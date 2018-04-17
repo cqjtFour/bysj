@@ -1,0 +1,88 @@
+@charset "utf-8";
+/*
+=======================================================================
+	Content Section Rules
+=======================================================================
+*/
+#contentsec {
+	width:100%;
+	padding:20px 0px 0px 0px;
+}
+.box {
+	border:#e6e6e6 solid 1px;
+	background:#FFF;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-bottom:20px;
+}
+.padbox {
+	padding:20px 20px 0px 20px;
+}
+.boxshadow{
+	width:100%;
+	float: left;
+	padding-top: 5px;
+	padding-bottom: 20px;
+}
+.search{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 20px;
+}
+.search-left{
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+.search-right{
+	float: right;
+	width: 40%;
+	height: 100%;
+}
+.search-list{
+	width: 100%;
+	margin-top: 20px;
+}
+.s-list {
+    border: solid 1px #eee;
+    width: 100%; 
+}
+.s-list tr {
+        border-bottom: solid 1px #eee;
+        height: 36px;
+}
+
+.s-list th {
+        padding: 0 10px;
+        text-align: left;
+        background: #f5f5f5;
+        color: #555;
+}
+
+.s-list a {
+        color: #15C;
+}
+
+.s-list a:hover {
+            color: #ff9c00;
+ }
+
+ .s-list td {
+        padding: 0 10px;
+           overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+        -icab-text-overflow: ellipsis;
+        -khtml-text-overflow: ellipsis;
+        -moz-text-overflow: ellipsis;
+        -webkit-text-overflow: ellipsis;
+}
+.page{
+	height:40px ;
+	margin-top:20px ;
+	float: right;
+	padding-right: 20px;
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.cqfour.bysj.util.MyMapper"></property>
+        </plugin>
+        <!-- 数据库连接信息 -->
+
+        <jdbcConnection
+                driverClass="com.mysql.jdbc.Driver"
+                connectionURL="jdbc:mysql://localhost:3306/bysj"
+                userId="root"
+                password="root">
+        </jdbcConnection>
+
+        <!-- 指定Javabean生成的位置 -->
+        <javaModelGenerator
+                targetPackage="com.cqfour.bysj.bean"
+                targetProject="src/main/java">
+        </javaModelGenerator>
+
+        <!-- 指定sql映射文件生成的位置 -->
+        <sqlMapGenerator
+                targetPackage="mapper"
+                targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- 指定dao接口生成的位置,mapper接口 -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.cqfour.bysj.mapper"
+                             targetProject="src/main/java">
+        </javaClientGenerator>
+
+        <!-- table指定每个表的生成策略 -->
+        <table tableName="t_cdb" domainObjectName="" />
+        <table tableName="t_jsb" domainObjectName="" />
+        <table tableName="t_jsglcdb" domainObjectName="" />
+        <table tableName="t_jycry" domainObjectName="" />
+        <table tableName="t_xsb" domainObjectName="" />
+        <table tableName="t_xxxxfbb" domainObjectName="" />
+        <table tableName="t_xyb" domainObjectName="" />
+        <table tableName="t_yhb" domainObjectName="" />
+        <table tableName="t_yp" domainObjectName="" />
+        <table tableName="t_yrdwb" domainObjectName="" />
+        <table tableName="t_yrdwxxshb" domainObjectName="" />
+        <table tableName="t_zpgwb" domainObjectName="" />
+        <table tableName="t_zpxxb" domainObjectName="" />
+        <table tableName="t_zyb" domainObjectName="" />
+
+    </context>
+</generatorConfiguration>
