@@ -1,0 +1,100 @@
+#canvas {
+    position: absolute;
+    top: 670px;
+    right: 43px;
+}
+
+#legend {
+    background-color: darkgrey;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 120px;
+    font-family: 'Microsoft yahei', Arial, Helvetica, sans-serif;
+}
+
+#div1 > ul > li > a {
+    width: 290px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#div2 > ul > li > a {
+    width: 290px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#div3 > ul > li > a {
+    width: 290px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#div4 > ul > li > a {
+    width: 290px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#div5 > ul > li > a {
+    width: 290px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#div6 > ul > li > a {
+    width: 290px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#div1 > ul {
+    list-style-type: disc;
+}
+
+#innerbox {
+    width: 1290px;
+    margin: 50px;
+    margin-top: 10px;
+}
+
+#onethirdRight {
+    margin-right: 10px;
+}
+#onethirdleft{
+    height: 300px;
+    background-color: gainsboro;
+    background-color: rgba(192,192,192,0.2);
+}
+#twoboxleft {
+    width: 940px;
+}
+
+#halfup {
+    width: 440px;
+}
+
+#halfdown {
+    width: 440px;
+}
+
+hr {
+    width: 430px;
+    margin-top: 5px;
+}
+
+.divwidth {
+    padding-bottom: 20px;
+}
