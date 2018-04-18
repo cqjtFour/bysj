@@ -53,6 +53,5 @@
         <table tableName="t_zpxxb" domainObjectName="JobInfo" />
         <table tableName="t_zyb" domainObjectName="Discipline" />
 
-
     </context>
 </generatorConfiguration>

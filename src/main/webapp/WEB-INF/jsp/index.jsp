@@ -390,7 +390,7 @@
                 <div class="onethird box left" id="onethirdleft">
                     <!-- Upcoming Widget Start -->
                     <div class="widget upcoming-events">
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" action="/getUser">
                             <fieldset>
                                 <legend id="legend" style="background-color: gainsboro">用户登录</legend>
                                 <div class="form-group">
