@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqfour.bysj.mapper.EmployersMapper">
+  <resultMap id="BaseResultMap" type="com.cqfour.bysj.bean.Employers">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="yrdwxxbbh" jdbcType="INTEGER" property="yrdwxxbbh" />
+    <result column="dlzh" jdbcType="CHAR" property="dlzh" />
+    <result column="dwmc" jdbcType="CHAR" property="dwmc" />
+    <result column="dwxz" jdbcType="CHAR" property="dwxz" />
+    <result column="zzjgdm" jdbcType="CHAR" property="zzjgdm" />
+    <result column="sshy" jdbcType="CHAR" property="sshy" />
+    <result column="dwgm" jdbcType="CHAR" property="dwgm" />
+    <result column="szd" jdbcType="CHAR" property="szd" />
+    <result column="dwlxr" jdbcType="CHAR" property="dwlxr" />
+    <result column="lxrdh" jdbcType="CHAR" property="lxrdh" />
+    <result column="dwlxdh" jdbcType="CHAR" property="dwlxdh" />
+    <result column="dzyx" jdbcType="CHAR" property="dzyx" />
+    <result column="yzbm" jdbcType="CHAR" property="yzbm" />
+    <result column="dwjbqkjj" jdbcType="LONGVARCHAR" property="dwjbqkjj" />
+  </resultMap>
+</mapper>
