@@ -33,12 +33,12 @@
             }
             that.options.jump ? jumpDom = '<input type="text" placeholder="1" class="jump-text" id="jumpText"><button type="button" class="btn btn-default jump-button" id="jumpBtn">跳转</button>' : jumpDom = '';
             content = '<button type="button" id="firstPage" class="btn btn-default first-page">首页</button>' +
-                '<button class="btn btn-default" id="prePage">上一页</button>' +
+                '<button class="btn btn-default" id="prePage"><span class="glyphicon glyphicon-menu-left"></span></button>' +
                 '<div class="pageWrap" style="width:' + wrapLength + 'px">' +
                 '<ul id="pageSelect" style="transition:all ' + that.options.slideSpeed + 'ms">' +
                 ulDom +
                 '</ul></div>' +
-                '<button class="btn btn-default" id="nextPage">下一页</button>' +
+                '<button class="btn btn-default" id="nextPage"><span class="glyphicon glyphicon-menu-right"></span></button>' +
                 '<button type="button" id="lastPage" class="btn btn-default last-page">尾页</button>' +
                 jumpDom /*+
                 '<p class="total-pages">共&nbsp;' +

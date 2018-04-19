@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>毕业去向</title>
+<title>就业管理系统</title>
 <!--// Stylesheets //-->
 <link href="css/headfooter.css" rel="stylesheet" type="text/css" />
 <link href="css/student-resume.css" rel="stylesheet" type="text/css" />
@@ -38,7 +38,7 @@
             <div class="inner">
                 <!-- Logo Start -->
                 <div class="logo">
-                    <a href="index.jsp"><img src="images/logo.png" alt=""/></a>
+                    <a href="/index"><img src="images/logo.png" alt=""/></a>
                 </div>
                 <!-- Logo End -->
                 <div class="right">
@@ -47,7 +47,7 @@
                         <div id="smoothmenu1" class="ddsmoothmenu">
 							<ul>
 								<li><a href="/index">首页</a></li>
-								<li class="current-menu-item"><a href="advice.jsp">通知公告</a></li>
+								<li><a href="/advice">通知公告</a></li>
 								<li><a href="#">招聘信息</a>
 									<ul class="backcolr">
 										<li><a href="/specialrecruitment">专场招聘</a></li>
@@ -63,7 +63,7 @@
 									</ul>
 								</li>
 								<li><a href="/studentresume">学生简历</a></li>
-								<li><a href="/graduating">毕业去向</a></li>
+								<li class="current-menu-item"><a href="/graduating">毕业去向</a></li>
 							</ul>
                             <div class="clear"></div>
                         </div>
@@ -78,10 +78,10 @@
     <!-- Bread Crumb Start -->
     <div id="bread-crumb">
     	<div class="inner">
-        	<ul>
-            	<li><span style="margin-right:5px ;"></span><a href="#">主页</a></li>
-                <li><span style="margin-right:5px ;"></span><a href="#">毕业去向</a></li>
-            </ul>
+			<ul>
+				<li><span class="glyphicon glyphicon-home" style="margin-right:5px ;"></span><a href="#">主页</a></li>
+				<li><span class="glyphicon glyphicon-send " style="margin-right:5px ;"></span><a href="#">毕业去向</a></li>
+			</ul>
             <div class="clear"></div>
         </div>
     </div>
