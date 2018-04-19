@@ -67,5 +67,6 @@ public class TiaoController {
     @RequestMapping("/login")
     public String login(){ return "/WEB-INF/jsp/login.jsp";}
 
-
+    @RequestMapping("/show")
+    public  String show(){ return "/WEB-INF/jsp/show.jsp";}
 }
