@@ -685,6 +685,9 @@ ul.post-thumbs li .desc p{
 	margin:0px;
 
 }
+.backcolr{
+	background-color: #6d6d6d !important;
+}
 .ddsmoothmenu ul li ul li:first-child{
 	padding-top:5px;
 }
