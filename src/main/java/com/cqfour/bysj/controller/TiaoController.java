@@ -31,7 +31,7 @@ public class TiaoController {
 
     @RequestMapping("/download")
     public String download(){
-        return "download";
+        return "/WEB-INF/jsp/download.jsp";
     }
 
     @RequestMapping("/employmentguidance")
@@ -63,5 +63,9 @@ public class TiaoController {
     public String student_resume(){
         return "/WEB-INF/jsp/student-resume.jsp";
     }
+
+    @RequestMapping("/login")
+    public String login(){ return "/WEB-INF/jsp/login.jsp";}
+
 
 }

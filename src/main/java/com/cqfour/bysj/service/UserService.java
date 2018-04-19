@@ -18,4 +18,18 @@ public class UserService {
     public List<User> getAllUser(){
         return userMapper.selectAll();
     }
+
+    //用户注册
+    public void insertUser(User user){
+        userMapper.insert(user);
+    }
+
+    //用户注销
+    public  void deleteUser(User user){
+        userMapper.delete(user);
+    }
+
 }
+
+
+

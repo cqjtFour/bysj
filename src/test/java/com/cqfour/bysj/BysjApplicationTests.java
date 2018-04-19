@@ -1,7 +1,10 @@
 package com.cqfour.bysj;
 
+import com.cqfour.bysj.bean.User;
+import com.cqfour.bysj.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -9,8 +12,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class BysjApplicationTests {
 
+	@Autowired
+	private UserService userService;
+	private User user;
+
 	@Test
 	public void contextLoads() {
+        user=new User();
+        user.setDlzh("631406010129");
+        userService.deleteUser(user);
 	}
 
 }

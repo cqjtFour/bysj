@@ -623,7 +623,7 @@ ul.post-thumbs li .desc p{
 */
 .logo {
 	float:left;
-	padding:30px 0px 0px 0px;
+	padding:0px 0px;
 }
 /*
 =======================================================================
@@ -653,7 +653,7 @@ ul.post-thumbs li .desc p{
 .ddsmoothmenu ul li a{
 	display:block;
 	padding:7px 15px 0px 15px;
-	height:25px;
+	height:32px;
 	color:#fff;
 	text-decoration:none;
 	font-size:14px;
@@ -664,7 +664,7 @@ ul.post-thumbs li .desc p{
 	display:inline-block;
 }
 .ddsmoothmenu ul li a:hover, .ddsmoothmenu ul li.current-menu-item a, .ddsmoothmenu ul li a.selected {
-	
+	background-color: #6d6d6d;
 }
 .ddsmoothmenu ul li a:link, .ddsmoothmenu ul li a:visited{
 	color:#fff;
@@ -683,6 +683,7 @@ ul.post-thumbs li .desc p{
 	float:left;
 	padding:0px 5px;
 	margin:0px;
+
 }
 .ddsmoothmenu ul li ul li:first-child{
 	padding-top:5px;
@@ -706,6 +707,7 @@ ul.post-thumbs li .desc p{
 }
 .ddsmoothmenu ul li ul li a.selected{
 	background-image:none;
+
 }
 .ddsmoothmenu ul li ul li a:hover, .ddsmoothmenu ul li ul li a.selected{
 	background:#ededed !important;
@@ -2186,7 +2188,7 @@ a#logoNext:hover {
 	-moz-box-sizing:border-box;
 	box-sizing:border-box;
 }
-
+/*
 =======================================================================
 	Gallery Rules
 =======================================================================
