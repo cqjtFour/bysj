@@ -1,10 +1,19 @@
 package com.cqfour.bysj.controller;
 
+import com.cqfour.bysj.bean.Menu;
+import com.cqfour.bysj.bean.RoleMenu;
+import com.cqfour.bysj.bean.User;
+import com.cqfour.bysj.service.MenuService;
+import com.cqfour.bysj.service.RoleMenuService;
 import com.cqfour.bysj.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by HYHSG on 2018/4/18.
@@ -16,10 +25,60 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private RoleMenuService roleMenuService;
+
+    @Autowired
+    private MenuService menuService;
+
     @RequestMapping("getUser")
     @ResponseBody
     public String getAllUser(){
         userService.getAllUser();
         return "index";
+    }
+
+    @RequestMapping("/loginUser")
+    public String loginUser(String username, String password, HttpServletRequest request){
+        System.out.println(111);
+        User user = userService.getUser(username);
+        if (null == user){
+            request.setAttribute("error","该用户不存在");
+            return "/WEB-INF/jsp/index.jsp";
+        } else if (!password.equals(user.getDlmm())){
+            request.setAttribute("error","密码输入错误");
+            return "/WEB-INF/jsp/index.jsp";
+        } else if (user.getZhzt()!=1){
+            request.setAttribute("error","该账号已注销");
+            return "/WEB-INF/jsp/index.jsp";
+        } else {
+            List<RoleMenu> roleMenus = roleMenuService.getRoleMenusByjsbh(user.getJsbh());
+            List<Menu> allMenu = menuService.getAllMenu();
+            List<Menu> menus = new ArrayList<>();
+            for (RoleMenu roleMenu : roleMenus){
+                for(Menu menu:allMenu){
+                    if (roleMenu.getCdbh().equals(menu.getCdbh())){
+                        menus.add(menu);
+                    }
+                }
+            }
+            // 找到主菜单
+            List<Menu> parentMenus = new ArrayList<>();
+            for (Menu menu : menus) {
+                if (menu.getFjcdbh().equals(0)) {
+                    parentMenus.add(menu);
+                }
+            }
+            // 为主菜单添加子菜单
+            for (Menu parent : parentMenus) {
+                for (Menu child : menus) {
+                    if (child.getFjcdbh().equals(parent.getCdbh())) {
+                        parent.getChildren().add(child);
+                    }
+                }
+            }
+            request.setAttribute("menus",parentMenus);
+            return "/WEB-INF/main/mainView.jsp";
+        }
     }
 }

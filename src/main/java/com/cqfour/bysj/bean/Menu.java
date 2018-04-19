@@ -1,6 +1,8 @@
 package com.cqfour.bysj.bean;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Table(name = "t_cdb")
 public class Menu {
@@ -29,6 +31,17 @@ public class Menu {
      * 父级菜单编号，Integer
      */
     private Integer fjcdbh;
+
+    @Transient
+    private List<Menu> children = new ArrayList<>();
+
+    public List<Menu> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<Menu> children) {
+        this.children = children;
+    }
 
     /**
      * 获取菜单编号，Integer，自增

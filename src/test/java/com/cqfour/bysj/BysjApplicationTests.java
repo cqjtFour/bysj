@@ -16,11 +16,4 @@ public class BysjApplicationTests {
 	private UserService userService;
 	private User user;
 
-	@Test
-	public void contextLoads() {
-        user=new User();
-        user.setDlzh("631406010129");
-        userService.deleteUser(user);
-	}
-
 }
