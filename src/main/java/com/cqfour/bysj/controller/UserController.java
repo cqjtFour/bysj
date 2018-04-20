@@ -1,6 +1,7 @@
 package com.cqfour.bysj.controller;
 
 import com.cqfour.bysj.bean.Menu;
+import com.cqfour.bysj.bean.Message;
 import com.cqfour.bysj.bean.RoleMenu;
 import com.cqfour.bysj.bean.User;
 import com.cqfour.bysj.service.MenuService;
@@ -39,18 +40,19 @@ public class UserController {
     }
 
     @RequestMapping("/loginUser")
-    public String loginUser(String username, String password, HttpServletRequest request){
-        System.out.println(111);
+    @ResponseBody
+    public Message loginUser(String username, String password, HttpServletRequest request){
+        Message message = new Message();
         User user = userService.getUser(username);
         if (null == user){
-            request.setAttribute("error","该用户不存在");
-            return "/WEB-INF/jsp/index.jsp";
+            message.setStatus("error");
+            message.setMsg("该用户不存在");
         } else if (!password.equals(user.getDlmm())){
-            request.setAttribute("error","密码输入错误");
-            return "/WEB-INF/jsp/index.jsp";
+            message.setStatus("error");
+            message.setMsg("密码输入错误");
         } else if (user.getZhzt()!=1){
-            request.setAttribute("error","该账号已注销");
-            return "/WEB-INF/jsp/index.jsp";
+            message.setStatus("error");
+            message.setMsg("该账号已注销");
         } else {
             List<RoleMenu> roleMenus = roleMenuService.getRoleMenusByjsbh(user.getJsbh());
             List<Menu> allMenu = menuService.getAllMenu();
@@ -77,8 +79,10 @@ public class UserController {
                     }
                 }
             }
-            request.setAttribute("menus",parentMenus);
-            return "/WEB-INF/main/mainView.jsp";
+            request.getSession().setAttribute("menus",parentMenus);
+            message.setStatus("success");
+            message.setMsg("");
         }
+        return message;
     }
 }

@@ -1,12 +1,7 @@
 package com.cqfour.bysj.controller;
 
-import com.cqfour.bysj.bean.SysUser;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * 控制页面之间的跳转
@@ -67,5 +62,8 @@ public class TiaoController {
     @RequestMapping("/login")
     public String login(){ return "/WEB-INF/jsp/login.jsp";}
 
-
+    @RequestMapping("/mainView")
+    public String mainView(){
+        return "/WEB-INF/main/mainView.jsp";
+    }
 }

@@ -390,7 +390,7 @@
                 <div class="onethird box left" id="onethirdleft">
                     <!-- Upcoming Widget Start -->
                     <div class="widget upcoming-events">
-                        <form class="form-horizontal" action="/loginUser" method="post" id="form">
+                        <form class="form-horizontal"  id="form">
                             <fieldset>
                                 <legend id="legend" style="background-color: gainsboro">用户登录</legend>
                                 <div class="form-group">
@@ -450,7 +450,24 @@
                                     document.getElementById("label1").innerHTML="验证码不正确";
                                     return false;
                                 }
-                                document.getElementById("form").submit();
+//                                document.getElementById("form").submit();
+                                login();
+                            }
+                            function login() {
+                                $.ajax({
+                                    url:"/loginUser",
+                                    type:"POST",
+                                    dataType:"json",
+                                    data:$("#form").serialize(),
+                                    success:function (result) {
+                                        alert(result.status);
+                                        if(result.status == "error"){
+                                            document.getElementById("label1").innerHTML= result.msg;
+                                        }else{
+                                            window.location.href="/mainView"
+                                        }
+                                    }
+                                })
                             }
                         </script>
                     </div>
