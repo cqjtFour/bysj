@@ -1,64 +1,88 @@
 package com.cqfour.bysj.controller;
 
-import com.cqfour.bysj.bean.SysUser;
+import com.cqfour.bysj.bean.Menu;
+import com.cqfour.bysj.bean.Message;
+import com.cqfour.bysj.bean.RoleMenu;
+import com.cqfour.bysj.bean.User;
+import com.cqfour.bysj.service.MenuService;
+import com.cqfour.bysj.service.RoleMenuService;
+import com.cqfour.bysj.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
 
+/**
+ * Created by HYHSG on 2018/4/18.
+ * 用户Controllo
+ */
 @Controller
 public class UserController {
 
-    @RequestMapping("/index")
-    public String index(){
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private RoleMenuService roleMenuService;
+
+    @Autowired
+    private MenuService menuService;
+
+    @RequestMapping("getUser")
+    @ResponseBody
+    public String getAllUser(){
+        userService.getAllUser();
         return "index";
     }
 
-    @RequestMapping("/advice")
-    public String advice(){
-        return "advice";
+    @RequestMapping("/loginUser")
+    @ResponseBody
+    public Message loginUser(String username, String password, HttpServletRequest request){
+        Message message = new Message();
+        User user = userService.getUser(username);
+        if (null == user){
+            message.setStatus("error");
+            message.setMsg("该用户不存在");
+        } else if (!password.equals(user.getDlmm())){
+            message.setStatus("error");
+            message.setMsg("密码输入错误");
+        } else if (user.getZhzt()!=1){
+            message.setStatus("error");
+            message.setMsg("该账号已注销");
+        } else {
+            List<RoleMenu> roleMenus = roleMenuService.getRoleMenusByjsbh(user.getJsbh());
+            List<Menu> allMenu = menuService.getAllMenu();
+            List<Menu> menus = new ArrayList<>();
+            for (RoleMenu roleMenu : roleMenus){
+                for(Menu menu:allMenu){
+                    if (roleMenu.getCdbh().equals(menu.getCdbh())){
+                        menus.add(menu);
+                    }
+                }
+            }
+            // 找到主菜单
+            List<Menu> parentMenus = new ArrayList<>();
+            for (Menu menu : menus) {
+                if (menu.getFjcdbh().equals(0)) {
+                    parentMenus.add(menu);
+                }
+            }
+            // 为主菜单添加子菜单
+            for (Menu parent : parentMenus) {
+                for (Menu child : menus) {
+                    if (child.getFjcdbh().equals(parent.getCdbh())) {
+                        parent.getChildren().add(child);
+                    }
+                }
+            }
+            request.getSession().setAttribute("menus",parentMenus);
+            message.setStatus("success");
+            message.setMsg("");
+        }
+        return message;
     }
-
-    @RequestMapping("/doublemeeting")
-    public String double_meeting(){
-        return "double-meeting";
-    }
-
-    @RequestMapping("/download")
-    public String download(){
-        return "download";
-    }
-
-    @RequestMapping("/employmentguidance")
-    public String employment_guidance(){
-        return "employment-guidance";
-    }
-
-    @RequestMapping("/employmentpolicy")
-    public String employment_policy(){
-        return "employment-policy";
-    }
-
-    @RequestMapping("/graduating")
-    public String graduating(){
-        return "graduating";
-    }
-
-    @RequestMapping("/socialrecruitment")
-    public String social_recruitment(){
-        return "social-recruitment";
-    }
-
-    @RequestMapping("/specialrecruitment")
-    public String special_recruitment(){
-        return "special-recruitment";
-    }
-
-    @RequestMapping("/studentresume")
-    public String student_resume(){
-        return "student-resume";
-    }
-
 }

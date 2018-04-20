@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqfour.bysj.mapper.EmploymentDepartmentMapper">
+  <resultMap id="BaseResultMap" type="com.cqfour.bysj.bean.EmploymentDepartment">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="zgh" jdbcType="CHAR" property="zgh" />
+    <result column="dlzh" jdbcType="CHAR" property="dlzh" />
+    <result column="rymc" jdbcType="CHAR" property="rymc" />
+    <result column="zw" jdbcType="CHAR" property="zw" />
+    <result column="sj" jdbcType="CHAR" property="sj" />
+  </resultMap>
+</mapper>

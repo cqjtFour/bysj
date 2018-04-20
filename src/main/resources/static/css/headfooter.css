@@ -252,7 +252,7 @@ iframe {
 	display:inline-block;
 }
 .ddsmoothmenu ul li a:hover, .ddsmoothmenu ul li.current-menu-item a, .ddsmoothmenu ul li a.selected {
-	
+	color:#fff;
 }
 .ddsmoothmenu ul li a:link, .ddsmoothmenu ul li a:visited{
 	color:#fff;
@@ -380,7 +380,6 @@ iframe {
 	float:left;
 	margin:10px 0px 0px 0px;
 	padding:0px 0px 0px 20px;
-	background:url(../images/home.gif) no-repeat 0px 6px;
 }
 #bread-crumb ul li{
 	float:left;

@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.cqfour.bysj"})
-@MapperScan(basePackages = {"com.cqfour.bysj.mapper"})
+@MapperScan(basePackages = {"com.cqfour.bysj.mapper.*"})
 public class BysjApplication {
 
 	public static void main(String[] args) {

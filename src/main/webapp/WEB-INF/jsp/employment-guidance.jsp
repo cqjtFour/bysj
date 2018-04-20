@@ -12,7 +12,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Identity</title>
+    <title>就业管理系统</title>
     <!--// Stylesheets //-->
     <link href="css/headfooter.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="css/gray.css" title="styles1" media="screen"/>
@@ -39,7 +39,7 @@
             <div class="inner">
                 <!-- Logo Start -->
                 <div class="logo">
-                    <a href="index.jsp"><img src="images/logo.png" alt=""/></a>
+                    <a href="/index"><img src="images/logo.png" alt=""/></a>
                 </div>
                 <!-- Logo End -->
                 <div class="right">
@@ -48,7 +48,7 @@
                         <div id="smoothmenu1" class="ddsmoothmenu">
                             <ul>
                                 <li><a href="/index">首页</a></li>
-                                <li class="current-menu-item"><a href="advice.jsp">通知公告</a></li>
+                                <li><a href="/advice">通知公告</a></li>
                                 <li><a href="#">招聘信息</a>
                                     <ul class="backcolr">
                                         <li><a href="/specialrecruitment">专场招聘</a></li>
@@ -57,7 +57,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="/download">下载中心</a></li>
-                                <li><a href="#">就业指南</a>
+                                <li class="current-menu-item"><a href="#">就业指南</a>
                                     <ul class="backcolr">
                                         <li><a href="/employmentguidance">就业指导</a></li>
                                         <li><a href="/employmentpolicy">就业政策</a></li>
@@ -80,9 +80,9 @@
     <div id="bread-crumb">
         <div class="inner">
             <ul>
-                <li><a href="#">主页</a></li>
-                <li><a href="#">就业指南</a></li>
-                <li><a href="#">就业指导</a></li>
+                <li><span class="glyphicon glyphicon-home" style="margin-right:5px ;"></span><a href="#">主页</a></li>
+                <li><span class="glyphicon glyphicon-flag" style="margin-right:5px ;"></span><a href="#">就业指南</a></li>
+                <li><span class="glyphicon glyphicon-tag" style="margin-right:5px ;"></span><a href="#">就业指导</a></li>
             </ul>
             <div class="clear"></div>
         </div>

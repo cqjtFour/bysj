@@ -8,7 +8,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -40,7 +40,7 @@
                     <div class="navigation">
                         <div id="smoothmenu1" class="ddsmoothmenu">
                             <ul>
-                                <li class="current-menu-item"><a href="index.jsp">首页</a></li>
+                                <li class="current-menu-item"><a href="/index">首页</a></li>
                                 <li><a href="/advice">通知公告</a></li>
                                 <li><a href="#">招聘信息</a>
                                     <ul class="backcolr">
@@ -390,7 +390,7 @@
                 <div class="onethird box left" id="onethirdleft">
                     <!-- Upcoming Widget Start -->
                     <div class="widget upcoming-events">
-                        <form class="form-horizontal">
+                        <form class="form-horizontal"  id="form">
                             <fieldset>
                                 <legend id="legend" style="background-color: gainsboro">用户登录</legend>
                                 <div class="form-group">
@@ -399,6 +399,7 @@
                                     </label>
                                     <div class="controls">
                                         <input type="text" class="form-control" style="width: 165px;height: 30px"
+                                               name="username"
                                                id="username">
                                     </div>
                                 </div>
@@ -408,7 +409,7 @@
                                     </label>
                                     <div class="controls">
                                         <input type="password" class="form-control" style="width: 165px;height: 30px"
-                                               id="password"></div>
+                                               id="password" name="password"></div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-5 control-label" for="password">
@@ -422,6 +423,7 @@
                                     </div>
                                     <div class="controls">
                                     </div>
+                                    <label id="label1" style="position: absolute;top: 710px;right: 110px">${error} </label>
                                 </div>
                                 <div class="form-group col-md-offset-10" style="margin-top: 40px">
                                     <a style="position: absolute;right: 230px;top: 740px;float: left" href="#"
@@ -429,11 +431,45 @@
                                     <a style="position: absolute;top: 740px;float: left" href="#"
                                        class="btn col-md-offset-1" role="button"><b>单位注册</b></a>
                                     <button class="col-sm-3 col-md-offset-7 btn"
-                                            style="background-color: darkgray;width: 70px;float: left" type="submit"> 登录
+                                            style="background-color: darkgray;width: 70px;float: left" type="button"
+                                            onclick="validate1()"> 登录
                                     </button>
                                 </div>
                             </fieldset>
                         </form>
+                        <script type="text/javascript">
+                            function validate1(){
+                                var userValue = document.getElementById("username").value;
+                                var passwordValue = document.getElementById("password").value;
+                                var yzm = document.getElementById("validate").value;
+                                if (userValue.length==0||passwordValue.length==0){
+                                    document.getElementById("label1").innerHTML="用户名或密码不能为空";
+                                    return false;
+                                }
+                                if(yzm != string){
+                                    document.getElementById("label1").innerHTML="验证码不正确";
+                                    return false;
+                                }
+//                                document.getElementById("form").submit();
+                                login();
+                            }
+                            function login() {
+                                $.ajax({
+                                    url:"/loginUser",
+                                    type:"POST",
+                                    dataType:"json",
+                                    data:$("#form").serialize(),
+                                    success:function (result) {
+                                        alert(result.status);
+                                        if(result.status == "error"){
+                                            document.getElementById("label1").innerHTML= result.msg;
+                                        }else{
+                                            window.location.href="/mainView"
+                                        }
+                                    }
+                                })
+                            }
+                        </script>
                     </div>
                     <!-- Upcoming Widget End -->
                 </div>
@@ -449,14 +485,14 @@
     </div>
 </div>
 <div class="friendship-link" style="position: absolute;top: 1310px;left: 50px">
-    <div class="links" >
+    <div class="links">
         <span style="float: left; padding-top: 10px;">友情链接:</span>
-                <a href="http://www.scpta.gov.cn/" title="四川省人事考试网" target="_blank">
-                    <img src="../img/d6f21951-ae83-4847-9f1a-5f4189281cf6.png" width="106px" height="39px"/>
-                </a>
-                <a href="http://gj.ncss.cn/" title="高校毕业生到国际组织实习任职信息" target="_blank">
-                    <img src="../img/0af63035-b7ce-4ba4-ac44-4d46a60acdca.jpg" width="106px" height="39px"/>
-                </a>
+        <a href="http://www.scpta.gov.cn/" title="四川省人事考试网" target="_blank">
+            <img src="../img/d6f21951-ae83-4847-9f1a-5f4189281cf6.png" width="106px" height="39px"/>
+        </a>
+        <a href="http://gj.ncss.cn/" title="高校毕业生到国际组织实习任职信息" target="_blank">
+            <img src="../img/0af63035-b7ce-4ba4-ac44-4d46a60acdca.jpg" width="106px" height="39px"/>
+        </a>
         <div class="clear"></div>
     </div>
     <!--container end-->
@@ -496,6 +532,7 @@
 </div>
 <!-- Wrapper End -->
 <!-- 生成验证码 -->
+
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/styleswitch.js"></script>
 <script type="text/javascript" src="../js/animatedcollapse.js"></script>

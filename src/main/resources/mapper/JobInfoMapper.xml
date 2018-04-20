@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqfour.bysj.mapper.JobInfoMapper">
+  <resultMap id="BaseResultMap" type="com.cqfour.bysj.bean.JobInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="zpxxbh" jdbcType="INTEGER" property="zpxxbh" />
+    <result column="yrdwxxbbh" jdbcType="INTEGER" property="yrdwxxbbh" />
+    <result column="zpbt" jdbcType="CHAR" property="zpbt" />
+    <result column="fbsj" jdbcType="TIMESTAMP" property="fbsj" />
+    <result column="zwnr" jdbcType="LONGVARCHAR" property="zwnr" />
+  </resultMap>
+</mapper>

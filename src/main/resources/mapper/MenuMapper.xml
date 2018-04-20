@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqfour.bysj.mapper.MenuMapper">
+  <resultMap id="BaseResultMap" type="com.cqfour.bysj.bean.Menu">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="cdbh" jdbcType="INTEGER" property="cdbh" />
+    <result column="cdmc" jdbcType="VARCHAR" property="cdmc" />
+    <result column="cdurl" jdbcType="CHAR" property="cdurl" />
+    <result column="cddj" jdbcType="INTEGER" property="cddj" />
+    <result column="fjcdbh" jdbcType="INTEGER" property="fjcdbh" />
+  </resultMap>
+</mapper>
