@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqfour.bysj.mapper.SchoolNewsMapper">
+  <resultMap id="BaseResultMap" type="com.cqfour.bysj.bean.SchoolNews">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="fbbbh" jdbcType="INTEGER" property="fbbbh" />
+    <result column="zgh" jdbcType="CHAR" property="zgh" />
+    <result column="xxlx" jdbcType="CHAR" property="xxlx" />
+    <result column="xxbt" jdbcType="CHAR" property="xxbt" />
+    <result column="xxfbsj" jdbcType="TIMESTAMP" property="xxfbsj" />
+    <result column="xxzw" jdbcType="LONGVARCHAR" property="xxzw" />
+  </resultMap>
+</mapper>

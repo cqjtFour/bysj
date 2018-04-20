@@ -12,7 +12,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Identity</title>
+    <title>就业管理系统</title>
     <!--// Stylesheets //-->
     <link href="../css/style.css" rel="stylesheet" type="text/css"/>
     <link rel="alternate stylesheet" type="text/css" href="../css/gray.css" title="styles3" media="screen"/>
@@ -32,7 +32,7 @@
             <div class="inner">
                 <!-- Logo Start -->
                 <div class="logo">
-                    <a href="index.jsp"><img src="../images/lalala.jpg" style="width: 90px;height: 20px" alt=""/></a>
+                    <a href="/index"><img src="../images/logo1.png" style="width: 98px;height: 98px" alt=""/></a>
                 </div>
                 <!-- Logo End -->
                 <div class="right">
@@ -390,7 +390,7 @@
                 <div class="onethird box left" id="onethirdleft">
                     <!-- Upcoming Widget Start -->
                     <div class="widget upcoming-events">
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" action="/getUser">
                             <fieldset>
                                 <legend id="legend" style="background-color: gainsboro">用户登录</legend>
                                 <div class="form-group">
