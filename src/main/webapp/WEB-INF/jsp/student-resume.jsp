@@ -133,7 +133,7 @@
             				</thead>
             				<tbody>
             					<tr>
-            						<td><a href="/MCenter/Student/StuResume_Info?XSIDStr=250A476B4807FE5F" target="_blank" title='李芸'>李芸</a></td>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
             						<td>女</td>
             						<td>本科生毕业</td>
             						<td>食品科学与工程-无方向</td>
@@ -143,7 +143,7 @@
             						<td>2018-04-07</td>
             					</tr>
             					<tr>
-            						<td><a href="/MCenter/Student/StuResume_Info?XSIDStr=250A476B4807FE5F" target="_blank" title='李芸'>李芸</a></td>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
             						<td>女</td>
             						<td>本科生毕业</td>
             						<td>食品科学与工程-无方向</td>
@@ -153,7 +153,7 @@
             						<td>2018-04-07</td>
             					</tr>
             					<tr>
-            						<td><a href="/MCenter/Student/StuResume_Info?XSIDStr=250A476B4807FE5F" target="_blank" title='李芸'>李芸</a></td>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
             						<td>女</td>
             						<td>本科生毕业</td>
             						<td>食品科学与工程-无方向</td>
@@ -163,7 +163,7 @@
             						<td>2018-04-07</td>
             					</tr>
             					<tr>
-            						<td><a href="/MCenter/Student/StuResume_Info?XSIDStr=250A476B4807FE5F" target="_blank" title='李芸'>李芸</a></td>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
             						<td>女</td>
             						<td>本科生毕业</td>
             						<td>食品科学与工程-无方向</td>
@@ -173,7 +173,7 @@
             						<td>2018-04-07</td>
             					</tr>
             					<tr>
-            						<td><a href="/MCenter/Student/StuResume_Info?XSIDStr=250A476B4807FE5F" target="_blank" title='李芸'>李芸</a></td>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
             						<td>女</td>
             						<td>本科生毕业</td>
             						<td>食品科学与工程-无方向</td>
@@ -183,7 +183,7 @@
             						<td>2018-04-07</td>
             					</tr>
             					<tr>
-            						<td><a href="/MCenter/Student/StuResume_Info?XSIDStr=250A476B4807FE5F" target="_blank" title='李芸'>李芸</a></td>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
             						<td>女</td>
             						<td>本科生毕业</td>
             						<td>食品科学与工程-无方向</td>
@@ -193,7 +193,7 @@
             						<td>2018-04-07</td>
             					</tr>
             					<tr>
-            						<td><a href="/MCenter/Student/StuResume_Info?XSIDStr=250A476B4807FE5F" target="_blank" title='李芸'>李芸</a></td>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
             						<td>女</td>
             						<td>本科生毕业</td>
             						<td>食品科学与工程-无方向</td>
@@ -203,7 +203,7 @@
             						<td>2018-04-07</td>
             					</tr>
             					<tr>
-            						<td><a href="/MCenter/Student/StuResume_Info?XSIDStr=250A476B4807FE5F" target="_blank" title='李芸'>李芸</a></td>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
             						<td>女</td>
             						<td>本科生毕业</td>
             						<td>食品科学与工程-无方向</td>
@@ -213,7 +213,7 @@
             						<td>2018-04-07</td>
             					</tr>
             					<tr>
-            						<td><a href="/MCenter/Student/StuResume_Info?XSIDStr=250A476B4807FE5F" target="_blank" title='李芸'>李芸</a></td>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
             						<td>女</td>
             						<td>本科生毕业</td>
             						<td>食品科学与工程-无方向</td>

@@ -10,7 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TiaoController {
 
     @RequestMapping("/index")
-    public String index(){
+    public String index(HttpServletRequest request){
+        String yzm = "";
+        for (int i = 0 ; i < 4 ; i ++){
+            yzm = yzm + (int)((Math.random()*9+1));
+        }
+        System.out.print(yzm);
+        request.setAttribute("yzm",yzm);
         return "/WEB-INF/jsp/index.jsp";
     }
 
@@ -65,12 +71,20 @@ public class TiaoController {
     }
 
     @RequestMapping("/show")
-    public String show(){
-        return "/WEB-INF/jsp/show.jsp";
-    }
+    public  String show(){ return "/WEB-INF/jsp/show.jsp";}
 
-    @RequestMapping("/mainView")
+    @RequestMapping("/createResume")
+    public String createResume(){
+        return  "/WEB-INF/main/createResume.jsp";
+     }
+  @RequestMapping("/mainView")
     public String mainView(){
         return "/WEB-INF/main/mainView.jsp";
     }
+   
+    @RequestMapping("/createResume")
+    public String createResume(){
+        return  "/WEB-INF/main/createResume.jsp";
+    }
+   
 }
