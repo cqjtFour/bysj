@@ -31,7 +31,7 @@
                     <dl class="layui-nav-child"> <!-- 二级菜单 -->
                         <dd><a href="">个人信息</a></dd>
                         <dd><a href="">切换帐号</a></dd>
-                        <dd><a href="./login.html">退出</a></dd>
+                        <dd><a href="/login">退出</a></dd>
                     </dl>
                 </li>
                 <!-- <li class="layui-nav-item">
@@ -39,7 +39,7 @@
                       <i class="layui-icon" style="top: 1px;">&#xe63a;</i>
                   </a>
                   </li> -->
-                <li class="layui-nav-item x-index"><a href="/">前台首页</a></li>
+                <li class="layui-nav-item x-index"><a href="/index">前台首页</a></li>
             </ul>
         </div>
     </div>

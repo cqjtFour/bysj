@@ -39,14 +39,14 @@
     <h2 class="mg-b20 text-center">就业管理系统</h2>
     <div class="col-sm-8 col-md-5 center-auto pd-sm-50 pd-xs-20 main_content">
         <p class="text-center font16">用户登录</p>
-        <form>
+        <form action="/loginUser" method="post">
             <div class="form-group mg-t20">
                 <i class="icon-user icon_font"></i>
-                <input type="email" class="login_input" id="Email1" placeholder="请输入用户名" />
+                <input type="text" class="login_input" id="username" name="username" placeholder="请输入用户名" />
             </div>
             <div class="form-group mg-t20">
                 <i class="icon-lock icon_font"></i>
-                <input type="password" class="login_input" id="Password1" placeholder="请输入密码" />
+                <input type="password" class="login_input" id="password" name="password" placeholder="请输入密码" />
             </div>
             <div class="form-group mg-t20">
                 <div class="code-box" id="code-box">
