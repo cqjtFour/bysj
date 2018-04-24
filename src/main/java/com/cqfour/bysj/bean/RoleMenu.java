@@ -8,22 +8,26 @@ public class RoleMenu {
      * 角色关联菜单表编号，Integer，自增
      */
     @Id
+    @Column(name = "JSGLCDBBH")
     private Integer jsglcdbbh;
 
     /**
      * 菜单编号，Integer，自增
      */
+    @Column(name = "CDBH")
     private Integer cdbh;
 
     /**
      * 角色编号，Integer，自增
      */
+    @Column(name = "JSBH")
     private Integer jsbh;
+
 
     /**
      * 获取角色关联菜单表编号，Integer，自增
      *
-     * @return jsglcdbbh - 角色关联菜单表编号，Integer，自增
+     * @return JSGLCDBBH - 角色关联菜单表编号，Integer，自增
      */
     public Integer getJsglcdbbh() {
         return jsglcdbbh;
@@ -41,7 +45,7 @@ public class RoleMenu {
     /**
      * 获取菜单编号，Integer，自增
      *
-     * @return cdbh - 菜单编号，Integer，自增
+     * @return CDBH - 菜单编号，Integer，自增
      */
     public Integer getCdbh() {
         return cdbh;
@@ -59,7 +63,7 @@ public class RoleMenu {
     /**
      * 获取角色编号，Integer，自增
      *
-     * @return jsbh - 角色编号，Integer，自增
+     * @return JSBH - 角色编号，Integer，自增
      */
     public Integer getJsbh() {
         return jsbh;

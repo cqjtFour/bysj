@@ -5,10 +5,11 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="zgh" jdbcType="CHAR" property="zgh" />
-    <result column="dlzh" jdbcType="CHAR" property="dlzh" />
-    <result column="rymc" jdbcType="CHAR" property="rymc" />
-    <result column="zw" jdbcType="CHAR" property="zw" />
-    <result column="sj" jdbcType="CHAR" property="sj" />
+    <id column="ZGH" jdbcType="CHAR" property="zgh" />
+    <result column="DLZH" jdbcType="CHAR" property="dlzh" />
+    <result column="RYMC" jdbcType="CHAR" property="rymc" />
+    <result column="ZW" jdbcType="CHAR" property="zw" />
+    <result column="SJ" jdbcType="CHAR" property="sj" />
+    <result column="BJDH" jdbcType="CHAR" property="bjdh" />
   </resultMap>
 </mapper>

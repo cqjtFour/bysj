@@ -10,26 +10,31 @@ public class Menu {
      * 菜单编号，Integer，自增
      */
     @Id
+    @Column(name = "CDBH")
     private Integer cdbh;
 
     /**
      * 菜单名称，Char(32)
      */
+    @Column(name = "CDMC")
     private String cdmc;
 
     /**
      * 菜单url,Char(255)
      */
+    @Column(name = "CDURL")
     private String cdurl;
 
     /**
      * 菜单等级，Integer
      */
+    @Column(name = "CDDJ")
     private Integer cddj;
 
     /**
      * 父级菜单编号，Integer
      */
+    @Column(name = "FJCDBH")
     private Integer fjcdbh;
 
     @Transient
@@ -42,11 +47,10 @@ public class Menu {
     public void setChildren(List<Menu> children) {
         this.children = children;
     }
-
     /**
      * 获取菜单编号，Integer，自增
      *
-     * @return cdbh - 菜单编号，Integer，自增
+     * @return CDBH - 菜单编号，Integer，自增
      */
     public Integer getCdbh() {
         return cdbh;
@@ -64,7 +68,7 @@ public class Menu {
     /**
      * 获取菜单名称，Char(32)
      *
-     * @return cdmc - 菜单名称，Char(32)
+     * @return CDMC - 菜单名称，Char(32)
      */
     public String getCdmc() {
         return cdmc;
@@ -82,7 +86,7 @@ public class Menu {
     /**
      * 获取菜单url,Char(255)
      *
-     * @return cdurl - 菜单url,Char(255)
+     * @return CDURL - 菜单url,Char(255)
      */
     public String getCdurl() {
         return cdurl;
@@ -100,7 +104,7 @@ public class Menu {
     /**
      * 获取菜单等级，Integer
      *
-     * @return cddj - 菜单等级，Integer
+     * @return CDDJ - 菜单等级，Integer
      */
     public Integer getCddj() {
         return cddj;
@@ -118,7 +122,7 @@ public class Menu {
     /**
      * 获取父级菜单编号，Integer
      *
-     * @return fjcdbh - 父级菜单编号，Integer
+     * @return FJCDBH - 父级菜单编号，Integer
      */
     public Integer getFjcdbh() {
         return fjcdbh;

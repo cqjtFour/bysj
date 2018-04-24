@@ -5,8 +5,8 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="jsglcdbbh" jdbcType="INTEGER" property="jsglcdbbh" />
-    <result column="cdbh" jdbcType="INTEGER" property="cdbh" />
-    <result column="jsbh" jdbcType="INTEGER" property="jsbh" />
+    <id column="JSGLCDBBH" jdbcType="INTEGER" property="jsglcdbbh" />
+    <result column="CDBH" jdbcType="INTEGER" property="cdbh" />
+    <result column="JSBH" jdbcType="INTEGER" property="jsbh" />
   </resultMap>
 </mapper>

@@ -9,32 +9,37 @@ public class JobInfo {
      * 招牌信息编号，Integer，自增
      */
     @Id
+    @Column(name = "ZPXXBH")
     private Integer zpxxbh;
 
     /**
      * 用人单位编号，Integer
      */
+    @Column(name = "YRDWXXBBH")
     private Integer yrdwxxbbh;
 
     /**
      * 招聘标题，Char(64)
      */
+    @Column(name = "ZPBT")
     private String zpbt;
 
     /**
      * 发布时间，Date
      */
+    @Column(name = "FBSJ")
     private Date fbsj;
 
     /**
      * 正文内容，Char(500)
      */
+    @Column(name = "ZWNR")
     private String zwnr;
 
     /**
      * 获取招牌信息编号，Integer，自增
      *
-     * @return zpxxbh - 招牌信息编号，Integer，自增
+     * @return ZPXXBH - 招牌信息编号，Integer，自增
      */
     public Integer getZpxxbh() {
         return zpxxbh;
@@ -52,7 +57,7 @@ public class JobInfo {
     /**
      * 获取用人单位编号，Integer
      *
-     * @return yrdwxxbbh - 用人单位编号，Integer
+     * @return YRDWXXBBH - 用人单位编号，Integer
      */
     public Integer getYrdwxxbbh() {
         return yrdwxxbbh;
@@ -70,7 +75,7 @@ public class JobInfo {
     /**
      * 获取招聘标题，Char(64)
      *
-     * @return zpbt - 招聘标题，Char(64)
+     * @return ZPBT - 招聘标题，Char(64)
      */
     public String getZpbt() {
         return zpbt;
@@ -88,7 +93,7 @@ public class JobInfo {
     /**
      * 获取发布时间，Date
      *
-     * @return fbsj - 发布时间，Date
+     * @return FBSJ - 发布时间，Date
      */
     public Date getFbsj() {
         return fbsj;
@@ -106,7 +111,7 @@ public class JobInfo {
     /**
      * 获取正文内容，Char(500)
      *
-     * @return zwnr - 正文内容，Char(500)
+     * @return ZWNR - 正文内容，Char(500)
      */
     public String getZwnr() {
         return zwnr;

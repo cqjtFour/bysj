@@ -5,9 +5,9 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="ypbbh" jdbcType="INTEGER" property="ypbbh" />
-    <result column="zpgwbh" jdbcType="INTEGER" property="zpgwbh" />
-    <result column="xh" jdbcType="CHAR" property="xh" />
-    <result column="ypsj" jdbcType="DATE" property="ypsj" />
+    <id column="YPBBH" jdbcType="INTEGER" property="ypbbh" />
+    <result column="ZPGWBH" jdbcType="INTEGER" property="zpgwbh" />
+    <result column="XH" jdbcType="CHAR" property="xh" />
+    <result column="YPSJ" jdbcType="DATE" property="ypsj" />
   </resultMap>
 </mapper>

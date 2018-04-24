@@ -9,27 +9,31 @@ public class Apply {
      * 应聘表编号，Integer，自增
      */
     @Id
+    @Column(name = "YPBBH")
     private Integer ypbbh;
 
     /**
      * 招牌岗位编号，Integer，自增
      */
+    @Column(name = "ZPGWBH")
     private Integer zpgwbh;
 
     /**
      * 学号，Char(16)
      */
+    @Column(name = "XH")
     private String xh;
 
     /**
      * 应聘时间，Date
      */
+    @Column(name = "YPSJ")
     private Date ypsj;
 
     /**
      * 获取应聘表编号，Integer，自增
      *
-     * @return ypbbh - 应聘表编号，Integer，自增
+     * @return YPBBH - 应聘表编号，Integer，自增
      */
     public Integer getYpbbh() {
         return ypbbh;
@@ -47,7 +51,7 @@ public class Apply {
     /**
      * 获取招牌岗位编号，Integer，自增
      *
-     * @return zpgwbh - 招牌岗位编号，Integer，自增
+     * @return ZPGWBH - 招牌岗位编号，Integer，自增
      */
     public Integer getZpgwbh() {
         return zpgwbh;
@@ -65,7 +69,7 @@ public class Apply {
     /**
      * 获取学号，Char(16)
      *
-     * @return xh - 学号，Char(16)
+     * @return XH - 学号，Char(16)
      */
     public String getXh() {
         return xh;
@@ -83,7 +87,7 @@ public class Apply {
     /**
      * 获取应聘时间，Date
      *
-     * @return ypsj - 应聘时间，Date
+     * @return YPSJ - 应聘时间，Date
      */
     public Date getYpsj() {
         return ypsj;
