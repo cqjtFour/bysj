@@ -42,16 +42,24 @@
         <table tableName="t_jsb" domainObjectName="Role" />
         <table tableName="t_jsglcdb" domainObjectName="RoleMenu" />
         <table tableName="t_jycry" domainObjectName="EmploymentDepartment" />
+
         <table tableName="t_xsb" domainObjectName="Student" />
         <table tableName="t_xxxxfbb" domainObjectName="SchoolNews" />
         <table tableName="t_xyb" domainObjectName="Faculty" />
         <table tableName="t_yhb" domainObjectName="User" />
+
         <table tableName="t_yp" domainObjectName="Apply" />
         <table tableName="t_yrdwb" domainObjectName="Employers" />
         <table tableName="t_yrdwxxshb" domainObjectName="EmployersInfoCheck" />
         <table tableName="t_zpgwb" domainObjectName="Job" />
+
         <table tableName="t_zpxxb" domainObjectName="JobInfo" />
         <table tableName="t_zyb" domainObjectName="Discipline" />
+        <table tableName="t_xyzbyyb" domainObjectName="SchoolJob" />
+        <table tableName="t_znsxb" domainObjectName="PrivateMessage" />
+        <table tableName="t_qyb" domainObjectName="Sign" />
+
+
 
     </context>
 </generatorConfiguration>

@@ -5,15 +5,15 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="zpgwbh" jdbcType="INTEGER" property="zpgwbh" />
-    <result column="zpxxbh" jdbcType="INTEGER" property="zpxxbh" />
-    <result column="gwmc" jdbcType="CHAR" property="gwmc" />
-    <result column="gwlx" jdbcType="CHAR" property="gwlx" />
-    <result column="xqzy" jdbcType="CHAR" property="xqzy" />
-    <result column="gzdd" jdbcType="CHAR" property="gzdd" />
-    <result column="gzjy" jdbcType="CHAR" property="gzjy" />
-    <result column="zpsl" jdbcType="INTEGER" property="zpsl" />
-    <result column="gwyx" jdbcType="INTEGER" property="gwyx" />
-    <result column="gwjj" jdbcType="LONGVARCHAR" property="gwjj" />
+    <id column="ZPGWBH" jdbcType="INTEGER" property="zpgwbh" />
+    <result column="ZPXXBH" jdbcType="INTEGER" property="zpxxbh" />
+    <result column="GWMC" jdbcType="CHAR" property="gwmc" />
+    <result column="GWLX" jdbcType="CHAR" property="gwlx" />
+    <result column="XQZY" jdbcType="CHAR" property="xqzy" />
+    <result column="GZDD" jdbcType="CHAR" property="gzdd" />
+    <result column="GZJY" jdbcType="CHAR" property="gzjy" />
+    <result column="ZPSL" jdbcType="INTEGER" property="zpsl" />
+    <result column="GWYX" jdbcType="INTEGER" property="gwyx" />
+    <result column="GWJJ" jdbcType="LONGVARCHAR" property="gwjj" />
   </resultMap>
 </mapper>

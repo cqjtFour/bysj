@@ -9,202 +9,283 @@ public class Student {
      * 学号，Char(16)
      */
     @Id
+    @Column(name = "XH")
     private String xh;
 
     /**
      * 登录账号，Char(32)
      */
+    @Column(name = "DLZH")
     private String dlzh;
 
     /**
      * 专业编号，Integer
      */
+    @Column(name = "ZYBH")
     private Integer zybh;
 
     /**
      * 毕业生届数，Integer
      */
+    @Column(name = "BYSJS")
     private Integer bysjs;
 
     /**
      * 学生照片，Char(255)，存储学生相片路径
      */
+    @Column(name = "XSZP")
     private String xszp;
 
     /**
      * 学生姓名，Char(16)
      */
+    @Column(name = "XSXM")
     private String xsxm;
 
     /**
      * 是否已就业，Integer，1表示已就业,0表示未就业
      */
+    @Column(name = "SFYJY")
     private Integer sfyjy;
 
     /**
      * 就业方式，Integer，0表示签约，1表示升学，2表示出国，3表示自由职业
      */
+    @Column(name = "JYFS")
     private Integer jyfs;
 
     /**
      * 就业时间，Date
      */
+    @Column(name = "JYSJ")
     private Date jysj;
 
     /**
      * 三方是否领取，Integer，0表示未领取，1表示领取
      */
+    @Column(name = "SFSFLQ")
     private Short sfsflq;
 
     /**
      * 手机号码，Char(16)
      */
+    @Column(name = "SJHM")
     private String sjhm;
 
     /**
      * 性别，Integer，0表示男，1表示女
      */
+    @Column(name = "XB")
     private Short xb;
 
     /**
      * 出生日期，Date
      */
+    @Column(name = "CSRQ")
     private Date csrq;
 
     /**
      * 生源地，Char(16)
      */
+    @Column(name = "SYD")
     private String syd;
 
     /**
      * 学历，Integer，0表示本科，1表示硕士
      */
+    @Column(name = "XL")
     private Short xl;
 
     /**
      * 政治面貌，Char(16)
      */
+    @Column(name = "ZZMM")
     private String zzmm;
 
     /**
      * 民族，Char(8)
      */
+    @Column(name = "MZ")
     private String mz;
 
     /**
      * 专业排名，Char(16)
      */
+    @Column(name = "ZYPM")
     private String zypm;
 
     /**
      * 身高，Char(8)
      */
+    @Column(name = "SG")
     private String sg;
 
     /**
      * 是否通过英语4级，Integer，0表示未通过，1表示通过
      */
+    @Column(name = "SFTGYYSJ")
     private Short sftgyysj;
 
     /**
      * 四级成绩，Integer
      */
+    @Column(name = "YYSJCJ")
     private Integer yysjcj;
 
     /**
      * 是否通过英语6级，Integer，0表示未通过，1表示通过
      */
+    @Column(name = "SFTGYYLJ")
     private Short sftgyylj;
 
     /**
      * 六级成绩，Integer
      */
+    @Column(name = "YYLJCJ")
     private Integer yyljcj;
 
     /**
      * 计算机水平，Char(16)
      */
+    @Column(name = "JSJSP")
     private String jsjsp;
 
     /**
      * 本科就读学校，Char(16)
      */
+    @Column(name = "BKJDXX")
     private String bkjdxx;
 
     /**
      * 本科专业，Char(16)
      */
+    @Column(name = "BKZY")
     private String bkzy;
 
     /**
      * 本科开始时间，Date
      */
+    @Column(name = "BKKSSJ")
     private Date bkkssj;
 
     /**
      * 本科毕业时间，Date
      */
+    @Column(name = "BKBYSJ")
     private Date bkbysj;
 
     /**
      * 硕士就读学校，Char(16)
      */
+    @Column(name = "SSJDXX")
     private String ssjdxx;
 
     /**
      * 硕士专业，Char(16)
      */
+    @Column(name = "SSZY")
     private String sszy;
 
     /**
      * 硕士开始时间，Date
      */
+    @Column(name = "SSKSSJ")
     private Date sskssj;
 
     /**
      * 硕士毕业时间，Date
      */
+    @Column(name = "SSBYSJ")
     private Date ssbysj;
+
+    /**
+     * 实习公司名称，Char(32)
+     */
+    @Column(name = "SXGSMC")
+    private String sxgsmc;
+
+    /**
+     * 公司行业，Char(64)
+     */
+    @Column(name = "GSHY")
+    private String gshy;
+
+    /**
+     * 实习职位，Char(32)
+     */
+    @Column(name = "SXZW")
+    private String sxzw;
+
+    /**
+     * 实习地点，Char(64)
+     */
+    @Column(name = "SXDD")
+    private String sxdd;
+
+    /**
+     * 实习开始时间，Date
+     */
+    @Column(name = "SXKSSJ")
+    private Date sxkssj;
+
+    /**
+     * 实习结束时间，Date
+     */
+    @Column(name = "SXJSSJ")
+    private Date sxjssj;
 
     /**
      * 自我评价，Char(64)
      */
+    @Column(name = "ZWPJ")
     private String zwpj;
 
     /**
      * 电子邮箱，Char(32)
      */
+    @Column(name = "EMAIL")
     private String email;
 
     /**
      * 更新时间，Date
      */
+    @Column(name = "GXSJ")
     private Date gxsj;
 
     /**
      * 备注，Char(128)
      */
+    @Column(name = "BZ")
     private String bz;
 
     /**
      * 社会实践历经，Char(512)
      */
+    @Column(name = "SHSJJL")
     private String shsjjl;
+
+    /**
+     * 主要实习内容，Char(512)
+     */
+    @Column(name = "ZYSXNR")
+    private String zysxnr;
 
     /**
      * 获奖情况，Char(512)
      */
+    @Column(name = "HJQK")
     private String hjqk;
 
     /**
      * 特长爱好，Char(512)
      */
+    @Column(name = "TCAH")
     private String tcah;
 
     /**
      * 获取学号，Char(16)
      *
-     * @return xh - 学号，Char(16)
+     * @return XH - 学号，Char(16)
      */
     public String getXh() {
         return xh;
@@ -222,7 +303,7 @@ public class Student {
     /**
      * 获取登录账号，Char(32)
      *
-     * @return dlzh - 登录账号，Char(32)
+     * @return DLZH - 登录账号，Char(32)
      */
     public String getDlzh() {
         return dlzh;
@@ -240,7 +321,7 @@ public class Student {
     /**
      * 获取专业编号，Integer
      *
-     * @return zybh - 专业编号，Integer
+     * @return ZYBH - 专业编号，Integer
      */
     public Integer getZybh() {
         return zybh;
@@ -258,7 +339,7 @@ public class Student {
     /**
      * 获取毕业生届数，Integer
      *
-     * @return bysjs - 毕业生届数，Integer
+     * @return BYSJS - 毕业生届数，Integer
      */
     public Integer getBysjs() {
         return bysjs;
@@ -276,7 +357,7 @@ public class Student {
     /**
      * 获取学生照片，Char(255)，存储学生相片路径
      *
-     * @return xszp - 学生照片，Char(255)，存储学生相片路径
+     * @return XSZP - 学生照片，Char(255)，存储学生相片路径
      */
     public String getXszp() {
         return xszp;
@@ -294,7 +375,7 @@ public class Student {
     /**
      * 获取学生姓名，Char(16)
      *
-     * @return xsxm - 学生姓名，Char(16)
+     * @return XSXM - 学生姓名，Char(16)
      */
     public String getXsxm() {
         return xsxm;
@@ -312,7 +393,7 @@ public class Student {
     /**
      * 获取是否已就业，Integer，1表示已就业,0表示未就业
      *
-     * @return sfyjy - 是否已就业，Integer，1表示已就业,0表示未就业
+     * @return SFYJY - 是否已就业，Integer，1表示已就业,0表示未就业
      */
     public Integer getSfyjy() {
         return sfyjy;
@@ -330,7 +411,7 @@ public class Student {
     /**
      * 获取就业方式，Integer，0表示签约，1表示升学，2表示出国，3表示自由职业
      *
-     * @return jyfs - 就业方式，Integer，0表示签约，1表示升学，2表示出国，3表示自由职业
+     * @return JYFS - 就业方式，Integer，0表示签约，1表示升学，2表示出国，3表示自由职业
      */
     public Integer getJyfs() {
         return jyfs;
@@ -348,7 +429,7 @@ public class Student {
     /**
      * 获取就业时间，Date
      *
-     * @return jysj - 就业时间，Date
+     * @return JYSJ - 就业时间，Date
      */
     public Date getJysj() {
         return jysj;
@@ -366,7 +447,7 @@ public class Student {
     /**
      * 获取三方是否领取，Integer，0表示未领取，1表示领取
      *
-     * @return sfsflq - 三方是否领取，Integer，0表示未领取，1表示领取
+     * @return SFSFLQ - 三方是否领取，Integer，0表示未领取，1表示领取
      */
     public Short getSfsflq() {
         return sfsflq;
@@ -384,7 +465,7 @@ public class Student {
     /**
      * 获取手机号码，Char(16)
      *
-     * @return sjhm - 手机号码，Char(16)
+     * @return SJHM - 手机号码，Char(16)
      */
     public String getSjhm() {
         return sjhm;
@@ -402,7 +483,7 @@ public class Student {
     /**
      * 获取性别，Integer，0表示男，1表示女
      *
-     * @return xb - 性别，Integer，0表示男，1表示女
+     * @return XB - 性别，Integer，0表示男，1表示女
      */
     public Short getXb() {
         return xb;
@@ -420,7 +501,7 @@ public class Student {
     /**
      * 获取出生日期，Date
      *
-     * @return csrq - 出生日期，Date
+     * @return CSRQ - 出生日期，Date
      */
     public Date getCsrq() {
         return csrq;
@@ -438,7 +519,7 @@ public class Student {
     /**
      * 获取生源地，Char(16)
      *
-     * @return syd - 生源地，Char(16)
+     * @return SYD - 生源地，Char(16)
      */
     public String getSyd() {
         return syd;
@@ -456,7 +537,7 @@ public class Student {
     /**
      * 获取学历，Integer，0表示本科，1表示硕士
      *
-     * @return xl - 学历，Integer，0表示本科，1表示硕士
+     * @return XL - 学历，Integer，0表示本科，1表示硕士
      */
     public Short getXl() {
         return xl;
@@ -474,7 +555,7 @@ public class Student {
     /**
      * 获取政治面貌，Char(16)
      *
-     * @return zzmm - 政治面貌，Char(16)
+     * @return ZZMM - 政治面貌，Char(16)
      */
     public String getZzmm() {
         return zzmm;
@@ -492,7 +573,7 @@ public class Student {
     /**
      * 获取民族，Char(8)
      *
-     * @return mz - 民族，Char(8)
+     * @return MZ - 民族，Char(8)
      */
     public String getMz() {
         return mz;
@@ -510,7 +591,7 @@ public class Student {
     /**
      * 获取专业排名，Char(16)
      *
-     * @return zypm - 专业排名，Char(16)
+     * @return ZYPM - 专业排名，Char(16)
      */
     public String getZypm() {
         return zypm;
@@ -528,7 +609,7 @@ public class Student {
     /**
      * 获取身高，Char(8)
      *
-     * @return sg - 身高，Char(8)
+     * @return SG - 身高，Char(8)
      */
     public String getSg() {
         return sg;
@@ -546,7 +627,7 @@ public class Student {
     /**
      * 获取是否通过英语4级，Integer，0表示未通过，1表示通过
      *
-     * @return sftgyysj - 是否通过英语4级，Integer，0表示未通过，1表示通过
+     * @return SFTGYYSJ - 是否通过英语4级，Integer，0表示未通过，1表示通过
      */
     public Short getSftgyysj() {
         return sftgyysj;
@@ -564,7 +645,7 @@ public class Student {
     /**
      * 获取四级成绩，Integer
      *
-     * @return yysjcj - 四级成绩，Integer
+     * @return YYSJCJ - 四级成绩，Integer
      */
     public Integer getYysjcj() {
         return yysjcj;
@@ -582,7 +663,7 @@ public class Student {
     /**
      * 获取是否通过英语6级，Integer，0表示未通过，1表示通过
      *
-     * @return sftgyylj - 是否通过英语6级，Integer，0表示未通过，1表示通过
+     * @return SFTGYYLJ - 是否通过英语6级，Integer，0表示未通过，1表示通过
      */
     public Short getSftgyylj() {
         return sftgyylj;
@@ -600,7 +681,7 @@ public class Student {
     /**
      * 获取六级成绩，Integer
      *
-     * @return yyljcj - 六级成绩，Integer
+     * @return YYLJCJ - 六级成绩，Integer
      */
     public Integer getYyljcj() {
         return yyljcj;
@@ -618,7 +699,7 @@ public class Student {
     /**
      * 获取计算机水平，Char(16)
      *
-     * @return jsjsp - 计算机水平，Char(16)
+     * @return JSJSP - 计算机水平，Char(16)
      */
     public String getJsjsp() {
         return jsjsp;
@@ -636,7 +717,7 @@ public class Student {
     /**
      * 获取本科就读学校，Char(16)
      *
-     * @return bkjdxx - 本科就读学校，Char(16)
+     * @return BKJDXX - 本科就读学校，Char(16)
      */
     public String getBkjdxx() {
         return bkjdxx;
@@ -654,7 +735,7 @@ public class Student {
     /**
      * 获取本科专业，Char(16)
      *
-     * @return bkzy - 本科专业，Char(16)
+     * @return BKZY - 本科专业，Char(16)
      */
     public String getBkzy() {
         return bkzy;
@@ -672,7 +753,7 @@ public class Student {
     /**
      * 获取本科开始时间，Date
      *
-     * @return bkkssj - 本科开始时间，Date
+     * @return BKKSSJ - 本科开始时间，Date
      */
     public Date getBkkssj() {
         return bkkssj;
@@ -690,7 +771,7 @@ public class Student {
     /**
      * 获取本科毕业时间，Date
      *
-     * @return bkbysj - 本科毕业时间，Date
+     * @return BKBYSJ - 本科毕业时间，Date
      */
     public Date getBkbysj() {
         return bkbysj;
@@ -708,7 +789,7 @@ public class Student {
     /**
      * 获取硕士就读学校，Char(16)
      *
-     * @return ssjdxx - 硕士就读学校，Char(16)
+     * @return SSJDXX - 硕士就读学校，Char(16)
      */
     public String getSsjdxx() {
         return ssjdxx;
@@ -726,7 +807,7 @@ public class Student {
     /**
      * 获取硕士专业，Char(16)
      *
-     * @return sszy - 硕士专业，Char(16)
+     * @return SSZY - 硕士专业，Char(16)
      */
     public String getSszy() {
         return sszy;
@@ -744,7 +825,7 @@ public class Student {
     /**
      * 获取硕士开始时间，Date
      *
-     * @return sskssj - 硕士开始时间，Date
+     * @return SSKSSJ - 硕士开始时间，Date
      */
     public Date getSskssj() {
         return sskssj;
@@ -762,7 +843,7 @@ public class Student {
     /**
      * 获取硕士毕业时间，Date
      *
-     * @return ssbysj - 硕士毕业时间，Date
+     * @return SSBYSJ - 硕士毕业时间，Date
      */
     public Date getSsbysj() {
         return ssbysj;
@@ -778,9 +859,117 @@ public class Student {
     }
 
     /**
+     * 获取实习公司名称，Char(32)
+     *
+     * @return SXGSMC - 实习公司名称，Char(32)
+     */
+    public String getSxgsmc() {
+        return sxgsmc;
+    }
+
+    /**
+     * 设置实习公司名称，Char(32)
+     *
+     * @param sxgsmc 实习公司名称，Char(32)
+     */
+    public void setSxgsmc(String sxgsmc) {
+        this.sxgsmc = sxgsmc;
+    }
+
+    /**
+     * 获取公司行业，Char(64)
+     *
+     * @return GSHY - 公司行业，Char(64)
+     */
+    public String getGshy() {
+        return gshy;
+    }
+
+    /**
+     * 设置公司行业，Char(64)
+     *
+     * @param gshy 公司行业，Char(64)
+     */
+    public void setGshy(String gshy) {
+        this.gshy = gshy;
+    }
+
+    /**
+     * 获取实习职位，Char(32)
+     *
+     * @return SXZW - 实习职位，Char(32)
+     */
+    public String getSxzw() {
+        return sxzw;
+    }
+
+    /**
+     * 设置实习职位，Char(32)
+     *
+     * @param sxzw 实习职位，Char(32)
+     */
+    public void setSxzw(String sxzw) {
+        this.sxzw = sxzw;
+    }
+
+    /**
+     * 获取实习地点，Char(64)
+     *
+     * @return SXDD - 实习地点，Char(64)
+     */
+    public String getSxdd() {
+        return sxdd;
+    }
+
+    /**
+     * 设置实习地点，Char(64)
+     *
+     * @param sxdd 实习地点，Char(64)
+     */
+    public void setSxdd(String sxdd) {
+        this.sxdd = sxdd;
+    }
+
+    /**
+     * 获取实习开始时间，Date
+     *
+     * @return SXKSSJ - 实习开始时间，Date
+     */
+    public Date getSxkssj() {
+        return sxkssj;
+    }
+
+    /**
+     * 设置实习开始时间，Date
+     *
+     * @param sxkssj 实习开始时间，Date
+     */
+    public void setSxkssj(Date sxkssj) {
+        this.sxkssj = sxkssj;
+    }
+
+    /**
+     * 获取实习结束时间，Date
+     *
+     * @return SXJSSJ - 实习结束时间，Date
+     */
+    public Date getSxjssj() {
+        return sxjssj;
+    }
+
+    /**
+     * 设置实习结束时间，Date
+     *
+     * @param sxjssj 实习结束时间，Date
+     */
+    public void setSxjssj(Date sxjssj) {
+        this.sxjssj = sxjssj;
+    }
+
+    /**
      * 获取自我评价，Char(64)
      *
-     * @return zwpj - 自我评价，Char(64)
+     * @return ZWPJ - 自我评价，Char(64)
      */
     public String getZwpj() {
         return zwpj;
@@ -798,7 +987,7 @@ public class Student {
     /**
      * 获取电子邮箱，Char(32)
      *
-     * @return email - 电子邮箱，Char(32)
+     * @return EMAIL - 电子邮箱，Char(32)
      */
     public String getEmail() {
         return email;
@@ -816,7 +1005,7 @@ public class Student {
     /**
      * 获取更新时间，Date
      *
-     * @return gxsj - 更新时间，Date
+     * @return GXSJ - 更新时间，Date
      */
     public Date getGxsj() {
         return gxsj;
@@ -834,7 +1023,7 @@ public class Student {
     /**
      * 获取备注，Char(128)
      *
-     * @return bz - 备注，Char(128)
+     * @return BZ - 备注，Char(128)
      */
     public String getBz() {
         return bz;
@@ -852,7 +1041,7 @@ public class Student {
     /**
      * 获取社会实践历经，Char(512)
      *
-     * @return shsjjl - 社会实践历经，Char(512)
+     * @return SHSJJL - 社会实践历经，Char(512)
      */
     public String getShsjjl() {
         return shsjjl;
@@ -868,9 +1057,27 @@ public class Student {
     }
 
     /**
+     * 获取主要实习内容，Char(512)
+     *
+     * @return ZYSXNR - 主要实习内容，Char(512)
+     */
+    public String getZysxnr() {
+        return zysxnr;
+    }
+
+    /**
+     * 设置主要实习内容，Char(512)
+     *
+     * @param zysxnr 主要实习内容，Char(512)
+     */
+    public void setZysxnr(String zysxnr) {
+        this.zysxnr = zysxnr;
+    }
+
+    /**
      * 获取获奖情况，Char(512)
      *
-     * @return hjqk - 获奖情况，Char(512)
+     * @return HJQK - 获奖情况，Char(512)
      */
     public String getHjqk() {
         return hjqk;
@@ -888,7 +1095,7 @@ public class Student {
     /**
      * 获取特长爱好，Char(512)
      *
-     * @return tcah - 特长爱好，Char(512)
+     * @return TCAH - 特长爱好，Char(512)
      */
     public String getTcah() {
         return tcah;

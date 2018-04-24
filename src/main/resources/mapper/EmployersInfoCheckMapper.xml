@@ -5,12 +5,12 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="yrdwxxshbbh" jdbcType="INTEGER" property="yrdwxxshbbh" />
-    <result column="shr" jdbcType="CHAR" property="shr" />
-    <result column="yrdwxxbbh" jdbcType="INTEGER" property="yrdwxxbbh" />
-    <result column="tjsj" jdbcType="TIMESTAMP" property="tjsj" />
-    <result column="shsj" jdbcType="TIMESTAMP" property="shsj" />
-    <result column="sftgsh" jdbcType="SMALLINT" property="sftgsh" />
-    <result column="shyj" jdbcType="CHAR" property="shyj" />
+    <id column="YRDWXXSHBBH" jdbcType="INTEGER" property="yrdwxxshbbh" />
+    <result column="SHR" jdbcType="CHAR" property="shr" />
+    <result column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
+    <result column="TJSJ" jdbcType="TIMESTAMP" property="tjsj" />
+    <result column="SHSJ" jdbcType="TIMESTAMP" property="shsj" />
+    <result column="SFTGSH" jdbcType="SMALLINT" property="sftgsh" />
+    <result column="SHYJ" jdbcType="CHAR" property="shyj" />
   </resultMap>
 </mapper>

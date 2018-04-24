@@ -8,77 +8,91 @@ public class Employers {
      * 用人单位编号，Integer
      */
     @Id
+    @Column(name = "YRDWXXBBH")
     private Integer yrdwxxbbh;
 
     /**
      * 登录账号，Char(32)
      */
+    @Column(name = "DLZH")
     private String dlzh;
 
     /**
      * 单位名称，Char(32)
      */
+    @Column(name = "DWMC")
     private String dwmc;
 
     /**
      * 单位性质，Char(32)
      */
+    @Column(name = "DWXZ")
     private String dwxz;
 
     /**
      * 组织机构代码，Char(32)
      */
+    @Column(name = "ZZJGDM")
     private String zzjgdm;
 
     /**
      * 所属行业，Char(64)
      */
+    @Column(name = "SSHY")
     private String sshy;
 
     /**
      * 单位规模，Char(16)
      */
+    @Column(name = "DWGM")
     private String dwgm;
 
     /**
      * 所在地，Char(128)
      */
+    @Column(name = "SZD")
     private String szd;
 
     /**
      * 单位联系人，Char(16)
      */
+    @Column(name = "DWLXR")
     private String dwlxr;
 
     /**
      * 联系人电话，Char(16)
      */
+    @Column(name = "LXRDH")
     private String lxrdh;
 
     /**
      * 单位联系电话，Char(32)
      */
+    @Column(name = "DWLXDH")
     private String dwlxdh;
 
     /**
      * 电子邮箱，Char(32)
      */
+    @Column(name = "DZYX")
     private String dzyx;
 
     /**
      * 邮政编码，Char(8)
      */
+    @Column(name = "YZBM")
     private String yzbm;
 
     /**
      * 单位基本情况简介，Char(1024)
      */
+    @Column(name = "DWJBQKJJ")
     private String dwjbqkjj;
 
     /**
      * 获取用人单位编号，Integer
      *
-     * @return yrdwxxbbh - 用人单位编号，Integer
+     * @return YRDWXXBBH - 用人单位编号，Integer
      */
     public Integer getYrdwxxbbh() {
         return yrdwxxbbh;
@@ -96,7 +110,7 @@ public class Employers {
     /**
      * 获取登录账号，Char(32)
      *
-     * @return dlzh - 登录账号，Char(32)
+     * @return DLZH - 登录账号，Char(32)
      */
     public String getDlzh() {
         return dlzh;
@@ -114,7 +128,7 @@ public class Employers {
     /**
      * 获取单位名称，Char(32)
      *
-     * @return dwmc - 单位名称，Char(32)
+     * @return DWMC - 单位名称，Char(32)
      */
     public String getDwmc() {
         return dwmc;
@@ -132,7 +146,7 @@ public class Employers {
     /**
      * 获取单位性质，Char(32)
      *
-     * @return dwxz - 单位性质，Char(32)
+     * @return DWXZ - 单位性质，Char(32)
      */
     public String getDwxz() {
         return dwxz;
@@ -150,7 +164,7 @@ public class Employers {
     /**
      * 获取组织机构代码，Char(32)
      *
-     * @return zzjgdm - 组织机构代码，Char(32)
+     * @return ZZJGDM - 组织机构代码，Char(32)
      */
     public String getZzjgdm() {
         return zzjgdm;
@@ -168,7 +182,7 @@ public class Employers {
     /**
      * 获取所属行业，Char(64)
      *
-     * @return sshy - 所属行业，Char(64)
+     * @return SSHY - 所属行业，Char(64)
      */
     public String getSshy() {
         return sshy;
@@ -186,7 +200,7 @@ public class Employers {
     /**
      * 获取单位规模，Char(16)
      *
-     * @return dwgm - 单位规模，Char(16)
+     * @return DWGM - 单位规模，Char(16)
      */
     public String getDwgm() {
         return dwgm;
@@ -204,7 +218,7 @@ public class Employers {
     /**
      * 获取所在地，Char(128)
      *
-     * @return szd - 所在地，Char(128)
+     * @return SZD - 所在地，Char(128)
      */
     public String getSzd() {
         return szd;
@@ -222,7 +236,7 @@ public class Employers {
     /**
      * 获取单位联系人，Char(16)
      *
-     * @return dwlxr - 单位联系人，Char(16)
+     * @return DWLXR - 单位联系人，Char(16)
      */
     public String getDwlxr() {
         return dwlxr;
@@ -240,7 +254,7 @@ public class Employers {
     /**
      * 获取联系人电话，Char(16)
      *
-     * @return lxrdh - 联系人电话，Char(16)
+     * @return LXRDH - 联系人电话，Char(16)
      */
     public String getLxrdh() {
         return lxrdh;
@@ -258,7 +272,7 @@ public class Employers {
     /**
      * 获取单位联系电话，Char(32)
      *
-     * @return dwlxdh - 单位联系电话，Char(32)
+     * @return DWLXDH - 单位联系电话，Char(32)
      */
     public String getDwlxdh() {
         return dwlxdh;
@@ -276,7 +290,7 @@ public class Employers {
     /**
      * 获取电子邮箱，Char(32)
      *
-     * @return dzyx - 电子邮箱，Char(32)
+     * @return DZYX - 电子邮箱，Char(32)
      */
     public String getDzyx() {
         return dzyx;
@@ -294,7 +308,7 @@ public class Employers {
     /**
      * 获取邮政编码，Char(8)
      *
-     * @return yzbm - 邮政编码，Char(8)
+     * @return YZBM - 邮政编码，Char(8)
      */
     public String getYzbm() {
         return yzbm;
@@ -312,7 +326,7 @@ public class Employers {
     /**
      * 获取单位基本情况简介，Char(1024)
      *
-     * @return dwjbqkjj - 单位基本情况简介，Char(1024)
+     * @return DWJBQKJJ - 单位基本情况简介，Char(1024)
      */
     public String getDwjbqkjj() {
         return dwjbqkjj;

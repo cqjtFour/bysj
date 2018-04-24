@@ -5,19 +5,19 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="yrdwxxbbh" jdbcType="INTEGER" property="yrdwxxbbh" />
-    <result column="dlzh" jdbcType="CHAR" property="dlzh" />
-    <result column="dwmc" jdbcType="CHAR" property="dwmc" />
-    <result column="dwxz" jdbcType="CHAR" property="dwxz" />
-    <result column="zzjgdm" jdbcType="CHAR" property="zzjgdm" />
-    <result column="sshy" jdbcType="CHAR" property="sshy" />
-    <result column="dwgm" jdbcType="CHAR" property="dwgm" />
-    <result column="szd" jdbcType="CHAR" property="szd" />
-    <result column="dwlxr" jdbcType="CHAR" property="dwlxr" />
-    <result column="lxrdh" jdbcType="CHAR" property="lxrdh" />
-    <result column="dwlxdh" jdbcType="CHAR" property="dwlxdh" />
-    <result column="dzyx" jdbcType="CHAR" property="dzyx" />
-    <result column="yzbm" jdbcType="CHAR" property="yzbm" />
-    <result column="dwjbqkjj" jdbcType="LONGVARCHAR" property="dwjbqkjj" />
+    <id column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
+    <result column="DLZH" jdbcType="CHAR" property="dlzh" />
+    <result column="DWMC" jdbcType="CHAR" property="dwmc" />
+    <result column="DWXZ" jdbcType="CHAR" property="dwxz" />
+    <result column="ZZJGDM" jdbcType="CHAR" property="zzjgdm" />
+    <result column="SSHY" jdbcType="CHAR" property="sshy" />
+    <result column="DWGM" jdbcType="CHAR" property="dwgm" />
+    <result column="SZD" jdbcType="CHAR" property="szd" />
+    <result column="DWLXR" jdbcType="CHAR" property="dwlxr" />
+    <result column="LXRDH" jdbcType="CHAR" property="lxrdh" />
+    <result column="DWLXDH" jdbcType="CHAR" property="dwlxdh" />
+    <result column="DZYX" jdbcType="CHAR" property="dzyx" />
+    <result column="YZBM" jdbcType="CHAR" property="yzbm" />
+    <result column="DWJBQKJJ" jdbcType="LONGVARCHAR" property="dwjbqkjj" />
   </resultMap>
 </mapper>

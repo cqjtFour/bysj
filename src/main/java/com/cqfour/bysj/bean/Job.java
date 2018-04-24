@@ -8,57 +8,67 @@ public class Job {
      * 招牌岗位编号，Integer，自增
      */
     @Id
+    @Column(name = "ZPGWBH")
     private Integer zpgwbh;
 
     /**
      * 招牌信息编号，Integer，自增
      */
+    @Column(name = "ZPXXBH")
     private Integer zpxxbh;
 
     /**
      * 岗位名称，Char(32)
      */
+    @Column(name = "GWMC")
     private String gwmc;
 
     /**
      * 岗位类型，Char(16)
      */
+    @Column(name = "GWLX")
     private String gwlx;
 
     /**
      * 需求专业，Char(64)
      */
+    @Column(name = "XQZY")
     private String xqzy;
 
     /**
      * 工作地点，Char(32)
      */
+    @Column(name = "GZDD")
     private String gzdd;
 
     /**
      * 工作经验要求，Char(16)
      */
+    @Column(name = "GZJY")
     private String gzjy;
 
     /**
      * 招牌数量，Integer
      */
+    @Column(name = "ZPSL")
     private Integer zpsl;
 
     /**
      * 岗位月薪，Integer
      */
+    @Column(name = "GWYX")
     private Integer gwyx;
 
     /**
      * 岗位简介，Char(512)
      */
+    @Column(name = "GWJJ")
     private String gwjj;
 
     /**
      * 获取招牌岗位编号，Integer，自增
      *
-     * @return zpgwbh - 招牌岗位编号，Integer，自增
+     * @return ZPGWBH - 招牌岗位编号，Integer，自增
      */
     public Integer getZpgwbh() {
         return zpgwbh;
@@ -76,7 +86,7 @@ public class Job {
     /**
      * 获取招牌信息编号，Integer，自增
      *
-     * @return zpxxbh - 招牌信息编号，Integer，自增
+     * @return ZPXXBH - 招牌信息编号，Integer，自增
      */
     public Integer getZpxxbh() {
         return zpxxbh;
@@ -94,7 +104,7 @@ public class Job {
     /**
      * 获取岗位名称，Char(32)
      *
-     * @return gwmc - 岗位名称，Char(32)
+     * @return GWMC - 岗位名称，Char(32)
      */
     public String getGwmc() {
         return gwmc;
@@ -112,7 +122,7 @@ public class Job {
     /**
      * 获取岗位类型，Char(16)
      *
-     * @return gwlx - 岗位类型，Char(16)
+     * @return GWLX - 岗位类型，Char(16)
      */
     public String getGwlx() {
         return gwlx;
@@ -130,7 +140,7 @@ public class Job {
     /**
      * 获取需求专业，Char(64)
      *
-     * @return xqzy - 需求专业，Char(64)
+     * @return XQZY - 需求专业，Char(64)
      */
     public String getXqzy() {
         return xqzy;
@@ -148,7 +158,7 @@ public class Job {
     /**
      * 获取工作地点，Char(32)
      *
-     * @return gzdd - 工作地点，Char(32)
+     * @return GZDD - 工作地点，Char(32)
      */
     public String getGzdd() {
         return gzdd;
@@ -166,7 +176,7 @@ public class Job {
     /**
      * 获取工作经验要求，Char(16)
      *
-     * @return gzjy - 工作经验要求，Char(16)
+     * @return GZJY - 工作经验要求，Char(16)
      */
     public String getGzjy() {
         return gzjy;
@@ -184,7 +194,7 @@ public class Job {
     /**
      * 获取招牌数量，Integer
      *
-     * @return zpsl - 招牌数量，Integer
+     * @return ZPSL - 招牌数量，Integer
      */
     public Integer getZpsl() {
         return zpsl;
@@ -202,7 +212,7 @@ public class Job {
     /**
      * 获取岗位月薪，Integer
      *
-     * @return gwyx - 岗位月薪，Integer
+     * @return GWYX - 岗位月薪，Integer
      */
     public Integer getGwyx() {
         return gwyx;
@@ -220,7 +230,7 @@ public class Job {
     /**
      * 获取岗位简介，Char(512)
      *
-     * @return gwjj - 岗位简介，Char(512)
+     * @return GWJJ - 岗位简介，Char(512)
      */
     public String getGwjj() {
         return gwjj;

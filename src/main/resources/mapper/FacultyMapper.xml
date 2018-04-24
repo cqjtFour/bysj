@@ -5,10 +5,10 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="xybh" jdbcType="INTEGER" property="xybh" />
-    <result column="xymc" jdbcType="VARCHAR" property="xymc" />
-    <result column="xylxr" jdbcType="CHAR" property="xylxr" />
-    <result column="lxdh" jdbcType="CHAR" property="lxdh" />
-    <result column="xyjj" jdbcType="LONGVARCHAR" property="xyjj" />
+    <id column="XYBH" jdbcType="INTEGER" property="xybh" />
+    <result column="XYMC" jdbcType="VARCHAR" property="xymc" />
+    <result column="XYLXR" jdbcType="CHAR" property="xylxr" />
+    <result column="LXDH" jdbcType="CHAR" property="lxdh" />
+    <result column="XYJJ" jdbcType="LONGVARCHAR" property="xyjj" />
   </resultMap>
 </mapper>

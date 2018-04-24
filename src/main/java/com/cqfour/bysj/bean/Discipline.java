@@ -8,27 +8,31 @@ public class Discipline {
      * 专业编号，Integer
      */
     @Id
+    @Column(name = "ZYBH")
     private Integer zybh;
 
     /**
      * 学院编号，Integer，自增
      */
+    @Column(name = "XYBH")
     private Integer xybh;
 
     /**
      * 专业名称，Char(32)
      */
+    @Column(name = "ZYMC")
     private String zymc;
 
     /**
      * 应届生毕业生人数，Integer
      */
+    @Column(name = "YJBYSRS")
     private Integer yjbysrs;
 
     /**
      * 获取专业编号，Integer
      *
-     * @return zybh - 专业编号，Integer
+     * @return ZYBH - 专业编号，Integer
      */
     public Integer getZybh() {
         return zybh;
@@ -46,7 +50,7 @@ public class Discipline {
     /**
      * 获取学院编号，Integer，自增
      *
-     * @return xybh - 学院编号，Integer，自增
+     * @return XYBH - 学院编号，Integer，自增
      */
     public Integer getXybh() {
         return xybh;
@@ -64,7 +68,7 @@ public class Discipline {
     /**
      * 获取专业名称，Char(32)
      *
-     * @return zymc - 专业名称，Char(32)
+     * @return ZYMC - 专业名称，Char(32)
      */
     public String getZymc() {
         return zymc;
@@ -82,7 +86,7 @@ public class Discipline {
     /**
      * 获取应届生毕业生人数，Integer
      *
-     * @return yjbysrs - 应届生毕业生人数，Integer
+     * @return YJBYSRS - 应届生毕业生人数，Integer
      */
     public Integer getYjbysrs() {
         return yjbysrs;
