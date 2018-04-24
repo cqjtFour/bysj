@@ -8,17 +8,19 @@ public class Role {
      * 角色编号，Integer，自增
      */
     @Id
+    @Column(name = "JSBH")
     private Integer jsbh;
 
     /**
      * 角色名称，Char(16)
      */
+    @Column(name = "JSMC")
     private String jsmc;
 
     /**
      * 获取角色编号，Integer，自增
      *
-     * @return jsbh - 角色编号，Integer，自增
+     * @return JSBH - 角色编号，Integer，自增
      */
     public Integer getJsbh() {
         return jsbh;
@@ -36,7 +38,7 @@ public class Role {
     /**
      * 获取角色名称，Char(16)
      *
-     * @return jsmc - 角色名称，Char(16)
+     * @return JSMC - 角色名称，Char(16)
      */
     public String getJsmc() {
         return jsmc;

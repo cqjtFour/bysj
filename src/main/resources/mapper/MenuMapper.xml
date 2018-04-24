@@ -5,10 +5,10 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="cdbh" jdbcType="INTEGER" property="cdbh" />
-    <result column="cdmc" jdbcType="VARCHAR" property="cdmc" />
-    <result column="cdurl" jdbcType="CHAR" property="cdurl" />
-    <result column="cddj" jdbcType="INTEGER" property="cddj" />
-    <result column="fjcdbh" jdbcType="INTEGER" property="fjcdbh" />
+    <id column="CDBH" jdbcType="INTEGER" property="cdbh" />
+    <result column="CDMC" jdbcType="VARCHAR" property="cdmc" />
+    <result column="CDURL" jdbcType="CHAR" property="cdurl" />
+    <result column="CDDJ" jdbcType="INTEGER" property="cddj" />
+    <result column="FJCDBH" jdbcType="INTEGER" property="fjcdbh" />
   </resultMap>
 </mapper>

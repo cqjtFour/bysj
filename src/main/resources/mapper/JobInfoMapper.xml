@@ -5,10 +5,10 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="zpxxbh" jdbcType="INTEGER" property="zpxxbh" />
-    <result column="yrdwxxbbh" jdbcType="INTEGER" property="yrdwxxbbh" />
-    <result column="zpbt" jdbcType="CHAR" property="zpbt" />
-    <result column="fbsj" jdbcType="TIMESTAMP" property="fbsj" />
-    <result column="zwnr" jdbcType="LONGVARCHAR" property="zwnr" />
+    <id column="ZPXXBH" jdbcType="INTEGER" property="zpxxbh" />
+    <result column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
+    <result column="ZPBT" jdbcType="CHAR" property="zpbt" />
+    <result column="FBSJ" jdbcType="TIMESTAMP" property="fbsj" />
+    <result column="ZWNR" jdbcType="LONGVARCHAR" property="zwnr" />
   </resultMap>
 </mapper>

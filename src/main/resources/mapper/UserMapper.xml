@@ -5,9 +5,11 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="dlzh" jdbcType="CHAR" property="dlzh" />
-    <result column="jsbh" jdbcType="INTEGER" property="jsbh" />
-    <result column="dlmm" jdbcType="CHAR" property="dlmm" />
-    <result column="zhzt" jdbcType="INTEGER" property="zhzt" />
+    <id column="DLZH" jdbcType="CHAR" property="dlzh" />
+    <result column="JSBH" jdbcType="INTEGER" property="jsbh" />
+    <result column="DLMM" jdbcType="CHAR" property="dlmm" />
+    <result column="ZHZT" jdbcType="INTEGER" property="zhzt" />
+    <result column="ZHWT" jdbcType="CHAR" property="zhwt" />
+    <result column="ZHDA" jdbcType="CHAR" property="zhda" />
   </resultMap>
 </mapper>

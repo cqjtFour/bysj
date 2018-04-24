@@ -8,32 +8,37 @@ public class Faculty {
      * 学院编号，Integer，自增
      */
     @Id
+    @Column(name = "XYBH")
     private Integer xybh;
 
     /**
      * 学院名称，Char(16)
      */
+    @Column(name = "XYMC")
     private String xymc;
 
     /**
      * 学院联系人，Char(16)
      */
+    @Column(name = "XYLXR")
     private String xylxr;
 
     /**
      * 联系电话，Char(16)
      */
+    @Column(name = "LXDH")
     private String lxdh;
 
     /**
      * 学院简介，Char(2000)
      */
+    @Column(name = "XYJJ")
     private String xyjj;
 
     /**
      * 获取学院编号，Integer，自增
      *
-     * @return xybh - 学院编号，Integer，自增
+     * @return XYBH - 学院编号，Integer，自增
      */
     public Integer getXybh() {
         return xybh;
@@ -51,7 +56,7 @@ public class Faculty {
     /**
      * 获取学院名称，Char(16)
      *
-     * @return xymc - 学院名称，Char(16)
+     * @return XYMC - 学院名称，Char(16)
      */
     public String getXymc() {
         return xymc;
@@ -69,7 +74,7 @@ public class Faculty {
     /**
      * 获取学院联系人，Char(16)
      *
-     * @return xylxr - 学院联系人，Char(16)
+     * @return XYLXR - 学院联系人，Char(16)
      */
     public String getXylxr() {
         return xylxr;
@@ -87,7 +92,7 @@ public class Faculty {
     /**
      * 获取联系电话，Char(16)
      *
-     * @return lxdh - 联系电话，Char(16)
+     * @return LXDH - 联系电话，Char(16)
      */
     public String getLxdh() {
         return lxdh;
@@ -105,7 +110,7 @@ public class Faculty {
     /**
      * 获取学院简介，Char(2000)
      *
-     * @return xyjj - 学院简介，Char(2000)
+     * @return XYJJ - 学院简介，Char(2000)
      */
     public String getXyjj() {
         return xyjj;
