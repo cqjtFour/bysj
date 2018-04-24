@@ -8,4 +8,5 @@ import org.springframework.stereotype.Component;
 @Mapper
 @Component(value = "applyMapper")
 public interface ApplyMapper extends MyMapper<Apply> {
+
 }
