@@ -1,6 +1,5 @@
 package com.cqfour.bysj.bean;
 
-import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_qyb")
@@ -31,10 +30,10 @@ public class Sign {
     private Short sfqdsf;
 
     /**
-     * 签订时间，Date
+     * 签订时间
      */
     @Column(name = "QDSJ")
-    private Date qdsj;
+    private String qdsj;
 
     /**
      * 三方是否上交就业处，Integer，0表示未上交，1表示上交
@@ -43,10 +42,10 @@ public class Sign {
     private Short sfsfsjjyc;
 
     /**
-     * 上交时间，Date
+     * 上交时间
      */
     @Column(name = "SJSJ")
-    private Date sjsj;
+    private String sjsj;
 
     /**
      * 是否已毁约，Integer，0表示未毁约，1表示毁约
@@ -55,10 +54,10 @@ public class Sign {
     private Short sfyhy;
 
     /**
-     * 毁约时间，Date
+     * 毁约时间
      */
     @Column(name = "HYSJ")
-    private Date hysj;
+    private String hysj;
 
     /**
      * 新三方是否领取，Integer，0表否，1表是
@@ -67,10 +66,10 @@ public class Sign {
     private Short xsfsflq;
 
     /**
-     * 领取时间，Date
+     * 领取时间
      */
     @Column(name = "LQSJ")
-    private Date lqsj;
+    private String lqsj;
 
     /**
      * 获取签约表编号，Integer，自增
@@ -145,20 +144,20 @@ public class Sign {
     }
 
     /**
-     * 获取签订时间，Date
+     * 获取签订时间
      *
-     * @return QDSJ - 签订时间，Date
+     * @return QDSJ - 签订时间
      */
-    public Date getQdsj() {
+    public String getQdsj() {
         return qdsj;
     }
 
     /**
-     * 设置签订时间，Date
+     * 设置签订时间
      *
-     * @param qdsj 签订时间，Date
+     * @param qdsj 签订时间
      */
-    public void setQdsj(Date qdsj) {
+    public void setQdsj(String qdsj) {
         this.qdsj = qdsj;
     }
 
@@ -181,20 +180,20 @@ public class Sign {
     }
 
     /**
-     * 获取上交时间，Date
+     * 获取上交时间
      *
-     * @return SJSJ - 上交时间，Date
+     * @return SJSJ - 上交时间
      */
-    public Date getSjsj() {
+    public String getSjsj() {
         return sjsj;
     }
 
     /**
-     * 设置上交时间，Date
+     * 设置上交时间
      *
-     * @param sjsj 上交时间，Date
+     * @param sjsj 上交时间
      */
-    public void setSjsj(Date sjsj) {
+    public void setSjsj(String sjsj) {
         this.sjsj = sjsj;
     }
 
@@ -217,20 +216,20 @@ public class Sign {
     }
 
     /**
-     * 获取毁约时间，Date
+     * 获取毁约时间
      *
-     * @return HYSJ - 毁约时间，Date
+     * @return HYSJ - 毁约时间
      */
-    public Date getHysj() {
+    public String getHysj() {
         return hysj;
     }
 
     /**
-     * 设置毁约时间，Date
+     * 设置毁约时间
      *
-     * @param hysj 毁约时间，Date
+     * @param hysj 毁约时间
      */
-    public void setHysj(Date hysj) {
+    public void setHysj(String hysj) {
         this.hysj = hysj;
     }
 
@@ -253,20 +252,20 @@ public class Sign {
     }
 
     /**
-     * 获取领取时间，Date
+     * 获取领取时间
      *
-     * @return LQSJ - 领取时间，Date
+     * @return LQSJ - 领取时间
      */
-    public Date getLqsj() {
+    public String getLqsj() {
         return lqsj;
     }
 
     /**
-     * 设置领取时间，Date
+     * 设置领取时间
      *
-     * @param lqsj 领取时间，Date
+     * @param lqsj 领取时间
      */
-    public void setLqsj(Date lqsj) {
+    public void setLqsj(String lqsj) {
         this.lqsj = lqsj;
     }
 }

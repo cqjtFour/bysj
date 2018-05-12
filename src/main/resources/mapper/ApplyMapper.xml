@@ -8,6 +8,6 @@
     <id column="YPBBH" jdbcType="INTEGER" property="ypbbh" />
     <result column="ZPGWBH" jdbcType="INTEGER" property="zpgwbh" />
     <result column="XH" jdbcType="CHAR" property="xh" />
-    <result column="YPSJ" jdbcType="DATE" property="ypsj" />
+    <result column="YPSJ" jdbcType="CHAR" property="ypsj" />
   </resultMap>
 </mapper>

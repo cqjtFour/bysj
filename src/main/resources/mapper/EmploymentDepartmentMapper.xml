@@ -5,8 +5,9 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="ZGH" jdbcType="CHAR" property="zgh" />
+    <id column="ZGBH" jdbcType="INTEGER" property="zgbh" />
     <result column="DLZH" jdbcType="CHAR" property="dlzh" />
+    <result column="ZGH" jdbcType="CHAR" property="zgh" />
     <result column="RYMC" jdbcType="CHAR" property="rymc" />
     <result column="ZW" jdbcType="CHAR" property="zw" />
     <result column="SJ" jdbcType="CHAR" property="sj" />

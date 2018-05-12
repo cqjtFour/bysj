@@ -77,8 +77,6 @@
                                 <li><a href="/studentresume">学生简历</a></li>
                                 <li><a href="/graduating">毕业去向</a></li>
                             </ul><ul>
-                            <li><span class="glyphicon glyphicon-home" style="margin-right:5px ;"></span><a href="#">主页</a></li>
-                            <li><span class="glyphicon glyphicon-send " style="margin-right:5px ;"></span><a href="#">毕业去向</a></li>
                         </ul>
                             <div class="clear"></div>
                         </div>

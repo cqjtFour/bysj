@@ -19,16 +19,46 @@ public class SchoolJob {
     private Integer yrdwxxbbh;
 
     /**
-     * 职工号，Char(16)
+     * 主键，自增
      */
-    @Column(name = "DFR")
-    private String dfr;
+    @Column(name = "ZGBH")
+    private Integer zgbh;
+
+    /**
+     * 校园招聘单位负责人
+     */
+    @Column(name = "XYZPDWFZR")
+    private String xyzpdwfzr;
+
+    /**
+     * 负责人电话
+     */
+    @Column(name = "FZRDH")
+    private String fzrdh;
+
+    /**
+     * 负责人邮箱
+     */
+    @Column(name = "FZRYX")
+    private String fzryx;
+
+    /**
+     * 预约日期
+     */
+    @Column(name = "YRRQ")
+    private String yrrq;
+
+    /**
+     * 预约时间
+     */
+    @Column(name = "YYSJ")
+    private String yysj;
 
     /**
      * 预约提交到系统的时间，DataTime
      */
     @Column(name = "YYTJSJ")
-    private Date yytjsj;
+    private String yytjsj;
 
     /**
      * 状态，Integer,0表未答复，1表已答复
@@ -37,10 +67,10 @@ public class SchoolJob {
     private Short yyzt;
 
     /**
-     * 答复时间，DateTime
+     * 答复时间，StringTime
      */
     @Column(name = "DFSJ")
-    private Date dfsj;
+    private String dfsj;
 
     /**
      * 答复内容，Char(255)
@@ -91,21 +121,111 @@ public class SchoolJob {
     }
 
     /**
-     * 获取职工号，Char(16)
+     * 获取主键，自增
      *
-     * @return DFR - 职工号，Char(16)
+     * @return ZGBH - 主键，自增
      */
-    public String getDfr() {
-        return dfr;
+    public Integer getZgbh() {
+        return zgbh;
     }
 
     /**
-     * 设置职工号，Char(16)
+     * 设置主键，自增
      *
-     * @param dfr 职工号，Char(16)
+     * @param zgbh 主键，自增
      */
-    public void setDfr(String dfr) {
-        this.dfr = dfr;
+    public void setZgbh(Integer zgbh) {
+        this.zgbh = zgbh;
+    }
+
+    /**
+     * 获取校园招聘单位负责人
+     *
+     * @return XYZPDWFZR - 校园招聘单位负责人
+     */
+    public String getXyzpdwfzr() {
+        return xyzpdwfzr;
+    }
+
+    /**
+     * 设置校园招聘单位负责人
+     *
+     * @param xyzpdwfzr 校园招聘单位负责人
+     */
+    public void setXyzpdwfzr(String xyzpdwfzr) {
+        this.xyzpdwfzr = xyzpdwfzr;
+    }
+
+    /**
+     * 获取负责人电话
+     *
+     * @return FZRDH - 负责人电话
+     */
+    public String getFzrdh() {
+        return fzrdh;
+    }
+
+    /**
+     * 设置负责人电话
+     *
+     * @param fzrdh 负责人电话
+     */
+    public void setFzrdh(String fzrdh) {
+        this.fzrdh = fzrdh;
+    }
+
+    /**
+     * 获取负责人邮箱
+     *
+     * @return FZRYX - 负责人邮箱
+     */
+    public String getFzryx() {
+        return fzryx;
+    }
+
+    /**
+     * 设置负责人邮箱
+     *
+     * @param fzryx 负责人邮箱
+     */
+    public void setFzryx(String fzryx) {
+        this.fzryx = fzryx;
+    }
+
+    /**
+     * 获取预约日期
+     *
+     * @return YRRQ - 预约日期
+     */
+    public String getYrrq() {
+        return yrrq;
+    }
+
+    /**
+     * 设置预约日期
+     *
+     * @param yrrq 预约日期
+     */
+    public void setYrrq(String yrrq) {
+        this.yrrq = yrrq;
+    }
+
+    /**
+     * 获取预约时间
+     *
+     * @return YYSJ - 预约时间
+     */
+    public String getYysj() {
+        return yysj;
+    }
+
+    /**
+     * 设置预约时间
+     *
+     * @param yysj 预约时间
+     */
+    public void setYysj(String yysj) {
+        this.yysj = yysj;
     }
 
     /**
@@ -113,7 +233,7 @@ public class SchoolJob {
      *
      * @return YYTJSJ - 预约提交到系统的时间，DataTime
      */
-    public Date getYytjsj() {
+    public String getYytjsj() {
         return yytjsj;
     }
 
@@ -122,7 +242,7 @@ public class SchoolJob {
      *
      * @param yytjsj 预约提交到系统的时间，DataTime
      */
-    public void setYytjsj(Date yytjsj) {
+    public void setYytjsj(String yytjsj) {
         this.yytjsj = yytjsj;
     }
 
@@ -145,20 +265,20 @@ public class SchoolJob {
     }
 
     /**
-     * 获取答复时间，DateTime
+     * 获取答复时间，StringTime
      *
-     * @return DFSJ - 答复时间，DateTime
+     * @return DFSJ - 答复时间，StringTime
      */
-    public Date getDfsj() {
+    public String getDfsj() {
         return dfsj;
     }
 
     /**
-     * 设置答复时间，DateTime
+     * 设置答复时间，StringTime
      *
-     * @param dfsj 答复时间，DateTime
+     * @param dfsj 答复时间，StringTime
      */
-    public void setDfsj(Date dfsj) {
+    public void setDfsj(String dfsj) {
         this.dfsj = dfsj;
     }
 

@@ -23,7 +23,6 @@ public class RoleMenu {
     @Column(name = "JSBH")
     private Integer jsbh;
 
-
     /**
      * 获取角色关联菜单表编号，Integer，自增
      *

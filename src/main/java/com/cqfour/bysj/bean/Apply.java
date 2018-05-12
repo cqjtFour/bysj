@@ -1,6 +1,5 @@
 package com.cqfour.bysj.bean;
 
-import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_yp")
@@ -25,10 +24,10 @@ public class Apply {
     private String xh;
 
     /**
-     * 应聘时间，Date
+     * 应聘时间
      */
     @Column(name = "YPSJ")
-    private Date ypsj;
+    private String ypsj;
 
     /**
      * 获取应聘表编号，Integer，自增
@@ -85,20 +84,20 @@ public class Apply {
     }
 
     /**
-     * 获取应聘时间，Date
+     * 获取应聘时间
      *
-     * @return YPSJ - 应聘时间，Date
+     * @return YPSJ - 应聘时间
      */
-    public Date getYpsj() {
+    public String getYpsj() {
         return ypsj;
     }
 
     /**
-     * 设置应聘时间，Date
+     * 设置应聘时间
      *
-     * @param ypsj 应聘时间，Date
+     * @param ypsj 应聘时间
      */
-    public void setYpsj(Date ypsj) {
+    public void setYpsj(String ypsj) {
         this.ypsj = ypsj;
     }
 }

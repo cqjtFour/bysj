@@ -6,11 +6,11 @@
       WARNING - @mbg.generated
     -->
     <id column="YRDWXXSHBBH" jdbcType="INTEGER" property="yrdwxxshbbh" />
-    <result column="SHR" jdbcType="CHAR" property="shr" />
+    <result column="ZGBH" jdbcType="INTEGER" property="zgbh" />
     <result column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
-    <result column="TJSJ" jdbcType="TIMESTAMP" property="tjsj" />
-    <result column="SHSJ" jdbcType="TIMESTAMP" property="shsj" />
-    <result column="SFTGSH" jdbcType="SMALLINT" property="sftgsh" />
+    <result column="TJSJ" jdbcType="CHAR" property="tjsj" />
+    <result column="SHSJ" jdbcType="CHAR" property="shsj" />
+    <result column="SHZT" jdbcType="SMALLINT" property="shzt" />
     <result column="SHYJ" jdbcType="CHAR" property="shyj" />
   </resultMap>
 </mapper>

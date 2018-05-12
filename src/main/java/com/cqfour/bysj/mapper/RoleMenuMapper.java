@@ -14,4 +14,5 @@ public interface RoleMenuMapper extends MyMapper<RoleMenu> {
 
     @Select("select * from t_jsglcdb where jsbh = #{jsbh}")
     List<RoleMenu> getRoleMenusByjubh(Integer jsbh);
+
 }

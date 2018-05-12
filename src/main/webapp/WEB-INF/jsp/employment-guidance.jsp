@@ -1,5 +1,6 @@
 ﻿<%--
 
+
   Created by IntelliJ IDEA.
   User: ASUS
   Date: 2018/4/17
@@ -7,8 +8,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -92,161 +94,77 @@
     <div id="contentsec">
         <div class="inner">
             <div class="fullwidth box left">
-                <h3 class="widget-head-border colr" style="font-family: 'Microsoft yahei', Arial, Helvetica, sans-serif">就业指导</h3>
+                <h3 class="widget-head-border colr"
+                    style="font-family: 'Microsoft yahei', Arial, Helvetica, sans-serif">就业指导</h3>
                 <div class="boxshadow">
                     <div class="boxshadow-left">
                         <div class="list-show">
-                            <div class="list">
-                                <div>
-                                    <p>
-                                        <a href="/News/2001/10006/7012.html" title="从1月到6月，拿下2018春招offer的最强攻略" class="title">从1月到6月，拿下2018春招offer的最强攻略</a>
-                                    </p>
-                                    <p>
-                                        <span style="color: #666;">2018-01-18 15:15</span>
-                                        <span style="margin: 0 20px; color: #666;">作者:就业指导中心张老师</span>
-                                        <span style="color: #666;">浏览次数: 925 次</span>
-                                    </p>
+                            <c:forEach items="${eg_pageInfo.list}" var="schoolNews">
+                                <div class="list">
+                                    <div>
+                                        <p>
+                                            <a href="/News/2001/10006/7012.html" title="${schoolNews.xxbt}"
+                                               class="title">${schoolNews.xxbt}</a>
+                                        </p>
+                                        <p>
+                                            <span style="color: #666;">${schoolNews.xxfbsj}</span>
+                                            <span style="margin: 0 20px; color: #666;">作者:${schoolNews.zgbh}</span>
+                                            <span style="color: #666;">浏览次数: ${schoolNews.llcs} 次</span>
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="list">
-                                <div>
-                                    <p>
-                                        <a href="/News/2001/10006/7012.html" title="从1月到6月，拿下2018春招offer的最强攻略" class="title">从1月到6月，拿下2018春招offer的最强攻略</a>
-                                    </p>
-                                    <p>
-                                        <span style="color: #666;">2018-01-18 15:15</span>
-                                        <span style="margin: 0 20px; color: #666;">作者:就业指导中心张老师</span>
-                                        <span style="color: #666;">浏览次数: 925 次</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="list">
-                                <div>
-                                    <p>
-                                        <a href="/News/2001/10006/7012.html" title="从1月到6月，拿下2018春招offer的最强攻略" class="title">从1月到6月，拿下2018春招offer的最强攻略</a>
-                                    </p>
-                                    <p>
-                                        <span style="color: #666;">2018-01-18 15:15</span>
-                                        <span style="margin: 0 20px; color: #666;">作者:就业指导中心张老师</span>
-                                        <span style="color: #666;">浏览次数: 925 次</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="list">
-                                <div>
-                                    <p>
-                                        <a href="/News/2001/10006/7012.html" title="从1月到6月，拿下2018春招offer的最强攻略" class="title">从1月到6月，拿下2018春招offer的最强攻略</a>
-                                    </p>
-                                    <p>
-                                        <span style="color: #666;">2018-01-18 15:15</span>
-                                        <span style="margin: 0 20px; color: #666;">作者:就业指导中心张老师</span>
-                                        <span style="color: #666;">浏览次数: 925 次</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="list">
-                                <div>
-                                    <p>
-                                        <a href="/News/2001/10006/7012.html" title="从1月到6月，拿下2018春招offer的最强攻略" class="title">从1月到6月，拿下2018春招offer的最强攻略</a>
-                                    </p>
-                                    <p>
-                                        <span style="color: #666;">2018-01-18 15:15</span>
-                                        <span style="margin: 0 20px; color: #666;">作者:就业指导中心张老师</span>
-                                        <span style="color: #666;">浏览次数: 925 次</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="list">
-                                <div>
-                                    <p>
-                                        <a href="/News/2001/10006/7012.html" title="从1月到6月，拿下2018春招offer的最强攻略" class="title">从1月到6月，拿下2018春招offer的最强攻略</a>
-                                    </p>
-                                    <p>
-                                        <span style="color: #666;">2018-01-18 15:15</span>
-                                        <span style="margin: 0 20px; color: #666;">作者:就业指导中心张老师</span>
-                                        <span style="color: #666;">浏览次数: 925 次</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="list">
-                                <div>
-                                    <p>
-                                        <a href="/News/2001/10006/7012.html" title="从1月到6月，拿下2018春招offer的最强攻略" class="title">从1月到6月，拿下2018春招offer的最强攻略</a>
-                                    </p>
-                                    <p>
-                                        <span style="color: #666;">2018-01-18 15:15</span>
-                                        <span style="margin: 0 20px; color: #666;">作者:就业指导中心张老师</span>
-                                        <span style="color: #666;">浏览次数: 925 次</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="list">
-                                <div>
-                                    <p>
-                                        <a href="/News/2001/10006/7012.html" title="从1月到6月，拿下2018春招offer的最强攻略" class="title">从1月到6月，拿下2018春招offer的最强攻略</a>
-                                    </p>
-                                    <p>
-                                        <span style="color: #666;">2018-01-18 15:15</span>
-                                        <span style="margin: 0 20px; color: #666;">作者:就业指导中心张老师</span>
-                                        <span style="color: #666;">浏览次数: 925 次</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="list">
-                                <div>
-                                    <p>
-                                        <a href="/News/2001/10006/7012.html" title="从1月到6月，拿下2018春招offer的最强攻略" class="title">从1月到6月，拿下2018春招offer的最强攻略</a>
-                                    </p>
-                                    <p>
-                                        <span style="color: #666;">2018-01-18 15:15</span>
-                                        <span style="margin: 0 20px; color: #666;">作者:就业指导中心张老师</span>
-                                        <span style="color: #666;">浏览次数: 925 次</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="list">
-                                <div>
-                                    <p>
-                                        <a href="/News/2001/10006/7012.html" title="从1月到6月，拿下2018春招offer的最强攻略" class="title">从1月到6月，拿下2018春招offer的最强攻略</a>
-                                    </p>
-                                    <p>
-                                        <span style="color: #666;">2018-01-18 15:15</span>
-                                        <span style="margin: 0 20px; color: #666;">作者:就业指导中心张老师</span>
-                                        <span style="color: #666;">浏览次数: 925 次</span>
-                                    </p>
-                                </div>
-                            </div>
+                            </c:forEach>
                         </div>
                         <!--list-show-->
                         <div class="page" id="page"></div>
                         <script>
-                            var setTotalCount = 301;
                             $('#page').paging({
-                                initPageNo: 1, // 初始页码
-                                totalPages: 30, //总页数
+                                webPage: "/employmentguidance",
+                                parameter: "/employmentGuidanceToPage",
+                                initPageNo: ${eg_pageInfo.pageNum}, // 初始页码
+                                totalPages: ${eg_pageInfo.pages}, //总页数
+                                pageNo:${eg_pageInfo.pageNum},
                                 /*totalCount: '合计' + setTotalCount + '条数据', // 条目总数*/
                                 slideSpeed: 600, // 缓动速度。单位毫秒
                                 jump: true, //是否支持跳转
-                                callback: function(page) { // 回调函数
+                                callback: function (page) { // 回调函数
                                     console.log(page);
                                 }
                             })
+                            window.onload = function () {
+                                var obj_lis = document.getElementById("pageSelect").getElementsByTagName("li");
+                                for (var i = 0; i < obj_lis.length; i++) {
+                                    obj_lis[i].onclick = function () {
+                                        var j = parseInt(this.innerHTML);
+                                        alert(j);
+                                        $.ajax({
+                                            url: "/employmentGuidanceToPage",
+                                            type: "GET",
+                                            dataType: "json",
+                                            data: {"page": j},
+                                            success: function (result) {
+                                                if (result.status == "success") {
+                                                    window.location.href = "/employmentguidance?page=" + j;
+                                                }
+                                            }
+                                        })
+                                    }
+                                }
+                            }
                         </script>
                     </div>
                     <!--boxshadow-left end-->
                     <div class="boxshadow-right">
                         <div class="boxshadow-right-up">
                             <div class="boxshadow-right-title">
-                                <span class="title left" >热门就业指导</span>
+                                <span class="title left">热门就业指导</span>
                             </div>
                             <!--boxshadow-right-title end-->
                             <div class="boxshadow-right-show">
                                 <ul style="height: 238px; margin: 5px;">
-                                    <li><a href="" title="">2016届省优毕业生公示</a></li>
-                                    <li><a href="" title="">关于组织2016届毕业生参加全国大中型企业面向应届高校毕业生网上双选月活动的通知</a></li>
-                                    <li><a href="" title="">关于开展2015届毕业生就业现状调查的通知</a></li>
-                                    <li><a href="" title="">大学生创业补贴项目公示</a></li>
-                                    <li><a href="" title="">葛洲坝第五工程有限公司就业协议返回通知</a></li>
+                                    <c:forEach items="${eg_llcs}" var="al">
+                                        <li><a href="" title="">${al.xxbt}</a></li>
+                                    </c:forEach>
                                 </ul>
                             </div>
                             <!--boxshadow-right-show end-->
@@ -254,15 +172,13 @@
                         <!--boxshadow-right-up end-->
                         <div class="boxshadow-right-down">
                             <div class="boxshadow-right-title">
-                                <div class="left" >最新就业指导</div>
+                                <div class="left">最新就业指导</div>
                             </div>
                             <div class="boxshadow-right-show">
-                                <ul  class="multi" style="height: 256px;">
-                                    <li><a href="" title="">从1月到6月，拿下2018春招offer的最强攻略</a></li>
-                                    <li><a href="" title="">关于招生就业处工作地点搬迁的说明</a></li>
-                                    <li><a href="" title="">就业协议盖章时间公告</a></li>
-                                    <li><a href="" title="">关于2017届毕业生协助开展毕业生就业创业情况调研的通知</a></li>
-                                    <li><a href="" title="">2018届毕业生双选会邀请信</a></li>
+                                <ul class="multi" style="height: 256px;">
+                                    <c:forEach items="${eg_date}" var="al">
+                                        <li><a href="" title="">${al.xxbt}</a></li>
+                                    </c:forEach>
                                 </ul>
                             </div>
                         </div>
@@ -284,12 +200,12 @@
             <ul>
                 <li>
                     <a href="http://www.scpta.gov.cn/" title="四川省人事考试网" target="_blank">
-                        <img src="img/d6f21951-ae83-4847-9f1a-5f4189281cf6.png" width="106px" height="39px" />
+                        <img src="img/d6f21951-ae83-4847-9f1a-5f4189281cf6.png" width="106px" height="39px"/>
                     </a>
                 </li>
                 <li>
                     <a href="http://gj.ncss.cn/" title="高校毕业生到国际组织实习任职信息" target="_blank">
-                        <img src="img/0af63035-b7ce-4ba4-ac44-4d46a60acdca.jpg" width="106px" height="39px" />
+                        <img src="img/0af63035-b7ce-4ba4-ac44-4d46a60acdca.jpg" width="106px" height="39px"/>
                     </a>
                 </li>
             </ul>
