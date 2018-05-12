@@ -78,7 +78,7 @@
         </ul>
         <div class="layui-tab-content site-demo site-demo-body">
             <div class="layui-tab-item layui-show">
-                <iframe frameborder="0" src="./welcome.html" class="x-iframe"></iframe>
+                <iframe frameborder="0" src="/welcome" class="x-iframe"></iframe>
             </div>
         </div>
     </div>

@@ -6,14 +6,16 @@
       WARNING - @mbg.generated
     -->
     <id column="ZPGWBH" jdbcType="INTEGER" property="zpgwbh" />
-    <result column="ZPXXBH" jdbcType="INTEGER" property="zpxxbh" />
-    <result column="GWMC" jdbcType="CHAR" property="gwmc" />
+    <result column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
+    <result column="SS" jdbcType="CHAR" property="ss" />
     <result column="GWLX" jdbcType="CHAR" property="gwlx" />
-    <result column="XQZY" jdbcType="CHAR" property="xqzy" />
-    <result column="GZDD" jdbcType="CHAR" property="gzdd" />
+    <result column="ZY" jdbcType="CHAR" property="zy" />
+    <result column="DD" jdbcType="CHAR" property="dd" />
     <result column="GZJY" jdbcType="CHAR" property="gzjy" />
-    <result column="ZPSL" jdbcType="INTEGER" property="zpsl" />
-    <result column="GWYX" jdbcType="INTEGER" property="gwyx" />
+    <result column="XLYQ" jdbcType="CHAR" property="xlyq" />
+    <result column="ZPSL" jdbcType="CHAR" property="zpsl" />
+    <result column="YX" jdbcType="CHAR" property="yx" />
+    <result column="FBSJ" jdbcType="CHAR" property="fbsj" />
     <result column="GWJJ" jdbcType="LONGVARCHAR" property="gwjj" />
   </resultMap>
 </mapper>

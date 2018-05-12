@@ -4,20 +4,7 @@ var string = "";
 function randomNum(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 }
-function validate1(){
-    var userValue = document.getElementById("username").value;
-    var passwordValue = document.getElementById("password").value;
-    var yzm = document.getElementById("validate").value;
-    if (userValue.length==0||passwordValue.length==0){
-        document.getElementById("label1").innerHTML="用户名或密码不能为空";
-        return false;
-    }
-    if(yzm != string){
-        document.getElementById("label1").innerHTML="验证码不正确";
-        return false;
-    }
-    document.getElementById("form").submit();
-}
+
 /**生成一个随机色**/
 function randomColor(min, max) {
     var r = randomNum(min, max);

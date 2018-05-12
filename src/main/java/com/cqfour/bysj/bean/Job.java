@@ -12,16 +12,16 @@ public class Job {
     private Integer zpgwbh;
 
     /**
-     * 招牌信息编号，Integer，自增
+     * 用人单位编号，Integer
      */
-    @Column(name = "ZPXXBH")
-    private Integer zpxxbh;
+    @Column(name = "YRDWXXBBH")
+    private Integer yrdwxxbbh;
 
     /**
      * 岗位名称，Char(32)
      */
-    @Column(name = "GWMC")
-    private String gwmc;
+    @Column(name = "SS")
+    private String ss;
 
     /**
      * 岗位类型，Char(16)
@@ -30,16 +30,16 @@ public class Job {
     private String gwlx;
 
     /**
-     * 需求专业，Char(64)
+     * 需求专业，Char(128)
      */
-    @Column(name = "XQZY")
-    private String xqzy;
+    @Column(name = "ZY")
+    private String zy;
 
     /**
-     * 工作地点，Char(32)
+     * 工作地点，Char(64)
      */
-    @Column(name = "GZDD")
-    private String gzdd;
+    @Column(name = "DD")
+    private String dd;
 
     /**
      * 工作经验要求，Char(16)
@@ -48,16 +48,28 @@ public class Job {
     private String gzjy;
 
     /**
-     * 招牌数量，Integer
+     * 学历要求
      */
-    @Column(name = "ZPSL")
-    private Integer zpsl;
+    @Column(name = "XLYQ")
+    private String xlyq;
 
     /**
-     * 岗位月薪，Integer
+     * 招聘数量，Char(16)
      */
-    @Column(name = "GWYX")
-    private Integer gwyx;
+    @Column(name = "ZPSL")
+    private String zpsl;
+
+    /**
+     * 岗位月薪，Char(16)
+     */
+    @Column(name = "YX")
+    private String yx;
+
+    /**
+     * 发布时间，Char(255)
+     */
+    @Column(name = "FBSJ")
+    private String fbsj;
 
     /**
      * 岗位简介，Char(512)
@@ -84,39 +96,39 @@ public class Job {
     }
 
     /**
-     * 获取招牌信息编号，Integer，自增
+     * 获取用人单位编号，Integer
      *
-     * @return ZPXXBH - 招牌信息编号，Integer，自增
+     * @return YRDWXXBBH - 用人单位编号，Integer
      */
-    public Integer getZpxxbh() {
-        return zpxxbh;
+    public Integer getYrdwxxbbh() {
+        return yrdwxxbbh;
     }
 
     /**
-     * 设置招牌信息编号，Integer，自增
+     * 设置用人单位编号，Integer
      *
-     * @param zpxxbh 招牌信息编号，Integer，自增
+     * @param yrdwxxbbh 用人单位编号，Integer
      */
-    public void setZpxxbh(Integer zpxxbh) {
-        this.zpxxbh = zpxxbh;
+    public void setYrdwxxbbh(Integer yrdwxxbbh) {
+        this.yrdwxxbbh = yrdwxxbbh;
     }
 
     /**
      * 获取岗位名称，Char(32)
      *
-     * @return GWMC - 岗位名称，Char(32)
+     * @return SS - 岗位名称，Char(32)
      */
-    public String getGwmc() {
-        return gwmc;
+    public String getSs() {
+        return ss;
     }
 
     /**
      * 设置岗位名称，Char(32)
      *
-     * @param gwmc 岗位名称，Char(32)
+     * @param ss 岗位名称，Char(32)
      */
-    public void setGwmc(String gwmc) {
-        this.gwmc = gwmc;
+    public void setSs(String ss) {
+        this.ss = ss;
     }
 
     /**
@@ -138,39 +150,39 @@ public class Job {
     }
 
     /**
-     * 获取需求专业，Char(64)
+     * 获取需求专业，Char(128)
      *
-     * @return XQZY - 需求专业，Char(64)
+     * @return ZY - 需求专业，Char(128)
      */
-    public String getXqzy() {
-        return xqzy;
+    public String getZy() {
+        return zy;
     }
 
     /**
-     * 设置需求专业，Char(64)
+     * 设置需求专业，Char(128)
      *
-     * @param xqzy 需求专业，Char(64)
+     * @param zy 需求专业，Char(128)
      */
-    public void setXqzy(String xqzy) {
-        this.xqzy = xqzy;
+    public void setZy(String zy) {
+        this.zy = zy;
     }
 
     /**
-     * 获取工作地点，Char(32)
+     * 获取工作地点，Char(64)
      *
-     * @return GZDD - 工作地点，Char(32)
+     * @return DD - 工作地点，Char(64)
      */
-    public String getGzdd() {
-        return gzdd;
+    public String getDd() {
+        return dd;
     }
 
     /**
-     * 设置工作地点，Char(32)
+     * 设置工作地点，Char(64)
      *
-     * @param gzdd 工作地点，Char(32)
+     * @param dd 工作地点，Char(64)
      */
-    public void setGzdd(String gzdd) {
-        this.gzdd = gzdd;
+    public void setDd(String dd) {
+        this.dd = dd;
     }
 
     /**
@@ -192,39 +204,75 @@ public class Job {
     }
 
     /**
-     * 获取招牌数量，Integer
+     * 获取学历要求
      *
-     * @return ZPSL - 招牌数量，Integer
+     * @return XLYQ - 学历要求
      */
-    public Integer getZpsl() {
+    public String getXlyq() {
+        return xlyq;
+    }
+
+    /**
+     * 设置学历要求
+     *
+     * @param xlyq 学历要求
+     */
+    public void setXlyq(String xlyq) {
+        this.xlyq = xlyq;
+    }
+
+    /**
+     * 获取招聘数量，Char(16)
+     *
+     * @return ZPSL - 招聘数量，Char(16)
+     */
+    public String getZpsl() {
         return zpsl;
     }
 
     /**
-     * 设置招牌数量，Integer
+     * 设置招聘数量，Char(16)
      *
-     * @param zpsl 招牌数量，Integer
+     * @param zpsl 招聘数量，Char(16)
      */
-    public void setZpsl(Integer zpsl) {
+    public void setZpsl(String zpsl) {
         this.zpsl = zpsl;
     }
 
     /**
-     * 获取岗位月薪，Integer
+     * 获取岗位月薪，Char(16)
      *
-     * @return GWYX - 岗位月薪，Integer
+     * @return YX - 岗位月薪，Char(16)
      */
-    public Integer getGwyx() {
-        return gwyx;
+    public String getYx() {
+        return yx;
     }
 
     /**
-     * 设置岗位月薪，Integer
+     * 设置岗位月薪，Char(16)
      *
-     * @param gwyx 岗位月薪，Integer
+     * @param yx 岗位月薪，Char(16)
      */
-    public void setGwyx(Integer gwyx) {
-        this.gwyx = gwyx;
+    public void setYx(String yx) {
+        this.yx = yx;
+    }
+
+    /**
+     * 获取发布时间，Char(255)
+     *
+     * @return FBSJ - 发布时间，Char(255)
+     */
+    public String getFbsj() {
+        return fbsj;
+    }
+
+    /**
+     * 设置发布时间，Char(255)
+     *
+     * @param fbsj 发布时间，Char(255)
+     */
+    public void setFbsj(String fbsj) {
+        this.fbsj = fbsj;
     }
 
     /**

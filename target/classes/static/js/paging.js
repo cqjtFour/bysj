@@ -3,6 +3,8 @@
     function Paging(el, options) {
         this.el = el;
         this.options = {
+            webPage:options.webPage,
+            parameter:options.parameter,
             pageNo: options.initPageNo || 1, // 初始页码
             totalPages: options.totalPages || 1, //总页数
             totalCount: options.totalCount || '', // 条目总数
@@ -10,11 +12,13 @@
             jump: options.jump || false, // 支持跳转
             callback: options.callback || function() {} // 回调函数
         };
+        console.log(options.parameter);
         this.init();
     }
     // 给实例对象添加公共属性和方法
     Paging.prototype = {
-        constructor: Paging,
+
+    constructor: Paging,
         init: function() {
             this.createDom();
             this.bindEvents();
@@ -56,6 +60,8 @@
                 liWidth = lis[0].offsetWidth, // li的宽度
                 totalPages = that.options.totalPages, // 总页数
                 pageIndex = that.options.pageNo, // 当前选择的页码
+                para = that.options.parameter,
+                webP = that.options.webPage,
                 distance = 0, // ul移动距离
                 prePage = $('#prePage'),
                 nextPage = $('#nextPage'),
@@ -63,27 +69,71 @@
                 lastPage = $('#lastPage'),
                 jumpBtn = $('#jumpBtn'),
                 jumpText = $('#jumpText');
-
             prePage.on('click', function() {
                 pageIndex--;
                 if (pageIndex < 1) pageIndex = 1;
                 handles(pageIndex);
+                $.ajax({
+                    url:para,
+                    type:"GET",
+                    dataType:"json",
+                    data:{"page":pageIndex},
+                    success:function (result) {
+                        if (result.status == "success"){
+                            window.location.href=webP+"?page="+pageIndex;
+                        }
+                    }
+                })
             })
 
             nextPage.on('click', function() {
                 pageIndex++;
+                $.ajax({
+                    url:para,
+                    type:"GET",
+                    dataType:"json",
+                    data:{"page":pageIndex},
+                    success:function (result) {
+                        if (result.status == "success"){
+                            window.location.href=webP+"?page="+pageIndex;
+                        }
+                    }
+                })
                 if (pageIndex > lis.length) pageIndex = lis.length;
                 handles(pageIndex);
+
             })
 
             firstPage.on('click', function() {
                 pageIndex = 1;
                 handles(pageIndex);
+                $.ajax({
+                    url:para,
+                    type:"GET",
+                    dataType:"json",
+                    data:{"page":pageIndex},
+                    success:function (result) {
+                        if (result.status == "success"){
+                            window.location.href=webP+"?page="+pageIndex;
+                        }
+                    }
+                })
             })
 
             lastPage.on('click', function() {
                 pageIndex = totalPages;
                 handles(pageIndex);
+                $.ajax({
+                    url:para,
+                    type:"GET",
+                    dataType:"json",
+                    data:{"page":pageIndex},
+                    success:function (result) {
+                        if (result.status == "success"){
+                            window.location.href=webP+"?page="+pageIndex;
+                        }
+                    }
+                })
             })
 
             jumpBtn.on('click', function() {

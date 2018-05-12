@@ -9,12 +9,12 @@
     <result column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
     <result column="XH" jdbcType="CHAR" property="xh" />
     <result column="SFQDSF" jdbcType="SMALLINT" property="sfqdsf" />
-    <result column="QDSJ" jdbcType="DATE" property="qdsj" />
+    <result column="QDSJ" jdbcType="CHAR" property="qdsj" />
     <result column="SFSFSJJYC" jdbcType="SMALLINT" property="sfsfsjjyc" />
-    <result column="SJSJ" jdbcType="DATE" property="sjsj" />
+    <result column="SJSJ" jdbcType="CHAR" property="sjsj" />
     <result column="SFYHY" jdbcType="SMALLINT" property="sfyhy" />
-    <result column="HYSJ" jdbcType="DATE" property="hysj" />
+    <result column="HYSJ" jdbcType="CHAR" property="hysj" />
     <result column="XSFSFLQ" jdbcType="SMALLINT" property="xsfsflq" />
-    <result column="LQSJ" jdbcType="DATE" property="lqsj" />
+    <result column="LQSJ" jdbcType="CHAR" property="lqsj" />
   </resultMap>
 </mapper>

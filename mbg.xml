@@ -53,13 +53,13 @@
         <table tableName="t_yrdwxxshb" domainObjectName="EmployersInfoCheck" />
         <table tableName="t_zpgwb" domainObjectName="Job" />
 
-        <table tableName="t_zpxxb" domainObjectName="JobInfo" />
+        <table tableName="t_xlzpxxfbb" domainObjectName="JobInfo" />
         <table tableName="t_zyb" domainObjectName="Discipline" />
         <table tableName="t_xyzbyyb" domainObjectName="SchoolJob" />
         <table tableName="t_znsxb" domainObjectName="PrivateMessage" />
+
         <table tableName="t_qyb" domainObjectName="Sign" />
-
-
-
+        <table tableName="t_xnzpgx" domainObjectName="ReserveInfo" />
+        <table tableName="t_xyzpgwb" domainObjectName="ReserveInfoJob" />
     </context>
 </generatorConfiguration>

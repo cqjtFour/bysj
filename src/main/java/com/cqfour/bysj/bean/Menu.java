@@ -47,6 +47,7 @@ public class Menu {
     public void setChildren(List<Menu> children) {
         this.children = children;
     }
+
     /**
      * 获取菜单编号，Integer，自增
      *

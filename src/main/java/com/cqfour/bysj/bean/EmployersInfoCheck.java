@@ -1,6 +1,5 @@
 package com.cqfour.bysj.bean;
 
-import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_yrdwxxshb")
@@ -13,10 +12,10 @@ public class EmployersInfoCheck {
     private Integer yrdwxxshbbh;
 
     /**
-     * 职工号，Char(16)
+     * 主键，自增
      */
-    @Column(name = "SHR")
-    private String shr;
+    @Column(name = "ZGBH")
+    private Integer zgbh;
 
     /**
      * 用人单位编号，Integer
@@ -25,22 +24,22 @@ public class EmployersInfoCheck {
     private Integer yrdwxxbbh;
 
     /**
-     * 提交时间，Date
+     * 提交时间
      */
     @Column(name = "TJSJ")
-    private Date tjsj;
+    private String tjsj;
 
     /**
-     * 审核时间，Date
+     * 审核时间
      */
     @Column(name = "SHSJ")
-    private Date shsj;
+    private String shsj;
 
     /**
-     * 是否通过审核，Integer，0表是，1表否
+     * 审核状态，Integer，0表未审核，1表通过审核，2表驳回
      */
-    @Column(name = "SFTGSH")
-    private Short sftgsh;
+    @Column(name = "SHZT")
+    private Short shzt;
 
     /**
      * 审核意见，Char(16)
@@ -67,21 +66,21 @@ public class EmployersInfoCheck {
     }
 
     /**
-     * 获取职工号，Char(16)
+     * 获取主键，自增
      *
-     * @return SHR - 职工号，Char(16)
+     * @return ZGBH - 主键，自增
      */
-    public String getShr() {
-        return shr;
+    public Integer getZgbh() {
+        return zgbh;
     }
 
     /**
-     * 设置职工号，Char(16)
+     * 设置主键，自增
      *
-     * @param shr 职工号，Char(16)
+     * @param zgbh 主键，自增
      */
-    public void setShr(String shr) {
-        this.shr = shr;
+    public void setZgbh(Integer zgbh) {
+        this.zgbh = zgbh;
     }
 
     /**
@@ -103,57 +102,57 @@ public class EmployersInfoCheck {
     }
 
     /**
-     * 获取提交时间，Date
+     * 获取提交时间
      *
-     * @return TJSJ - 提交时间，Date
+     * @return TJSJ - 提交时间
      */
-    public Date getTjsj() {
+    public String getTjsj() {
         return tjsj;
     }
 
     /**
-     * 设置提交时间，Date
+     * 设置提交时间
      *
-     * @param tjsj 提交时间，Date
+     * @param tjsj 提交时间
      */
-    public void setTjsj(Date tjsj) {
+    public void setTjsj(String tjsj) {
         this.tjsj = tjsj;
     }
 
     /**
-     * 获取审核时间，Date
+     * 获取审核时间
      *
-     * @return SHSJ - 审核时间，Date
+     * @return SHSJ - 审核时间
      */
-    public Date getShsj() {
+    public String getShsj() {
         return shsj;
     }
 
     /**
-     * 设置审核时间，Date
+     * 设置审核时间
      *
-     * @param shsj 审核时间，Date
+     * @param shsj 审核时间
      */
-    public void setShsj(Date shsj) {
+    public void setShsj(String shsj) {
         this.shsj = shsj;
     }
 
     /**
-     * 获取是否通过审核，Integer，0表是，1表否
+     * 获取审核状态，Integer，0表未审核，1表通过审核，2表驳回
      *
-     * @return SFTGSH - 是否通过审核，Integer，0表是，1表否
+     * @return SHZT - 审核状态，Integer，0表未审核，1表通过审核，2表驳回
      */
-    public Short getSftgsh() {
-        return sftgsh;
+    public Short getShzt() {
+        return shzt;
     }
 
     /**
-     * 设置是否通过审核，Integer，0表是，1表否
+     * 设置审核状态，Integer，0表未审核，1表通过审核，2表驳回
      *
-     * @param sftgsh 是否通过审核，Integer，0表是，1表否
+     * @param shzt 审核状态，Integer，0表未审核，1表通过审核，2表驳回
      */
-    public void setSftgsh(Short sftgsh) {
-        this.sftgsh = sftgsh;
+    public void setShzt(Short shzt) {
+        this.shzt = shzt;
     }
 
     /**

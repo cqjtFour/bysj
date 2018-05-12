@@ -13,42 +13,51 @@
     <result column="XSXM" jdbcType="CHAR" property="xsxm" />
     <result column="SFYJY" jdbcType="INTEGER" property="sfyjy" />
     <result column="JYFS" jdbcType="INTEGER" property="jyfs" />
-    <result column="JYSJ" jdbcType="DATE" property="jysj" />
+    <result column="JYSJ" jdbcType="CHAR" property="jysj" />
     <result column="SFSFLQ" jdbcType="SMALLINT" property="sfsflq" />
     <result column="SJHM" jdbcType="CHAR" property="sjhm" />
+    <result column="EMAIL" jdbcType="CHAR" property="email" />
     <result column="XB" jdbcType="SMALLINT" property="xb" />
-    <result column="CSRQ" jdbcType="DATE" property="csrq" />
+    <result column="CSRQ" jdbcType="CHAR" property="csrq" />
     <result column="SYD" jdbcType="CHAR" property="syd" />
     <result column="XL" jdbcType="SMALLINT" property="xl" />
     <result column="ZZMM" jdbcType="CHAR" property="zzmm" />
     <result column="MZ" jdbcType="CHAR" property="mz" />
     <result column="ZYPM" jdbcType="CHAR" property="zypm" />
     <result column="SG" jdbcType="CHAR" property="sg" />
+    <result column="STZK" jdbcType="CHAR" property="stzk" />
     <result column="SFTGYYSJ" jdbcType="SMALLINT" property="sftgyysj" />
-    <result column="YYSJCJ" jdbcType="INTEGER" property="yysjcj" />
+    <result column="YYSJCJ" jdbcType="CHAR" property="yysjcj" />
     <result column="SFTGYYLJ" jdbcType="SMALLINT" property="sftgyylj" />
-    <result column="YYLJCJ" jdbcType="INTEGER" property="yyljcj" />
+    <result column="YYLJCJ" jdbcType="CHAR" property="yyljcj" />
     <result column="JSJSP" jdbcType="CHAR" property="jsjsp" />
     <result column="BKJDXX" jdbcType="CHAR" property="bkjdxx" />
     <result column="BKZY" jdbcType="CHAR" property="bkzy" />
-    <result column="BKKSSJ" jdbcType="DATE" property="bkkssj" />
-    <result column="BKBYSJ" jdbcType="DATE" property="bkbysj" />
+    <result column="BKKSSJ" jdbcType="CHAR" property="bkkssj" />
+    <result column="BKBYSJ" jdbcType="CHAR" property="bkbysj" />
     <result column="SSJDXX" jdbcType="CHAR" property="ssjdxx" />
     <result column="SSZY" jdbcType="CHAR" property="sszy" />
-    <result column="SSKSSJ" jdbcType="DATE" property="sskssj" />
-    <result column="SSBYSJ" jdbcType="DATE" property="ssbysj" />
+    <result column="SSKSSJ" jdbcType="CHAR" property="sskssj" />
+    <result column="SSBYSJ" jdbcType="CHAR" property="ssbysj" />
     <result column="SXGSMC" jdbcType="CHAR" property="sxgsmc" />
     <result column="GSHY" jdbcType="CHAR" property="gshy" />
     <result column="SXZW" jdbcType="CHAR" property="sxzw" />
     <result column="SXDD" jdbcType="CHAR" property="sxdd" />
-    <result column="SXKSSJ" jdbcType="DATE" property="sxkssj" />
-    <result column="SXJSSJ" jdbcType="DATE" property="sxjssj" />
+    <result column="SXKSSJ" jdbcType="CHAR" property="sxkssj" />
+    <result column="SXJSSJ" jdbcType="CHAR" property="sxjssj" />
+    <result column="XMMC" jdbcType="CHAR" property="xmmc" />
+    <result column="XMKSSJ" jdbcType="CHAR" property="xmkssj" />
+    <result column="XMJSSJ" jdbcType="CHAR" property="xmjssj" />
+    <result column="QWHY" jdbcType="CHAR" property="qwhy" />
+    <result column="QWZW" jdbcType="CHAR" property="qwzw" />
+    <result column="QWGZDD" jdbcType="CHAR" property="qwgzdd" />
+    <result column="QWYX" jdbcType="CHAR" property="qwyx" />
     <result column="ZWPJ" jdbcType="CHAR" property="zwpj" />
-    <result column="EMAIL" jdbcType="CHAR" property="email" />
-    <result column="GXSJ" jdbcType="TIMESTAMP" property="gxsj" />
+    <result column="GXSJ" jdbcType="CHAR" property="gxsj" />
     <result column="BZ" jdbcType="CHAR" property="bz" />
     <result column="SHSJJL" jdbcType="LONGVARCHAR" property="shsjjl" />
     <result column="ZYSXNR" jdbcType="LONGVARCHAR" property="zysxnr" />
+    <result column="XMNRMS" jdbcType="LONGVARCHAR" property="xmnrms" />
     <result column="HJQK" jdbcType="LONGVARCHAR" property="hjqk" />
     <result column="TCAH" jdbcType="LONGVARCHAR" property="tcah" />
   </resultMap>

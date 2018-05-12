@@ -5,17 +5,23 @@ import javax.persistence.*;
 @Table(name = "t_jycry")
 public class EmploymentDepartment {
     /**
-     * 职工号，Char(16)
+     * 主键，自增
      */
     @Id
-    @Column(name = "ZGH")
-    private String zgh;
+    @Column(name = "ZGBH")
+    private Integer zgbh;
 
     /**
      * 登录账号，Char(32)
      */
     @Column(name = "DLZH")
     private String dlzh;
+
+    /**
+     * 职工号，Char(16)
+     */
+    @Column(name = "ZGH")
+    private String zgh;
 
     /**
      * 人员名称，Char(16)
@@ -42,21 +48,21 @@ public class EmploymentDepartment {
     private String bjdh;
 
     /**
-     * 获取职工号，Char(16)
+     * 获取主键，自增
      *
-     * @return ZGH - 职工号，Char(16)
+     * @return ZGBH - 主键，自增
      */
-    public String getZgh() {
-        return zgh;
+    public Integer getZgbh() {
+        return zgbh;
     }
 
     /**
-     * 设置职工号，Char(16)
+     * 设置主键，自增
      *
-     * @param zgh 职工号，Char(16)
+     * @param zgbh 主键，自增
      */
-    public void setZgh(String zgh) {
-        this.zgh = zgh;
+    public void setZgbh(Integer zgbh) {
+        this.zgbh = zgbh;
     }
 
     /**
@@ -75,6 +81,24 @@ public class EmploymentDepartment {
      */
     public void setDlzh(String dlzh) {
         this.dlzh = dlzh;
+    }
+
+    /**
+     * 获取职工号，Char(16)
+     *
+     * @return ZGH - 职工号，Char(16)
+     */
+    public String getZgh() {
+        return zgh;
+    }
+
+    /**
+     * 设置职工号，Char(16)
+     *
+     * @param zgh 职工号，Char(16)
+     */
+    public void setZgh(String zgh) {
+        this.zgh = zgh;
     }
 
     /**

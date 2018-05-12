@@ -1,0 +1,130 @@
+@charset "UTF-8";
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+body{
+    background-color: #F5F5F5;
+}
+.notshow{
+    display: none;
+}
+.contentsec{
+    width: 100%;
+}
+.content{
+    width: 800px;
+    margin: 20px auto;
+    border: 1px solid  #5FB878;
+    background-color: white;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+
+.head-display-left{
+    width: 700px;
+    float: left;
+}
+.head-display-left-left{
+    width: 120px;
+    float: left;
+}
+ img{
+    width: 100px;
+    height: 100px;
+}
+.head-display-left-right{
+    float: left;
+}
+.head-display-right{
+    width: 30px;
+    float: right;
+}
+form{
+    border-bottom: 1px solid #0088cc;
+    border-left:1px solid #0088cc;
+    border-right: 1px solid #0088cc;
+    border-top: 4px solid #0088cc;
+    padding: 10px 10px;
+    overflow: hidden;
+}
+.head-form-left{
+    float: left;;
+    width: 120px;
+
+}
+.head-form-right{
+    float: left;
+    width: 600px;
+}
+.jbxx-display-left {
+    width: 380px;
+    float: left;
+    padding-left: 25px;
+    padding-top: 10px;
+}
+.jbxx-form-left{
+    float: left;
+    width: 360px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.jbxx-form-right{
+    float: left;
+    width: 360px;
+    margin-top: 10px;
+}
+.gzjl-display{
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.fjxx-display{
+    width: 100%;
+    overflow: hidden;
+    padding-bottom:10px ;
+}
+.fjxx-hide{
+    padding-bottom:10px ;
+    width: 100%;
+    padding-bottom:10px ;
+}
+
+/*一样的模式*/
+
+.head ,.jbxx , .gzjl ,.zyyx , .jyjl ,.xmjy , .zwpj , .fjxx{
+    width: 100%;
+    padding: 10px 10px;
+}
+.jbxx-head,.gzjl-head , .zyyx-head , .jyjl-head , .xmjy-head , .zwpj-head , .fjxx-head{
+    width: 100%;
+    overflow: hidden;
+}
+.jbxx-head-left , .gzjl-head-left , .zyyx-head-left , .jyjl-head-left , .xmjy-head-left , .zwpj-head-left , .fjxx-head-left{
+    float: left;
+    width: 700px;
+}
+.jbxx-head-right , .gzjl-head-right , .zyyx-head-right , .jyjl-head-right , .xmjy-head-right , .zwpj-head-right , .fjxx-head-right{
+    float: right;
+    width: 30px;
+}
+.head-display, .jbxx-display , .gzjl-display , .zyyx-display , .jyjl-display , .xmjy-display , .zwpj-display {
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #8c8c8c;
+    padding-bottom:10px ;
+}
+.gzjl-display , .zyyx-display , .jyjl-display , .xmjy-display ,.zwpj-display , .fjxx-display{
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.head-hide , .jbxx-hide , .gzjl-hide , .zyyx-hide , .jyjl-hide , .xmjy-hide , .zwpj-hide{
+    padding-bottom:10px ;
+    width: 100%;
+    border-bottom: 1px solid #8c8c8c;
+    padding-bottom:10px ;
+}

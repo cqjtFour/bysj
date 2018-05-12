@@ -8,8 +8,8 @@
     <id column="ZNSXBH" jdbcType="INTEGER" property="znsxbh" />
     <result column="FSYHZH" jdbcType="INTEGER" property="fsyhzh" />
     <result column="JSYHZH" jdbcType="INTEGER" property="jsyhzh" />
-    <result column="FSSJ" jdbcType="INTEGER" property="fssj" />
-    <result column="JSSJ" jdbcType="TIMESTAMP" property="jssj" />
+    <result column="FSSJ" jdbcType="CHAR" property="fssj" />
+    <result column="JSSJ" jdbcType="CHAR" property="jssj" />
     <result column="ZT" jdbcType="SMALLINT" property="zt" />
     <result column="XXNR" jdbcType="LONGVARCHAR" property="xxnr" />
   </resultMap>

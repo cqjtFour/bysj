@@ -1,128 +1,105 @@
 package com.cqfour.bysj.bean;
 
-import java.util.Date;
 import javax.persistence.*;
 
-@Table(name = "t_zpxxb")
+@Table(name = "t_xlzpxxfbb")
 public class JobInfo {
     /**
-     * 招牌信息编号，Integer，自增
+     * 校内招聘信息发布表编号
      */
     @Id
-    @Column(name = "ZPXXBH")
-    private Integer zpxxbh;
+    @Column(name = "XNZPXXFBBBH")
+    private Integer xnzpxxfbbbh;
 
     /**
-     * 用人单位编号，Integer
+     * 主键，自增
      */
-    @Column(name = "YRDWXXBBH")
-    private Integer yrdwxxbbh;
+    @Column(name = "ZGBH")
+    private Integer zgbh;
 
     /**
-     * 招聘标题，Char(64)
+     * 校内招聘内容标题
      */
-    @Column(name = "ZPBT")
-    private String zpbt;
+    @Column(name = "XNZPNRBT")
+    private String xnzpnrbt;
 
     /**
-     * 发布时间，Date
+     * 招聘信息发布时间
      */
-    @Column(name = "FBSJ")
-    private Date fbsj;
+    @Column(name = "ZPXXFBSJ")
+    private String zpxxfbsj;
 
+    @Column(name = "ZPLX")
+    private String zplx;
     /**
-     * 正文内容，Char(500)
-     */
-    @Column(name = "ZWNR")
-    private String zwnr;
-
-    /**
-     * 获取招牌信息编号，Integer，自增
+     * 获取校内招聘信息发布表编号
      *
-     * @return ZPXXBH - 招牌信息编号，Integer，自增
+     * @return XNZPXXFBBBH - 校内招聘信息发布表编号
      */
-    public Integer getZpxxbh() {
-        return zpxxbh;
+    public Integer getXnzpxxfbbbh() {
+        return xnzpxxfbbbh;
     }
 
     /**
-     * 设置招牌信息编号，Integer，自增
+     * 设置校内招聘信息发布表编号
      *
-     * @param zpxxbh 招牌信息编号，Integer，自增
+     * @param xnzpxxfbbbh 校内招聘信息发布表编号
      */
-    public void setZpxxbh(Integer zpxxbh) {
-        this.zpxxbh = zpxxbh;
+    public void setXnzpxxfbbbh(Integer xnzpxxfbbbh) {
+        this.xnzpxxfbbbh = xnzpxxfbbbh;
     }
 
     /**
-     * 获取用人单位编号，Integer
+     * 获取主键，自增
      *
-     * @return YRDWXXBBH - 用人单位编号，Integer
+     * @return ZGBH - 主键，自增
      */
-    public Integer getYrdwxxbbh() {
-        return yrdwxxbbh;
+    public Integer getZgbh() {
+        return zgbh;
     }
 
     /**
-     * 设置用人单位编号，Integer
+     * 设置主键，自增
      *
-     * @param yrdwxxbbh 用人单位编号，Integer
+     * @param zgbh 主键，自增
      */
-    public void setYrdwxxbbh(Integer yrdwxxbbh) {
-        this.yrdwxxbbh = yrdwxxbbh;
+    public void setZgbh(Integer zgbh) {
+        this.zgbh = zgbh;
     }
 
     /**
-     * 获取招聘标题，Char(64)
+     * 获取校内招聘内容标题
      *
-     * @return ZPBT - 招聘标题，Char(64)
+     * @return XNZPNRBT - 校内招聘内容标题
      */
-    public String getZpbt() {
-        return zpbt;
+    public String getXnzpnrbt() {
+        return xnzpnrbt;
     }
 
     /**
-     * 设置招聘标题，Char(64)
+     * 设置校内招聘内容标题
      *
-     * @param zpbt 招聘标题，Char(64)
+     * @param xnzpnrbt 校内招聘内容标题
      */
-    public void setZpbt(String zpbt) {
-        this.zpbt = zpbt;
+    public void setXnzpnrbt(String xnzpnrbt) {
+        this.xnzpnrbt = xnzpnrbt;
     }
 
     /**
-     * 获取发布时间，Date
+     * 获取招聘信息发布时间
      *
-     * @return FBSJ - 发布时间，Date
+     * @return ZPXXFBSJ - 招聘信息发布时间
      */
-    public Date getFbsj() {
-        return fbsj;
+    public String getZpxxfbsj() {
+        return zpxxfbsj;
     }
 
     /**
-     * 设置发布时间，Date
+     * 设置招聘信息发布时间
      *
-     * @param fbsj 发布时间，Date
+     * @param zpxxfbsj 招聘信息发布时间
      */
-    public void setFbsj(Date fbsj) {
-        this.fbsj = fbsj;
-    }
-
-    /**
-     * 获取正文内容，Char(500)
-     *
-     * @return ZWNR - 正文内容，Char(500)
-     */
-    public String getZwnr() {
-        return zwnr;
-    }
-
-    /**
-     * 设置正文内容，Char(500)
-     *
-     * @param zwnr 正文内容，Char(500)
-     */
-    public void setZwnr(String zwnr) {
-        this.zwnr = zwnr;
+    public void setZpxxfbsj(String zpxxfbsj) {
+        this.zpxxfbsj = zpxxfbsj;
     }
 }

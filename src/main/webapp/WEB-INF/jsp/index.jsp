@@ -7,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -40,7 +41,7 @@
                     <div class="navigation">
                         <div id="smoothmenu1" class="ddsmoothmenu">
                             <ul>
-                                <li class="current-menu-item"><a href="/index">首页</a></li>
+                                <li class="current-menu-item"><a href="#">首页</a></li>
                                 <li><a href="/advice">通知公告</a></li>
                                 <li><a href="#">招聘信息</a>
                                     <ul class="backcolr">
@@ -95,42 +96,12 @@
                         <hr/>
                         <div id="div1">
                             <ul style="list-style-type: disc">
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
+                                <c:forEach items="${specialEmployee}" var="special">
+                                    <li>
+                                        <a href="#" class="col-md-8">${special.xxbt}</a>
+                                        <span class="col-md-4">${special.xxfbsj}</span>
+                                    </li>
+                                </c:forEach>
                             </ul>
                         </div>
                     </div>
@@ -143,43 +114,13 @@
                         <hr/>
                         <div id="div2">
                             <ul style="list-style-type: disc">
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
+                                <c:forEach items="${doubleMeeting}" var="special">
+                                    <li>
+                                        <a href="#" class="col-md-8">${special.xxbt}</a>
+                                        <span class="col-md-4">${special.xxfbsj}</span>
+                                    </li>
+                                </c:forEach>
+                            </ul>
                             </ul>
                         </div>
                     </div>
@@ -192,43 +133,12 @@
                         <hr/>
                         <div id="div5">
                             <ul style="list-style-type: disc">
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
+                                <c:forEach items="${employmentPolicy}" var="special">
+                                    <li>
+                                        <a href="#" class="col-md-8">${special.xxbt}</a>
+                                        <span class="col-md-4">${special.xxfbsj}</span>
+                                    </li>
+                                </c:forEach>
                             </ul>
                         </div>
                     </div>
@@ -245,42 +155,12 @@
                         <hr/>
                         <div id="div3">
                             <ul style="list-style-type: disc">
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
+                                <c:forEach items="${advice}" var="special">
+                                    <li>
+                                        <a href="#" class="col-md-8">${special.xxbt}</a>
+                                        <span class="col-md-4">${special.xxfbsj}</span>
+                                    </li>
+                                </c:forEach>
                             </ul>
                         </div>
                     </div>
@@ -293,42 +173,12 @@
                         <hr/>
                         <div id="div4">
                             <ul style="list-style-type: disc">
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
+                                <c:forEach items="${socialEmployee}" var="special">
+                                    <li>
+                                        <a href="#" class="col-md-8">${special.xxbt}</a>
+                                        <span class="col-md-4">${special.xxfbsj}</span>
+                                    </li>
+                                </c:forEach>
                             </ul>
                         </div>
                     </div>
@@ -341,42 +191,12 @@
                         <hr/>
                         <div id="div6">
                             <ul style="list-style-type: disc">
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8">重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
-                                <li>
-                                    <a href="#" class="col-md-8" target="_blank">重庆交通大学招聘重庆交通大学招聘重庆交通大学招聘</a>
-                                    <span class="col-md-4">2018-9-8</span>
-                                </li>
+                                <c:forEach items="${employmentGuidance}" var="special">
+                                    <li>
+                                        <a href="#" class="col-md-8">${special.xxbt}</a>
+                                        <span class="col-md-4">${special.xxfbsj}</span>
+                                    </li>
+                                </c:forEach>
                             </ul>
                         </div>
                     </div>
@@ -428,17 +248,17 @@
                                 <div class="form-group col-md-offset-10" style="margin-top: 40px">
                                     <a style="position: absolute;right: 230px;top: 740px;float: left" href="#"
                                        class="btn" role="button"><b>忘记密码</b></a>
-                                    <a style="position: absolute;top: 740px;float: left" href="#"
+                                    <a style="position: absolute;top: 740px;float: left" href="/signIn"
                                        class="btn col-md-offset-1" role="button"><b>单位注册</b></a>
                                     <button class="col-sm-3 col-md-offset-7 btn"
                                             style="background-color: darkgray;width: 70px;float: left" type="button"
-                                            onclick="validate1()"> 登录
+                                            onclick="beforeLogin()"> 登录
                                     </button>
                                 </div>
                             </fieldset>
                         </form>
                         <script type="text/javascript">
-                            function validate1(){
+                            function beforeLogin(){
                                 var userValue = document.getElementById("username").value;
                                 var passwordValue = document.getElementById("password").value;
                                 var yzm = document.getElementById("validate").value;
@@ -450,7 +270,6 @@
                                     document.getElementById("label1").innerHTML="验证码不正确";
                                     return false;
                                 }
-//                                document.getElementById("form").submit();
                                 login();
                             }
                             function login() {
@@ -460,11 +279,10 @@
                                     dataType:"json",
                                     data:$("#form").serialize(),
                                     success:function (result) {
-                                        alert(result.status);
                                         if(result.status == "error"){
                                             document.getElementById("label1").innerHTML= result.msg;
                                         }else{
-                                            window.location.href="/mainView"
+                                            window.location.href="/mainView";
                                         }
                                     }
                                 })

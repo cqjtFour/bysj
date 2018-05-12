@@ -1,6 +1,5 @@
 package com.cqfour.bysj.bean;
 
-import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_xxxxfbb")
@@ -13,10 +12,10 @@ public class SchoolNews {
     private Integer fbbbh;
 
     /**
-     * 职工号，Char(16)
+     * 主键，自增
      */
-    @Column(name = "ZGH")
-    private String zgh;
+    @Column(name = "ZGBH")
+    private Integer zgbh;
 
     /**
      * 信息类型，Char(32)
@@ -37,10 +36,10 @@ public class SchoolNews {
     private String fj;
 
     /**
-     * 发布时间，Date
+     * 发布时间
      */
     @Column(name = "XXFBSJ")
-    private Date xxfbsj;
+    private String xxfbsj;
 
     /**
      * 浏览次数，Integer
@@ -53,6 +52,21 @@ public class SchoolNews {
      */
     @Column(name = "XXZW")
     private String xxzw;
+
+    /**
+     * 职工号
+     */
+    @Transient
+    private EmploymentDepartment employmentDepartment;
+
+
+    public EmploymentDepartment getEmploymentDepartment() {
+        return employmentDepartment;
+    }
+
+    public void setEmploymentDepartment(EmploymentDepartment employmentDepartment) {
+        this.employmentDepartment = employmentDepartment;
+    }
 
     /**
      * 获取学校信息发布表编号，Integer，自增
@@ -73,21 +87,21 @@ public class SchoolNews {
     }
 
     /**
-     * 获取职工号，Char(16)
+     * 获取主键，自增
      *
-     * @return ZGH - 职工号，Char(16)
+     * @return ZGBH - 主键，自增
      */
-    public String getZgh() {
-        return zgh;
+    public Integer getZgbh() {
+        return zgbh;
     }
 
     /**
-     * 设置职工号，Char(16)
+     * 设置主键，自增
      *
-     * @param zgh 职工号，Char(16)
+     * @param zgbh 主键，自增
      */
-    public void setZgh(String zgh) {
-        this.zgh = zgh;
+    public void setZgbh(Integer zgbh) {
+        this.zgbh = zgbh;
     }
 
     /**
@@ -145,20 +159,20 @@ public class SchoolNews {
     }
 
     /**
-     * 获取发布时间，Date
+     * 获取发布时间
      *
-     * @return XXFBSJ - 发布时间，Date
+     * @return XXFBSJ - 发布时间
      */
-    public Date getXxfbsj() {
+    public String getXxfbsj() {
         return xxfbsj;
     }
 
     /**
-     * 设置发布时间，Date
+     * 设置发布时间
      *
-     * @param xxfbsj 发布时间，Date
+     * @param xxfbsj 发布时间
      */
-    public void setXxfbsj(Date xxfbsj) {
+    public void setXxfbsj(String xxfbsj) {
         this.xxfbsj = xxfbsj;
     }
 

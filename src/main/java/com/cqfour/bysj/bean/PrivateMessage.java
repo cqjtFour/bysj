@@ -1,6 +1,5 @@
 package com.cqfour.bysj.bean;
 
-import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "t_znsxb")
@@ -25,16 +24,16 @@ public class PrivateMessage {
     private Integer jsyhzh;
 
     /**
-     * 发送时间，DateTime
+     * 发送时间
      */
     @Column(name = "FSSJ")
-    private Integer fssj;
+    private String fssj;
 
     /**
-     * 接收时间，DateTime
+     * 接收时间
      */
     @Column(name = "JSSJ")
-    private Date jssj;
+    private String jssj;
 
     @Column(name = "ZT")
     private Short zt;
@@ -100,38 +99,38 @@ public class PrivateMessage {
     }
 
     /**
-     * 获取发送时间，DateTime
+     * 获取发送时间
      *
-     * @return FSSJ - 发送时间，DateTime
+     * @return FSSJ - 发送时间
      */
-    public Integer getFssj() {
+    public String getFssj() {
         return fssj;
     }
 
     /**
-     * 设置发送时间，DateTime
+     * 设置发送时间
      *
-     * @param fssj 发送时间，DateTime
+     * @param fssj 发送时间
      */
-    public void setFssj(Integer fssj) {
+    public void setFssj(String fssj) {
         this.fssj = fssj;
     }
 
     /**
-     * 获取接收时间，DateTime
+     * 获取接收时间
      *
-     * @return JSSJ - 接收时间，DateTime
+     * @return JSSJ - 接收时间
      */
-    public Date getJssj() {
+    public String getJssj() {
         return jssj;
     }
 
     /**
-     * 设置接收时间，DateTime
+     * 设置接收时间
      *
-     * @param jssj 接收时间，DateTime
+     * @param jssj 接收时间
      */
-    public void setJssj(Date jssj) {
+    public void setJssj(String jssj) {
         this.jssj = jssj;
     }
 

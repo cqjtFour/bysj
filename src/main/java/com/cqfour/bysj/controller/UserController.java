@@ -50,7 +50,7 @@ public class UserController {
         } else if (!password.equals(user.getDlmm())){
             message.setStatus("error");
             message.setMsg("密码输入错误");
-        } else if (user.getZhzt()!=1){
+        } else if (user.getZhzt()!=0){
             message.setStatus("error");
             message.setMsg("该账号已注销");
         } else {
@@ -76,9 +76,11 @@ public class UserController {
                 for (Menu child : menus) {
                     if (child.getFjcdbh().equals(parent.getCdbh())) {
                         parent.getChildren().add(child);
+                        System.out.println(child.getFjcdbh());
                     }
                 }
             }
+            System.out.println(parentMenus.size());
             request.getSession().setAttribute("menus",parentMenus);
             message.setStatus("success");
             message.setMsg("");
