@@ -14,12 +14,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+/**
+ * 就业政策
+ */
 @Controller
 public class EmployeePolicy {
 
     @Autowired
     private SchoolNewsService schoolNewsService;
 
+    /**
+     * 初始化就业政策
+     * @param page
+     * @param request
+     * @return
+     */
     @RequestMapping("/employmentpolicy")
     public String employment_policy(@RequestParam(value = "page", defaultValue = "1")Integer page, HttpServletRequest request){
         List<SchoolNews> schoolNews = schoolNewsService.selectEmploymentPolicyByLlcs();
@@ -28,12 +37,19 @@ public class EmployeePolicy {
         request.getSession().setAttribute("ep_date",schoolNewsByDate);
         PageHelper.startPage(page,10);
         List<SchoolNews> employmentGuidance = schoolNewsService.selectAllEmploymentPolicy();
-        System.out.println(employmentGuidance.size());
+        System.out.println(employmentGuidance.size()+"======");
         PageInfo pageInfo = new PageInfo(employmentGuidance,5);
+        System.out.println(pageInfo.toString());
         request.setAttribute("ep_pageInfo",pageInfo);
         return "/WEB-INF/jsp/employment-policy.jsp";
     }
 
+    /**
+     * 分页查询
+     * @param page
+     * @param request
+     * @return
+     */
     @RequestMapping("/employmentPolicyToPage")
     @ResponseBody
     public Message employmentGuidanceToPage(@RequestParam(value = "page", defaultValue = "1")Integer page, HttpServletRequest request){

@@ -7,10 +7,9 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
+public class EmailUtil {
 
-public class TestMain {
-
-    public static void main(String args[]) throws MessagingException {
+    public static void sendEmail(InternetAddress[] addresses,String password) throws MessagingException {
         Properties properties = new Properties();
         properties.put("mail.transport.protocol", "smtp");// 连接协议
         properties.put("mail.smtp.host", "smtp.qq.com");// 主机名
@@ -25,11 +24,11 @@ public class TestMain {
         //设置发件人邮箱地址
         message.setFrom(new InternetAddress("1780799104@qq.com"));
         //设置收件人地址
-        message.setRecipients(MimeMessage.RecipientType.TO,new InternetAddress[] { new InternetAddress("384574686@qq.com") });
+        message.setRecipients(MimeMessage.RecipientType.TO,addresses);
         //设置邮件标题
-        message.setSubject("这是第一封Java邮件");
+        message.setSubject("找回密码");
         //设置邮件内容
-        message.setText("内容为： 这是第一封java发送来的邮件。");
+        message.setText("密码为："+password);
         //得到邮差对象
         Transport transport = session.getTransport();
         transport.connect("1780799104@qq.com", "txmncexwsbflfcfi");//密码为刚才得到的授权码

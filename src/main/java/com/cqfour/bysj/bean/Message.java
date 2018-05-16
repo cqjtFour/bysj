@@ -1,10 +1,22 @@
 package com.cqfour.bysj.bean;
 
+import java.util.List;
+
 public class Message {
 
     private String status;
 
     private String msg;
+
+    private List<ReserveInfo> reserveInfos;
+
+    public List<ReserveInfo> getReserveInfos() {
+        return reserveInfos;
+    }
+
+    public void setReserveInfos(List<ReserveInfo> reserveInfos) {
+        this.reserveInfos = reserveInfos;
+    }
 
     public String getStatus() {
         return status;
