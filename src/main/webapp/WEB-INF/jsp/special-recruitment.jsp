@@ -194,7 +194,7 @@
                             <div class="boxshadow-right-show">
                                 <ul style="height: 238px; margin: 5px;">
                                     <c:forEach items="${fiveData}" var="five">
-                                        <li>${five.employers.dwmc}</li>
+                                        <li><a href="/showReserveInfo?xnzpgsbbh=${five.xnzpgsbbh}">${five.employers.dwmc}</a></li>
                                     </c:forEach>
                                 </ul>
                             </div>

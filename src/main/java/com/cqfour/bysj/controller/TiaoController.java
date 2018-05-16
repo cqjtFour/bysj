@@ -1,21 +1,13 @@
 package com.cqfour.bysj.controller;
 
-import com.cqfour.bysj.bean.Message;
-import com.cqfour.bysj.bean.SchoolNews;
 import com.cqfour.bysj.service.JobInfoService;
 import com.cqfour.bysj.service.ReserveInfoService;
 import com.cqfour.bysj.service.SchoolNewsService;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 控制页面之间的跳转
@@ -50,11 +42,6 @@ public class TiaoController {
     @RequestMapping("/download")
     public String download(){
         return "/WEB-INF/jsp/download.jsp";
-    }
-
-
-    public String graduating(){
-        return "/WEB-INF/jsp/graduating.jsp";
     }
 
     @RequestMapping("/socialrecruitment")

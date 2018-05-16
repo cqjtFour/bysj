@@ -160,7 +160,7 @@
                             <div class="boxshadow-right-show">
                                 <ul style="height: 238px; margin: 5px;">
                                     <c:forEach items="${advicellcs}" var="al">
-                                        <li><a href="" title="">${al.xxbt}</a></li>
+                                        <li><a href="/showAdvice?fbbh=${al.fbbbh}" title="">${al.xxbt}</a></li>
                                     </c:forEach>
                                 </ul>
                             </div>
@@ -174,7 +174,7 @@
                             <div class="boxshadow-right-show">
                                 <ul class="multi" style="height: 256px;">
                                     <c:forEach items="${adviceDate}" var="al">
-                                        <li><a href="" title="">${al.xxbt}</a></li>
+                                        <li><a href="/showAdvice?fbbh=${al.fbbbh}" title="">${al.xxbt}</a></li>
                                     </c:forEach>
                                 </ul>
                             </div>
