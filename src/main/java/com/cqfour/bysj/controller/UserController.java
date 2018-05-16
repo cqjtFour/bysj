@@ -17,8 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by HYHSG on 2018/4/18.
- * 用户Controllo
+ *主界面
  */
 @Controller
 public class UserController {
@@ -32,6 +31,10 @@ public class UserController {
     @Autowired
     private MenuService menuService;
 
+    /**
+     * 测试用的，无用
+     * @return
+     */
     @RequestMapping("getUser")
     @ResponseBody
     public String getAllUser(){
@@ -39,6 +42,13 @@ public class UserController {
         return "index";
     }
 
+    /**
+     * 登录
+     * @param username
+     * @param password
+     * @param request
+     * @return
+     */
     @RequestMapping("/loginUser")
     @ResponseBody
     public Message loginUser(String username, String password, HttpServletRequest request){

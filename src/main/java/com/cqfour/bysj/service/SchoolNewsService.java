@@ -15,34 +15,13 @@ public class SchoolNewsService {
     @Autowired
     private SchoolNewsMapper schoolNewsMapper;
 
-    @Autowired
-    private EmploymentDepartmentMapper employmentDepartmentMapper;
 
     /**
-     * 查询前七条专场招聘信息
-     *
+     * 查出所有的发布信息
      * @return
      */
-    public List<SchoolNews> getSpecialEmployee() {
-        return schoolNewsMapper.selectSpecailEmployee();
-    }
-
-    /**
-     * 查询前九条社会招聘信息
-     *
-     * @return
-     */
-    public List<SchoolNews> selectSocialEmployee() {
-        return schoolNewsMapper.selectSocialEmployee();
-    }
-
-    /**
-     * 查询前九条双选会信息
-     *
-     * @return
-     */
-    public List<SchoolNews> selectDoubleMeeting() {
-        return schoolNewsMapper.selectDoubleMeeting();
+    public List<SchoolNews> selectAll(){
+        return schoolNewsMapper.selectAll();
     }
 
     /**
@@ -79,16 +58,7 @@ public class SchoolNewsService {
      * @return
      */
     public List<SchoolNews> selectAllAdvice() {
-        List<EmploymentDepartment> employmentDepartments = employmentDepartmentMapper.selectAll();
-        List<SchoolNews> schoolNewsList = schoolNewsMapper.selectAllAdvice();
-        for (EmploymentDepartment employmentDepartment: employmentDepartments) {
-            for(SchoolNews schoolNews : schoolNewsList){
-                if (schoolNews.getZgbh().equals(employmentDepartment.getZgbh())){
-                    schoolNews.setEmploymentDepartment(employmentDepartment);
-                }
-            }
-        }
-        return schoolNewsList;
+        return schoolNewsMapper.selectAllAdvice();
     }
 
     /**
@@ -163,9 +133,4 @@ public class SchoolNewsService {
         return schoolNewsMapper.selectEmploymentPolicyByLlcs();
     }
 
-    public List<SchoolNews> selectTest(){
-        List<SchoolNews> schoolNewsList = schoolNewsMapper.selectTest();
-        System.out.println(schoolNewsList.size());
-        return schoolNewsList;
-    }
 }

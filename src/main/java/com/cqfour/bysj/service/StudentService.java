@@ -20,4 +20,22 @@ public class StudentService {
     public List<Student> getAllStudent(){
         return studentMapper.selectAll();
     }
+
+    /**
+     * 模糊查询学生
+     * @param param
+     * @return
+     */
+    public List<Student> selectStudentByInput(String param){
+        return studentMapper.queryStudentByInput(param);
+    }
+
+    public Student selectOneStudentByDLZH(String dlzh){
+        return studentMapper.selectOneStudent(dlzh);
+    }
+
+
+    public List<Student> selectSomeStudent(String stuName,String stuNo){
+        return studentMapper.querySomeStudent(stuName,stuNo);
+    }
 }

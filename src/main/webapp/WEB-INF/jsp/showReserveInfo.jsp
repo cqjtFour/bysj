@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: HYHSG
@@ -19,7 +20,7 @@
     <link rel="stylesheet" type="text/css" media="all" href="css/daterangepicker.css"/>
     <link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
     <!--// Javascripts //-->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/moment.js"></script>
     <script type="text/javascript" src="js/daterangepicker.js"></script>
@@ -87,24 +88,63 @@
                   <div class="boxshow" >
                         <div class="title">
                             <div class="title-center">
-                                <div style="width: 400px;margin: 0px auto;"><p style="text-align: left;" class="blue">${current.xxbt}</p></div>
+                                <div style="width: 400px;margin: 0px auto;"><p style="text-align: left;" class="blue">${current.jobInfo.xnzpnrbt}</p></div>
                                 <div>
                                     <p style="overflow: auto; margin-top: 5px; padding-bottom: 20px;">
-                                    <span class="left">发布日期:${current.xxfbsj}</span>
-                                    <span class="left">&nbsp;&nbsp;|&nbsp;&nbsp;发布者:${current.employmentDepartment.rymc}</span>
-                                    <span class="left">&nbsp;&nbsp;|&nbsp;&nbsp;浏览次数: ${current.llcs} 次</span>
+                                    <span class="center" style="margin-left: 80px;padding-top: 20px">发布日期:${current.jobInfo.zpxxfbsj}</span>
+                                    <span class="center">&nbsp;&nbsp;|&nbsp;&nbsp;招聘公司:${current.employers.dwmc}</span>
+                                    <%--<span class="left">&nbsp;&nbsp;|&nbsp;&nbsp;浏览次数: ${current.llcs} 次</span>--%>
                                     </p>
                                 </div>
                             </div>
                         </div>
                       <%--title end--%>
                         <div class="content">
-                            ${current.xxzw}
+                                <div>
+                                    <h3>&nbsp;&nbsp;公司介绍：</h3>
+                                    <label style="margin-left: 100px;">${current.employers.dwjbqkjj}</label>
+                                </div>
+                                <div class="container">
+                                    <h3>招聘需求:</h3>
+                                        <div style="margin-left: 100px;">
+                                            <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <td><label> 招聘岗位：</label></td>
+                                                        <td><label> 招聘专业：</label></td>
+                                                        <td><label> 招聘人数：</label></td>
+                                                        <td><label> 薪资待遇：</label></td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <c:forEach items="${current.reserveInfoJob}" var="re">
+                                                        <tr>
+                                                            <td>${re.gwmc}</td>
+                                                            <td>${re.xyzy}</td>
+                                                            <td>${re.rs}</td>
+                                                            <td>${re.dy}</td>
+                                                        </tr>
+                                                    </c:forEach>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    <h3>时间地点:</h3>
+                                    <div>
+                                        <label style="margin-left: 100px;display:inline">招聘时间：<p style="color: red;display:inline">${current.zpsj}</p></label><br>
+                                        <label style="margin-left: 100px;display:inline">招聘地点：<p style="color: red;display:inline">${current.zpdd}</p></label>
+                                    </div>
+                                    <h3>联系方式:</h3>
+                                    <div>
+                                        <label style="margin-left: 100px;display:inline">招聘负责人：<p style="color: red;display:inline">${current.employers.dwlxr}</p></label><br>
+                                        <label style="margin-left: 100px;display:inline">联系人电话：<p style="color: red;display:inline">${current.employers.lxrdh}</p></label><br>
+                                        <label style="margin-left: 100px;display:inline">联系人邮箱：<p style="color: red;display:inline">${current.employers.dzyx}</p></label>
+                                    </div>
+                                </div>
                         </div>
                       <%--content end--%>
                       <div class="newsupdown">
-                          <div class="newsup"><a href="/${url}?fbbh=${pre.fbbbh}">上一篇：${pre.xxbt}</a></div>
-                          <div class="newsdown"><a href="/${url}?fbbh=${next.fbbbh}">下一篇：${next.xxbt}</a></div>
+                          <div class="newsup"><a href="/showReserveInfo?xnzpgsbbh=${pre.xnzpgsbbh}">上一篇：${pre.jobInfo.xnzpnrbt}</a></div>
+                          <div class="newsdown"><a href="/showReserveInfo?xnzpgsbbh=${next.xnzpgsbbh}">下一篇：${next.jobInfo.xnzpnrbt}</a></div>
                       </div>
                   </div>
             </div>

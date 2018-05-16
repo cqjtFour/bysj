@@ -78,41 +78,54 @@
         </div>
     </div>
     <!-- Header End -->
-    <!-- Bread Crumb Start -->
-    <!-- Banner End -->
-    <!-- Content Section Start -->
     <div id="contentsec">
         <div class="inner">
             <div class="fullwidth box left">
-                  <div class="boxshow" >
-                        <div class="title">
-                            <div class="title-center">
-                                <div style="width: 400px;margin: 0px auto;"><p style="text-align: left;" class="blue">${current.xxbt}</p></div>
-                                <div>
-                                    <p style="overflow: auto; margin-top: 5px; padding-bottom: 20px;">
-                                    <span class="left">发布日期:${current.xxfbsj}</span>
-                                    <span class="left">&nbsp;&nbsp;|&nbsp;&nbsp;发布者:${current.employmentDepartment.rymc}</span>
-                                    <span class="left">&nbsp;&nbsp;|&nbsp;&nbsp;浏览次数: ${current.llcs} 次</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                      <%--title end--%>
-                        <div class="content">
-                            ${current.xxzw}
-                        </div>
-                      <%--content end--%>
-                      <div class="newsupdown">
-                          <div class="newsup"><a href="/${url}?fbbh=${pre.fbbbh}">上一篇：${pre.xxbt}</a></div>
-                          <div class="newsdown"><a href="/${url}?fbbh=${next.fbbbh}">下一篇：${next.xxbt}</a></div>
+                  <div class="container" >
+                      <div class="row" style="margin-top: 100px;margin-left: 200px;margin-bottom: 100px" id="emailForm">
+                          <form class="form-horizontal">
+                              <div class="form-group">
+                                  <label for="username" class="col-sm-2 control-label">登录账号</label>
+                                  <div class="col-sm-10">
+                                      <input type="text" style="width: 200px" class="form-control" id="username" name="username" placeholder="请输入账号">
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label for="email" class="col-sm-2 control-label">电子邮箱</label>
+                                  <div class="col-sm-10">
+                                      <input type="email" style="width: 200px" class="form-control" id="email" name="email" placeholder="请输入邮箱">
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <label style="color: red;margin-left: 180px" id="label1"></label>
+                              </div>
+                              <div class="form-group">
+                                  <div class="col-sm-offset-2 col-sm-10">
+                                      <input type="button" class="btn btn-default" id="submit" value="确定" onclick="show()"/>
+                                  </div>
+                              </div>
+                          </form>
                       </div>
                   </div>
             </div>
-            <!--fullwidth box left end-->
         </div>
-        <!--inner end-->
     </div>
-    <!-- Content Section End -->
+    <script>
+        function show() {
+            document.getElementById("label1").innerHTML="";
+            var username = $("#username").val();
+            var email = $("#email").val();
+            $.ajax({
+                url:"/sendEmail",
+                dataType:'json',
+                data:{"username":username,"email":email},
+                type:'GET',
+                success:function (result) {
+                    document.getElementById("label1").innerHTML=result.msg;
+                }
+            })
+        }
+    </script>
     <!--Friendship-link start 友情链接-->
     <div class="friendship-link">
         <div class="links">

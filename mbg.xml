@@ -59,7 +59,7 @@
         <table tableName="t_znsxb" domainObjectName="PrivateMessage" />
 
         <table tableName="t_qyb" domainObjectName="Sign" />
-        <table tableName="t_xnzpgx" domainObjectName="ReserveInfo" />
+        <table tableName="t_xnzpgs" domainObjectName="ReserveInfo" />
         <table tableName="t_xyzpgwb" domainObjectName="ReserveInfoJob" />
     </context>
 </generatorConfiguration>

@@ -51,14 +51,8 @@
                             <ul>
                                 <li><a href="/index">首页</a></li>
                                 <li class="current-menu-item"><a href="/advice">通知公告</a></li>
-                                <li><a href="#">招聘信息</a>
-                                    <ul class="backcolr">
-                                        <li><a href="/specialrecruitment">专场招聘</a></li>
-                                        <li><a href="/socialrecruitment">社会招聘</a></li>
-                                        <li><a href="/doublemeeting">双选会</a></li>
-                                    </ul>
+                                <li><a href="/specialrecruitment">招聘信息</a>
                                 </li>
-                                <li><a href="/download">下载中心</a></li>
                                 <li><a href="#">就业指南</a>
                                     <ul class="backcolr">
                                         <li><a href="/employmentguidance">就业指导</a></li>
@@ -104,7 +98,7 @@
                                 <div class="list">
                                     <div>
                                         <p>
-                                            <a href="/News/2001/10006/7012.html" title="${schoolNews.xxbt}"
+                                            <a href="/showAdvice?fbbh=${schoolNews.fbbbh}" title="${schoolNews.xxbt}"
                                                class="title">${schoolNews.xxbt}</a>
                                         </p>
                                         <p>

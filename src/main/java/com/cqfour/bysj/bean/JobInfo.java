@@ -31,6 +31,15 @@ public class JobInfo {
 
     @Column(name = "ZPLX")
     private String zplx;
+
+    public String getZplx() {
+        return zplx;
+    }
+
+    public void setZplx(String zplx) {
+        this.zplx = zplx;
+    }
+
     /**
      * 获取校内招聘信息发布表编号
      *

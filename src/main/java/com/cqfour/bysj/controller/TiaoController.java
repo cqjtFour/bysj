@@ -2,6 +2,8 @@ package com.cqfour.bysj.controller;
 
 import com.cqfour.bysj.bean.Message;
 import com.cqfour.bysj.bean.SchoolNews;
+import com.cqfour.bysj.service.JobInfoService;
+import com.cqfour.bysj.service.ReserveInfoService;
 import com.cqfour.bysj.service.SchoolNewsService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -24,11 +26,16 @@ public class TiaoController {
     @Autowired
     private SchoolNewsService schoolNewsService;
 
+    @Autowired
+    private JobInfoService jobInfoService;
+
+    @Autowired
+    private ReserveInfoService reserveInfoService;
+
+
     @RequestMapping("/index")
     public String index(HttpServletRequest request){
-        request.getSession().setAttribute("specialEmployee",schoolNewsService.getSpecialEmployee());
-        request.getSession().setAttribute("socialEmployee",schoolNewsService.selectSocialEmployee());
-        request.getSession().setAttribute("doubleMeeting",schoolNewsService.selectDoubleMeeting());
+        request.getSession().setAttribute("specialEmployee",reserveInfoService.getAllReserveInfoWithJobInfo().subList(0,3));
         request.getSession().setAttribute("employmentPolicy",schoolNewsService.selectEmploymentPocily());
         request.getSession().setAttribute("employmentGuidance",schoolNewsService.selectEmploymentGuidance());
         request.getSession().setAttribute("advice",schoolNewsService.selectAdvice());
@@ -45,7 +52,7 @@ public class TiaoController {
         return "/WEB-INF/jsp/download.jsp";
     }
 
-    @RequestMapping("/graduating")
+
     public String graduating(){
         return "/WEB-INF/jsp/graduating.jsp";
     }
@@ -55,23 +62,10 @@ public class TiaoController {
         return "/WEB-INF/jsp/social-recruitment.jsp";
     }
 
-    @RequestMapping("/specialrecruitment")
-    public String special_recruitment(){
-        return "/WEB-INF/jsp/special-recruitment.jsp";
-    }
-
-    @RequestMapping("/studentresume")
-    public String student_resume(){
-        return "/WEB-INF/jsp/student-resume.jsp";
-    }
-
     @RequestMapping("/login")
     public String login(){
         return "/WEB-INF/jsp/login.jsp";
     }
-
-    @RequestMapping("/show")
-    public  String show(){ return "/WEB-INF/jsp/show.jsp";}
 
     @RequestMapping("/mainView")
     public String mainView(){
