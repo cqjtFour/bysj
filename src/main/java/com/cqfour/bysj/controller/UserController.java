@@ -1,15 +1,13 @@
 package com.cqfour.bysj.controller;
 
-import com.cqfour.bysj.bean.Menu;
-import com.cqfour.bysj.bean.Message;
-import com.cqfour.bysj.bean.RoleMenu;
-import com.cqfour.bysj.bean.User;
+import com.cqfour.bysj.bean.*;
 import com.cqfour.bysj.service.MenuService;
 import com.cqfour.bysj.service.RoleMenuService;
 import com.cqfour.bysj.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -82,9 +80,36 @@ public class UserController {
             }
             System.out.println(parentMenus.size());
             request.getSession().setAttribute("menus",parentMenus);
+            //student session
+            Student student=new Student();
+            student.setXh(user.getDlzh());
+            request.getSession().setAttribute("student",student);
+
             message.setStatus("success");
             message.setMsg("");
         }
         return message;
     }
+
+
+    /**
+     * 验证是否唯一
+     * @param dzyx
+     * @return
+     */
+    @RequestMapping("/validUser")
+    @ResponseBody
+    public Message validUserExist(@RequestParam("dzyx") String dzyx){
+         User user=new User();
+         user.setDlzh(dzyx);
+         boolean flag=userService.validUser(user);
+         Message msg=new Message();
+         if(flag){//已存在
+             msg.setMsg("该邮箱已经注册");
+         }else{
+             msg.setMsg("可以注册");
+         }
+         return msg;
+    }
+
 }

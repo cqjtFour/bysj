@@ -1,6 +1,7 @@
 package com.cqfour.bysj.bean;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Table(name = "t_yrdwb")
 public class Employers {
@@ -88,6 +89,7 @@ public class Employers {
      */
     @Column(name = "DWJBQKJJ")
     private String dwjbqkjj;
+
 
     /**
      * 获取用人单位编号，Integer

@@ -29,6 +29,21 @@ public class Apply {
     @Column(name = "YPSJ")
     private String ypsj;
 
+
+    /**
+     * 查看状态
+     */
+    @Column(name="CKZT")
+    private Short ckzt;
+
+    public Short getCkzt() {
+        return ckzt;
+    }
+
+    public void setCkzt(Short ckzt) {
+        this.ckzt = ckzt;
+    }
+
     /**
      * 获取应聘表编号，Integer，自增
      *

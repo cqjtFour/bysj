@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqfour.bysj.mapper.SignMapper">
+  <resultMap id="BaseResultMap" type="com.cqfour.bysj.bean.Sign">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="QYBBH" jdbcType="INTEGER" property="qybbh" />
+    <result column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
+    <result column="XH" jdbcType="CHAR" property="xh" />
+    <result column="SFQDSF" jdbcType="SMALLINT" property="sfqdsf" />
+    <result column="QDSJ" jdbcType="CHAR" property="qdsj" />
+    <result column="SFSFSJJYC" jdbcType="SMALLINT" property="sfsfsjjyc" />
+    <result column="SJSJ" jdbcType="CHAR" property="sjsj" />
+    <result column="SFYHY" jdbcType="SMALLINT" property="sfyhy" />
+    <result column="HYSJ" jdbcType="CHAR" property="hysj" />
+    <result column="XSFSFLQ" jdbcType="SMALLINT" property="xsfsflq" />
+    <result column="LQSJ" jdbcType="CHAR" property="lqsj" />
+  </resultMap>
+</mapper>

@@ -113,10 +113,7 @@ public class TiaoController {
     public String recInfoHistory(){
         return "/WEB-INF/main/recInfoHistory.jsp";
     }
-    @RequestMapping("/jobSearch")
-    public String jobSearch(){
-        return "/WEB-INF/main/jobsearch.jsp";
-    }
+
 
     @RequestMapping("/checkRecord")
     public String checkRecord(){
@@ -136,6 +133,16 @@ public class TiaoController {
     @RequestMapping("/signIn")
     public String signIn(){
         return "/WEB-INF/jsp/signin.jsp";
+    }
+
+    @RequestMapping("/success")
+    public String success(){
+        return "/WEB-INF/jsp/success.jsp";
+    }
+
+    @RequestMapping("/fail")
+    public String fail(){
+        return "/WEB-INF/jsp/fail.jsp";
     }
 
 }
