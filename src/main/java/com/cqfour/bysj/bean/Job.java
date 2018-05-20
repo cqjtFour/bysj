@@ -78,6 +78,20 @@ public class Job {
     private String gwjj;
 
     /**
+     * 用人单位信息
+     */
+    @Transient
+    private Employers employers;
+
+    public Employers getEmployers() {
+        return employers;
+    }
+
+    public void setEmployers(Employers employers) {
+        this.employers = employers;
+    }
+
+    /**
      * 获取招牌岗位编号，Integer，自增
      *
      * @return ZPGWBH - 招牌岗位编号，Integer，自增

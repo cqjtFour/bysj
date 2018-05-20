@@ -11,4 +11,11 @@
     <result column="CDDJ" jdbcType="INTEGER" property="cddj" />
     <result column="FJCDBH" jdbcType="INTEGER" property="fjcdbh" />
   </resultMap>
+
+  <select id="searchMenu" resultMap="BaseResultMap" parameterType="java.lang.String">
+    <bind name="pattern" value="'%' + cdmc + '%'" />
+    SELECT *
+    from t_cdb where cdmc LIKE #{pattern}
+  </select>
+
 </mapper>

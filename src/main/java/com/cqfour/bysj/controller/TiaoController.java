@@ -64,11 +64,6 @@ public class TiaoController {
         return  "/WEB-INF/main/createResume.jsp";
     }
 
-    @RequestMapping("/addMenu")
-    public String addMenu(){
-        return "/WEB-INF/main/addMenu.jsp";
-    }
-
     @RequestMapping("/myResume")
     public String myResume(){
         return "/WEB-INF/main/myResume.jsp";

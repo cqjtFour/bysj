@@ -2,6 +2,7 @@ package com.cqfour.bysj.mapper;
 
 import com.cqfour.bysj.bean.Student;
 import com.cqfour.bysj.util.MyMapper;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -29,4 +30,8 @@ public interface StudentMapper extends MyMapper<Student> {
 
     @Select("select * from t_xsb where dlzh=#{0}")
     Student selectOneStudent(String dlzh);
+
+    @Insert("insert into t_xsb (xh,xsxm,dlzh,zybh) values (#{xh},#{xsxm},#{dlzh},#{zybh})")
+    int insertStudent(@Param("xh") String xh,@Param("xsxm") String xsxm,@Param("dlzh") String dlzh,@Param("zybh") Integer zybh);
+
 }

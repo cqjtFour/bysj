@@ -18,10 +18,10 @@
     <link href="css/headfooter.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="css/gray.css" title="styles1" media="screen"/>
     <link href="css/advice.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="bootstrap-3.3.7-dist/js/bootstrap.min.js"/>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
     <!--// Javascripts //-->
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="bootstrap-3.3.7-dist/css/bootstrap.min.css"></script>
+    <script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/animatedcollapse.js"></script>
     <script type="text/javascript" src="js/ddsmoothmenu.js"></script>
     <script type="text/javascript" src="js/scrolltopcontrol.js"></script>

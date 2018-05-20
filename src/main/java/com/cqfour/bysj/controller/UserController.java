@@ -90,8 +90,8 @@ public class UserController {
                     }
                 }
             }
-            System.out.println(parentMenus.size());
             request.getSession().setAttribute("menus",parentMenus);
+            request.getSession().setAttribute("user",user);
             message.setStatus("success");
             message.setMsg("");
         }
