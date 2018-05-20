@@ -38,6 +38,9 @@ public class Menu {
     private Integer fjcdbh;
 
     @Transient
+    private List<RoleMenu> roleMenus;
+
+    @Transient
     private List<Menu> children = new ArrayList<>();
 
     public List<Menu> getChildren() {
@@ -46,6 +49,14 @@ public class Menu {
 
     public void setChildren(List<Menu> children) {
         this.children = children;
+    }
+
+    public List<RoleMenu> getRoleMenus() {
+        return roleMenus;
+    }
+
+    public void setRoleMenus(List<RoleMenu> roleMenus) {
+        this.roleMenus = roleMenus;
     }
 
     /**

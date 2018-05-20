@@ -29,6 +29,31 @@ public class Apply {
     @Column(name = "YPSJ")
     private String ypsj;
 
+    public Integer getCkzt() {
+        return ckzt;
+    }
+
+    public void setCkzt(Integer ckzt) {
+        this.ckzt = ckzt;
+    }
+
+    @Column(name="CKZT")
+    private Integer ckzt;
+
+    /**
+     * 投递岗位
+     */
+    @Transient
+    private Job job;
+
+    public Job getJob() {
+        return job;
+    }
+
+    public void setJob(Job job) {
+        this.job = job;
+    }
+
     /**
      * 获取应聘表编号，Integer，自增
      *

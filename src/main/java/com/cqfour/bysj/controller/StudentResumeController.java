@@ -25,38 +25,6 @@ public class StudentResumeController {
     private StudentService studentService;
 
     /**
-     * 获得所有学生
-     * @param page
-     * @param request
-     * @return
-     */
-//    @RequestMapping("/studentresume")
-//    public String student_resume(@RequestParam(value = "page", defaultValue = "1")Integer page, HttpServletRequest request){
-//        PageHelper.startPage(page,10);
-//        List<Student> allStudent = studentService.getAllStudent();
-//        PageInfo pageInfo = new PageInfo(allStudent,5);
-//        request.setAttribute("student_pageInfo",pageInfo);
-//        return "/WEB-INF/jsp/student-resume.jsp";
-//    }
-
-//    /**
-//     * 分页查询
-//     * @param page
-//     * @param request
-//     * @return
-//     */
-//    @RequestMapping("/studentresumeToPage")
-//    @ResponseBody
-//    public Message student_resumeToPage(@RequestParam(value = "page", defaultValue = "1")Integer page, HttpServletRequest request){
-//        PageHelper.startPage(page,10);
-//        List<Student> allStudent = studentService.getAllStudent();
-//        PageInfo pageInfo = new PageInfo(allStudent,5);
-//        request.setAttribute("student_pageInfo",pageInfo);
-//        Message message = new Message();
-//        message.setStatus("success");
-//        return message;
-//    }
-    /**
      * 分页查询
      * @param page
      * @param request
