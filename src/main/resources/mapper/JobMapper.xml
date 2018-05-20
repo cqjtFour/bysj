@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cqfour.bysj.mapper.JobMapper">
-  <resultMap id="JobResultMap" type="com.cqfour.bysj.bean.Job">
-
+  <resultMap id="BaseResultMap" type="com.cqfour.bysj.bean.Job">
     <!--
       WARNING - @mbg.generated
     -->
@@ -18,33 +17,47 @@
     <result column="YX" jdbcType="CHAR" property="yx" />
     <result column="FBSJ" jdbcType="CHAR" property="fbsj" />
     <result column="GWJJ" jdbcType="LONGVARCHAR" property="gwjj" />
-    <association property="employers" javaType="Employers">
-     <id column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
-    <result column="DLZH" jdbcType="CHAR" property="dlzh" />
-    <result column="DWMC" jdbcType="CHAR" property="dwmc" />
-    <result column="DWXZ" jdbcType="CHAR" property="dwxz" />
-    <result column="ZZJGDM" jdbcType="CHAR" property="zzjgdm" />
-    <result column="SSHY" jdbcType="CHAR" property="sshy" />
-    <result column="DWGM" jdbcType="CHAR" property="dwgm" />
-    <result column="SZD" jdbcType="CHAR" property="szd" />
-    <result column="DWLXR" jdbcType="CHAR" property="dwlxr" />
-    <result column="LXRDH" jdbcType="CHAR" property="lxrdh" />
-    <result column="DWLXDH" jdbcType="CHAR" property="dwlxdh" />
-    <result column="DZYX" jdbcType="CHAR" property="dzyx" />
-    <result column="YZBM" jdbcType="CHAR" property="yzbm" />
-    <result column="DWJBQKJJ" jdbcType="LONGVARCHAR" property="dwjbqkjj" />
+  </resultMap>
+  <resultMap id="BaseResultMapWithEmployersNo" type="com.cqfour.bysj.bean.Job">
+    <id column="ZPGWBH" jdbcType="INTEGER" property="zpgwbh" />
+    <result column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
+    <result column="MC" jdbcType="CHAR" property="mc" />
+    <result column="GWLX" jdbcType="CHAR" property="gwlx" />
+    <result column="ZY" jdbcType="CHAR" property="zy" />
+    <result column="DD" jdbcType="CHAR" property="dd" />
+    <result column="GZJY" jdbcType="CHAR" property="gzjy" />
+    <result column="XLYQ" jdbcType="CHAR" property="xlyq" />
+    <result column="ZPSL" jdbcType="CHAR" property="zpsl" />
+    <result column="YX" jdbcType="CHAR" property="yx" />
+    <result column="FBSJ" jdbcType="CHAR" property="fbsj" />
+    <result column="GWJJ" jdbcType="LONGVARCHAR" property="gwjj" />
+    <association property="employers" javaType="com.cqfour.bysj.bean.Employers">
+      <id column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
+      <result column="DLZH" jdbcType="CHAR" property="dlzh" />
+      <result column="DWMC" jdbcType="CHAR" property="dwmc" />
+      <result column="DWXZ" jdbcType="CHAR" property="dwxz" />
+      <result column="ZZJGDM" jdbcType="CHAR" property="zzjgdm" />
+      <result column="SSHY" jdbcType="CHAR" property="sshy" />
+      <result column="DWGM" jdbcType="CHAR" property="dwgm" />
+      <result column="SZD" jdbcType="CHAR" property="szd" />
+      <result column="DWLXR" jdbcType="CHAR" property="dwlxr" />
+      <result column="LXRDH" jdbcType="CHAR" property="lxrdh" />
+      <result column="DWLXDH" jdbcType="CHAR" property="dwlxdh" />
+      <result column="DZYX" jdbcType="CHAR" property="dzyx" />
+      <result column="YZBM" jdbcType="CHAR" property="yzbm" />
+      <result column="DWJBQKJJ" jdbcType="LONGVARCHAR" property="dwjbqkjj" />
     </association>
   </resultMap>
 
-  <select id="getJobList" resultMap="JobResultMap">
+  <select id="getJobList" resultMap="BaseResultMapWithEmployersNo">
    SELECT ZPGWBH,t_zpgwb.YRDWXXBBH, MC ,GWlX ,DWMC,ZY,DD,GZJY,XLYQ,ZPSL,YX,GWJJ,FBSJ from t_zpgwb ,t_yrdwb where t_zpgwb.YRDWXXBBH=t_yrdwb.YRDWXXBBH
   </select>
-  
-  <select id="jobDetail" parameterType="Integer" resultMap="JobResultMap">
+
+  <select id="jobDetail" parameterType="Integer" resultMap="BaseResultMapWithEmployersNo">
     SELECT ZPGWBH,t_zpgwb.YRDWXXBBH, MC ,GWlX ,DWMC,DWJBQKJJ,ZY,DD,GZJY,XLYQ,ZPSL,YX,GWJJ,FBSJ from t_zpgwb ,t_yrdwb where t_zpgwb.YRDWXXBBH=t_yrdwb.YRDWXXBBH AND ZPGWBH=#{zpgwbh}
   </select>
 
-  <select id="getJobListByCondition" parameterType="com.cqfour.bysj.bean.Job" resultMap="JobResultMap">
+  <select id="getJobListByCondition" parameterType="com.cqfour.bysj.bean.Job" resultMap="BaseResultMapWithEmployersNo">
     SELECT ZPGWBH,t_zpgwb.YRDWXXBBH, MC ,GWlX ,DWMC,ZY,DD,GZJY,XLYQ,ZPSL,YX,GWJJ,FBSJ from t_zpgwb ,t_yrdwb
     <where>
       t_zpgwb.YRDWXXBBH=t_yrdwb.YRDWXXBBH
@@ -64,5 +77,5 @@
 
   </select>
 
-  
+
 </mapper>

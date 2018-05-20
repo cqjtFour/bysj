@@ -72,4 +72,15 @@ public class EmployerService {
 		Employers employers=employersMapper.selectByPrimaryKey(yrdwxxbbh);
 		return  employers;
 	}
+
+
+
+    /**
+     * 根据登录账号得到用人单位
+     * @param dlzh
+     * @return
+     */
+    public Employers getOneEmployer(String dlzh){
+        return employersMapper.getOneEmployerByDLZH(dlzh);
+    }
 }

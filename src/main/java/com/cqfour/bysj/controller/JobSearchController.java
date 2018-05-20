@@ -159,7 +159,7 @@ public class JobSearchController {
 		apply.setXh(xsxh);
 		apply.setZpgwbh(gwbh);
 		apply.setYpsj(DateUtil.getStringDate());
-		apply.setCkzt((short)0);
+		apply.setCkzt(0);
 
 		jobService.applyJob(apply);
 

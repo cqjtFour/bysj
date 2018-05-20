@@ -29,19 +29,29 @@ public class Apply {
     @Column(name = "YPSJ")
     private String ypsj;
 
-
-    /**
-     * 查看状态
-     */
-    @Column(name="CKZT")
-    private Short ckzt;
-
-    public Short getCkzt() {
+    public Integer getCkzt() {
         return ckzt;
     }
 
-    public void setCkzt(Short ckzt) {
+    public void setCkzt(Integer ckzt) {
         this.ckzt = ckzt;
+    }
+
+    @Column(name="CKZT")
+    private Integer ckzt;
+
+    /**
+     * 投递岗位
+     */
+    @Transient
+    private Job job;
+
+    public Job getJob() {
+        return job;
+    }
+
+    public void setJob(Job job) {
+        this.job = job;
     }
 
     /**

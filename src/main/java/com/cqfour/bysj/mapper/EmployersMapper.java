@@ -2,6 +2,8 @@ package com.cqfour.bysj.mapper;
 
 import com.cqfour.bysj.bean.Employers;
 import com.cqfour.bysj.util.MyMapper;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Component;
 
@@ -26,5 +28,9 @@ public interface EmployersMapper extends MyMapper<Employers> {
 			@Result(property = "YRDWXXBBH",column = "YRDWXXBBH")
 	})
 	public Employers findById(@Param(value = "YRDWXXBBH") Integer YRDWXXBBH);
+
+
+    @Select("select * from t_yrdwb where DLZH = #{0}")
+    Employers getOneEmployerByDLZH(String dlzh);
 
 }

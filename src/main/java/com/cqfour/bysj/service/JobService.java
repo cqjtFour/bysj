@@ -74,4 +74,12 @@ public class JobService {
 	public void applyJob(Apply a){
 		applyMapper.insert(a);
 	}
+
+    /**
+     * 得到应聘信息
+     * @return
+     */
+    public List<Job> selectAllJobWithEmployer(){
+        return jobMapper.selectAllJobWithEmployer();
+    }
 }

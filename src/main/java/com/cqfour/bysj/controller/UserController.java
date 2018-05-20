@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -78,13 +79,13 @@ public class UserController {
                     }
                 }
             }
-            System.out.println(parentMenus.size());
             request.getSession().setAttribute("menus",parentMenus);
             //student session
             Student student=new Student();
             student.setXh(user.getDlzh());
             request.getSession().setAttribute("student",student);
 
+            request.getSession().setAttribute("user",user);
             message.setStatus("success");
             message.setMsg("");
         }

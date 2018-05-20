@@ -80,23 +80,10 @@ public class Job {
     private String gwjj;
 
     /**
-     * author:wgp
-     * 用人单位外键
+     * 用人单位信息
      */
-
     @Transient
     private Employers employers;
-
-
-   // private Integer YRDWXXBBH;
-
-    /*public Integer getYRDWXXBBH() {
-        return YRDWXXBBH;
-    }
-
-    public void setYRDWXXBBH(Integer YRDWXXBBH) {
-        this.YRDWXXBBH = YRDWXXBBH;
-    }*/
 
     public Employers getEmployers() {
         return employers;

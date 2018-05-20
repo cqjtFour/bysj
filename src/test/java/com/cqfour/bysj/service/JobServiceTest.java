@@ -77,7 +77,7 @@ public class JobServiceTest {
 		a.setXh("631406010103");
 		a.setZpgwbh(1);
 		a.setYpsj(DateUtil.getStringDate());
-		a.setCkzt((short)0);
+		a.setCkzt(0);
 
 		applyMapper.insert(a);
 

@@ -11,6 +11,17 @@ public class ReserveInfoJob {
     @Column(name = "GWBH")
     private Integer gwbh;
 
+    @Column
+    private String gwmc;
+
+    public String getGwmc() {
+        return gwmc;
+    }
+
+    public void setGwmc(String gwmc) {
+        this.gwmc = gwmc;
+    }
+
     /**
      * 自增id，Integer
      */

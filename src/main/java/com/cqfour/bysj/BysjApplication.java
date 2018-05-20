@@ -14,4 +14,5 @@ public class BysjApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BysjApplication.class, args);
 	}
+
 }
