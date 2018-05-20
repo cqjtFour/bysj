@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqfour.bysj.mapper.ApplyMapper">
+  <resultMap id="BaseResultMap" type="com.cqfour.bysj.bean.Apply">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="YPBBH" jdbcType="INTEGER" property="ypbbh" />
+    <result column="ZPGWBH" jdbcType="INTEGER" property="zpgwbh" />
+    <result column="XH" jdbcType="CHAR" property="xh" />
+    <result column="YPSJ" jdbcType="CHAR" property="ypsj" />
+  </resultMap>
+</mapper>

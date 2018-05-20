@@ -1,15 +1,14 @@
 package com.cqfour.bysj.controller;
 
-import com.cqfour.bysj.bean.Menu;
-import com.cqfour.bysj.bean.Message;
-import com.cqfour.bysj.bean.RoleMenu;
-import com.cqfour.bysj.bean.User;
+import com.cqfour.bysj.bean.*;
 import com.cqfour.bysj.service.MenuService;
 import com.cqfour.bysj.service.RoleMenuService;
 import com.cqfour.bysj.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *主界面
+ * Created by HYHSG on 2018/4/18.
+ * 用户Controllo
  */
 @Controller
 public class UserController {
@@ -31,10 +31,6 @@ public class UserController {
     @Autowired
     private MenuService menuService;
 
-    /**
-     * 测试用的，无用
-     * @return
-     */
     @RequestMapping("getUser")
     @ResponseBody
     public String getAllUser(){
@@ -42,13 +38,6 @@ public class UserController {
         return "index";
     }
 
-    /**
-     * 登录
-     * @param username
-     * @param password
-     * @param request
-     * @return
-     */
     @RequestMapping("/loginUser")
     @ResponseBody
     public Message loginUser(String username, String password, HttpServletRequest request){
@@ -91,10 +80,37 @@ public class UserController {
                 }
             }
             request.getSession().setAttribute("menus",parentMenus);
+            //student session
+            Student student=new Student();
+            student.setXh(user.getDlzh());
+            request.getSession().setAttribute("student",student);
+
             request.getSession().setAttribute("user",user);
             message.setStatus("success");
             message.setMsg("");
         }
         return message;
     }
+
+
+    /**
+     * 验证是否唯一
+     * @param dzyx
+     * @return
+     */
+    @RequestMapping("/validUser")
+    @ResponseBody
+    public Message validUserExist(@RequestParam("dzyx") String dzyx){
+         User user=new User();
+         user.setDlzh(dzyx);
+         boolean flag=userService.validUser(user);
+         Message msg=new Message();
+         if(flag){//已存在
+             msg.setMsg("该邮箱已经注册");
+         }else{
+             msg.setMsg("可以注册");
+         }
+         return msg;
+    }
+
 }

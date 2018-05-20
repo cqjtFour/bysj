@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqfour.bysj.mapper.EmployersInfoCheckMapper">
+  <resultMap id="BaseResultMap" type="com.cqfour.bysj.bean.EmployersInfoCheck">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="YRDWXXSHBBH" jdbcType="INTEGER" property="yrdwxxshbbh" />
+    <result column="ZGBH" jdbcType="INTEGER" property="zgbh" />
+    <result column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
+    <result column="TJSJ" jdbcType="CHAR" property="tjsj" />
+    <result column="SHSJ" jdbcType="CHAR" property="shsj" />
+    <result column="SHZT" jdbcType="SMALLINT" property="shzt" />
+    <result column="SHYJ" jdbcType="CHAR" property="shyj" />
+  </resultMap>
+</mapper>

@@ -1,6 +1,8 @@
 package com.cqfour.bysj.bean;
 
 import javax.persistence.*;
+import javax.persistence.Transient;
+import java.beans.*;
 
 @Table(name = "t_zpgwb")
 public class Job {
@@ -20,8 +22,8 @@ public class Job {
     /**
      * 岗位名称，Char(32)
      */
-    @Column(name = "SS")
-    private String ss;
+    @Column(name = "MC")
+    private String mc;
 
     /**
      * 岗位类型，Char(16)
@@ -132,17 +134,17 @@ public class Job {
      *
      * @return SS - 岗位名称，Char(32)
      */
-    public String getSs() {
-        return ss;
+    public String getMc() {
+        return mc;
     }
 
     /**
      * 设置岗位名称，Char(32)
      *
-     * @param ss 岗位名称，Char(32)
+     * @param mc 岗位名称，Char(32)
      */
-    public void setSs(String ss) {
-        this.ss = ss;
+    public void setMc(String mc) {
+        this.mc = mc;
     }
 
     /**
@@ -305,5 +307,12 @@ public class Job {
      */
     public void setGwjj(String gwjj) {
         this.gwjj = gwjj;
+    }
+
+    @Override
+    public String toString(){
+        String string;
+        string=this.getMc()+"-"+this.getGwlx()+"-"+this.getZy()+"-"+this.getGzjy()+"-"+this.getXlyq()+"-"+this.getZpsl()+"-"+this.getYx()+"-"+this.getGwjj()+"-"+this.getFbsj();
+        return  string;
     }
 }

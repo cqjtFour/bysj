@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqfour.bysj.mapper.MenuMapper">
+  <resultMap id="BaseResultMap" type="com.cqfour.bysj.bean.Menu">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="CDBH" jdbcType="INTEGER" property="cdbh" />
+    <result column="CDMC" jdbcType="VARCHAR" property="cdmc" />
+    <result column="CDURL" jdbcType="CHAR" property="cdurl" />
+    <result column="CDDJ" jdbcType="INTEGER" property="cddj" />
+    <result column="FJCDBH" jdbcType="INTEGER" property="fjcdbh" />
+  </resultMap>
+
+  <select id="searchMenu" resultMap="BaseResultMap" parameterType="java.lang.String">
+    <bind name="pattern" value="'%' + cdmc + '%'" />
+    SELECT *
+    from t_cdb where cdmc LIKE #{pattern}
+  </select>
+
+</mapper>

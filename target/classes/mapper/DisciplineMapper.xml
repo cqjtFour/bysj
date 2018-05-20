@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqfour.bysj.mapper.DisciplineMapper">
+    <resultMap id="BaseResultMap" type="com.cqfour.bysj.bean.Discipline">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="ZYBH" jdbcType="INTEGER" property="zybh"/>
+        <result column="XYBH" jdbcType="INTEGER" property="xybh"/>
+        <result column="ZYMC" jdbcType="VARCHAR" property="zymc"/>
+        <result column="YJBYSRS" jdbcType="INTEGER" property="yjbysrs"/>
+    </resultMap>
+
+
+    <resultMap id="BaseResultMapWithFaculty" type="com.cqfour.bysj.bean.Discipline">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="ZYBH" jdbcType="INTEGER" property="zybh"/>
+        <result column="XYBH" jdbcType="INTEGER" property="xybh"/>
+        <result column="ZYMC" jdbcType="VARCHAR" property="zymc"/>
+        <result column="YJBYSRS" jdbcType="INTEGER" property="yjbysrs"/>
+        <association property="faculty" javaType="com.cqfour.bysj.bean.Faculty">
+            <id column="XYBH" jdbcType="INTEGER" property="xybh"/>
+            <result column="XYMC" jdbcType="VARCHAR" property="xymc"/>
+            <result column="XYLXR" jdbcType="CHAR" property="xylxr"/>
+            <result column="LXDH" jdbcType="CHAR" property="lxdh"/>
+            <result column="XYJJ" jdbcType="LONGVARCHAR" property="xyjj"/>
+        </association>
+    </resultMap>
+
+    <select id="selectAllWithFaculty" resultMap="BaseResultMapWithFaculty">
+      SELECT * from t_zyb,t_xyb WHERE t_zyb.xybh = t_xyb.xybh
+    </select>
+</mapper>
