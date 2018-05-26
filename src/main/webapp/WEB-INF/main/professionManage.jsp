@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui-1.10.4.custom.css"/>
+    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.js"></script>
     <script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/facultyValidate.js"></script>
 </head>
+
 <body>
+<div id="dialog-confirm" title="提示">
+    <label id="labeln">
+    </label>
+</div>
 <%--添加菜单模态框--%>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -17,51 +23,30 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">增加学院</h4>
+                <h4 class="modal-title" id="myModalLabel">增加专业</h4>
             </div>
             <div class="modal-body">
-                <form class="form-horizontal" id="addFacultyForm">
+                <form class="form-horizontal" id="addMenuForm">
                     <div class="form-group ">
-                        <label for="facultyName" class="col-sm-2 control-label">学院名称</label>
+                        <label for="proName" class="col-sm-2 control-label">专业名称</label>
                         <div class="col-sm-5">
-                            <input type="text" name="facultyName" class="form-control"
-                                   id="facultyName" placeholder="学院名称" onblur="valColName()">
-                            <span class="" aria-hidden="true"></span>
+                            <input type="text" name="proName" class="form-control"
+                                   id="proName" placeholder="专业名称" onblur="valZyName()">
                             <span class="help-block"></span>
                         </div>
                     </div>
-                    <div class="form-group ">
-                        <label for="colPeople" class="col-sm-2 control-label">学院负责人</label>
+                    <div class="form-group "  id="hiddenDiv">
+                        <label for="ssxy" class="col-sm-2 control-label">所属学院</label>
                         <div class="col-sm-5">
-                            <input type="text" name="colPeople" class="form-control"
-                                   id="colPeople" placeholder="学院负责人" onblur="valColPeople()">
-                            <span class="" aria-hidden="true"></span>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>
-                    <div class="form-group ">
-                        <label for="coltel" class="col-sm-2 control-label">联系电话</label>
-                        <div class="col-sm-5">
-                            <input type="text" name="coltel" class="form-control"
-                                   id="coltel" placeholder="联系电话" onblur="valColTel()">
-                            <span class="" aria-hidden="true"></span>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>
-                    <div class="form-group " >
-                        <label for="colshow" class="col-sm-2 control-label">学院简介</label>
-                        <div class="col-sm-5">
-                            <input type="text" name="colshow" class="form-control"
-                                   id="colshow" placeholder="学院简介" onblur="valColShow()">
-                            <span class="" aria-hidden="true"></span>
-                            <span class="help-block"></span>
+                            <select style="width: 150px;height: 35px ;border-radius:5px;" id="ssxy">
+                            </select>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" id="addFacultyBtn">保存</button>
+                <button type="button" class="btn btn-primary" id="addMenuBtn">保存</button>
             </div>
         </div>
     </div>
@@ -73,51 +58,65 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel1"></h4>
+                <h4 class="modal-title" id="myModalLabel1">修改专业</h4>
             </div>
             <div class="modal-body">
                 <form class="form-horizontal" id="updateMenuForm">
                     <div class="form-group ">
-                        <label for="facultyName_update" class="col-sm-2 control-label">学院名称</label>
+                        <label for="updateProName" class="col-sm-2 control-label">专业名称</label>
                         <div class="col-sm-5">
-                            <input type="text" name="facultyName" class="form-control"
-                                   id="facultyName_update" placeholder="学院名称" onblur="valColName_update()">
-                            <span class="" aria-hidden="true"></span>
+                            <input type="text" name="proName" class="form-control"
+                                   id="updateProName" placeholder="菜单名称">
                             <span class="help-block"></span>
                         </div>
                     </div>
-                    <div class="form-group ">
-                        <label for="colPeople_update" class="col-sm-2 control-label">学院负责人</label>
+                    <div class="form-group "  id="updateHiddenDiv">
+                        <label for="updateParentProfession" class="col-sm-2 control-label">选择所属学院</label>
                         <div class="col-sm-5">
-                            <input type="text" name="colPeople" class="form-control"
-                                   id="colPeople_update" placeholder="学院负责人" onblur="valColPeople_update()">
-                            <span class="" aria-hidden="true"></span>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>
-                    <div class="form-group ">
-                        <label for="coltel_update" class="col-sm-2 control-label">联系电话</label>
-                        <div class="col-sm-5">
-                            <input type="text" name="coltel" class="form-control"
-                                   id="coltel_update" placeholder="联系电话" onblur="valColTel_update()">
-                            <span class="" aria-hidden="true"></span>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>
-                    <div class="form-group " >
-                        <label for="colshow_update" class="col-sm-2 control-label">学院简介</label>
-                        <div class="col-sm-5">
-                            <input type="text" name="colshow" class="form-control"
-                                   id="colshow_update" placeholder="学院简介" onblur="valColShow_update()">
-                            <span class="" aria-hidden="true"></span>
-                            <span class="help-block"></span>
+                            <select style="width: 150px;height: 35px ;border-radius:5px;" id="updateParentProfession">
+                            </select>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary" id="saveUpdate">保存</button>
+                <button type="button" class="btn btn-primary" id="save">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<%--权限分配模态框--%>
+<!-- Modal -->
+<div class="modal fade" id="assignMyModal" tabindex="-1" role="dialog" aria-labelledby="assignModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="assign">专业分配</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="assignMenuForm">
+                    <div class="form-group ">
+                        <label for="assignProName" class="col-sm-2 control-label">专业名称</label>
+                        <div class="col-sm-5">
+                            <input type="text" name="proName" class="form-control"
+                                   id="assignProName" placeholder="菜单名称" disabled>
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group " id="assignHiddenDiv">
+                        <label for="assignFaculty" class="col-sm-2 control-label">选择学院</label>
+                        <div class="col-sm-5">
+                            <select style="width: 150px;height: 35px ;border-radius:5px;" id="assignFaculty" disabled>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="assignSave">保存</button>
             </div>
         </div>
     </div>
@@ -126,32 +125,34 @@
     <div class="row" style="margin-top: 20px;">
         <form class="form-inline">
             <div class="form-group">
-                <button type="button" class="form-control btn btn-info" id="addFaculty" data-toggle="modal" data-target="#myModal">
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>增加学院
+                <button type="button" class="form-control btn btn-info" id="addMune" data-toggle="modal" data-target="#myModal">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>增加专业
                 </button>
             </div>
             <div class="form-group">
-                <button type="button" class="form-control btn btn-warning" id="updateFaculty" data-toggle="popover" data-content="" data-target="#updateMyModal">
-                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改学院
+                <button type="button" class="form-control btn btn-warning" id="updateProfession" data-toggle="popover" data-content="" data-target="#updateMyModal">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改专业
                 </button>
             </div>
-            <div class="form-group">
-                <button type="button" class="form-control btn btn-danger" id="deleteFaculty" data-toggle="popover" data-content="">
-                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>删除学院
-                </button>
+            <div class="form-group input-group col-md-offset-3">
+                <input id="inputMenuName" type="text" class="form-control" placeholder="模糊搜索专业" >
+                <span class="input-group-btn">
+                    <button onclick="to_page_search()" class="btn btn-default" id="searchMenu" type="button" style="height: 34px;">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
             </div>
         </form>
     </div>
     <div class="row">
-        <table class="table table-striped table-condensed" id="facultyTable">
+        <table class="table table-striped table-condensed" id="menuTable">
             <thead>
             <tr>
                 <td><input type="checkbox" id="check_all"/></td>
-                <td>学院编号</td>
-                <td>学院名称</td>
-                <td>学院联系人</td>
-                <td>联系电话</td>
-                <td>学院简介</td>
+                <td>专业编号</td>
+                <td>专业名称</td>
+                <td>专业人数</td>
+                <td>所属学院</td>
             </tr>
             </thead>
             <tbody>
@@ -173,12 +174,12 @@
     });
     function to_page(page) {
         $.ajax({
-            url : "/collegeManageInfo",
+            url : "/professionManageInfo",
             data : "page=" + page,
             type : "GET",
             success : function(result) {
-                //1、解析并显示学院数据
-                build_faculty_table(result);
+                //1、解析并显示菜单数据
+                build_profession_table(result);
                 //2、解析并显示分页数据
                 build_page_nav(result);
                 //3、解析并显示分页条数据
@@ -189,12 +190,12 @@
     function to_page_search(page) {
         var inputData = $("#inputMenuName").val();
         $.ajax({
-            url : "/searchMenuInfo",
+            url : "/selectSomeProfession",
             data : {"page":page,"inputData":inputData},
             type : "GET",
             success : function(result) {
                 //1、解析并显示员工数据
-                build_menu_table(result);
+                build_profession_table(result);
                 //2、解析并显示分页数据
                 build_page_nav(result);
                 //3、解析并显示分页条数据
@@ -203,20 +204,19 @@
         })
     }
     //解析并显示菜单数据
-    function build_faculty_table(result) {
+    function build_profession_table(result) {
         //清空table
-        $("#facultyTable tbody").empty();
-        var faculty = result.list;
-        $.each(faculty, function(index, item) {
+        $("#menuTable tbody").empty();
+        var menu = result.list;
+        $.each(menu, function(index, item) {
             var checkbox = $("<td></td>").append("<input type='checkbox' class='check_item'/>");
-            var colId = $("<td></td>").append(item.xybh);
-            var colName = $("<td></td>").append(item.xymc);
-            var colPeople = $("<td></td>").append(item.xylxr);
-            var coltel = $("<td></td>").append(item.lxdh);
-            var colshow = $("<td></td>").append(item.xyjj);
-            $("<tr></tr>").append(checkbox).append(colId)
-                .append(colName).append(colPeople).append(
-                coltel).append(colshow).appendTo("#facultyTable tbody");
+            var proNo = $("<td></td>").append(item.zybh);
+            var proName = $("<td></td>").append(item.zymc);
+            var zyrs = $("<td></td>").append(item.yjbysrs);
+            var ssxy = $("<td></td>").append(item.faculty.xymc);
+            $("<tr></tr>").append(checkbox).append(proNo)
+                .append(proName).append(zyrs).append(
+                ssxy).appendTo("#menuTable tbody");
         });
     }
     //3、解析并显示分页条数据
@@ -346,6 +346,62 @@
         navEle.appendTo("#page_nav_area");
     };
 
+    $("#addMune").click(function () {
+        $.ajax({
+            url:"/getAllFaculty",
+            type:"POST",
+            success:function(result){
+                $.each(result,function(){
+                    var optionEle = $("<option></option>").append(this.xymc).attr("value",this.xybh);
+                    optionEle.appendTo("#ssxy");
+                });
+            }
+        });
+    });
+    //添加菜单
+    $("#addMenuBtn").click(function () {
+        var proName = $("#proName").val();
+        var xybh = $("#ssxy").val();
+        $.ajax({
+            url:"/addProfession",
+            type:"POST",
+            data:{"proName":proName,"xybh":xybh},
+            success:function(result){
+                //隐藏模态框
+                $("#myModal").modal('hide');
+                if (result.msg=="添加成功！"){
+                    document.getElementById("labeln").innerHTML = "添加成功";
+                    $( "#dialog-confirm" ).dialog({
+                        resizable: false,
+                        height:140,
+                        modal: true,
+                        buttons: {
+                            "确定": function() {
+                                $( this ).dialog( "close" );
+                            },
+                        }
+                    });
+                }else if ((result.msg=="添加失败！")){
+                    document.getElementById("labeln").innerHTML = "添加失败";
+                    $( "#dialog-confirm-fail" ).dialog({
+                        resizable: false,
+                        height:140,
+                        modal: true,
+                        buttons: {
+                            "确定": function() {
+                                $( this ).dialog( "close" );
+                            },
+                        }
+                    });
+                }
+
+
+                //显示最后一页
+                to_page(totalRecord);
+            }
+
+        });
+    });
     //全选全不选
     $("#check_all").click(function () {
         $(".check_item").prop("checked",$(this).prop("checked"));
@@ -355,102 +411,61 @@
         $("#check_all").prop("checked",flag);
     });
 
-    /**
-     * 添加学院
-     */
-    $("#addFacultyBtn").click(function () {
-        var colName = $("#facultyName").val();
-        var colPeople = $("#colPeople").val();
-        var coltel = $("#coltel").val();
-        var colshow = $("#colshow").val();
-        if (validateForm()){
-            $.ajax({
-                url:"/addFaculty",
-                type:"POST",
-                data:{"colName":colName,"colPeople":colPeople,"coltel":coltel,"colshow":colshow},
-                success:function(result){
-                    //隐藏模态框
-                    $("#myModal").modal('hide');
-                    $("#facultyName").val("");
-                    $("#colPeople").val("");
-                    $("#coltel").val("");
-                    $("#colshow").val("");
-                    //显示最后一页
-                    to_page(totalRecord);
-                }
-            });
-        }
-
-    });
-
-    //删除学院
-    $("#deleteFaculty").click(function () {
-        var deleteNos = "";
-        $.each($(".check_item:checked"),function () {
-            deleteNos += $(this).parents("tr").find("td:eq(1)").text()+",";
-        });
-        if ($(".check_item:checked")==0){
-            $("#deleteFaculty").attr("data-content","至少选择一条数据删除");
-        }else{
-            deleteNos = deleteNos.substring(0,deleteNos.length-1);
-            if (confirm("确定删除编号为["+deleteNos+"]的菜单吗")){
-                $.ajax({
-                    url:"/deleteFaculty",
-                    type:"POST",
-                    data:{"deleteNos":deleteNos},
-                    success:function(result){
-                        if (result.status === "0"){
-                            alert(result.msg);
-                        } else if (result.status === "1"){
-                            alert(result.msg);
-                            to_page(currentPage);
-                        }
-
-                    }
-                });
-            }
-        }
-    });
     var updateNo = "";
-    $("#updateFaculty").click(function () {
+    $("#updateProfession").click(function () {
+        //修改菜单
         var updateNos = "";
         $.each($(".check_item:checked"),function () {
             updateNos = $(this).parents("tr").find("td:eq(1)").text();
         });
         if ($(".check_item:checked").length==0||$(".check_item:checked").length>1){
-            $("#updateFaculty").attr("data-content","只能选择一条数据修改");
+            $("#updateMenu").attr("data-content","只能选择一条数据修改");
         }else{
-            $('#updateFaculty').popover('hide');
+            $('#updateProfession').popover('hide');
             $('#updateMyModal').modal('show');
             $.ajax({
-                url:"/selectOneFaculty",
+                url:"/selectOneProfession",
                 type:"POST",
                 data:{"updateNos":updateNos},
                 success:function(result){
-                    $("#facultyName_update").val(result.xymc);
-                    $("#colPeople_update").val(result.xylxr);
-                    $("#coltel_update").val(result.lxdh);
-                    $("#colshow_update").val(result.xyjj);
+                    $("#updateProName").val(result.zymc);
+                    $.ajax({
+                        url:"/getAllFaculty",
+                        type:"POST",
+                        success:function(result){
+                            //显示2级菜单信息
+                            $.each(result,function(){
+                                var optionEle = $("<option></option>").append(this.xymc).attr("value",this.xybh);
+                                optionEle.appendTo("#updateParentProfession");
+                            });
+                        }
+                    });
+                    $("#updateParentProfession").val(result.xybh);
                     updateNo = updateNos;
                 }
             });
         }
     });
-    $("#saveUpdate").click(function () {
-        var facultyNo = updateNo;
-        var colName = $("#facultyName_update").val();
-        var colPeople = $("#colPeople_update").val();
-        var coltel = $("#coltel_update").val();
-        var colshow = $("#colshow_update").val();
+    //修改菜单
+    $("#save").click(function () {
+        var proNo = updateNo;
+        var xybh = $("#updateParentProfession").val();
+        var proName = $("#updateProName").val();
         $.ajax({
-            url:"/updateFaculty",
+            url:"/updateProfession",
             type:"POST",
-            data:{"facultyNo":facultyNo,"colName":colName,"colPeople":colPeople,"coltel":coltel,"colshow":colshow},
+            data:{"proNo":proNo,"proName":proName,"xybh":xybh},
             success:function(result){
-                //隐藏模态框
-                $("#updateMyModal").modal('hide');
-                //显示最后一页
-                to_page(currentPage);
+                if (result.status=="1"){
+                    alert(result.msg);
+                    //隐藏模态框
+                    $("#updateMyModal").modal('hide');
+                    //显示最后一页
+                    to_page(currentPage);
+                }else{
+                    alert(result.msg);
+                }
+
             }
         });
     });

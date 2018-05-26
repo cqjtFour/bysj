@@ -62,6 +62,115 @@
     <result column="TCAH" jdbcType="LONGVARCHAR" property="tcah" />
   </resultMap>
 
+
+  <resultMap id="BaseResultMapWithDisciplineAndSign" type="com.cqfour.bysj.bean.Student">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="XH" jdbcType="CHAR" property="xh" />
+    <result column="DLZH" jdbcType="CHAR" property="dlzh" />
+    <result column="ZYBH" jdbcType="INTEGER" property="zybh" />
+    <result column="BYSJS" jdbcType="INTEGER" property="bysjs" />
+    <result column="XSZP" jdbcType="CHAR" property="xszp" />
+    <result column="XSXM" jdbcType="CHAR" property="xsxm" />
+    <result column="SFYJY" jdbcType="INTEGER" property="sfyjy" />
+    <result column="JYFS" jdbcType="INTEGER" property="jyfs" />
+    <result column="JYSJ" jdbcType="CHAR" property="jysj" />
+    <result column="SFSFLQ" jdbcType="SMALLINT" property="sfsflq" />
+    <result column="SJHM" jdbcType="CHAR" property="sjhm" />
+    <result column="EMAIL" jdbcType="CHAR" property="email" />
+    <result column="XB" jdbcType="SMALLINT" property="xb" />
+    <result column="CSRQ" jdbcType="CHAR" property="csrq" />
+    <result column="SYD" jdbcType="CHAR" property="syd" />
+    <result column="XL" jdbcType="SMALLINT" property="xl" />
+    <result column="ZZMM" jdbcType="CHAR" property="zzmm" />
+    <result column="MZ" jdbcType="CHAR" property="mz" />
+    <result column="ZYPM" jdbcType="CHAR" property="zypm" />
+    <result column="SG" jdbcType="CHAR" property="sg" />
+    <result column="STZK" jdbcType="CHAR" property="stzk" />
+    <result column="SFTGYYSJ" jdbcType="SMALLINT" property="sftgyysj" />
+    <result column="YYSJCJ" jdbcType="CHAR" property="yysjcj" />
+    <result column="SFTGYYLJ" jdbcType="SMALLINT" property="sftgyylj" />
+    <result column="YYLJCJ" jdbcType="CHAR" property="yyljcj" />
+    <result column="JSJSP" jdbcType="CHAR" property="jsjsp" />
+    <result column="BKJDXX" jdbcType="CHAR" property="bkjdxx" />
+    <result column="BKZY" jdbcType="CHAR" property="bkzy" />
+    <result column="BKKSSJ" jdbcType="CHAR" property="bkkssj" />
+    <result column="BKBYSJ" jdbcType="CHAR" property="bkbysj" />
+    <result column="SSJDXX" jdbcType="CHAR" property="ssjdxx" />
+    <result column="SSZY" jdbcType="CHAR" property="sszy" />
+    <result column="SSKSSJ" jdbcType="CHAR" property="sskssj" />
+    <result column="SSBYSJ" jdbcType="CHAR" property="ssbysj" />
+    <result column="SXGSMC" jdbcType="CHAR" property="sxgsmc" />
+    <result column="GSHY" jdbcType="CHAR" property="gshy" />
+    <result column="SXZW" jdbcType="CHAR" property="sxzw" />
+    <result column="SXDD" jdbcType="CHAR" property="sxdd" />
+    <result column="SXKSSJ" jdbcType="CHAR" property="sxkssj" />
+    <result column="SXJSSJ" jdbcType="CHAR" property="sxjssj" />
+    <result column="XMMC" jdbcType="CHAR" property="xmmc" />
+    <result column="XMKSSJ" jdbcType="CHAR" property="xmkssj" />
+    <result column="XMJSSJ" jdbcType="CHAR" property="xmjssj" />
+    <result column="QWHY" jdbcType="CHAR" property="qwhy" />
+    <result column="QWZW" jdbcType="CHAR" property="qwzw" />
+    <result column="QWGZDD" jdbcType="CHAR" property="qwgzdd" />
+    <result column="QWYX" jdbcType="CHAR" property="qwyx" />
+    <result column="ZWPJ" jdbcType="CHAR" property="zwpj" />
+    <result column="GXSJ" jdbcType="CHAR" property="gxsj" />
+    <result column="BZ" jdbcType="CHAR" property="bz" />
+    <result column="SHSJJL" jdbcType="LONGVARCHAR" property="shsjjl" />
+    <result column="ZYSXNR" jdbcType="LONGVARCHAR" property="zysxnr" />
+    <result column="XMNRMS" jdbcType="LONGVARCHAR" property="xmnrms" />
+    <result column="HJQK" jdbcType="LONGVARCHAR" property="hjqk" />
+    <result column="TCAH" jdbcType="LONGVARCHAR" property="tcah" />
+    <association property="discipline" javaType="com.cqfour.bysj.bean.Discipline">
+      <id column="ZYBH" jdbcType="INTEGER" property="zybh"/>
+      <result column="XYBH" jdbcType="INTEGER" property="xybh"/>
+      <result column="ZYMC" jdbcType="VARCHAR" property="zymc"/>
+      <result column="YJBYSRS" jdbcType="INTEGER" property="yjbysrs"/>
+      <association property="faculty" javaType="com.cqfour.bysj.bean.Faculty">
+        <id column="XYBH" jdbcType="INTEGER" property="xybh"/>
+        <result column="XYMC" jdbcType="VARCHAR" property="xymc"/>
+        <result column="XYLXR" jdbcType="CHAR" property="xylxr"/>
+        <result column="LXDH" jdbcType="CHAR" property="lxdh"/>
+        <result column="XYJJ" jdbcType="LONGVARCHAR" property="xyjj"/>
+      </association>
+    </association>
+    <association property="sign" javaType="com.cqfour.bysj.bean.Sign">
+      <id column="QYBBH" jdbcType="INTEGER" property="qybbh" />
+      <result column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
+      <result column="XH" jdbcType="CHAR" property="xh" />
+      <result column="SFQDSF" jdbcType="SMALLINT" property="sfqdsf" />
+      <result column="QDSJ" jdbcType="CHAR" property="qdsj" />
+      <result column="SFSFSJJYC" jdbcType="SMALLINT" property="sfsfsjjyc" />
+      <result column="SJSJ" jdbcType="CHAR" property="sjsj" />
+      <result column="SFYHY" jdbcType="SMALLINT" property="sfyhy" />
+      <result column="HYSJ" jdbcType="CHAR" property="hysj" />
+      <result column="XSFSFLQ" jdbcType="SMALLINT" property="xsfsflq" />
+      <result column="LQSJ" jdbcType="CHAR" property="lqsj" />
+    </association>
+  </resultMap>
+
+  <select id="selectBigZaHui" resultMap="BaseResultMapWithDisciplineAndSign">
+    SELECT * from t_qyb,t_xsb,t_zyb,t_xyb where t_qyb.XH = t_xsb.XH
+    and t_xsb.ZYBH=t_zyb.ZYBH and t_zyb.XYBH = t_xyb.XYBH
+  </select>
+
+  <select id="queryStudentWithSign" resultMap="BaseResultMapWithDisciplineAndSign">
+    SELECT * from t_qyb,t_xsb,t_zyb,t_xyb
+    <where>
+      t_qyb.XH = t_xsb.XH
+      and t_xsb.ZYBH=t_zyb.ZYBH and t_zyb.XYBH = t_xyb.XYBH
+      and bysjs = #{year}
+      <if test="collega != null and collega !=''">
+        AND t_zyb.XYBH = #{collega}
+      </if>
+      <if test="sure != null ">
+        AND sfqdsf = #{sure}
+      </if>
+    </where>
+  </select>
+
+
   <sql id="studentAllData">
     *
   </sql>

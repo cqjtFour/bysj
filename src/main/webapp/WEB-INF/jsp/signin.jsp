@@ -219,7 +219,7 @@ To change this template use File | Settings | File Templates.
 
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                        <button style="width: 200px;"  type="submit" onclick="beroreSub()"  class="btn btn-default form-control">提交</button>
+                        <button style="width: 150px;"  type="submit" onclick="beroreSub()"  class="btn btn-info form-control">提交</button>
                         </div>
                     </div>
 

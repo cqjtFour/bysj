@@ -59,8 +59,9 @@ public class StudentAccountManageController {
         return pageInfo;
     }
     @RequestMapping("/fileUrl")
+
     @ResponseBody
-    public Message testExcel(@RequestParam("file") MultipartFile file, HttpSession session){
+    public Message testExcel(@RequestParam("file") MultipartFile file){
         Message message = new Message();
 
         //获取文件名

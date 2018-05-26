@@ -495,6 +495,7 @@
             success:function(result){
                 //隐藏模态框
                 $("#myModal").modal('hide');
+                alert("添加成功");
                 //显示最后一页
                 to_page(totalRecord);
             }
@@ -526,7 +527,13 @@
                     type:"POST",
                     data:{"deleteNos":deleteNos},
                     success:function(result){
-                        to_page(currentPage);
+                        if (result.status=="1"){
+                            alert(result.msg);
+                            //显示最后一页
+                            to_page(currentPage);
+                        }else{
+                            alert(result.msg);
+                        }
                     }
                 });
             }
@@ -588,6 +595,7 @@
             type:"POST",
             data:{"menuNo":menuNo,"menuName":menuName,"menuUrl":menuUrl,"menuType":menuType,"parentMenu":parent},
             success:function(result){
+                alert("修改成功");
                 //隐藏模态框
                 $("#updateMyModal").modal('hide');
                 //显示最后一页
@@ -687,6 +695,7 @@
             success:function(result){
                 //隐藏模态框
                 $("#assignMyModal").modal('hide');
+                alert("分配成功");
                 //显示最后一页
                 to_page(currentPage);
             }

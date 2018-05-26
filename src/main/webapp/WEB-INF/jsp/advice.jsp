@@ -20,7 +20,7 @@
     <link href="css/advice.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
     <!--// Javascripts //-->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/animatedcollapse.js"></script>
     <script type="text/javascript" src="js/ddsmoothmenu.js"></script>

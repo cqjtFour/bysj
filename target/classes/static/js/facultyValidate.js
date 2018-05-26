@@ -17,6 +17,26 @@ function valColName() {
     }
 }
 
+function valZyName() {
+    if ($("#facultyName").val().length==0||$("#facultyName").val().length>16){
+        $("#facultyName").next("span").removeClass("glyphicon glyphicon-ok form-control-feedback");
+        $("#facultyName").parent().addClass("has-feedback");
+        $("#facultyName").parent().addClass("has-error");
+        $("#facultyName").next("soan").addClass("glyphicon glyphicon-remove form-control-feedback");
+        $("#facultyName").next("span").next("span").text("学院名称必填且在16个汉字之内");
+        return false;
+    }else{
+        $("#facultyName").next("soan").removeClass("glyphicon glyphicon-remove form-control-feedback");
+        $("#facultyName").next("span").next("span").text("");
+        $("#facultyName").parent().removeClass("has-error");
+        $("#facultyName").parent().addClass("has-feedback");
+        $("#facultyName").parent().addClass("has-success");
+        $("#facultyName").next("span").addClass("glyphicon glyphicon-ok form-control-feedback");
+        return true;
+    }
+}
+
+
 function valColPeople() {
     if ($("#colPeople").val().length==0||$("#colPeople").val().length>4){
         $("#colPeople").next("span").removeClass("glyphicon glyphicon-ok form-control-feedback");

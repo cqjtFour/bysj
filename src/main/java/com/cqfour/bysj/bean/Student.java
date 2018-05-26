@@ -1,5 +1,7 @@
 package com.cqfour.bysj.bean;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 
 @Table(name = "t_xsb")
@@ -335,16 +337,20 @@ public class Student {
     @Column(name = "TCAH")
     private String tcah;
 
+
+    @Transient
+    private Sign sign;
+
+    public Sign getSign() {
+        return sign;
+    }
+
+    public void setSign(Sign sign) {
+        this.sign = sign;
+    }
+
     @Transient
     private Discipline discipline;
-
-    public Discipline getDiscipline() {
-        return discipline;
-    }
-
-    public void setDiscipline(Discipline discipline) {
-        this.discipline = discipline;
-    }
 
     @Transient
     private User user;
@@ -357,6 +363,14 @@ public class Student {
         this.user = user;
     }
 
+
+    public Discipline getDiscipline() {
+        return discipline;
+    }
+
+    public void setDiscipline(Discipline discipline) {
+        this.discipline = discipline;
+    }
     /**
      * 获取学号，Char(16)
      *
