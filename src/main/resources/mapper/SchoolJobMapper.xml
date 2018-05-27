@@ -19,4 +19,5 @@
     <result column="DFNR" jdbcType="CHAR" property="dfnr" />
     <result column="YYNR" jdbcType="LONGVARCHAR" property="yynr" />
   </resultMap>
+
 </mapper>

@@ -23,7 +23,7 @@ public class FacultyController {
     }
 
     /**
-     * 菜单分页信息
+     * 分页信息
      *
      * @param page
      * @return
@@ -49,7 +49,7 @@ public class FacultyController {
     }
 
     /**
-     * 删除某个菜单
+     * 删除某个学院
      *
      * @param deleteNos
      * @return

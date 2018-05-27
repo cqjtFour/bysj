@@ -127,7 +127,7 @@
             				</thead>
             				<tbody>
 								<c:forEach items="${student_pageInfo.list}" var="student">
-									<tr>
+									<tr style="cursor: pointer" onclick="toShow()">
 										<td>${student.xh}</td>
 										<td>${student.xsxm}</td>
 										<td>
@@ -159,6 +159,11 @@
 										<td>${student.qwgzdd}</td>
 										<td>${student.gxsj}</td>
 									</tr>
+									<script>
+                                        function toShow(i) {
+                                            window.location.href = "/login";
+                                        }
+									</script>
 								</c:forEach>
             				</tbody>
             			</table>

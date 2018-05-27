@@ -28,6 +28,7 @@ function drawPic() {
     ctx.fillRect(0, 0, width, height);
     /**绘制文字**/
     var str = '123456789';
+    string = "";
     for (var i = 0; i < 4; i++) {
         var txt = str[randomNum(0, str.length)];
         string = string + txt;

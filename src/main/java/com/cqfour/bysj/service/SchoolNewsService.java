@@ -7,6 +7,7 @@ import com.cqfour.bysj.mapper.SchoolNewsMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -14,6 +15,9 @@ public class SchoolNewsService {
 
     @Autowired
     private SchoolNewsMapper schoolNewsMapper;
+
+    @Autowired
+    private EmploymentDepartmentMapper employmentDepartmentMapper;
 
 
     /**
@@ -133,4 +137,27 @@ public class SchoolNewsService {
         return schoolNewsMapper.selectEmploymentPolicyByLlcs();
     }
 
+
+    public List<SchoolNews> getAllInfo(){
+        return schoolNewsMapper.getAllInfo();
+    }
+
+    public void insertSchoolNews(String xxbt, String xxlx, String xxzw, int i) {
+        EmploymentDepartment employmentDepartment = employmentDepartmentMapper.selectEmpByZGBH(i);
+        System.out.println(employmentDepartment.toString());
+        schoolNewsMapper.insertSchoolNews(xxbt,xxlx,xxzw,employmentDepartment.getZgbh());
+    }
+
+    public void deleteMenu(int i) {
+        schoolNewsMapper.deleteByPrimaryKey(i);
+    }
+
+    /**
+     * 返回某种信息类型的所有信息
+     * @param kind
+     * @return
+     */
+    public List<SchoolNews> getAllInfoByKind(String kind) {
+        return schoolNewsMapper.getKindOfXxlx(kind);
+    }
 }

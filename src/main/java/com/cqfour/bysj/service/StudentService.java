@@ -1,11 +1,10 @@
 package com.cqfour.bysj.service;
 
-import com.cqfour.bysj.bean.Discipline;
-import com.cqfour.bysj.bean.Student;
-import com.cqfour.bysj.bean.User;
+import com.cqfour.bysj.bean.*;
 import com.cqfour.bysj.mapper.StudentMapper;
 import com.cqfour.bysj.mapper.UserMapper;
 import com.cqfour.bysj.util.ExcelImportUtils;
+import com.cqfour.bysj.util.StringUtil;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -21,9 +20,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class StudentService {
@@ -179,5 +176,109 @@ public class StudentService {
             tempFile.delete();
         }
         return errorMsg;
+    }
+
+    /**
+     * 得到就业率信息
+     * @param js
+     * @return
+     */
+    public List<JiuYeLv> selectBigZaHui(String js){
+        List<JiuYeLv> xyInfo = studentMapper.selectPart(js);
+        List<JiuYeLv> qyInfo = studentMapper.selectPartqy(js);
+        List<JiuYeLv> info= new ArrayList<>();
+        boolean flag ;//标志在学院表中是否有签约表没有的的学院
+        for(JiuYeLv jiuYeLv : xyInfo){
+            flag = false;
+            for(JiuYeLv qyjiuYeLv : qyInfo){
+                if (jiuYeLv.getXymc().equals(qyjiuYeLv.getXymc())){
+                    Double i = (qyjiuYeLv.getNum()/jiuYeLv.getNum())*100;
+                    JiuYeLv jiuYeLv1 = new JiuYeLv();
+                    jiuYeLv1.setNum(i);
+                    jiuYeLv1.setXymc(jiuYeLv.getXymc());
+                    info.add(jiuYeLv1);
+                    flag = true;
+                }
+            }
+            if (flag==false){
+                JiuYeLv jiuYeLv1 = new JiuYeLv();
+                jiuYeLv1.setNum(0.0);
+                jiuYeLv1.setXymc(jiuYeLv.getXymc());
+                info.add(jiuYeLv1);
+            }
+
+        }
+        return info;
+    }
+
+    /**
+     * 得到所有的毕业生签约信息
+     * @return
+     */
+    public List<Student> selectBigZaHui(){
+        return studentMapper.selectBigZaHui();
+    }
+
+    /**
+     * 条件查询学生就业情况
+     * @param year
+     * @param collega
+     * @param sure
+     * @return
+     */
+    public List<Student> queryStudentWithSign(String year, Integer collega
+            , Integer sure){
+        return studentMapper.queryStudentWithSign(year,collega,sure);
+    }
+
+    /**
+     * 通过届数查询学生
+     * @param js
+     * @return
+     */
+    public List<Student> selectStuentByJs(String js){
+        return studentMapper.selectStuentByJs(js);
+    }
+
+    /**
+     * 将学生就业信息导出excel的数据
+     * @return
+     */
+    public List<JiuYeStudentInfo> studentInfoToExcel(String year, Integer collega
+            , Integer sure){
+        List<Student> studentList = queryStudentWithSign(year, collega, sure);
+        List<JiuYeStudentInfo> list = new ArrayList<>();
+        int i = 1;
+        for(Student student : studentList){
+            JiuYeStudentInfo jiuYeStudentInfo = new JiuYeStudentInfo();
+            jiuYeStudentInfo.setId(String.valueOf(i));
+            jiuYeStudentInfo.setStuNo(student.getXh());
+            jiuYeStudentInfo.setStuName(student.getXsxm());
+            jiuYeStudentInfo.setZy(student.getDiscipline().getZymc());
+            jiuYeStudentInfo.setXy(student.getDiscipline().getFaculty().getXymc());
+            if (student.getSign().getSfqdsf()==0){
+                jiuYeStudentInfo.setSfqdsfxy("否");
+            }else if (student.getSign().getSfqdsf()==1){
+                jiuYeStudentInfo.setSfqdsfxy("是");
+            }
+            if (student.getSign().getSfsfsjjyc()==0){
+                jiuYeStudentInfo.setSfsfsj("否");
+            }else if (student.getSign().getSfsfsjjyc()==1){
+                jiuYeStudentInfo.setSfsfsj("是");
+            }
+            if (student.getSign().getSfyhy()==0){
+                jiuYeStudentInfo.setSfhy("否");
+            }else if (student.getSign().getSfyhy()==1){
+                jiuYeStudentInfo.setSfhy("是");
+            }
+            if (student.getSign().getXsfsflq()==0){
+                jiuYeStudentInfo.setXsfsflq("否");
+            }else if (student.getSign().getSfyhy()==1){
+                jiuYeStudentInfo.setXsfsflq("是");
+            }
+            list.add(jiuYeStudentInfo);
+            i++;
+        }
+        return list;
     }
 }

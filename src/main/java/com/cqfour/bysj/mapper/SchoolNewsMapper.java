@@ -2,8 +2,7 @@ package com.cqfour.bysj.mapper;
 
 import com.cqfour.bysj.bean.SchoolNews;
 import com.cqfour.bysj.util.MyMapper;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -83,6 +82,13 @@ public interface SchoolNewsMapper extends MyMapper<SchoolNews> {
      */
     List<SchoolNews> selectEmploymentPolicyByLlcs();
 
+    List<SchoolNews> getAllInfo();
 
 
+    @Insert("insert into t_xxxxfbb (ZGBH,XXLX,XXBT,FJ,XXFBSJ,LLCS,XXZW ) VALUES( #{i},#{xxlx},#{xxbt},'','2018-06-04',0,#{xxzw} )")
+    void insertSchoolNews(@Param("xxbt") String xxbt, @Param("xxlx")String xxlx, @Param("xxzw")String xxzw, @Param("i")Integer i);
+
+    @Select(" SELECT * from t_jycry,t_xxxxfbb where t_jycry.ZGBH = t_xxxxfbb.ZGBH and xxlx = #{kind}")
+    @ResultMap("ResultMapWithRymc")
+    List<SchoolNews> getKindOfXxlx(@Param("kind") String kind);
 }
