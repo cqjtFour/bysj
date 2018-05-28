@@ -91,10 +91,7 @@ public class TiaoController {
     }
 
 
-    @RequestMapping("/checkRecord")
-    public String checkRecord(){
-        return "/WEB-INF/main/checkRecord.jsp";
-    }
+
 
     @RequestMapping("/jobResume")
     public String jobResume(){
@@ -120,5 +117,6 @@ public class TiaoController {
     public String fail(){
         return "/WEB-INF/jsp/fail.jsp";
     }
+
 
 }

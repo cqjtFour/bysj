@@ -18,6 +18,7 @@
     <result column="FBSJ" jdbcType="CHAR" property="fbsj" />
     <result column="GWJJ" jdbcType="LONGVARCHAR" property="gwjj" />
   </resultMap>
+
   <resultMap id="BaseResultMapWithEmployersNo" type="com.cqfour.bysj.bean.Job">
     <id column="ZPGWBH" jdbcType="INTEGER" property="zpgwbh" />
     <result column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />

@@ -135,4 +135,16 @@ public class ReserveInfoJob {
     public void setDy(String dy) {
         this.dy = dy;
     }
+
+    @Override
+    public String toString() {
+        return "ReserveInfoJob{" +
+                "gwbh=" + gwbh +
+                ", gwmc='" + gwmc + '\'' +
+                ", xyzpyybbh=" + xyzpyybbh +
+                ", xyzy='" + xyzy + '\'' +
+                ", rs='" + rs + '\'' +
+                ", dy='" + dy + '\'' +
+                '}';
+    }
 }

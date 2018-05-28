@@ -19,4 +19,71 @@
     <result column="DFNR" jdbcType="CHAR" property="dfnr" />
     <result column="YYNR" jdbcType="LONGVARCHAR" property="yynr" />
   </resultMap>
+  <resultMap id="BaseResultMapWithJoin" type="com.cqfour.bysj.bean.SchoolJob">
+    <id column="XYZPYYBBH" jdbcType="INTEGER" property="xyzpyybbh" />
+    <result column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
+    <result column="ZGBH" jdbcType="INTEGER" property="zgbh" />
+    <result column="XYZPDWFZR" jdbcType="CHAR" property="xyzpdwfzr" />
+    <result column="FZRDH" jdbcType="CHAR" property="fzrdh" />
+    <result column="FZRYX" jdbcType="CHAR" property="fzryx" />
+    <result column="YRRQ" jdbcType="DATE" property="yrrq" />
+    <result column="YYSJ" jdbcType="CHAR" property="yysj" />
+    <result column="YYTJSJ" jdbcType="TIMESTAMP" property="yytjsj" />
+    <result column="YYZT" jdbcType="SMALLINT" property="yyzt" />
+    <result column="DFSJ" jdbcType="TIMESTAMP" property="dfsj" />
+    <result column="DFNR" jdbcType="CHAR" property="dfnr" />
+    <result column="YYNR" jdbcType="LONGVARCHAR" property="yynr" />
+    <association property="employers" javaType="com.cqfour.bysj.bean.Employers">
+      <id column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
+      <result column="DLZH" jdbcType="CHAR" property="dlzh" />
+      <result column="DWMC" jdbcType="CHAR" property="dwmc" />
+      <result column="DWXZ" jdbcType="CHAR" property="dwxz" />
+      <result column="ZZJGDM" jdbcType="CHAR" property="zzjgdm" />
+      <result column="SSHY" jdbcType="CHAR" property="sshy" />
+      <result column="DWGM" jdbcType="CHAR" property="dwgm" />
+      <result column="SZD" jdbcType="CHAR" property="szd" />
+      <result column="DWLXR" jdbcType="CHAR" property="dwlxr" />
+      <result column="LXRDH" jdbcType="CHAR" property="lxrdh" />
+      <result column="DWLXDH" jdbcType="CHAR" property="dwlxdh" />
+      <result column="DZYX" jdbcType="CHAR" property="dzyx" />
+      <result column="YZBM" jdbcType="CHAR" property="yzbm" />
+      <result column="DWJBQKJJ" jdbcType="LONGVARCHAR" property="dwjbqkjj" />
+    </association>
+    <association property="employmentDepartment" javaType="com.cqfour.bysj.bean.EmploymentDepartment">
+      <id column="ZGBH" jdbcType="INTEGER" property="zgbh" />
+      <result column="DLZH" jdbcType="CHAR" property="dlzh" />
+      <result column="ZGH" jdbcType="CHAR" property="zgh" />
+      <result column="RYMC" jdbcType="CHAR" property="rymc" />
+      <result column="ZW" jdbcType="CHAR" property="zw" />
+      <result column="SJ" jdbcType="CHAR" property="sj" />
+      <result column="BJDH" jdbcType="CHAR" property="bjdh" />
+    </association>
+  </resultMap>
+
+  <select id="getSchoolJobList" resultMap="BaseResultMapWithJoin">
+SELECT
+    XYZPYYBBH,
+	DWMC,
+	t_xyzbyyb.ZGBH,
+	XYZPDWFZR,
+	FZRDH,
+	FZRYX,
+	YRRQ,
+	YYSJ,
+	YYTJSJ,
+	YYZT,
+	RYMC,
+	DFSJ,
+    YYNR,
+	DFNR
+FROM
+	t_xyzbyyb
+LEFT JOIN t_yrdwb ON t_xyzbyyb.YRDWXXBBH = t_yrdwb.YRDWXXBBH
+LEFT JOIN t_jycry ON t_xyzbyyb.ZGBH = t_jycry.ZGBH
+    <where>
+      <if test="yyzt!=null and yyzt!=-1" >
+        YYZT=#{yyzt}
+      </if>
+    </where>
+  </select>
 </mapper>

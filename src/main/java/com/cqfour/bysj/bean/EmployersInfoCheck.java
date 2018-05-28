@@ -48,6 +48,35 @@ public class EmployersInfoCheck {
     private String shyj;
 
     /**
+     * 审核公司
+     */
+    @Transient
+    private Employers employers;
+
+    /**
+     * 审核工作人员
+     */
+    @Transient
+    private EmploymentDepartment employmentDepartment;
+
+    public Employers getEmployers() {
+        return employers;
+    }
+
+    public void setEmployers(Employers employers) {
+        this.employers = employers;
+    }
+
+    public EmploymentDepartment getEmploymentDepartment() {
+        return employmentDepartment;
+    }
+
+    public void setEmploymentDepartment(EmploymentDepartment employmentDepartment) {
+        this.employmentDepartment = employmentDepartment;
+    }
+
+
+    /**
      * 获取审核表编号，Integer，自增
      *
      * @return YRDWXXSHBBH - 审核表编号，Integer，自增
@@ -171,5 +200,13 @@ public class EmployersInfoCheck {
      */
     public void setShyj(String shyj) {
         this.shyj = shyj;
+    }
+
+    @Override
+    public String toString(){
+        String str;
+        str="单位名称:"+this.getEmployers().getDwmc()+"-提交时间:"+this.getTjsj()+"-审核人:"+this.getEmploymentDepartment().getRymc()+
+                "-审核时间:"+this.getShsj()+"-状态:"+String.valueOf(this.getShzt())+"-意见:"+this.getShyj();
+        return  str;
     }
 }

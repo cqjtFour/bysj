@@ -62,6 +62,16 @@
     <result column="TCAH" jdbcType="LONGVARCHAR" property="tcah" />
   </resultMap>
 
+  <resultMap id="BaseResultMapWithJoin" type="com.cqfour.bysj.bean.Student">
+    <id column="XH" jdbcType="CHAR" property="xh" />
+    <result column="ZYBH" jdbcType="INTEGER" property="zybh" />
+    <result column="XSXM" jdbcType="CHAR" property="xsxm" />
+    <association property="discipline" javaType="com.cqfour.bysj.bean.Discipline">
+      <id column="ZYBH" jdbcType="INTEGER" property="zybh"/>
+      <result column="ZYMC" jdbcType="VARCHAR" property="zymc"/>
+    </association>
+  </resultMap>
+
   <sql id="studentAllData">
     *
   </sql>
@@ -91,5 +101,9 @@
       and XH = #{stuNo}
     </if>
     </where>
+  </select>
+
+  <select id="selectStudentWithDis" resultMap="BaseResultMapWithJoin">
+   Select xsxm,zymc from t_xsb,t_zyb where t_xsb.zybh=t_zyb.zybh and xh=#{xsxh}
   </select>
 </mapper>

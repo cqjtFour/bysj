@@ -13,4 +13,67 @@
     <result column="SHZT" jdbcType="SMALLINT" property="shzt" />
     <result column="SHYJ" jdbcType="CHAR" property="shyj" />
   </resultMap>
+  <resultMap id="BaseResultMapWithJoin" type="com.cqfour.bysj.bean.EmployersInfoCheck">
+    <id column="YRDWXXSHBBH" jdbcType="INTEGER" property="yrdwxxshbbh" />
+    <result column="ZGBH" jdbcType="INTEGER" property="zgbh" />
+    <result column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
+    <result column="TJSJ" jdbcType="CHAR" property="tjsj" />
+    <result column="SHSJ" jdbcType="CHAR" property="shsj" />
+    <result column="SHZT" jdbcType="SMALLINT" property="shzt" />
+    <result column="SHYJ" jdbcType="CHAR" property="shyj" />
+    <association property="employers" javaType="com.cqfour.bysj.bean.Employers">
+      <id column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
+      <result column="DLZH" jdbcType="CHAR" property="dlzh" />
+      <result column="DWMC" jdbcType="CHAR" property="dwmc" />
+      <result column="DWXZ" jdbcType="CHAR" property="dwxz" />
+      <result column="ZZJGDM" jdbcType="CHAR" property="zzjgdm" />
+      <result column="SSHY" jdbcType="CHAR" property="sshy" />
+      <result column="DWGM" jdbcType="CHAR" property="dwgm" />
+      <result column="SZD" jdbcType="CHAR" property="szd" />
+      <result column="DWLXR" jdbcType="CHAR" property="dwlxr" />
+      <result column="LXRDH" jdbcType="CHAR" property="lxrdh" />
+      <result column="DWLXDH" jdbcType="CHAR" property="dwlxdh" />
+      <result column="DZYX" jdbcType="CHAR" property="dzyx" />
+      <result column="YZBM" jdbcType="CHAR" property="yzbm" />
+      <result column="DWJBQKJJ" jdbcType="LONGVARCHAR" property="dwjbqkjj" />
+    </association>
+    <association property="employmentDepartment" javaType="com.cqfour.bysj.bean.EmploymentDepartment">
+      <id column="ZGBH" jdbcType="INTEGER" property="zgbh" />
+      <result column="DLZH" jdbcType="CHAR" property="dlzh" />
+      <result column="ZGH" jdbcType="CHAR" property="zgh" />
+      <result column="RYMC" jdbcType="CHAR" property="rymc" />
+      <result column="ZW" jdbcType="CHAR" property="zw" />
+      <result column="SJ" jdbcType="CHAR" property="sj" />
+      <result column="BJDH" jdbcType="CHAR" property="bjdh" />
+    </association>
+  </resultMap>
+  
+  <select id="getlist" resultMap="BaseResultMapWithJoin" >
+SELECT
+    YRDWXXSHBBH,
+    t_yrdwb.YRDWXXBBH,
+    t_yrdwb.dwmc as DWMC ,
+    t_yrdwb.dlzh AS DLZH,
+    DWXZ,
+    SSHY,
+    DWGM,
+    DWLXR,
+    LXRDH,
+    DZYX,
+    ZZJGDM,
+    SHSJ,
+    t_yrdwxxshb.tjsj as TJSJ,
+    t_jycry.rymc as RYMC,
+    t_yrdwxxshb.shyj AS SHYJ,
+    t_yrdwxxshb.shzt AS SHZT
+FROM
+	t_yrdwb
+LEFT JOIN t_yrdwxxshb ON t_yrdwb.yrdwxxbbh = t_yrdwxxshb.yrdwxxbbh
+LEFT JOIN t_jycry ON t_yrdwxxshb.ZGBH = t_jycry.ZGBH
+<where>
+   <if test="shzt!=null and shzt!=-1" >
+     SHZT=#{shzt}
+   </if>
+</where>
+  </select>
 </mapper>

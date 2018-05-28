@@ -17,4 +17,71 @@
     <result column="XSFSFLQ" jdbcType="SMALLINT" property="xsfsflq" />
     <result column="LQSJ" jdbcType="CHAR" property="lqsj" />
   </resultMap>
+
+  <resultMap id="BaseResultMapWithJoin" type="com.cqfour.bysj.bean.Sign">
+    <id column="QYBBH" jdbcType="INTEGER" property="qybbh" />
+    <result column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
+    <result column="XH" jdbcType="CHAR" property="xh" />
+    <result column="SFQDSF" jdbcType="SMALLINT" property="sfqdsf" />
+    <result column="QDSJ" jdbcType="CHAR" property="qdsj" />
+    <result column="SFSFSJJYC" jdbcType="SMALLINT" property="sfsfsjjyc" />
+    <result column="SJSJ" jdbcType="CHAR" property="sjsj" />
+    <result column="SFYHY" jdbcType="SMALLINT" property="sfyhy" />
+    <result column="HYSJ" jdbcType="CHAR" property="hysj" />
+    <result column="XSFSFLQ" jdbcType="SMALLINT" property="xsfsflq" />
+    <result column="LQSJ" jdbcType="CHAR" property="lqsj" />
+    <association property="student" javaType="com.cqfour.bysj.bean.Student">
+      <id column="XH" jdbcType="CHAR" property="xh" />
+      <result column="XSXM" jdbcType="CHAR" property="xsxm" />
+      <result column="SJHM" jdbcType="CHAR" property="sjhm" />
+      <result column="EMAIL" jdbcType="CHAR" property="email" />
+    </association>
+    <association property="employers" javaType="com.cqfour.bysj.bean.Employers">
+      <id column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
+      <result column="DLZH" jdbcType="CHAR" property="dlzh" />
+      <result column="DWMC" jdbcType="CHAR" property="dwmc" />
+      <result column="DWXZ" jdbcType="CHAR" property="dwxz" />
+      <result column="ZZJGDM" jdbcType="CHAR" property="zzjgdm" />
+      <result column="SSHY" jdbcType="CHAR" property="sshy" />
+      <result column="DWGM" jdbcType="CHAR" property="dwgm" />
+      <result column="SZD" jdbcType="CHAR" property="szd" />
+      <result column="DWLXR" jdbcType="CHAR" property="dwlxr" />
+      <result column="LXRDH" jdbcType="CHAR" property="lxrdh" />
+      <result column="DWLXDH" jdbcType="CHAR" property="dwlxdh" />
+      <result column="DZYX" jdbcType="CHAR" property="dzyx" />
+      <result column="YZBM" jdbcType="CHAR" property="yzbm" />
+      <result column="DWJBQKJJ" jdbcType="LONGVARCHAR" property="dwjbqkjj" />
+    </association>
+  </resultMap>
+
+  <select id="getAllSignInfo" resultMap="BaseResultMapWithJoin" >
+SELECT
+    QYBBH,
+    t_qyb.YRDWXXBBH,
+	t_xsb.XH,
+	XSXM,
+	SJHM,
+	EMAIL,
+	DWMC,
+	DWLXR,
+	DWLXDH,
+	DZYX,
+	SFQDSF,
+	QDSJ,
+	SFSFSJJYC,
+	SJSJ,
+	SFYHY,
+	HYSJ
+FROM
+	t_qyb,
+	t_yrdwb,
+	t_xsb
+WHERE
+	t_qyb.XH = t_xsb.XH
+AND t_qyb.YRDWXXBBH = t_yrdwb.YRDWXXBBH
+ <if test="xh!=null and xh!=''">
+     AND t_qyb.XH=#{xh}
+ </if>
+  </select>
+
 </mapper>

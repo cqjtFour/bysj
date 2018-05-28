@@ -71,6 +71,12 @@ public class Sign {
     @Column(name = "LQSJ")
     private String lqsj;
 
+    @Transient
+    private Employers employers;
+
+    @Transient
+    private Student student;
+
     /**
      * 获取签约表编号，Integer，自增
      *
@@ -267,5 +273,38 @@ public class Sign {
      */
     public void setLqsj(String lqsj) {
         this.lqsj = lqsj;
+    }
+
+    public Employers getEmployers() {
+        return employers;
+    }
+
+    public void setEmployers(Employers employers) {
+        this.employers = employers;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    @Override
+    public String toString() {
+        return "Sign{" +
+                "qybbh=" + qybbh +
+                ", yrdwxxbbh=" + yrdwxxbbh +
+                ", xh='" + xh + '\'' +
+                ", sfqdsf=" + sfqdsf +
+                ", qdsj='" + qdsj + '\'' +
+                ", sfsfsjjyc=" + sfsfsjjyc +
+                ", sjsj='" + sjsj + '\'' +
+                ", sfyhy=" + sfyhy +
+                ", hysj='" + hysj + '\'' +
+                ", xsfsflq=" + xsfsflq +
+                ", lqsj='" + lqsj + '\'' +
+                '}';
     }
 }

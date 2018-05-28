@@ -34,4 +34,7 @@ public interface StudentMapper extends MyMapper<Student> {
     @Insert("insert into t_xsb (xh,xsxm,dlzh,zybh) values (#{xh},#{xsxm},#{dlzh},#{zybh})")
     int insertStudent(@Param("xh") String xh,@Param("xsxm") String xsxm,@Param("dlzh") String dlzh,@Param("zybh") Integer zybh);
 
+
+    Student selectStudentWithDis(@Param("xsxh") String xsxh);
+
 }
