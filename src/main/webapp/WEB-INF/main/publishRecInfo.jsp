@@ -8,11 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>发布招聘信息</title>
+    <title>招聘预约</title>
     <%-- javascripte --%>
     <script src="./bootstrap-3.3.7-dist/js/jquery.js" type="text/javascript"></script>
     <script src="./bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript"></script>
     <script src="./ckeditor/ckeditor.js" type="text/javascript"></script>
+    <script src="./js/publishReclnfo.js" type="text/javascript"></script>
     <%-- style --%>
     <link href="./bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="./css/publishReclnfo.css" type="text/css" rel="stylesheet">
@@ -21,16 +22,11 @@
       <div class="contentsec">
           <div class="content">
               <form class="form-horizontal" role="form">
+                  <input type="hidden" id="yrdwxxbbh" value="${employers.yrdwxxbbh}">
                   <div class="form-group">
                       <label class="col-sm-2 control-label left">单位名称</label>
                       <div class="left">
-                          <input type="text" class="form-control" style="width: 200px;" id="dwmc" name="dwmc" >
-                      </div>
-                  </div>
-                  <div class="form-group">
-                      <label class="col-sm-2 control-label left">信息标题</label>
-                      <div class="left">
-                          <input type="text" class="form-control" style="width: 200px;" id="xxbt" name="xxbt" >
+                          <input type="text" class="form-control" style="width: 200px;" id="dwmc" name="dwmc"  value="${employers.dwmc}" disabled>
                       </div>
                   </div>
                   <div class="form-group">
@@ -42,11 +38,13 @@
                   <div class="form-group">
                       <label class="col-sm-2 control-label left">举办时间</label>
                       <div class="left">
-                          <input type="time" class="form-control" style="width: 200px;" id="ksjbsj" name="ksjbsj" >
-                      </div>
-                      <label class="control-label left" style="margin-left:10px;margin-right:10px; width: 48px;">————</label>
-                      <div class="left">
-                          <input type="time" class="form-control" style="width: 200px;" id="jsjbsj" name="jsjbsj" >
+                          <%--<input type="time" class="form-control" style="width: 200px;" id="ksjbsj" name="ksjbsj" >--%>
+                          <select class="form-control" style="width: 200px;"  id="jbsj" name="jbsj">
+                              <option value="9:00-11:00">9:00-11:00</option>
+                              <option value="14:00-16:00">14:00-16:00</option>
+                              <option value="16:00-18:00">16:00-18:00</option>
+                              <option value="19:00-21:00">19:00-21:00</option>
+                          </select>
                       </div>
                   </div>
                   <div class="form-group">
@@ -65,12 +63,48 @@
                           <input type="email" class="form-control" style="width: 200px;" id="fzryx" name="fzryx" >
                       </div>
                   </div>
+
                   <div class="form-group">
-                      <label class="col-sm-2 control-label left">招聘简章</label>
+                      <label class="col-sm-2 control-label left">招聘内容</label>
                   </div>
-                  <div class="form-group" style="width: 790px;margin:10px auto">
-                      <textarea id="xq" name="xq" class="ckeditor"></textarea>
+                  <div class="form-group" style="width: 700px;margin-left: 60px">
+                      <textarea id="zpnr" name="content"  class="ckeditor"></textarea>
                   </div>
+                  <div class="form-group">
+                      <label class="col-sm-2 control-label left">招聘岗位</label>
+                  </div>
+                  <div class="form-group" style="width: 700px;margin-left: 60px">
+                      <table class="table table-striped table-hover">
+                          <thead bgcolor="antiquewhite">
+                          <tr>
+                              <td>
+                                  <label>岗位名称</label>
+                              </td>
+                              <td>
+                                  <label>招聘人数</label>
+                              </td>
+                              <td>
+                                  <label>薪资待遇</label>
+                              </td>
+                              <td>
+                                  <label>需求专业</label>
+                              </td>
+                              <td>
+                                  <label>操作</label>
+                              </td>
+                          </tr>
+                          </thead>
+                          <tbody id="tbody">
+                          <tr id="tjyh">
+                              <td colspan="5" align="right">
+                                  <span  class="glyphicon glyphicon-plus" style="cursor: pointer" id="xtjyh"></span>
+                              </td>
+                          </tr>
+                          </tbody>
+                      </table>
+                  </div>
+
+
                   <div class="form-group">
                       <div class="col-sm-offset-2 col-sm-10">
                           <button type="button" class="btn btn-default" id="tj">提交</button>

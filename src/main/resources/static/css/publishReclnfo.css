@@ -30,3 +30,27 @@ form{
     margin-top:20px ;
     margin-bottom: 20px;
 }
+
+td {
+    text-align: center;
+    width: auto;
+    white-space: nowrap; /* 自适应宽度*/
+    word-break:  keep-all; /* 避免长单词截断，保持全部 */
+
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th{
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+tbody tr input{
+    border: 0px;
+    text-align: center;
+    height: 100%;
+}

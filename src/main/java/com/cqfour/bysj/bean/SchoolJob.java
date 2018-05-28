@@ -19,7 +19,7 @@ public class SchoolJob {
     private Integer yrdwxxbbh;
 
     /**
-     * 主键，自增
+     * 职工编号，Integer
      */
     @Column(name = "ZGBH")
     private Integer zgbh;

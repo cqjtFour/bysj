@@ -6,6 +6,7 @@
       WARNING - @mbg.generated
     -->
     <id column="GWBH" jdbcType="INTEGER" property="gwbh" />
+    <result column="GWMC" jdbcType="CHAR" property="gwmc"></result>
     <result column="XYZPYYBBH" jdbcType="INTEGER" property="xyzpyybbh" />
     <result column="XYZY" jdbcType="CHAR" property="xyzy" />
     <result column="RS" jdbcType="CHAR" property="rs" />

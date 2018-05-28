@@ -19,4 +19,8 @@
     <result column="DFNR" jdbcType="CHAR" property="dfnr" />
     <result column="YYNR" jdbcType="LONGVARCHAR" property="yynr" />
   </resultMap>
+
+  <select id="getSchoolJobId" resultType="int">
+    SELECT XYZPYYBBH FROM t_xyzbyyb WHERE YRDWXXBBH=#{yrdwxxbbh} AND  YYNR=#{yynr}
+  </select>
 </mapper>
