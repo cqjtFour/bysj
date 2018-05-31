@@ -37,7 +37,6 @@ public class MenuManageController {
     /**
      * 菜单分页信息
      * @param page
-     * @param request
      * @return
      */
     @RequestMapping("/menuManageInfo")
@@ -84,12 +83,21 @@ public class MenuManageController {
     @RequestMapping("/deleteMenu")
     @ResponseBody
     public Message deleteMenu(String deleteNos){
-        roleMenuService.deleteRoleMenu(Integer.parseInt(deleteNos));
-        String[] ids = deleteNos.split(",");
-        for (String s: ids) {
-            menuService.deleteMenu(Integer.parseInt(s));
+        Message message = new Message();
+        try {
+            roleMenuService.deleteRoleMenu(Integer.parseInt(deleteNos));
+            String[] ids = deleteNos.split(",");
+            for (String s: ids) {
+                menuService.deleteMenu(Integer.parseInt(s));
+            }
+            message.setStatus("1");
+            message.setMsg("删除成功");
+        } catch (Exception e) {
+            message.setStatus("0");
+            message.setMsg("请先删除某些父级菜单的子菜单");
+            e.printStackTrace();
         }
-        return new Message();
+        return message;
     }
 
     /**

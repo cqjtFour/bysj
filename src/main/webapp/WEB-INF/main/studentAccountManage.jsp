@@ -247,6 +247,7 @@
             return ;
         }
         var options = {
+
             type: "post",
             url : "/fileUrl",
             dataType: "text",

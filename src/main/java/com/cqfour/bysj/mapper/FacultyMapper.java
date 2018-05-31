@@ -14,4 +14,5 @@ public interface FacultyMapper extends MyMapper<Faculty> {
     @Update("update t_xyb set xymc = #{colName},xylxr = #{colPeople},xxjj=#{colshow},lxdh = #{coltel} where xybh = #{facultyNo}")
     Integer updateFaculty(@Param("facultyNo") String facultyNo, @Param("colName")String colName,
                           @Param("colPeople")String colPeople,@Param("coltel") String coltel, @Param("colshow")String colshow);
+
 }

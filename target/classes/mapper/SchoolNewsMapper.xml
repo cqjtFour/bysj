@@ -37,6 +37,16 @@
   <sql id="SchoolNewsWithJycry" >
     FBBBH,t_xxxxfbb.ZGBH,XXLX,XXBT,FJ,XXFBSJ,LLCS,XXZW,t_jycry.ZGBH,DLZH,ZGH,RYMC,ZW,SJ,BJDH
   </sql>
+
+  <select id="getAllInfo" resultMap="ResultMapWithRymc">
+    SELECT * from t_jycry,t_xxxxfbb where t_jycry.ZGBH = t_xxxxfbb.ZGBH
+  </select>
+
+
+
+
+
+
   <!--==========================通知公告========================================-->
   <!--查出所有的通知公告 -->
   <select id="selectAllAdvice" resultMap="ResultMapWithRymc">

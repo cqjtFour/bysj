@@ -32,4 +32,9 @@
     <select id="selectAllWithFaculty" resultMap="BaseResultMapWithFaculty">
       SELECT * from t_zyb,t_xyb WHERE t_zyb.xybh = t_xyb.xybh
     </select>
+
+    <select id="selectSomeProfession" resultMap="BaseResultMapWithFaculty" parameterType="java.lang.String">
+        <bind name="pattern" value="'%' + zymc + '%'" />
+        select * from t_zyb,t_xyb where zymc like  #{pattern} AND t_zyb.xybh = t_xyb.xybh
+    </select>
 </mapper>

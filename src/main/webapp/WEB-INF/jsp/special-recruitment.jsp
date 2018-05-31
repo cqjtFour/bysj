@@ -140,7 +140,6 @@
                                 </tr>
                                 <script>
                                     function toShow(i) {
-                                        alert(i);
                                         window.location.href = "/showReserveInfo?xnzpgsbbh="+i;
                                     }
                                 </script>

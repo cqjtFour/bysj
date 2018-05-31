@@ -112,7 +112,7 @@
                         <script>
                             $('#page').paging({
                                 webPage:"/employmentpolicy",
-                                parameter:"/employmentpolicyToPage",
+                                parameter:"/employmentPolicyToPage",
                                 initPageNo: ${ep_pageInfo.pageNum}, // 初始页码
                                 totalPages: ${ep_pageInfo.pages}, //总页数
                                 pageNo:${ep_pageInfo.pageNum},
@@ -154,7 +154,7 @@
                             <div class="boxshadow-right-show">
                                 <ul style="height: 238px; margin: 5px;">
                                     <c:forEach items="${ep_llcs}" var="al">
-                                        <li><a href="" title="">${al.xxbt}</a></li>
+                                        <li><a href="/showPolicy?fbbh=${al.fbbbh}" title="">${al.xxbt}</a></li>
                                     </c:forEach>
                                 </ul>
                             </div>
@@ -170,7 +170,7 @@
                             <div class="boxshadow-right-show">
                                 <ul  class="multi" style="height: 256px;">
                                     <c:forEach items="${ep_date}" var="al">
-                                        <li><a href="" title="">${al.xxbt}</a></li>
+                                        <li><a href="/showPolicy?fbbh=${al.fbbbh}" title="">${al.xxbt}</a></li>
                                     </c:forEach>
                                 </ul>
                             </div>
