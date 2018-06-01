@@ -16,7 +16,7 @@ $(document).ready(function () {
            dataType:"json",
            data:user,
            success:function (result) {
-               if(result == false)
+               if(!result)
                    $("#error1").removeClass("notshow");
            }
        })
@@ -51,27 +51,47 @@ $(document).ready(function () {
     });
     /*保存*/
     $("#bc").click(function () {
-        var error1=$("#error1").hasClass("notshow");
-        var error2=$("#error2").hasClass("notshow");
-        var error3=$("#error3").hasClass("notshow");
-        var error4=$("#error4").hasClass("notshow");
-        if(  error1 && error2 && error3 && error4){
-            user.dlmm=$("#xmm").val();
-            $.ajax({
-                url:"/updatePassword",
-                type:"post",
-                dataType:"json",
-                data:user,
-                success:function (result) {
-                    if(result)
-                        alert("更新密码成功！");
-                    else
-                        alert("更新密码失败!");
-                }
-            })
-        }
-        else {
-            alert("有错误，无法更新！");
-        }
+        //提交前检验
+       var dqmm=$("#dqmm").val();
+       var xmm=$("#xmm").val();
+       var qrmm=$("#qrmm").val();
+       var mbda=$("#mbda").val();
+       if(dqmm==null || dqmm=="")
+           $("#error1").removeClass("notshow");
+       else if(xmm==null || xmm=="")
+           $("#error2").removeClass("notshow");
+       else if(qrmm==null || qrmm=="")
+           $("#error3").removeClass("notshow");
+       else if(mbda==null || mbda=="")
+           $("#error4").removeClass("notshow");
+       else{
+           var error1=$("#error1").hasClass("notshow");
+           var error2=$("#error2").hasClass("notshow");
+           var error3=$("#error3").hasClass("notshow");
+           var error4=$("#error4").hasClass("notshow");
+           user.dlmm=$("#xmm").val();
+           user.zhwt=$("#mbwt").val();
+           user.zhda=$("#mbda").val();
+           if(  error1 && error2 && error3 && error4){
+               user.dlmm=$("#xmm").val();
+               $.ajax({
+                   url:"/updatePassword",
+                   type:"post",
+                   dataType:"json",
+                   data:user,
+                   success:function (result) {
+                       if(result){
+                           $("#form").addClass("notshow");
+                           $("#success").removeClass("notshow");
+                       }
+                       else
+                           alert("更新密码失败!");
+                   }
+               })
+           }
+           else {
+               alert("有错误，无法更新！");
+           }
+       }
     });
 });

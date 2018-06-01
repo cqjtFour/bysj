@@ -7,7 +7,7 @@
     -->
     <id column="ZPGWBH" jdbcType="INTEGER" property="zpgwbh" />
     <result column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
-    <result column="SS" jdbcType="CHAR" property="ss" />
+    <result column="MC" jdbcType="CHAR" property="mc" />
     <result column="GWLX" jdbcType="CHAR" property="gwlx" />
     <result column="ZY" jdbcType="CHAR" property="zy" />
     <result column="DD" jdbcType="CHAR" property="dd" />
@@ -18,34 +18,12 @@
     <result column="FBSJ" jdbcType="CHAR" property="fbsj" />
     <result column="GWJJ" jdbcType="LONGVARCHAR" property="gwjj" />
   </resultMap>
-  <resultMap id="BaseResultMapWithEmployersNo" type="com.cqfour.bysj.bean.Job">
-    <id column="ZPGWBH" jdbcType="INTEGER" property="zpgwbh" />
-    <result column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
-    <result column="SS" jdbcType="CHAR" property="ss" />
-    <result column="GWLX" jdbcType="CHAR" property="gwlx" />
-    <result column="ZY" jdbcType="CHAR" property="zy" />
-    <result column="DD" jdbcType="CHAR" property="dd" />
-    <result column="GZJY" jdbcType="CHAR" property="gzjy" />
-    <result column="XLYQ" jdbcType="CHAR" property="xlyq" />
-    <result column="ZPSL" jdbcType="CHAR" property="zpsl" />
-    <result column="YX" jdbcType="CHAR" property="yx" />
-    <result column="FBSJ" jdbcType="CHAR" property="fbsj" />
-    <result column="GWJJ" jdbcType="LONGVARCHAR" property="gwjj" />
-    <association property="employers" javaType="com.cqfour.bysj.bean.Employers">
-      <id column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
-      <result column="DLZH" jdbcType="CHAR" property="dlzh" />
-      <result column="DWMC" jdbcType="CHAR" property="dwmc" />
-      <result column="DWXZ" jdbcType="CHAR" property="dwxz" />
-      <result column="ZZJGDM" jdbcType="CHAR" property="zzjgdm" />
-      <result column="SSHY" jdbcType="CHAR" property="sshy" />
-      <result column="DWGM" jdbcType="CHAR" property="dwgm" />
-      <result column="SZD" jdbcType="CHAR" property="szd" />
-      <result column="DWLXR" jdbcType="CHAR" property="dwlxr" />
-      <result column="LXRDH" jdbcType="CHAR" property="lxrdh" />
-      <result column="DWLXDH" jdbcType="CHAR" property="dwlxdh" />
-      <result column="DZYX" jdbcType="CHAR" property="dzyx" />
-      <result column="YZBM" jdbcType="CHAR" property="yzbm" />
-      <result column="DWJBQKJJ" jdbcType="LONGVARCHAR" property="dwjbqkjj" />
-    </association>
-  </resultMap>
+
+  <select id="getGwList" resultMap="BaseResultMap">
+    SELECT * FROM t_zpgwb WHERE YRDWXXBBH=#{yrdwxxbbh}
+  </select>
+
+  <select id="getJobName" resultType="String" >
+    SELECT MC from t_zpgwb WHERE ZPGWBH=#{zpgwbh}
+  </select>
 </mapper>

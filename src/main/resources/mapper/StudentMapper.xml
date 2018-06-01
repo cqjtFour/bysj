@@ -62,34 +62,7 @@
     <result column="TCAH" jdbcType="LONGVARCHAR" property="tcah" />
   </resultMap>
 
-  <sql id="studentAllData">
-    *
-  </sql>
-
-  <select id="queryStudentByInput" resultMap="BaseResultMap" parameterType="java.lang.String">
-    <bind name="pattern" value="'%' + param + '%'" />
-    SELECT
-    <include refid="studentAllData" />
-    from t_xsb where XSXM LIKE #{pattern}
-                    or XH like #{pattern}
-                    or XL like #{pattern}
-                    or bkzy like #{pattern}
-                    or sszy LIKE #{pattern}
-                    OR BYSJS LIKE #{pattern}
-                    or qwhy like #{pattern}
-                    or qwgzdd like #{pattern}
-                    or GXSJ LIKE #{pattern}
-  </select>
-
-  <select id="querySomeStudent" resultMap="BaseResultMap">
-    SELECT * from t_xsb
-    <where>
-    <if test=" stuName != null and stuName != ''">
-       and XSXM = #{stuName}
-    </if>
-    <if test=" stuNo != null and stuNo != ''">
-      and XH = #{stuNo}
-    </if>
-    </where>
+  <select id="getStudentName" resultType="String">
+    SELECT XSXM FROM t_xsb WHERE XH=#{xh}
   </select>
 </mapper>

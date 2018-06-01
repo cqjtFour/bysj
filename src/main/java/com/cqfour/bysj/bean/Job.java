@@ -1,6 +1,8 @@
 package com.cqfour.bysj.bean;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Table(name = "t_zpgwb")
 public class Job {
@@ -20,8 +22,8 @@ public class Job {
     /**
      * 岗位名称，Char(32)
      */
-    @Column(name = "SS")
-    private String ss;
+    @Column(name = "MC")
+    private String mc;
 
     /**
      * 岗位类型，Char(16)
@@ -78,20 +80,6 @@ public class Job {
     private String gwjj;
 
     /**
-     * 用人单位信息
-     */
-    @Transient
-    private Employers employers;
-
-    public Employers getEmployers() {
-        return employers;
-    }
-
-    public void setEmployers(Employers employers) {
-        this.employers = employers;
-    }
-
-    /**
      * 获取招牌岗位编号，Integer，自增
      *
      * @return ZPGWBH - 招牌岗位编号，Integer，自增
@@ -132,17 +120,17 @@ public class Job {
      *
      * @return SS - 岗位名称，Char(32)
      */
-    public String getSs() {
-        return ss;
+    public String getMc() {
+        return mc;
     }
 
     /**
      * 设置岗位名称，Char(32)
      *
-     * @param ss 岗位名称，Char(32)
+     * @param mc 岗位名称，Char(32)
      */
-    public void setSs(String ss) {
-        this.ss = ss;
+    public void setMc(String mc) {
+        this.mc = mc;
     }
 
     /**

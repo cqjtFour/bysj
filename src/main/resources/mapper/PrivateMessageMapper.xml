@@ -6,11 +6,30 @@
       WARNING - @mbg.generated
     -->
     <id column="ZNSXBH" jdbcType="INTEGER" property="znsxbh" />
-    <result column="FSYHZH" jdbcType="INTEGER" property="fsyhzh" />
-    <result column="JSYHZH" jdbcType="INTEGER" property="jsyhzh" />
+    <result column="FSYHZH" jdbcType="CHAR" property="fsyhzh" />
+    <result column="FSYHMC" jdbcType="CHAR" property="fsyhmc" />
+    <result column="JSYHZH" jdbcType="CHAR" property="jsyhzh" />
+    <result column="JSYHMC" jdbcType="CHAR" property="jsyhmc" />
     <result column="FSSJ" jdbcType="CHAR" property="fssj" />
     <result column="JSSJ" jdbcType="CHAR" property="jssj" />
     <result column="ZT" jdbcType="SMALLINT" property="zt" />
     <result column="XXNR" jdbcType="LONGVARCHAR" property="xxnr" />
   </resultMap>
+
+  <select id="getPrivateMessageList" resultMap="BaseResultMap" parameterType="java.lang.String">
+    SELECT * FROM t_znsxb WHERE t_znsxb.FSYHZH=#{fsyhzh} AND t_znsxb.JSYHZH=#{jsyhzh} OR  t_znsxb.FSYHZH=#{jsyhzh} AND t_znsxb.JSYHZH=#{fsyhzh} ORDER BY FSSJ
+  </select>
+
+  <select id="getConversationNameList" resultMap="BaseResultMap">
+    select FSYHZH,FSYHMC from t_znsxb where JSYHZH=#{zh} union select JSYHZH,JSYHMC from t_znsxb where FSYHZH=#{zh}
+  </select>
+
+  <select id="getUnreadMessage" resultType="String">
+    SELECT count(*) from t_znsxb WHERE FSYHZH=#{fsyhzh} AND  JSYHZH=#{jsyhzh} AND ZT=0
+  </select>
+
+  <select id="setAlreadyRead" >
+    UPDATE t_znsxb SET ZT=1   WHERE FSYHZH=#{fsyhzh} AND  JSYHZH=#{jsyhzh}
+  </select>
+
 </mapper>
