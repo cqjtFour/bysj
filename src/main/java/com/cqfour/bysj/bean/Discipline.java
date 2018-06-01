@@ -1,6 +1,8 @@
 package com.cqfour.bysj.bean;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Table(name = "t_zyb")
 public class Discipline {
@@ -28,17 +30,6 @@ public class Discipline {
      */
     @Column(name = "YJBYSRS")
     private Integer yjbysrs;
-
-    @Transient
-    private Faculty faculty;
-
-    public Faculty getFaculty() {
-        return faculty;
-    }
-
-    public void setFaculty(Faculty faculty) {
-        this.faculty = faculty;
-    }
 
     /**
      * 获取专业编号，Integer

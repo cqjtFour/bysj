@@ -13,6 +13,17 @@ body{
 .contentsec{
     width: 100%;
 }
+.tiaozhuan{
+    width: 800px;
+    margin:20px auto ;
+    overflow: hidden;
+}
+.tiaozhuan a{
+    float: right;
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+}
 .content{
     width: 800px;
     margin: 20px auto;

@@ -20,4 +20,13 @@
     <result column="YZBM" jdbcType="CHAR" property="yzbm" />
     <result column="DWJBQKJJ" jdbcType="LONGVARCHAR" property="dwjbqkjj" />
   </resultMap>
+
+  <select id="getEmployerName" resultType="String">
+    SELECT DWMC FROM t_yrdwb WHERE DLZH=#{dlzh}
+  </select>
+  
+  <select id="getEmployer"  resultMap="BaseResultMap">
+    SELECT * FROM  t_yrdwb WHERE DLZH=#{dlzh};
+  </select>
+
 </mapper>

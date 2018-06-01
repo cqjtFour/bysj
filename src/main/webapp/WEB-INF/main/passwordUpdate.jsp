@@ -20,7 +20,7 @@
 <body>
      <div class="contentsec">
          <div class="content">
-             <form class="form-horizontal" role="form" >
+             <form class="form-horizontal" role="form" id="form">
                  <input type="hidden" id="dlzh" value="${user.dlzh}">
                  <div class="form-group">
                      <label class="col-sm-2 control-label left">当前密码</label>
@@ -53,8 +53,8 @@
                      <label class="col-sm-2 control-label left">密保问题</label>
                      <div class="left">
                          <select class="form-control" id="mbwt" style="width: 200px;" >
-                             <option>你爹是谁？</option>
-                             <option>你妈是谁？</option>
+                             <option value="你父亲的名字？">你父亲的名字？</option>
+                             <option value="你母亲的名字？">你母亲的名字？</option>
                          </select>
                      </div>
                  </div>
@@ -73,6 +73,9 @@
                      </div>
                  </div>
              </form>
+             <div id="success" class="notshow" style="width: 300px;margin: 100px auto;overflow: hidden">
+                 <h1 class="left">Success</h1><a href="/login"  target="_parent" class="left" style="margin-left: 20px;margin-top:38px; ">重新登录</a>
+             </div>
          </div>
          <%-- content end --%>
      </div>

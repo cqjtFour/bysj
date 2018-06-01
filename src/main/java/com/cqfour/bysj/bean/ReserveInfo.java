@@ -1,9 +1,10 @@
 package com.cqfour.bysj.bean;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Table(name = "t_xnzpgs")
+@Table(name = "t_xnzpgx")
 public class ReserveInfo {
 
     @Id
@@ -24,39 +25,6 @@ public class ReserveInfo {
 
     @Column(name = "ZPZY")
     private String zpzy;
-
-    @Transient
-    private JobInfo jobInfo;
-
-    @Transient
-    private Employers employers;
-
-    @Transient
-    private List<ReserveInfoJob> reserveInfoJob;
-
-    public List<ReserveInfoJob> getReserveInfoJob() {
-        return reserveInfoJob;
-    }
-
-    public void setReserveInfoJob(List<ReserveInfoJob> reserveInfoJob) {
-        this.reserveInfoJob = reserveInfoJob;
-    }
-
-    public Employers getEmployers() {
-        return employers;
-    }
-
-    public void setEmployers(Employers employers) {
-        this.employers = employers;
-    }
-
-    public JobInfo getJobInfo() {
-        return jobInfo;
-    }
-
-    public void setJobInfo(JobInfo jobInfo) {
-        this.jobInfo = jobInfo;
-    }
 
     public Integer getXnzpgsbbh() {
         return xnzpgsbbh;

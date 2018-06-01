@@ -1,6 +1,8 @@
 package com.cqfour.bysj.bean;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Table(name = "t_xyzpgwb")
 public class ReserveInfoJob {
@@ -11,19 +13,14 @@ public class ReserveInfoJob {
     @Column(name = "GWBH")
     private Integer gwbh;
 
-    @Column
+    /**
+     * 岗位名称
+     */
+    @Column(name="GWMC")
     private String gwmc;
 
-    public String getGwmc() {
-        return gwmc;
-    }
-
-    public void setGwmc(String gwmc) {
-        this.gwmc = gwmc;
-    }
-
     /**
-     * 自增id，Integer
+     * 校园招聘预约表编号
      */
     @Column(name = "XYZPYYBBH")
     private Integer xyzpyybbh;
@@ -62,6 +59,25 @@ public class ReserveInfoJob {
      */
     public void setGwbh(Integer gwbh) {
         this.gwbh = gwbh;
+    }
+
+
+    /**
+     * 获取岗位名称
+     *
+     * @return GWMC - 岗位名称,自增
+     */
+    public String  getGwmc() {
+        return gwmc;
+    }
+
+    /**
+     * 设置岗位名称
+     *
+     * @param gwmc 岗位名称
+     */
+    public void setGwmc(String gwmc) {
+        this.gwmc= gwmc;
     }
 
     /**

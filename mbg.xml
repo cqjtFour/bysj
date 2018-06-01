@@ -4,33 +4,28 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-
     <context id="DB2Tables" targetRuntime="MyBatis3Simple" defaultModelType="flat">
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <property name="mappers" value="com.cqfour.bysj.util.MyMapper"></property>
         </plugin>
         <!-- 数据库连接信息 -->
-
         <jdbcConnection
                 driverClass="com.mysql.jdbc.Driver"
                 connectionURL="jdbc:mysql://localhost:3306/bysj"
                 userId="root"
                 password="root">
         </jdbcConnection>
-
         <!-- 指定Javabean生成的位置 -->
         <javaModelGenerator
                 targetPackage="com.cqfour.bysj.bean"
                 targetProject="src/main/java">
         </javaModelGenerator>
-
         <!-- 指定sql映射文件生成的位置 -->
         <sqlMapGenerator
                 targetPackage="mapper"
                 targetProject="src/main/resources">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
-
         <!-- 指定dao接口生成的位置,mapper接口 -->
         <javaClientGenerator type="XMLMAPPER"
                              targetPackage="com.cqfour.bysj.mapper"
@@ -59,7 +54,7 @@
         <table tableName="t_znsxb" domainObjectName="PrivateMessage" />
 
         <table tableName="t_qyb" domainObjectName="Sign" />
-        <table tableName="t_xnzpgs" domainObjectName="ReserveInfo" />
+        <table tableName="t_xnzpgx" domainObjectName="ReserveInfo" />
         <table tableName="t_xyzpgwb" domainObjectName="ReserveInfoJob" />
     </context>
 </generatorConfiguration>

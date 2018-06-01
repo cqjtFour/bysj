@@ -9,5 +9,130 @@
     <result column="ZPGWBH" jdbcType="INTEGER" property="zpgwbh" />
     <result column="XH" jdbcType="CHAR" property="xh" />
     <result column="YPSJ" jdbcType="CHAR" property="ypsj" />
+    <result column="CKZT" jdbcType="SMALLINT" property="ckzt"></result>
+    <result column="SHZT" jdbcType="SMALLINT" property="shzt"></result>
   </resultMap>
+
+  <resultMap id="ApplyJopStudentDiscipline" type="com.cqfour.bysj.bean.Apply">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="YPBBH" jdbcType="INTEGER" property="ypbbh" />
+    <result column="ZPGWBH" jdbcType="INTEGER" property="zpgwbh" />
+    <result column="XH" jdbcType="CHAR" property="xh" />
+    <result column="YPSJ" jdbcType="CHAR" property="ypsj" />
+    <result column="CKZT" jdbcType="SMALLINT" property="ckzt"></result>
+    <result column="SHZT" jdbcType="SMALLINT" property="shzt"></result>
+    <association property="job" javaType="com.cqfour.bysj.bean.Job">
+      <id column="ZPGWBH" jdbcType="INTEGER" property="zpgwbh" />
+      <result column="YRDWXXBBH" jdbcType="INTEGER" property="yrdwxxbbh" />
+      <result column="MC" jdbcType="CHAR" property="mc" />
+      <result column="GWLX" jdbcType="CHAR" property="gwlx" />
+      <result column="ZY" jdbcType="CHAR" property="zy" />
+      <result column="DD" jdbcType="CHAR" property="dd" />
+      <result column="GZJY" jdbcType="CHAR" property="gzjy" />
+      <result column="XLYQ" jdbcType="CHAR" property="xlyq" />
+      <result column="ZPSL" jdbcType="CHAR" property="zpsl" />
+      <result column="YX" jdbcType="CHAR" property="yx" />
+      <result column="FBSJ" jdbcType="CHAR" property="fbsj" />
+      <result column="GWJJ" jdbcType="LONGVARCHAR" property="gwjj" />
+    </association>
+    <association property="student" javaType="com.cqfour.bysj.bean.Student">
+      <id column="XH" jdbcType="CHAR" property="xh" />
+      <result column="DLZH" jdbcType="CHAR" property="dlzh" />
+      <result column="ZYBH" jdbcType="INTEGER" property="zybh" />
+      <result column="BYSJS" jdbcType="INTEGER" property="bysjs" />
+      <result column="XSZP" jdbcType="CHAR" property="xszp" />
+      <result column="XSXM" jdbcType="CHAR" property="xsxm" />
+      <result column="SFYJY" jdbcType="INTEGER" property="sfyjy" />
+      <result column="JYFS" jdbcType="INTEGER" property="jyfs" />
+      <result column="JYSJ" jdbcType="CHAR" property="jysj" />
+      <result column="SFSFLQ" jdbcType="SMALLINT" property="sfsflq" />
+      <result column="SJHM" jdbcType="CHAR" property="sjhm" />
+      <result column="EMAIL" jdbcType="CHAR" property="email" />
+      <result column="XB" jdbcType="SMALLINT" property="xb" />
+      <result column="CSRQ" jdbcType="CHAR" property="csrq" />
+      <result column="SYD" jdbcType="CHAR" property="syd" />
+      <result column="XL" jdbcType="SMALLINT" property="xl" />
+      <result column="ZZMM" jdbcType="CHAR" property="zzmm" />
+      <result column="MZ" jdbcType="CHAR" property="mz" />
+      <result column="ZYPM" jdbcType="CHAR" property="zypm" />
+      <result column="SG" jdbcType="CHAR" property="sg" />
+      <result column="STZK" jdbcType="CHAR" property="stzk" />
+      <result column="SFTGYYSJ" jdbcType="SMALLINT" property="sftgyysj" />
+      <result column="YYSJCJ" jdbcType="CHAR" property="yysjcj" />
+      <result column="SFTGYYLJ" jdbcType="SMALLINT" property="sftgyylj" />
+      <result column="YYLJCJ" jdbcType="CHAR" property="yyljcj" />
+      <result column="JSJSP" jdbcType="CHAR" property="jsjsp" />
+      <result column="BKJDXX" jdbcType="CHAR" property="bkjdxx" />
+      <result column="BKZY" jdbcType="CHAR" property="bkzy" />
+      <result column="BKKSSJ" jdbcType="CHAR" property="bkkssj" />
+      <result column="BKBYSJ" jdbcType="CHAR" property="bkbysj" />
+      <result column="SSJDXX" jdbcType="CHAR" property="ssjdxx" />
+      <result column="SSZY" jdbcType="CHAR" property="sszy" />
+      <result column="SSKSSJ" jdbcType="CHAR" property="sskssj" />
+      <result column="SSBYSJ" jdbcType="CHAR" property="ssbysj" />
+      <result column="SXGSMC" jdbcType="CHAR" property="sxgsmc" />
+      <result column="GSHY" jdbcType="CHAR" property="gshy" />
+      <result column="SXZW" jdbcType="CHAR" property="sxzw" />
+      <result column="SXDD" jdbcType="CHAR" property="sxdd" />
+      <result column="SXKSSJ" jdbcType="CHAR" property="sxkssj" />
+      <result column="SXJSSJ" jdbcType="CHAR" property="sxjssj" />
+      <result column="XMMC" jdbcType="CHAR" property="xmmc" />
+      <result column="XMKSSJ" jdbcType="CHAR" property="xmkssj" />
+      <result column="XMJSSJ" jdbcType="CHAR" property="xmjssj" />
+      <result column="QWHY" jdbcType="CHAR" property="qwhy" />
+      <result column="QWZW" jdbcType="CHAR" property="qwzw" />
+      <result column="QWGZDD" jdbcType="CHAR" property="qwgzdd" />
+      <result column="QWYX" jdbcType="CHAR" property="qwyx" />
+      <result column="ZWPJ" jdbcType="CHAR" property="zwpj" />
+      <result column="GXSJ" jdbcType="CHAR" property="gxsj" />
+      <result column="BZ" jdbcType="CHAR" property="bz" />
+      <result column="SHSJJL" jdbcType="LONGVARCHAR" property="shsjjl" />
+      <result column="ZYSXNR" jdbcType="LONGVARCHAR" property="zysxnr" />
+      <result column="XMNRMS" jdbcType="LONGVARCHAR" property="xmnrms" />
+      <result column="HJQK" jdbcType="LONGVARCHAR" property="hjqk" />
+      <result column="TCAH" jdbcType="LONGVARCHAR" property="tcah" />
+      <association property="discipline" javaType="com.cqfour.bysj.bean.Discipline">
+        <id column="ZYBH" jdbcType="INTEGER" property="zybh" />
+        <result column="XYBH" jdbcType="INTEGER" property="xybh" />
+        <result column="ZYMC" jdbcType="VARCHAR" property="zymc" />
+        <result column="YJBYSRS" jdbcType="INTEGER" property="yjbysrs" />
+      </association>
+    </association>
+  </resultMap>
+   <sql id="jg">
+     MC,XSXM,t_yp.XH,ZYMC,YPSJ,t_yp.CKZT,t_yp.ZPGWBH,SHZT
+   </sql>
+  <select id="getStudentsByGw" resultMap="ApplyJopStudentDiscipline">
+    SELECT
+    <include refid="jg"></include>
+    FROM t_yp,t_zpgwb,t_xsb,t_zyb
+    WHERE
+    <if test=" zpgwbh !=null and zpgwbh!=0" >
+    t_yp.ZPGWBH=#{zpgwbh}
+    </if>
+    AND  t_yp.ZPGWBH=t_zpgwb.ZPGWBH
+    AND t_yp.XH=t_xsb.XH
+    AND t_xsb.ZYBH=t_zyb.ZYBH
+    <if test="startTime!=null and startTime!=''">
+      AND YPSJ>=#{startTime}
+    </if>
+    <if test="endTime!=null and endTime!=''">
+      AND  YPSJ &lt;= #{endTime}
+    </if>
+    <if test=" ckzt==1 or ckzt==0">
+      AND CKZT=#{ckzt}
+    </if>
+    ORDER BY YPSJ
+  </select>
+
+  <select id="updateCKZT">
+    UPDATE t_yp SET CKZT=1 WHERE ZPGWBH=#{zpgwbh} AND XH=#{xh}
+  </select>
+
+
+  <select id="updateSHZT">
+    UPDATE t_yp SET SHZT=#{shzt} WHERE  ZPGWBH=#{zpgwbh} AND XH=#{xh}
+  </select>
 </mapper>

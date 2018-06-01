@@ -1,6 +1,9 @@
 package com.cqfour.bysj.bean;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Table(name = "t_yp")
 public class Apply {
@@ -29,30 +32,59 @@ public class Apply {
     @Column(name = "YPSJ")
     private String ypsj;
 
-    public Integer getCkzt() {
-        return ckzt;
-    }
 
-    public void setCkzt(Integer ckzt) {
-        this.ckzt = ckzt;
-    }
-
-    @Column(name="CKZT")
-    private Integer ckzt;
 
     /**
-     * 投递岗位
+     * 查看状态
+     */
+    @Column(name="CKZT")
+    private Short ckzt;
+
+    /**
+     * 审核状态
+     */
+    @Column(name="SHZT")
+    private Short shzt;
+
+
+    /**
+     * 通过zpgwbh关联Job
      */
     @Transient
     private Job job;
 
-    public Job getJob() {
-        return job;
+    /**
+     * 通过xh关联Student
+     */
+    @Transient
+    private Student student;
+
+/*    *//**
+     * 通过zybh关联Discipline
+     *//*
+    @Transient
+    private Discipline discipline;*/
+
+    public Job getJob(){
+        return  this.job;
+    }
+    public void setJob(Job job){
+        this.job=job;
     }
 
-    public void setJob(Job job) {
-        this.job = job;
+    public Student getStudent(){
+        return this.student;
     }
+    public void setStudent(Student student){
+        this.student=student;
+    }
+
+ /*   public Discipline getDiscipline(){
+        return this.discipline;
+    }
+    public void setDiscipline(Discipline discipline){
+        this.discipline=discipline;
+    }*/
 
     /**
      * 获取应聘表编号，Integer，自增
@@ -124,5 +156,43 @@ public class Apply {
      */
     public void setYpsj(String ypsj) {
         this.ypsj = ypsj;
+    }
+
+
+    /**
+     * 获取状态
+     *
+     */
+    public Short getCkzt() {
+        return ckzt;
+    }
+
+    /**
+     * 设置状态
+     *
+     * @param ckzt 查看状态
+     */
+
+    public void setCkzt(Short ckzt) {
+        this.ckzt = ckzt;
+    }
+
+
+    /**
+     * 获取审核状态
+     *
+     */
+    public Short getShzt() {
+        return shzt;
+    }
+
+    /**
+     * 设置状态
+     *
+     * @param shzt 查看状态
+     */
+
+    public void setShzt(Short shzt) {
+        this.shzt = shzt;
     }
 }

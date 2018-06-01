@@ -1,6 +1,9 @@
 package com.cqfour.bysj.bean;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Table(name = "t_xsb")
 public class Student {
@@ -335,26 +338,17 @@ public class Student {
     @Column(name = "TCAH")
     private String tcah;
 
+    /**
+     * 通过zybh关联Discipline
+     */
     @Transient
     private Discipline discipline;
 
-    public Discipline getDiscipline() {
-        return discipline;
+    public Discipline getDiscipline(){
+        return this.discipline;
     }
-
-    public void setDiscipline(Discipline discipline) {
-        this.discipline = discipline;
-    }
-
-    @Transient
-    private User user;
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
+    public void setDiscipline(Discipline discipline){
+        this.discipline=discipline;
     }
 
     /**
@@ -1345,66 +1339,5 @@ public class Student {
      */
     public void setTcah(String tcah) {
         this.tcah = tcah;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "xh='" + xh + '\'' +
-                ", dlzh='" + dlzh + '\'' +
-                ", zybh=" + zybh +
-                ", bysjs=" + bysjs +
-                ", xszp='" + xszp + '\'' +
-                ", xsxm='" + xsxm + '\'' +
-                ", sfyjy=" + sfyjy +
-                ", jyfs=" + jyfs +
-                ", jysj='" + jysj + '\'' +
-                ", sfsflq=" + sfsflq +
-                ", sjhm='" + sjhm + '\'' +
-                ", email='" + email + '\'' +
-                ", xb=" + xb +
-                ", csrq='" + csrq + '\'' +
-                ", syd='" + syd + '\'' +
-                ", xl=" + xl +
-                ", zzmm='" + zzmm + '\'' +
-                ", mz='" + mz + '\'' +
-                ", zypm='" + zypm + '\'' +
-                ", sg='" + sg + '\'' +
-                ", stzk='" + stzk + '\'' +
-                ", sftgyysj=" + sftgyysj +
-                ", yysjcj='" + yysjcj + '\'' +
-                ", sftgyylj=" + sftgyylj +
-                ", yyljcj='" + yyljcj + '\'' +
-                ", jsjsp='" + jsjsp + '\'' +
-                ", bkjdxx='" + bkjdxx + '\'' +
-                ", bkzy='" + bkzy + '\'' +
-                ", bkkssj='" + bkkssj + '\'' +
-                ", bkbysj='" + bkbysj + '\'' +
-                ", ssjdxx='" + ssjdxx + '\'' +
-                ", sszy='" + sszy + '\'' +
-                ", sskssj='" + sskssj + '\'' +
-                ", ssbysj='" + ssbysj + '\'' +
-                ", sxgsmc='" + sxgsmc + '\'' +
-                ", gshy='" + gshy + '\'' +
-                ", sxzw='" + sxzw + '\'' +
-                ", sxdd='" + sxdd + '\'' +
-                ", sxkssj='" + sxkssj + '\'' +
-                ", sxjssj='" + sxjssj + '\'' +
-                ", xmmc='" + xmmc + '\'' +
-                ", xmkssj='" + xmkssj + '\'' +
-                ", xmjssj='" + xmjssj + '\'' +
-                ", qwhy='" + qwhy + '\'' +
-                ", qwzw='" + qwzw + '\'' +
-                ", qwgzdd='" + qwgzdd + '\'' +
-                ", qwyx='" + qwyx + '\'' +
-                ", zwpj='" + zwpj + '\'' +
-                ", gxsj='" + gxsj + '\'' +
-                ", bz='" + bz + '\'' +
-                ", shsjjl='" + shsjjl + '\'' +
-                ", zysxnr='" + zysxnr + '\'' +
-                ", xmnrms='" + xmnrms + '\'' +
-                ", hjqk='" + hjqk + '\'' +
-                ", tcah='" + tcah + '\'' +
-                '}';
     }
 }

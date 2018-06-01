@@ -14,25 +14,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-/**
- * 就业指导
- */
 @Controller
 public class EmploymentGuidanceController {
 
     @Autowired
     private SchoolNewsService schoolNewsService;
 
-    /**
-     * 初始化就业指导信息
-     * @param page
-     * @param request
-     * @return
-     */
     @RequestMapping("/employmentguidance")
     public String employment_guidance(@RequestParam(value = "page", defaultValue = "1") Integer page, HttpServletRequest request) {
         List<SchoolNews> schoolNews = schoolNewsService.selectEmploymentGuidanceByLlcs();
-        System.out.println(page+"----------");
         request.getSession().setAttribute("eg_llcs", schoolNews);
         List<SchoolNews> schoolNewsByDate = schoolNewsService.selectEmploymentGuidanceByDate();
         request.getSession().setAttribute("eg_date", schoolNewsByDate);
@@ -43,17 +33,10 @@ public class EmploymentGuidanceController {
         return "/WEB-INF/jsp/employment-guidance.jsp";
     }
 
-    /**
-     * 分页查询
-     * @param page
-     * @param request
-     * @return
-     */
     @RequestMapping("/employmentGuidanceToPage")
     @ResponseBody
     public Message employmentGuidanceToPage(@RequestParam(value = "page", defaultValue = "1") Integer page, HttpServletRequest request) {
         PageHelper.startPage(page, 10);
-        System.out.println(page+"===========");
         List<SchoolNews> employmentGuidance = schoolNewsService.selectAllEmploymentGuidance();
         PageInfo pageInfo = new PageInfo(employmentGuidance, 5);
         request.setAttribute("eg_pageInfo", pageInfo);

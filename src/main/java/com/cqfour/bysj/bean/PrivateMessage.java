@@ -1,6 +1,8 @@
 package com.cqfour.bysj.bean;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Table(name = "t_znsxb")
 public class PrivateMessage {
@@ -15,13 +17,25 @@ public class PrivateMessage {
      * 发送用户账号，Char(64)
      */
     @Column(name = "FSYHZH")
-    private Integer fsyhzh;
+    private String fsyhzh;
+
+    /**
+     * 发送用户名称，Char(64)
+     */
+    @Column(name = "FSYHMC")
+    private String fsyhmc;
 
     /**
      * 接收用户账号，Char(64)
      */
     @Column(name = "JSYHZH")
-    private Integer jsyhzh;
+    private String jsyhzh;
+
+    /**
+     * 接收用户名称，Char(64)
+     */
+    @Column(name = "JSYHMC")
+    private String jsyhmc;
 
     /**
      * 发送时间
@@ -35,6 +49,9 @@ public class PrivateMessage {
     @Column(name = "JSSJ")
     private String jssj;
 
+    /**
+     * 状态是否已读 ， 0表示接收用户未接收，1表示已接收
+     */
     @Column(name = "ZT")
     private Short zt;
 
@@ -67,7 +84,7 @@ public class PrivateMessage {
      *
      * @return FSYHZH - 发送用户账号，Char(64)
      */
-    public Integer getFsyhzh() {
+    public String getFsyhzh() {
         return fsyhzh;
     }
 
@@ -76,16 +93,30 @@ public class PrivateMessage {
      *
      * @param fsyhzh 发送用户账号，Char(64)
      */
-    public void setFsyhzh(Integer fsyhzh) {
+    public void setFsyhzh(String fsyhzh) {
         this.fsyhzh = fsyhzh;
     }
+
+    /**
+     * 获取发送用户名称，Char(64)
+     *
+     * @return FSYHMC - 发送用户名称，Char(64)
+     */
+    public  String getFsyhmc(){ return  this.fsyhmc;}
+
+    /**
+     * 设置发送用户名称，Char(64)
+     *
+     * @param fsyhmc 发送用户名称，Char(64)
+     */
+    public void  setFsyhmc(String fsyhmc){ this.fsyhmc=fsyhmc; }
 
     /**
      * 获取接收用户账号，Char(64)
      *
      * @return JSYHZH - 接收用户账号，Char(64)
      */
-    public Integer getJsyhzh() {
+    public String getJsyhzh() {
         return jsyhzh;
     }
 
@@ -94,8 +125,26 @@ public class PrivateMessage {
      *
      * @param jsyhzh 接收用户账号，Char(64)
      */
-    public void setJsyhzh(Integer jsyhzh) {
+    public void setJsyhzh(String jsyhzh) {
         this.jsyhzh = jsyhzh;
+    }
+
+    /**
+     * 获取接收用户名称，Char(64)
+     *
+     * @return JSYHMC - 接收用户名称，Char(64)
+     */
+    public String getJsyhmc() {
+        return jsyhmc;
+    }
+
+    /**
+     * 设置接收用户名称，Char(64)
+     *
+     * @param jsyhmc 接收用户名称，Char(64)
+     */
+    public void setJsyhmc(String jsyhmc) {
+        this.jsyhmc = jsyhmc;
     }
 
     /**

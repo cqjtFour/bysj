@@ -80,11 +80,7 @@
                     data:{"page":pageIndex},
                     success:function (result) {
                         if (result.status == "success"){
-                            if (webP.indexOf("queryStudent")>=0||webP.indexOf("studentresume")>=0||webP.indexOf("deliveredResume")>=0){
-                                window.location.href=webP+"&page="+pageIndex;
-                            }else{
-                                window.location.href=webP+"?page="+pageIndex;
-                            }
+                            window.location.href=webP+"?page="+pageIndex;
                         }
                     }
                 })
@@ -99,11 +95,7 @@
                     data:{"page":pageIndex},
                     success:function (result) {
                         if (result.status == "success"){
-                            if (webP.indexOf("queryStudent")>=0||webP.indexOf("studentresume")>=0||webP.indexOf("deliveredResume")>=0){
-                                window.location.href=webP+"&page="+pageIndex;
-                            }else{
-                                window.location.href=webP+"?page="+pageIndex;
-                            }
+                            window.location.href=webP+"?page="+pageIndex;
                         }
                     }
                 })
@@ -122,11 +114,7 @@
                     data:{"page":pageIndex},
                     success:function (result) {
                         if (result.status == "success"){
-                            if (webP.indexOf("queryStudent")>=0||webP.indexOf("studentresume")>=0||webP.indexOf("deliveredResume")>=0){
-                                window.location.href=webP+"&page="+pageIndex;
-                            }else{
-                                window.location.href=webP+"?page="+pageIndex;
-                            }
+                            window.location.href=webP+"?page="+pageIndex;
                         }
                     }
                 })
@@ -142,11 +130,7 @@
                     data:{"page":pageIndex},
                     success:function (result) {
                         if (result.status == "success"){
-                            if (webP.indexOf("queryStudent")>=0||webP.indexOf("studentresume")>=0||webP.indexOf("deliveredResume")>=0){
-                                window.location.href=webP+"&page="+pageIndex;
-                            }else{
-                                window.location.href=webP+"?page="+pageIndex;
-                            }
+                            window.location.href=webP+"?page="+pageIndex;
                         }
                     }
                 })

@@ -3,6 +3,9 @@
  */
 
 $(document).ready(function () {
+    $(document).bind("click",function (e) {
+       $("#ts").addClass("notshow");
+    })
     student=new Object();
     /*基本信息*/
     $("#form1bc").click(function () {
@@ -13,24 +16,13 @@ $(document).ready(function () {
         student.xh=$("#xh").val();
         student.xsxm=$("#xsxm").val();
         student.xb=$("input[name='xb']:checked").val();
+        student.csrq=$("#csrq").val();
         student.mz=$("#mz").val();
         student.syd=$("#syd").val();
         student.sjhm=$("#sjhm").val();
         student.email=$("#email").val();
         student.zzmm=$("input[name='zzmm']:checked").val();
         student.sr = $("#csrq").val();
-         $.ajax({
-         url:"/createStudentResume",
-         type:"POST",
-         dataType:"json",
-         data:student,
-         success:function (result) {
-         if(result.status == "success"){
-             console.log(result.msg);
-         }else {
-         }
-         }
-         });
     });
     /*职业意向*/
     $("#form2bc").click(function () {
@@ -38,10 +30,10 @@ $(document).ready(function () {
         $("#span2").addClass("color01");
         $("#form2").addClass("notshow");
         $("#form3").removeClass("notshow");
-        /*student.qwhx=$("#qwhy").val();
-        student.qwzn=$("#qwzn").val();
-        student.qwdd=$("#qwdd").val();
-        student.yx=$("#yx").val();*/
+        student.qwhy=$("#qwhy").val();
+        student.qwzw=$("#qwzn").val();
+        student.qwgzdd=$("#qwdd").val();
+        student.qwyx=$("#yx").val();
     });
     /*工作经历*/
     $("#form3bc").click(function () {
@@ -55,7 +47,7 @@ $(document).ready(function () {
         student.sxdd=$("#gzdd").val();
         student.sxkssj=$("#kssj").val();
         student.sxjssj=$("#jssj").val();
-        /*student.gzms=$("#gzms").val();*/
+        student.zysxnr=$("#gzms").val();
     });
     /*教育经历*/
     $("#form4bc").click(function () {
@@ -78,7 +70,6 @@ $(document).ready(function () {
             student.ssjssj=$("#jsjdsj").val();
             /*student.zypm=$("#zypm").val();*/
         }
-
     });
     /*项目经验*/
     $("#form5bc").click(function () {
@@ -86,13 +77,10 @@ $(document).ready(function () {
         $("#span5").addClass("color01");
         $("#form5").addClass("notshow");
         $("#form6").removeClass("notshow");
-        /*student.xmmc=$("#xmmc").val();
-        student.gsmc=$("#gsmc").val();
-        student.ksxmsj=$("#ksxmsj").val();
-        student.jsxmsj=$("#jsxmsj").val();
-        student.xmms=$("#xmms").val();
-        student.xmzz=$("#xmzz").val();
-        student.xmyz=$("#xmyz").val();*/
+        student.xmmc=$("#xmmc").val();
+        student.xmkssj=$("#ksxmsj").val();
+        student.xmjssj=$("#jsxmsj").val();
+        student.xmnrms=$("#xmms").val();
     });
     /*自我评价*/
     $("#form6bc").click(function () {
@@ -122,18 +110,25 @@ $(document).ready(function () {
         }
         student.xszp=$("#yltx")[0].src;
         student.hjqk=$("#fjxx").val();
-        /*$.ajax({
-         url:"/createStudentResume",
-         type:"POST",
-         dataType:"json",
-         data:student,
-         success:function (result) {
-         if(result.status == "error"){
-         }else {
-         }
-         }
-         });*/
+        $.ajax({
+            url:"/createStudentResume",
+            type:"POST",
+            dataType:"json",
+            data:student,
+            success:function (result) {
+                if(result.msg == "success"){
+                    $("#form7").addClass("notshow");
+                    $("#success").removeClass("notshow");
+                }else {
+                }
+            }
+        });
     });
+
+
+
+
+
 
 
     $("#fh2").click(function () {
@@ -181,6 +176,7 @@ $(document).ready(function () {
         }
     });
 
+
 });
 function uploadImg() {
     var options={
@@ -191,7 +187,7 @@ function uploadImg() {
             $("#yltx").attr("src",result.msg);
         }
     };
-    $("#form8").ajaxSubmit(options);
+    $("#form7").ajaxSubmit(options);
 }
 function jsnx() {
     var yx=Number($("#yx").val());

@@ -1,6 +1,8 @@
 package com.cqfour.bysj.bean;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Table(name = "t_xlzpxxfbb")
 public class JobInfo {
@@ -31,15 +33,6 @@ public class JobInfo {
 
     @Column(name = "ZPLX")
     private String zplx;
-
-    public String getZplx() {
-        return zplx;
-    }
-
-    public void setZplx(String zplx) {
-        this.zplx = zplx;
-    }
-
     /**
      * 获取校内招聘信息发布表编号
      *

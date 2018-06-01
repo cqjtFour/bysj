@@ -11,6 +11,16 @@ body{
 .contentsec{
     width: 100%;
 }
+.ts{
+    width: 800px;
+    margin:20px auto ;
+    overflow: hidden;
+}
+.ts span{
+    font-size: 17px;
+    float: left;
+    color: red;
+}
 .content{
     width: 1000px;
     margin: 20px auto;

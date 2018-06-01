@@ -30,7 +30,12 @@
             background: -moz-linear-gradient(#4990c1, #52a3d2, #6186a3); /* Firefox 3.6 - 15 */
             background: linear-gradient(#4990c1, #52a3d2, #6186a3); /* 标准的语法 */
         }
+        .notshow{
+            display: none;
+        }
     </style>
+
+    <script src="./bootstrap-3.3.7-dist/js/jquery.js" type="text/javascript"></script>
 
 </head>
 
@@ -39,10 +44,10 @@
     <h2 class="mg-b20 text-center">就业管理系统</h2>
     <div class="col-sm-8 col-md-5 center-auto pd-sm-50 pd-xs-20 main_content">
         <p class="text-center font16">用户登录</p>
-        <form action="/loginUser" method="post">
+        <form action="/loginUser" method="post" id="form">
             <div class="form-group mg-t20">
                 <i class="icon-user icon_font"></i>
-                <input type="text" class="login_input" id="username" name="username" placeholder="请输入用户名" />
+                <input type="text" class="login_input" id="username" name="username" placeholder="请输入用户名"  />
             </div>
             <div class="form-group mg-t20">
                 <i class="icon-lock icon_font"></i>
@@ -59,8 +64,9 @@
                 <label>
                     <input type="checkbox" />记住我的登录信息
                 </label>
+                <label id="label1" style="color: red" class=""></label>
             </div>
-            <button type="submit" class="login_btn">登 录</button>
+            <button type="button" class="login_btn" onclick="login()">登 录</button>
         </form>
     </div><!--row end-->
 </div><!--container end-->
@@ -69,7 +75,30 @@
 </body>
 <script src="js/login.js"></script>
 <script>
-
+    $(document).ready(function () {
+        $("#username").focus(function () {
+            $("#label1").addClass("notshow")
+        })
+        $("#password").focus(function () {
+            $("#label1").addClass("notshow");
+        })
+    })
+    function login() {
+        $.ajax({
+            url:"/loginUser",
+            type:"POST",
+            dataType:"json",
+            data:$("#form").serialize(),
+            success:function (result) {
+                if(result.status == "error"){
+                    $("#label1").removeClass("notshow");
+                    document.getElementById("label1").innerHTML= result.msg;
+                }else{
+                    window.location.href="/mainView";
+                }
+            }
+        })
+    }
     window.addEventListener('load',function(){
 
         //code是后台传入的验证字符串

@@ -20,6 +20,7 @@
 </head>
 <body>
       <div class="contentsec">
+          <div class="ts" id="ts"><span>你当前还没有简历，需要创建简历！</span></div>
           <div class="content">
               <div class="speedOfProgress">
                   <ul>
@@ -44,7 +45,7 @@
                           <span class="wid216 color02" id="span5"></span>
                       </li>
                       <li>
-                          <span>7.自我评价</span>
+                          <span>6.自我评价</span>
                           <span class="wid216 color02" id="span6"></span>
                       </li>
                       <li>
@@ -57,18 +58,18 @@
               <div class="inner">
                     <div class="jibenxinxi">
                         <form class="form-horizontal" role="form" id="form1" target="id_iframe">
-                            <input type="hidden" id="xh" name="xh" value="${user.xh}">
+                            <input type="hidden" id="xh" name="xh" value="${student.xh}">
                             <div class="form-group">
                                 <label for="xsxm" class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;名字</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="xsxm" name="xsxm" style="width: 200px;" value="${user.xsxm}">
+                                    <input type="text" class="form-control" id="xsxm" name="xsxm" style="width: 200px;" value="${student.xsxm}">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="xbnan" class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;性别</label>
+                                <label for="xbnan" class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;性别</label>
                                 <div class="col-sm-10">
                                     <label class="radio-inline">
-                                        <input type="radio" name="xb" id="xbnan" value="0"> 男
+                                        <input type="radio" name="xb" id="xbnan" value="0" checked> 男
                                     </label>
                                     <label class="radio-inline">
                                         <input type="radio" name="xb" id="xbnv" value="1"> 女
@@ -82,7 +83,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="syd" class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;民族</label>
+                                <label for="syd" class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;民族</label>
                                 <div class="col-sm-10" >
                                     <select class="form-control" style="width: 200px;" id="mz" name="mz">
                                         <option value="汉">汉</option>
@@ -92,7 +93,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="syd" class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;生源地</label>
+                                <label for="syd" class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;生源地</label>
                                 <div class="col-sm-10" >
                                     <input type="text" class="form-control" id="syd" name="syd" style="width: 200px;">
                                 </div>
@@ -110,7 +111,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="zgdy" class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;政治面貌</label>
+                                <label for="zgdy" class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;政治面貌</label>
                                 <div class="col-sm-10" >
                                     <label class="radio-inline">
                                         <input type="radio" name="zzmm" id="zgdy" value="中共党员（含预备党员）"> 中共党员（含预备党员）
@@ -150,13 +151,13 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="qwdd" class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;期望地点</label>
+                                <label for="qwdd" class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;期望地点</label>
                                 <div class="col-sm-10" >
                                     <input type="text" class="form-control" id="qwdd" name="qwdd" style="width: 200px;">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label  class="col-sm-2 control-label" style="float: left;">*&nbsp;&nbsp;&nbsp;期望年薪</label>
+                                <label  class="col-sm-2 control-label" style="float: left;">&nbsp;&nbsp;&nbsp;期望年薪</label>
                                 <div  style="float: left;">
                                     <input type="text" class="form-control" id="yx" name="yx" onmouseout="jsnx()" style="width: 100px;margin-left: 14px;">
                                 </div>
@@ -176,31 +177,31 @@
                         <%--form2 end--%>
                         <form class="form-horizontal notshow"  role="form" id="form3" target="id_iframe">
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;企业名称</label>
+                                <label class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;企业名称</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="qymc" name="qymc" style="width: 200px;">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;公司行业</label>
+                                <label class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;公司行业</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="gshy" name="gshy" style="width: 200px;">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;职位名称</label>
+                                <label class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;职位名称</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="zwmc" name="zwmc" style="width: 200px;">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;工作地点</label>
+                                <label class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;工作地点</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="gzdd" name="gzdd" style="width: 200px;">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label" style="float: left;">*&nbsp;&nbsp;&nbsp;工作时间</label>
+                                <label class="col-sm-2 control-label" style="float: left;">&nbsp;&nbsp;&nbsp;工作时间</label>
                                 <div style="float: left;">
                                     <input type="date" class="form-control" id="kssj" name="kssj" style="width: 200px;margin-left: 14px;">
                                 </div>
@@ -210,7 +211,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;工作描述</label>
+                                <label class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;工作描述</label>
                                 <div class="col-sm-10">
                                     <textarea class="form-control" id="gzms" name="gzms" maxlength="1000" placeholder="请详述您的工作职责范围以及工作业绩" rows="5"></textarea>
                                 </div>
@@ -276,19 +277,13 @@
                         <%--form4 end--%>
                         <form class="form-horizontal notshow"  role="form" id="form5" target="id_iframe">
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;项目名称</label>
+                                <label class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;项目名称</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="xmmc" style="width: 200px;">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;公司名称</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="gsmc" style="width: 200px;">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" style="float: left;">*&nbsp;&nbsp;&nbsp;项目时间</label>
+                                <label class="col-sm-2 control-label" style="float: left;">&nbsp;&nbsp;&nbsp;项目时间</label>
                                 <div style="float: left;">
                                     <input type="date" class="form-control" id="ksxmsj" style="width: 200px;margin-left: 14px;">
                                 </div>
@@ -298,21 +293,9 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;项目描述</label>
+                                <label class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;项目描述</label>
                                 <div class="col-sm-10">
                                     <textarea class="form-control" id="xmms" maxlength="1000" rows="5" placeholder="请详细描述项目内容，填写文字限1000字以内"></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;项目职责</label>
-                                <div class="col-sm-10">
-                                    <textarea class="form-control" id="xmzz" maxlength="1000" rows="5" placeholder="请详细描述您的职责范围及工作任务，填写文字限1000字以内"></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;项目业绩</label>
-                                <div class="col-sm-10">
-                                    <textarea class="form-control" id="xmyz" maxlength="1000" rows="5" placeholder="请详细描述您在项目中取得的业绩，填写文字限1000字以内"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -340,7 +323,7 @@
                         <%--form7 end--%>
                         <form class="form-horizontal notshow"  role="form" id="form7" target="id_iframe">
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;更新头像</label>
+                                <label class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;更新头像</label>
                                 <div class="col-sm-10">
                                     <label for="xztp" class="btn btn-default">选择图片</label>
                                     <input id="xztp" type="file" name="file" style="display: none" onchange="uploadImg()">
@@ -349,11 +332,11 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;预览头像</label>
                                 <div class="col-sm-10">
-                                    <label class="control-label"><img src="../images/headPortrait/15248290425412842823817552636617.jpg" style="width: 140px;height: 140px;" class="img-thumbnail" id="yltx"></label>
+                                    <label class="control-label"><img src="${student.xszp}" style="width: 140px;height: 140px;" class="img-thumbnail" id="yltx"></label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label" style="float: left;">*&nbsp;&nbsp;&nbsp;英语等级</label>
+                                <label class="col-sm-2 control-label" style="float: left;">&nbsp;&nbsp;&nbsp;英语等级</label>
                                 <div style="float:left;">
                                     <label class="control-label" style="float: left">
                                         <input type="checkbox"  id="yysj" style="margin-left: 10px;">&nbsp;英语四级
@@ -366,7 +349,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;附加信息</label>
+                                <label class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;附加信息</label>
                                 <div class="col-sm-10">
                                     <textarea class="form-control" id="fjxx" rows="5" placeholder="如：获奖资格证书、专利等，填写文字限1000字以内" maxlength="1000"></textarea>
                                 </div>
@@ -379,6 +362,9 @@
                             </div>
                         </form>
                         <%--form8 end--%>
+                        <div class="notshow" id="success" style="width: 300px;margin: 100px auto;">
+                            <h1>Success!   <a href="/resume" style="font-size: 17px;">查看我的简历</a></h1>
+                        </div>
                         <iframe id="id_iframe" name="id_iframe" style="display:none;"></iframe>
                     </div>
                   <%--jibenxinxi end--%>
