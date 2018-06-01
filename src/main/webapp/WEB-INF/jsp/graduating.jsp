@@ -49,8 +49,14 @@
                             <ul>
                                 <li><a href="/index">首页</a></li>
                                 <li><a href="/advice">通知公告</a></li>
-                                <li><a href="/specialrecruitment">招聘信息</a>
+                                <li><a href="#">招聘信息</a>
+                                    <ul class="backcolr">
+                                        <li><a href="/specialrecruitment">专场招聘</a></li>
+                                        <li><a href="/socialrecruitment">社会招聘</a></li>
+                                        <li><a href="/doublemeeting">双选会</a></li>
+                                    </ul>
                                 </li>
+                                <li><a href="/download">下载中心</a></li>
                                 <li><a href="#">就业指南</a>
                                     <ul class="backcolr">
                                         <li><a href="/employmentguidance">就业指导</a></li>
@@ -90,126 +96,77 @@
                 <h3 class="widget-head-border colr">毕业去向</h3>
                 <div class="boxshadow">
                     <div class="search">
-                        <form class="form-inline" action="/queryStudent" method="get" id="myForm">
+                        <form class="form-inline">
                             <div class="form-group">
-                                <input type="text" value="" class="form-control"  placeholder="姓名" name="stuName" id="stuName">
+                                <input type="text" class="form-control" id="exampleInputName2" placeholder="姓名">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control"  placeholder="学号" name="stuNo" id="stuNo">
+                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="学号">
                             </div>
-                            <button type="button" class="btn btn-default" id="button">
+                            <button type="submit" class="btn btn-default">
                                 <span class="glyphicon glyphicon-search" style="height: 20px;"></span>
                             </button>
-                            <span style="color:#999;margin-left:20px ;">爱填不填</span>
+                            <span style="color:#999;margin-left:20px ;">姓名、学号都填写的情况下才能查询档案去向信息</span>
                         </form>
-                        <input type="hidden" id="sName"/>
-                        <input type="hidden" id="sNo"/>
-                        <script type="text/javascript">
-                            $("#button").click(function(){
-                                $("#sName").val($("#stuName").val());
-                                $("#sNo").val($("#stuNo").val());
-                                $("#myForm").submit();    //提交ID为myform的表单
-                            })
-                        </script>
                     </div>
                     <!--search end-->
                     <div class="search-list">
                         <table class="s-list">
                             <thead>
                             <tr>
-                                <th width="60">学号</th>
                                 <th width="50">姓名</th>
+                                <th width="60">学号</th>
                                 <th width="50">性别</th>
-                                <th width="60">学历</th>
-                                <th>专业名称</th>
                                 <th width="100">毕业年份</th>
-
+                                <th>专业名称</th>
+                                <th width="60">学历</th>
                                 <th width="50">手机号码</th>
                                 <th width="300">所在公司</th>
                                 <th width="100">公司地点</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <c:forEach items="${student_pageInfo.list}" var="student">
+                            <c:forEach items="${student}" var="student">
                                 <tr>
-                                    <td>${student.xh}</td>
-                                    <td>${student.xsxm}</td>
                                     <td>
-                                        <c:if test="${student.xb==0}">
-                                            男
-                                        </c:if>
-                                        <c:if test="${student.xb==1}">
-                                            女
-                                        </c:if>
+                                            ${student.xsxm}
                                     </td>
                                     <td>
-                                        <c:if test="${student.xl==0}">
-                                            本科
-                                        </c:if>
-                                        <c:if test="${student.xl==1}">
+                                            ${student.xh}
+                                    </td>
+                                    <td>
+                                            ${student.xb}
+                                    </td>
+                                    <td>
+                                            ${student.bkbysj}
+                                    </td>
+                                    <td>
+                                            ${student.zybh}
+                                    </td>
+                                    <td>
+                                        <c:if test="${student.xl}==1">
                                             硕士
                                         </c:if>
+                                        <c:if test="${student.xl}==0">
+                                            本科
+                                        </c:if>
                                     </td>
                                     <td>
-                                        <c:if test="${student.xl==0}">
-                                            ${student.bkzy}
-                                        </c:if>
-                                        <c:if test="${student.xl==1}">
-                                            ${student.sszy}
-                                        </c:if>
+                                            ${student.sjhm}
                                     </td>
-                                    <td>${student.bysjs}</td>
-
-                                    <td>${student.sjhm}</td>
-                                    <td>${student.sxgsmc}</td>
-                                    <td>${student.sxdd}</td>
+                                    <td>
+                                            ${student.sxgsmc}
+                                    </td>
+                                    <td>
+                                            ${student.sxdd}
+                                    </td>
                                 </tr>
                             </c:forEach>
+
                             </tbody>
                         </table>
                     </div>
                     <!--search-list end-->
-                    <div class="page" id="page"></div>
-                    <script>
-                        $("#sNo").val(${stuNo});
-                        $("#sName").val("${stuName}");
-                        $('#page').paging({
-                            webPage:"/queryStudent?stuName="+$("#sName").val()+""
-                            +"&stuNo"+$("#sNo").val(),
-                            parameter:"/queryStudentToPage?page="+1+"&stuName="+$("#sName").val()+""
-                            +"&stuNo"+$("#sNo").val(),
-                            initPageNo: ${student_pageInfo.pageNum}, // 初始页码
-                            totalPages: ${student_pageInfo.pages}, //总页数
-                            pageNo:${student_pageInfo.pageNum},
-                            /*totalCount: '合计' + setTotalCount + '条数据', // 条目总数*/
-                            slideSpeed: 600, // 缓动速度。单位毫秒
-                            jump: true, //是否支持跳转
-                            callback: function(page) { // 回调函数
-                                console.log(page);
-                            }
-                        })
-                        window.onload = function(){
-                            var obj_lis = document.getElementById("pageSelect").getElementsByTagName("li");
-                            for(var i=0;i < obj_lis.length;i++){
-                                obj_lis[i].onclick = function(){
-
-                                    var j = parseInt(this.innerHTML);
-                                    $.ajax({
-                                        url:"/queryStudentToPage",
-                                        type:"GET",
-                                        dataType:"json",
-                                        data:{"page":j,"stuName":$("#sName").val(),"stuNo":$("#sNo").val()},
-                                        success:function (result) {
-                                            if (result.status == "success"){
-                                                window.location.href="/queryStudent?page="+j+"&stuName="+$("#sName").val()+""
-                                                    +"&stuNo"+$("#sNo").val();
-                                            }
-                                        }
-                                    })
-                                }
-                            }
-                        }
-                    </script>
                 </div>
                 <!--contact-us end-->
             </div>

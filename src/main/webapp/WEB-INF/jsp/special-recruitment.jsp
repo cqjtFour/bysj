@@ -1,5 +1,4 @@
-﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
+﻿<%--
 
   Created by IntelliJ IDEA.
   User: ASUS
@@ -23,7 +22,7 @@
     <link rel="stylesheet" type="text/css" media="all" href="css/daterangepicker.css"/>
     <link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
     <!--// Javascripts //-->
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/moment.js"></script>
     <script type="text/javascript" src="js/daterangepicker.js"></script>
@@ -61,8 +60,14 @@
                             <ul>
                                 <li><a href="/index">首页</a></li>
                                 <li><a href="/advice">通知公告</a></li>
-                                <li class="current-menu-item"><a href="/specialrecruitment">招聘信息</a>
+                                <li class="current-menu-item"><a href="#">招聘信息</a>
+                                    <ul class="backcolr">
+                                        <li><a href="/specialrecruitment">专场招聘</a></li>
+                                        <li><a href="/socialrecruitment">社会招聘</a></li>
+                                        <li><a href="/doublemeeting">双选会</a></li>
+                                    </ul>
                                 </li>
+                                <li><a href="/download">下载中心</a></li>
                                 <li><a href="#">就业指南</a>
                                     <ul class="backcolr">
                                         <li><a href="/employmentguidance">就业指导</a></li>
@@ -107,81 +112,112 @@
                             <div style="float: left;margin-right: 10px;margin-left: 180px;margin-top: 5px">
                                 <label>请选择日期范围:</label>
                             </div>
-                            <div style="margin-bottom: 20px;float: left" class="col-md-4">
+                            <div style="margin-bottom: 20px;float: left" class="col-md-4 demo">
                                 <input style="width: 227px" type="text" id="config-demo" class="form-control"/>
                                 <i class="glyphicon glyphicon-calendar form-control-feedback"></i>
-                            </div>
-                            <div style="margin-bottom: 20px;float: left" class="col-md-2" class="col-offset-2">
-                                <button type="button" class="btn btn-info" onclick="getDate()">查询</button>
                             </div>
                         </div>
                         <script type="text/javascript">
                             $('#config-demo').daterangepicker({
-                                "startDate": "04-08-2018",
-                                "endDate": "04-14-2018"
+                                "startDate": "04/08/2018",
+                                "endDate": "04/14/2018"
                             });
-                            function getDate() {
-                                window.location.href = "/specialrecruitment?date="+$('#config-demo').val().toString();
-                            }
                         </script>
                         <table class="table table-striped table-hover">
                             <tr>
                                 <td>单位名称</td>
-                                <td>招聘地点</td>
+                                <td>教室名称</td>
                                 <td>招聘日期</td>
-                                <td>单位性质</td>
+                                <td>招聘时间</td>
                             </tr>
-                            <c:forEach items="${recruitment.list}" var="reserveInfo">
-                                <tr style="cursor: pointer" onclick="toShow(${reserveInfo.xnzpgsbbh})">
-                                    <td>${reserveInfo.employers.dwmc}</td>
-                                    <td>${reserveInfo.zpdd}</td>
-                                    <td>${reserveInfo.zpsj}</td>
-                                    <td>${reserveInfo.employers.dwxz}</td>
-                                </tr>
-                                <script>
-                                    function toShow(i) {
-                                        alert(i);
-                                        window.location.href = "/showReserveInfo?xnzpgsbbh="+i;
-                                    }
-                                </script>
-                            </c:forEach>
+                            <tr>
+                                <td>四川凯力威科技股份有限公司专场招聘</td>
+                                <td>就业宣讲厅</td>
+                                <td>2018-04-26</td>
+                                <td>14:30 - 18:00</td>
+                            </tr>
+                            <tr>
+                                <td>四川凯力威科技股份有限公司专场招聘</td>
+                                <td>就业宣讲厅</td>
+                                <td>2018-04-26</td>
+                                <td>14:30 - 18:00</td>
+                            </tr>
+                            <tr>
+                                <td>四川凯力威科技股份有限公司专场招聘</td>
+                                <td>就业宣讲厅</td>
+                                <td>2018-04-26</td>
+                                <td>14:30 - 18:00</td>
+                            </tr>
+                            <tr>
+                                <td>四川凯力威科技股份有限公司专场招聘</td>
+                                <td>就业宣讲厅</td>
+                                <td>2018-04-26</td>
+                                <td>14:30 - 18:00</td>
+                            </tr>
+                            <tr>
+                                <td>四川凯力威科技股份有限公司专场招聘</td>
+                                <td>就业宣讲厅</td>
+                                <td>2018-04-26</td>
+                                <td>14:30 - 18:00</td>
+                            </tr>
+                            <tr>
+                                <td>四川凯力威科技股份有限公司专场招聘</td>
+                                <td>就业宣讲厅</td>
+                                <td>2018-04-26</td>
+                                <td>14:30 - 18:00</td>
+                            </tr>
+                            <tr>
+                                <td>四川凯力威科技股份有限公司专场招聘</td>
+                                <td>就业宣讲厅</td>
+                                <td>2018-04-26</td>
+                                <td>14:30 - 18:00</td>
+                            </tr>
+                            <tr>
+                                <td>四川凯力威科技股份有限公司专场招聘</td>
+                                <td>就业宣讲厅</td>
+                                <td>2018-04-26</td>
+                                <td>14:30 - 18:00</td>
+                            </tr>
+                            <tr>
+                                <td>四川凯力威科技股份有限公司专场招聘</td>
+                                <td>就业宣讲厅</td>
+                                <td>2018-04-26</td>
+                                <td>14:30 - 18:00</td>
+                            </tr>
+                            <tr>
+                                <td>四川凯力威科技股份有限公司专场招聘</td>
+                                <td>就业宣讲厅</td>
+                                <td>2018-04-26</td>
+                                <td>14:30 - 18:00</td>
+                            </tr>
+                            <tr>
+                                <td>四川凯力威科技股份有限公司专场招聘</td>
+                                <td>就业宣讲厅</td>
+                                <td>2018-04-26</td>
+                                <td>14:30 - 18:00</td>
+                            </tr>
+                            <tr>
+                                <td>四川凯力威科技股份有限公司专场招聘</td>
+                                <td>就业宣讲厅</td>
+                                <td>2018-04-26</td>
+                                <td>14:30 - 18:00</td>
+                            </tr>
                         </table>
 
-                        <div class="page" id="page"></div>
 
+                        <div class="page" id="page"></div>
                         <script>
+                            var setTotalCount = 301;
                             $('#page').paging({
-                                webPage:"/specialrecruitment",
-                                parameter:"/queryReserveInfo",
-                                initPageNo: ${recruitment.pageNum}, // 初始页码
-                                totalPages: ${recruitment.pages}, //总页数
-                                pageNo:${recruitment.pageNum},
+                                initPageNo: 1, // 初始页码
+                                totalPages: 30, //总页数
                                 /*totalCount: '合计' + setTotalCount + '条数据', // 条目总数*/
                                 slideSpeed: 600, // 缓动速度。单位毫秒
                                 jump: true, //是否支持跳转
-                                callback: function(page) { // 回调函数
+                                callback: function (page) { // 回调函数
                                     console.log(page);
                                 }
                             })
-                            window.onload = function(){
-                                var obj_lis = document.getElementById("pageSelect").getElementsByTagName("li");
-                                for(var i=0;i < obj_lis.length;i++){
-                                    obj_lis[i].onclick = function(){
-                                        var j = parseInt(this.innerHTML);
-                                        $.ajax({
-                                            url:"/queryReserveInfo",
-                                            type:"GET",
-                                            dataType:"json",
-                                            data:{"page":j},
-                                            success:function (result) {
-                                                if (result.status == "success"){
-                                                    window.location.href="/specialrecruitment?page="+j;
-                                                }
-                                            }
-                                        })
-                                    }
-                                }
-                            }
                         </script>
                     </div>
                     <!--boxshadow-left end-->
@@ -193,14 +229,30 @@
                             <!--boxshadow-right-title end-->
                             <div class="boxshadow-right-show">
                                 <ul style="height: 238px; margin: 5px;">
-                                    <c:forEach items="${fiveData}" var="five">
-                                        <li><a href="/showReserveInfo?xnzpgsbbh=${five.xnzpgsbbh}">${five.employers.dwmc}</a></li>
-                                    </c:forEach>
+                                    <li><a href="" title="">重庆交通大学</a></li>
+                                    <li><a href="" title="">重庆交通大学</a></li>
+                                    <li><a href="" title="">关于开展2015届毕业生就业现状调查的通知</a></li>
+                                    <li><a href="" title="">大学生创业补贴项目公示</a></li>
+                                    <li><a href="" title="">葛洲坝第五工程有限公司就业协议返回通知</a></li>
                                 </ul>
                             </div>
                             <!--boxshadow-right-show end-->
                         </div>
                         <!--boxshadow-right-up end-->
+                        <div class="boxshadow-right-down">
+                            <div class="boxshadow-right-title">
+                                <div class="left">最新招聘公司</div>
+                            </div>
+                            <div class="boxshadow-right-show">
+                                <ul class="multi" style="height: 256px;">
+                                    <li><a href="" title="">四川理工学院 2017届毕业生就业质量年度报告</a></li>
+                                    <li><a href="" title="">关于招生就业处工作地点搬迁的说明</a></li>
+                                    <li><a href="" title="">就业协议盖章时间公告</a></li>
+                                    <li><a href="" title="">关于2017届毕业生协助开展毕业生就业创业情况调研的通知</a></li>
+                                    <li><a href="" title="">2018届毕业生双选会邀请信</a></li>
+                                </ul>
+                            </div>
+                        </div>
                         <!--boxshadow-right-down end-->
                     </div>
                     <!--boxshadow-right end-->

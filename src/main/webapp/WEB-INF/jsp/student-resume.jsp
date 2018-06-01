@@ -1,5 +1,4 @@
-﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
+﻿<%--
 
   Created by IntelliJ IDEA.
   User: ASUS
@@ -49,8 +48,14 @@
 							<ul>
 								<li><a href="/index">首页</a></li>
 								<li><a href="/advice">通知公告</a></li>
-								<li><a href="/specialrecruitment">招聘信息</a>
+								<li><a href="#">招聘信息</a>
+									<ul class="backcolr">
+										<li><a href="/specialrecruitment">专场招聘</a></li>
+										<li><a href="/socialrecruitment">社会招聘</a></li>
+										<li><a href="/doublemeeting">双选会</a></li>
+									</ul>
 								</li>
+								<li><a href="/download">下载中心</a></li>
 								<li><a href="#">就业指南</a>
 									<ul class="backcolr">
 										<li><a href="/employmentguidance">就业指导</a></li>
@@ -93,20 +98,22 @@
             		<div class="search">           		    	
             			<form class="form-inline">
             				<div class="form-group input-group">
-            					<input id="inputData" type="text" class="form-control" placeholder="在结果中搜索">
+            					<input type="text" class="form-control" placeholder="在结果中搜索">	
                                 <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button" style="height: 34px;" onclick="sortByDate()">
+                                    <button class="btn btn-default" type="button" style="height: 34px;">
                                     	<span class="glyphicon glyphicon-search"></span>
                                     </button>
                                 </span>      					
-            				</div>
-							<input type="hidden" id="result"/>
-							<script type="text/javascript">
-								function sortByDate() {
-								    var input = $('#inputData').val();
-                                    window.location.href = "/studentresume?input="+input;
-                                }
-							</script>
+            				</div>			
+                            <div class="checkbox" style="float: right;padding-right: 40px;">
+								更新日期:
+								<label style="padding-right: 5px;">
+									<span class="glyphicon glyphicon-arrow-up"></span>
+								</label>
+								<label >
+									<span class="glyphicon glyphicon-arrow-down"></span>
+								</label>
+                            </div>   
             			</form>
             		</div>
             		<!--search end-->
@@ -114,11 +121,10 @@
             			<table class="s-list">
             				<thead>
             					<tr>
-									<th width="60">学号</th>
             						<th width="60">姓名</th>
             						<th width="60">性别</th>
             						<th width="60">学历</th>
-            						<th>专业</th>
+            						<th>专业名称-方向</th>
             						<th width="100">毕业年份</th>
             						<th width="100">意向行业</th>
             						<th width="150">意向工作地</th>
@@ -126,79 +132,123 @@
             					</tr>
             				</thead>
             				<tbody>
-								<c:forEach items="${student_pageInfo.list}" var="student">
-									<tr>
-										<td>${student.xh}</td>
-										<td>${student.xsxm}</td>
-										<td>
-											<c:if test="${student.xb==0}">
-												男
-											</c:if>
-											<c:if test="${student.xb==1}">
-												女
-											</c:if>
-										</td>
-										<td>
-											<c:if test="${student.xl==0}">
-												本科
-											</c:if>
-											<c:if test="${student.xl==1}">
-												硕士
-											</c:if>
-										</td>
-										<td>
-											<c:if test="${student.xl==0}">
-												${student.bkzy}
-											</c:if>
-											<c:if test="${student.xl==1}">
-												${student.sszy}
-											</c:if>
-										</td>
-										<td>${student.bysjs}</td>
-										<td>${student.qwhy}</td>
-										<td>${student.qwgzdd}</td>
-										<td>${student.gxsj}</td>
-									</tr>
-								</c:forEach>
+            					<tr>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
+            						<td>女</td>
+            						<td>本科生毕业</td>
+            						<td>食品科学与工程-无方向</td>
+            						<td>2018</td>
+            						<td>制造业</td>
+            						<td>成都</td>
+            						<td>2018-04-07</td>
+            					</tr>
+            					<tr>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
+            						<td>女</td>
+            						<td>本科生毕业</td>
+            						<td>食品科学与工程-无方向</td>
+            						<td>2018</td>
+            						<td>制造业</td>
+            						<td>成都</td>
+            						<td>2018-04-07</td>
+            					</tr>
+            					<tr>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
+            						<td>女</td>
+            						<td>本科生毕业</td>
+            						<td>食品科学与工程-无方向</td>
+            						<td>2018</td>
+            						<td>制造业</td>
+            						<td>成都</td>
+            						<td>2018-04-07</td>
+            					</tr>
+            					<tr>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
+            						<td>女</td>
+            						<td>本科生毕业</td>
+            						<td>食品科学与工程-无方向</td>
+            						<td>2018</td>
+            						<td>制造业</td>
+            						<td>成都</td>
+            						<td>2018-04-07</td>
+            					</tr>
+            					<tr>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
+            						<td>女</td>
+            						<td>本科生毕业</td>
+            						<td>食品科学与工程-无方向</td>
+            						<td>2018</td>
+            						<td>制造业</td>
+            						<td>成都</td>
+            						<td>2018-04-07</td>
+            					</tr>
+            					<tr>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
+            						<td>女</td>
+            						<td>本科生毕业</td>
+            						<td>食品科学与工程-无方向</td>
+            						<td>2018</td>
+            						<td>制造业</td>
+            						<td>成都</td>
+            						<td>2018-04-07</td>
+            					</tr>
+            					<tr>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
+            						<td>女</td>
+            						<td>本科生毕业</td>
+            						<td>食品科学与工程-无方向</td>
+            						<td>2018</td>
+            						<td>制造业</td>
+            						<td>成都</td>
+            						<td>2018-04-07</td>
+            					</tr>
+            					<tr>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
+            						<td>女</td>
+            						<td>本科生毕业</td>
+            						<td>食品科学与工程-无方向</td>
+            						<td>2018</td>
+            						<td>制造业</td>
+            						<td>成都</td>
+            						<td>2018-04-07</td>
+            					</tr>
+            					<tr>
+            						<td><a href="/login" target="_blank" title='李芸'>李芸</a></td>
+            						<td>女</td>
+            						<td>本科生毕业</td>
+            						<td>食品科学与工程-无方向</td>
+            						<td>2018</td>
+            						<td>制造业</td>
+            						<td>成都</td>
+            						<td>2018-04-07</td>
+            					</tr>
+            					<tr>
+            						<td><a href="/MCenter/Student/StuResume_Info?XSIDStr=250A476B4807FE5F" target="_blank" title='李芸'>李芸</a></td>
+            						<td>女</td>
+            						<td>本科生毕业</td>
+            						<td>食品科学与工程-无方向</td>
+            						<td>2018</td>
+            						<td>制造业</td>
+            						<td>成都</td>
+            						<td>2018-04-07</td>
+            					</tr>
             				</tbody>
             			</table>
             		</div>
             		<!--search-list end-->
             		<div class="page" id="page"></div>
             		<script>
-						$("#result").val("${inputResult}");
-                        $('#page').paging({
-                            webPage:"/studentresume?input="+$("#result").val(),
-                            parameter:"/studentresumeToPage?input="+$("#result").val(),
-                            initPageNo: ${student_pageInfo.pageNum}, // 初始页码
-                            totalPages: ${student_pageInfo.pages}, //总页数
-                            pageNo:${student_pageInfo.pageNum},
-                            /*totalCount: '合计' + setTotalCount + '条数据', // 条目总数*/
-                            slideSpeed: 600, // 缓动速度。单位毫秒
-                            jump: true, //是否支持跳转
-                            callback: function(page) { // 回调函数
-                                console.log(page);
-                            }
-                        })
-                        window.onload = function(){
-                            var obj_lis = document.getElementById("pageSelect").getElementsByTagName("li");
-                            for(var i=0;i < obj_lis.length;i++){
-                                obj_lis[i].onclick = function(){
-                                    var j = parseInt(this.innerHTML);
-                                    $.ajax({
-                                        url:"/studentresumeToPage",
-                                        type:"GET",
-                                        dataType:"json",
-                                        data:{"page":j,"input":$("#result").val()},
-                                        success:function (result) {
-                                            if (result.status == "success"){
-                                                window.location.href="/studentresume?page="+j+"&input="+$("#result").val();
-                                            }
-                                        }
-                                    })
-                                }
-                            }
-                        }
+            			var setTotalCount = 301;
+            			$('#page').paging({
+            				initPageNo: 1, // 初始页码
+            				totalPages: 30, //总页数
+            				/*totalCount: '合计' + setTotalCount + '条数据', // 条目总数*/
+            				slideSpeed: 600, // 缓动速度。单位毫秒
+            				jump: true, //是否支持跳转
+            				callback: function(page) { // 回调函数
+            					console.log(page);
+            					}
+            				})
             		</script>
             	</div>
             	<!--contact-us end-->

@@ -43,8 +43,14 @@
                             <ul>
                                 <li class="current-menu-item"><a href="#">首页</a></li>
                                 <li><a href="/advice">通知公告</a></li>
-                                <li><a href="/specialrecruitment">招聘信息</a>
+                                <li><a href="#">招聘信息</a>
+                                    <ul class="backcolr">
+                                        <li><a href="/specialrecruitment">专场招聘</a></li>
+                                        <li><a href="/socialrecruitment">社会招聘</a></li>
+                                        <li><a href="/doublemeeting">双选会</a></li>
+                                    </ul>
                                 </li>
+                                <li><a href="/download">下载中心</a></li>
                                 <li><a href="#">就业指南</a>
                                     <ul class="backcolr">
                                         <li><a href="/employmentguidance">就业指导</a></li>
@@ -84,22 +90,40 @@
                 <div class="halfbox left" id="halfup">
                     <div class="divwidth">
                         <div class="row">
-                            <div class="col-md-8">招聘信息</div>
+                            <div class="col-md-8">专场招聘</div>
                             <div class="col-md-4"><a href="/specialrecruitment" class="readmore">查看更多</a></div>
                         </div>
                         <hr/>
-                        <div id="div1" style="height: 155px">
+                        <div id="div1">
                             <ul style="list-style-type: disc">
                                 <c:forEach items="${specialEmployee}" var="special">
                                     <li>
-                                        <a href="/showReserveInfo?xnzpgsbbh=${special.xnzpgsbbh}" class="col-md-8">${special.jobInfo.xnzpnrbt}</a>
-                                        <span class="col-md-4">${special.jobInfo.zpxxfbsj}</span>
+                                        <a href="#" class="col-md-8">${special.xxbt}</a>
+                                        <span class="col-md-4">${special.xxfbsj}</span>
                                     </li>
                                 </c:forEach>
                             </ul>
                         </div>
                     </div>
                     <hr/>
+                    <div class="divwidth" style="padding-top: 15px;">
+                        <div class="row">
+                            <div class="col-md-8">双选会</div>
+                            <div class="col-md-4"><a href="/doublemeeting" class="readmore">查看更多</a></div>
+                        </div>
+                        <hr/>
+                        <div id="div2">
+                            <ul style="list-style-type: disc">
+                                <c:forEach items="${doubleMeeting}" var="special">
+                                    <li>
+                                        <a href="#" class="col-md-8">${special.xxbt}</a>
+                                        <span class="col-md-4">${special.xxfbsj}</span>
+                                    </li>
+                                </c:forEach>
+                            </ul>
+                            </ul>
+                        </div>
+                    </div>
                     <hr/>
                     <div class="divwidth" style="padding-top: 15px;">
                         <div class="row">
@@ -111,7 +135,7 @@
                             <ul style="list-style-type: disc">
                                 <c:forEach items="${employmentPolicy}" var="special">
                                     <li>
-                                        <a href="/showPolicy?fbbh=${special.fbbbh}" class="col-md-8">${special.xxbt}</a>
+                                        <a href="#" class="col-md-8">${special.xxbt}</a>
                                         <span class="col-md-4">${special.xxfbsj}</span>
                                     </li>
                                 </c:forEach>
@@ -133,7 +157,7 @@
                             <ul style="list-style-type: disc">
                                 <c:forEach items="${advice}" var="special">
                                     <li>
-                                        <a href="/showAdvice?fbbh=${special.fbbbh}" class="col-md-8">${special.xxbt}</a>
+                                        <a href="#" class="col-md-8">${special.xxbt}</a>
                                         <span class="col-md-4">${special.xxfbsj}</span>
                                     </li>
                                 </c:forEach>
@@ -141,6 +165,23 @@
                         </div>
                     </div>
                     <hr/>
+                    <div class="divwidth" style="padding-top: 15px;">
+                        <div class="row">
+                            <div class="col-md-8">社会招聘</div>
+                            <div class="col-md-4"><a href="/socialrecruitment" class="readmore">查看更多</a></div>
+                        </div>
+                        <hr/>
+                        <div id="div4">
+                            <ul style="list-style-type: disc">
+                                <c:forEach items="${socialEmployee}" var="special">
+                                    <li>
+                                        <a href="#" class="col-md-8">${special.xxbt}</a>
+                                        <span class="col-md-4">${special.xxfbsj}</span>
+                                    </li>
+                                </c:forEach>
+                            </ul>
+                        </div>
+                    </div>
                     <hr/>
                     <div class="divwidth" style="padding-top: 15px;">
                         <div class="row">
@@ -152,7 +193,7 @@
                             <ul style="list-style-type: disc">
                                 <c:forEach items="${employmentGuidance}" var="special">
                                     <li>
-                                        <a href="/showGuidance?fbbh=${special.fbbbh}" class="col-md-8">${special.xxbt}</a>
+                                        <a href="#" class="col-md-8">${special.xxbt}</a>
                                         <span class="col-md-4">${special.xxfbsj}</span>
                                     </li>
                                 </c:forEach>
@@ -202,10 +243,10 @@
                                     </div>
                                     <div class="controls">
                                     </div>
-                                    <label id="label1" style="position: absolute;top: 710px;right: 110px;color: red">${error} </label>
+                                    <label id="label1" style="position: absolute;top: 710px;right: 110px">${error} </label>
                                 </div>
                                 <div class="form-group col-md-offset-10" style="margin-top: 40px">
-                                    <a style="position: absolute;right: 230px;top: 740px;float: left" href="/forgetPassword"
+                                    <a style="position: absolute;right: 230px;top: 740px;float: left" href="#"
                                        class="btn" role="button"><b>忘记密码</b></a>
                                     <a style="position: absolute;top: 740px;float: left" href="/signIn"
                                        class="btn col-md-offset-1" role="button"><b>单位注册</b></a>
@@ -261,7 +302,7 @@
         </div>
     </div>
 </div>
-<div class="friendship-link" style="position: absolute;top: 1200px;left: 50px">
+<div class="friendship-link" style="position: absolute;top: 1310px;left: 50px">
     <div class="links">
         <span style="float: left; padding-top: 10px;">友情链接:</span>
         <a href="http://www.scpta.gov.cn/" title="四川省人事考试网" target="_blank">
