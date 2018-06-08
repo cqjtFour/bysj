@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -50,14 +50,8 @@
                             <ul>
                                 <li><a href="/index">首页</a></li>
                                 <li><a href="/advice">通知公告</a></li>
-                                <li><a href="#">招聘信息</a>
-                                    <ul class="backcolr">
-                                        <li><a href="/specialrecruitment">专场招聘</a></li>
-                                        <li><a href="/socialrecruitment">社会招聘</a></li>
-                                        <li><a href="/doublemeeting">双选会</a></li>
-                                    </ul>
+                                <li><a href="/specialrecruitment">招聘信息</a>
                                 </li>
-                                <li><a href="/download">下载中心</a></li>
                                 <li  class="current-menu-item" ><a href="#">就业指南</a>
                                     <ul class="backcolr">
                                         <li><a href="/employmentguidance">就业指导</a></li>
@@ -101,12 +95,12 @@
                                 <div class="list">
                                     <div>
                                         <p>
-                                            <a href="/News/2001/10006/7012.html" title="${schoolNews.xxbt}"
+                                            <a href="/showPolicy?fbbh=${schoolNews.fbbbh}" title="${schoolNews.xxbt}"
                                                class="title">${schoolNews.xxbt}</a>
                                         </p>
                                         <p>
                                             <span style="color: #666;">${schoolNews.xxfbsj}</span>
-                                            <span style="margin: 0 20px; color: #666;">作者:${schoolNews.zgbh}</span>
+                                            <span style="margin: 0 20px; color: #666;">作者:${schoolNews.employmentDepartment.rymc}</span>
                                             <span style="color: #666;">浏览次数: ${schoolNews.llcs} 次</span>
                                         </p>
                                     </div>
@@ -118,7 +112,7 @@
                         <script>
                             $('#page').paging({
                                 webPage:"/employmentpolicy",
-                                parameter:"/employmentpolicyToPage",
+                                parameter:"/employmentPolicyToPage",
                                 initPageNo: ${ep_pageInfo.pageNum}, // 初始页码
                                 totalPages: ${ep_pageInfo.pages}, //总页数
                                 pageNo:${ep_pageInfo.pageNum},
@@ -160,7 +154,7 @@
                             <div class="boxshadow-right-show">
                                 <ul style="height: 238px; margin: 5px;">
                                     <c:forEach items="${ep_llcs}" var="al">
-                                        <li><a href="" title="">${al.xxbt}</a></li>
+                                        <li><a href="/showPolicy?fbbh=${al.fbbbh}" title="">${al.xxbt}</a></li>
                                     </c:forEach>
                                 </ul>
                             </div>
@@ -176,7 +170,7 @@
                             <div class="boxshadow-right-show">
                                 <ul  class="multi" style="height: 256px;">
                                     <c:forEach items="${ep_date}" var="al">
-                                        <li><a href="" title="">${al.xxbt}</a></li>
+                                        <li><a href="/showPolicy?fbbh=${al.fbbbh}" title="">${al.xxbt}</a></li>
                                     </c:forEach>
                                 </ul>
                             </div>

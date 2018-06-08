@@ -43,6 +43,19 @@ public class User {
     @Column(name = "ZHDA")
     private String zhda;
 
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "dlzh='" + dlzh + '\'' +
+                ", jsbh=" + jsbh +
+                ", dlmm='" + dlmm + '\'' +
+                ", zhzt=" + zhzt +
+                ", zhwt='" + zhwt + '\'' +
+                ", zhda='" + zhda + '\'' +
+                '}';
+    }
+
     /**
      * 获取登录账号，Char(32)
      *

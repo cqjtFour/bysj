@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+body{
+    background-color: #F5F5F5;
+}
+.notshow{
+    display: none;
+}
+.contentsec{
+    width: 100%;
+}
+.content{
+    width: 800px;
+    margin: 20px auto;
+    border: 1px solid  #5FB878;
+    background-color: white;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+form{
+    margin-top:20px ;
+    margin-bottom: 20px;
+}
+
+td {
+    text-align: center;
+    width: auto;
+    white-space: nowrap; /* 自适应宽度*/
+    word-break:  keep-all; /* 避免长单词截断，保持全部 */
+
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th{
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+tbody tr input{
+    border: 0px;
+    text-align: center;
+    height: 100%;
+}

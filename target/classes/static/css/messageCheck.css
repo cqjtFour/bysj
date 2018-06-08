@@ -1,0 +1,128 @@
+@charset "UTF-8";
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+body{
+    background-color: #F5F5F5;
+}
+.notshow{
+    display: none;
+}
+.contentsec{
+    width: 100%;
+}
+.content{
+    width: 700px;
+    height: 530px;
+    margin: 20px auto;
+    border: 1px solid  #5c5c5c;
+    background-color: white;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+/*head*/
+.head{
+    height: 30px;
+    width: 100%;
+    background-color:#521e18;
+}
+.head label{
+    margin-top: 3px ;
+    margin-left: 250px;
+}
+.head span{
+    font-size: 15px;
+    color: white;
+}
+
+/*middle*/
+.middle{
+    height: 498px;
+    width: 100%;
+    overflow: hidden;
+}
+.messageoperation{
+    width: 530px;
+    height: 100%;
+    border-right: 1px solid #5c5c5c;
+    float: left;
+}
+.messageshow{
+    width: 100%;
+    height: 370px;
+    border-bottom: 1px solid #5c5c5c;
+    overflow: auto;
+    scrollTop:scrollHeight;
+
+}
+.messagesend{
+    height: 128px;
+    width: 100%;
+}
+.messageedit{
+    height: 80px;
+    width: 100%;
+}
+.messageedit textarea{
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px;
+    border: 0;
+    outline: none;
+    font-size: 15px;
+    font-family: "华文楷体";
+    overflow-y: hidden;
+    resize: none;
+}
+.send{
+    height: 48px;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 5px;
+}
+.send button{
+    float: right;
+    margin-right:20px ;
+    width: 100px;
+    background-color: #521e18;
+    color: white;
+}
+
+
+.contactsshow{
+    width: 168px;
+    height: 100%;
+    float: left;
+}
+/*.messageshow span{
+    font-family: '华文楷体';
+    font-size: 15px;
+}*/
+.blue{
+    color: blue;
+}
+.green{
+    color: green;
+}
+
+.contactsshow ul{
+    width: 100%;
+}
+.content li{
+    list-style-type: none;
+    height: 30px;
+    font-family: "华文楷体";
+    font-size: 14px;
+    padding: 8px 10px;
+    border-bottom: 1px dotted #5c5c5c;
+}
+li:hover{
+    cursor:pointer;
+    background-color: #d5d5d5;
+}

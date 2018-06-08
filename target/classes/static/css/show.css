@@ -1,0 +1,61 @@
+@charset "utf-8";
+/*
+=======================================================================
+	Content Section Rules
+=======================================================================
+*/
+#contentsec {
+    width:100%;
+    padding:30px 0px 0px 0px;
+}
+.box {
+    border:#e6e6e6 solid 1px;
+    background:#FFF;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+.boxshow{
+   width: 100%;
+    height: 1000px;
+}
+.title{
+    width: 100%;
+    height: 100px;
+    border-bottom: 2px solid red;
+}
+.title-center{
+    width: 600px;
+    height: 60px;
+    margin: 0px auto;
+    padding-top:10px;
+}
+.title-center .blue{
+    color: #a90000;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+.content{
+    width: 100%;
+    height: 800px;
+    border-bottom: 1px dotted red;
+
+}
+.newsupdown{
+    width: 100%;
+    height: 50px;
+    padding-top: 10px;
+    margin-top:10px ;
+}
+.newsup{
+    float: left;
+    margin-left: 5px;
+}
+.newsdown{
+    float: right;
+    margin-right: 5px;
+}

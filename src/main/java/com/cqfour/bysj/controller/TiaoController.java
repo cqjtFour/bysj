@@ -1,5 +1,7 @@
 package com.cqfour.bysj.controller;
 
+import com.cqfour.bysj.service.JobInfoService;
+import com.cqfour.bysj.service.ReserveInfoService;
 import com.cqfour.bysj.service.SchoolNewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,11 +18,16 @@ public class TiaoController {
     @Autowired
     private SchoolNewsService schoolNewsService;
 
+    @Autowired
+    private JobInfoService jobInfoService;
+
+    @Autowired
+    private ReserveInfoService reserveInfoService;
+
+
     @RequestMapping("/index")
     public String index(HttpServletRequest request){
-        request.getSession().setAttribute("specialEmployee",schoolNewsService.getSpecialEmployee());
-        request.getSession().setAttribute("socialEmployee",schoolNewsService.selectSocialEmployee());
-        request.getSession().setAttribute("doubleMeeting",schoolNewsService.selectDoubleMeeting());
+        request.getSession().setAttribute("specialEmployee",reserveInfoService.getAllReserveInfoWithJobInfo().subList(0,3));
         request.getSession().setAttribute("employmentPolicy",schoolNewsService.selectEmploymentPocily());
         request.getSession().setAttribute("employmentGuidance",schoolNewsService.selectEmploymentGuidance());
         request.getSession().setAttribute("advice",schoolNewsService.selectAdvice());
@@ -37,33 +44,15 @@ public class TiaoController {
         return "/WEB-INF/jsp/download.jsp";
     }
 
-    @RequestMapping("/graduating")
-    public String graduating(){
-        return "/WEB-INF/jsp/graduating.jsp";
-    }
-
     @RequestMapping("/socialrecruitment")
     public String social_recruitment(){
         return "/WEB-INF/jsp/social-recruitment.jsp";
-    }
-
-    @RequestMapping("/specialrecruitment")
-    public String special_recruitment(){
-        return "/WEB-INF/jsp/special-recruitment.jsp";
-    }
-
-    @RequestMapping("/studentresume")
-    public String student_resume(){
-        return "/WEB-INF/jsp/student-resume.jsp";
     }
 
     @RequestMapping("/login")
     public String login(){
         return "/WEB-INF/jsp/login.jsp";
     }
-
-    @RequestMapping("/show")
-    public  String show(){ return "/WEB-INF/jsp/show.jsp";}
 
     @RequestMapping("/mainView")
     public String mainView(){
@@ -73,11 +62,6 @@ public class TiaoController {
     @RequestMapping("/createResume")
     public String createResume(){
         return  "/WEB-INF/main/createResume.jsp";
-    }
-
-    @RequestMapping("/addMenu")
-    public String addMenu(){
-        return "/WEB-INF/main/addMenu.jsp";
     }
 
     @RequestMapping("/myResume")
@@ -105,15 +89,9 @@ public class TiaoController {
     public String recInfoHistory(){
         return "/WEB-INF/main/recInfoHistory.jsp";
     }
-    @RequestMapping("/jobSearch")
-    public String jobSearch(){
-        return "/WEB-INF/main/jobsearch.jsp";
-    }
 
-    @RequestMapping("/checkRecord")
-    public String checkRecord(){
-        return "/WEB-INF/main/checkRecord.jsp";
-    }
+
+
 
     @RequestMapping("/jobResume")
     public String jobResume(){
@@ -130,6 +108,22 @@ public class TiaoController {
         return "/WEB-INF/jsp/signin.jsp";
     }
 
+    @RequestMapping("/success")
+    public String success(){
+        return "/WEB-INF/jsp/success.jsp";
+    }
+
+    @RequestMapping("/successRec")
+    public String successRec(){
+        return "/WEB-INF/main/success.jsp";
+    }
+
+    @RequestMapping("/fail")
+    public String fail(){
+        return "/WEB-INF/jsp/fail.jsp";
+    }
+
+
     @RequestMapping("/resume")
     public String resume(){
         return "/WEB-INF/main/resume.jsp";
@@ -140,10 +134,6 @@ public class TiaoController {
         return "/WEB-INF/main/test.jsp";
     }
 
-    @RequestMapping("/success")
-    public String success(){
-        return "/WEB-INF/main/success.jsp";
-    }
 
     @RequestMapping("/ws")
     public String ws(){

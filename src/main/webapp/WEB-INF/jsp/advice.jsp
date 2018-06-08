@@ -18,10 +18,10 @@
     <link href="css/headfooter.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="css/gray.css" title="styles1" media="screen"/>
     <link href="css/advice.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="bootstrap-3.3.7-dist/js/bootstrap.min.js"/>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
     <!--// Javascripts //-->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="bootstrap-3.3.7-dist/css/bootstrap.min.css"></script>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/animatedcollapse.js"></script>
     <script type="text/javascript" src="js/ddsmoothmenu.js"></script>
     <script type="text/javascript" src="js/scrolltopcontrol.js"></script>
@@ -51,14 +51,8 @@
                             <ul>
                                 <li><a href="/index">首页</a></li>
                                 <li class="current-menu-item"><a href="/advice">通知公告</a></li>
-                                <li><a href="#">招聘信息</a>
-                                    <ul class="backcolr">
-                                        <li><a href="/specialrecruitment">专场招聘</a></li>
-                                        <li><a href="/socialrecruitment">社会招聘</a></li>
-                                        <li><a href="/doublemeeting">双选会</a></li>
-                                    </ul>
+                                <li><a href="/specialrecruitment">招聘信息</a>
                                 </li>
-                                <li><a href="/download">下载中心</a></li>
                                 <li><a href="#">就业指南</a>
                                     <ul class="backcolr">
                                         <li><a href="/employmentguidance">就业指导</a></li>
@@ -104,7 +98,7 @@
                                 <div class="list">
                                     <div>
                                         <p>
-                                            <a href="/News/2001/10006/7012.html" title="${schoolNews.xxbt}"
+                                            <a href="/showAdvice?fbbh=${schoolNews.fbbbh}" title="${schoolNews.xxbt}"
                                                class="title">${schoolNews.xxbt}</a>
                                         </p>
                                         <p>
@@ -166,7 +160,7 @@
                             <div class="boxshadow-right-show">
                                 <ul style="height: 238px; margin: 5px;">
                                     <c:forEach items="${advicellcs}" var="al">
-                                        <li><a href="" title="">${al.xxbt}</a></li>
+                                        <li><a href="/showAdvice?fbbh=${al.fbbbh}" title="">${al.xxbt}</a></li>
                                     </c:forEach>
                                 </ul>
                             </div>
@@ -180,7 +174,7 @@
                             <div class="boxshadow-right-show">
                                 <ul class="multi" style="height: 256px;">
                                     <c:forEach items="${adviceDate}" var="al">
-                                        <li><a href="" title="">${al.xxbt}</a></li>
+                                        <li><a href="/showAdvice?fbbh=${al.fbbbh}" title="">${al.xxbt}</a></li>
                                     </c:forEach>
                                 </ul>
                             </div>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cqfour.bysj.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.cqfour.bysj.bean.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="DLZH" jdbcType="CHAR" property="dlzh" />
+    <result column="JSBH" jdbcType="INTEGER" property="jsbh" />
+    <result column="DLMM" jdbcType="CHAR" property="dlmm" />
+    <result column="ZHZT" jdbcType="INTEGER" property="zhzt" />
+    <result column="ZHWT" jdbcType="CHAR" property="zhwt" />
+    <result column="ZHDA" jdbcType="CHAR" property="zhda" />
+  </resultMap>
+
+  <select id="getRoleNumber" resultType="int">
+    SELECT JSBH FROM t_yhb WHERE DLZH=#{dlzh}
+  </select>
+</mapper>

@@ -1,11 +1,3 @@
-<%--
-
-Created by IntelliJ IDEA.
-User: ASUS
-Date: 2018/4/17
-Time: 14:40
-To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,15 +10,9 @@ To change this template use File | Settings | File Templates.
     <link href="css/advice.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
     <!--// Javascripts //-->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/animatedcollapse.js"></script>
-    <script type="text/javascript" src="js/ddsmoothmenu.js"></script>
-    <script type="text/javascript" src="js/scrolltopcontrol.js"></script>
-    <script type="text/javascript" src="js/tabs.js"></script>
-    <script type="text/javascript" src="js/jquery.fancybox-1.3.1.js"></script>
-    <script type="text/javascript" src="js/lightbox.js"></script>
-    <script type="text/javascript" src="js/functions.js"></script>
-    <script type="text/x-javascript" src="js/paging.js"></script>
+    <script src="./bootstrap-3.3.7-dist/js/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/signinvalid.js"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 </head>
 
 <body>
@@ -47,15 +33,9 @@ To change this template use File | Settings | File Templates.
                         <div id="smoothmenu1" class="ddsmoothmenu">
                             <ul>
                                 <li><a href="/index">首页</a></li>
-                                <li><a href="/advice">通知公告</a></li>
-                                <li><a href="#">招聘信息</a>
-                                    <ul class="backcolr">
-                                        <li><a href="/specialrecruitment">专场招聘</a></li>
-                                        <li><a href="/socialrecruitment">社会招聘</a></li>
-                                        <li><a href="/doublemeeting">双选会</a></li>
-                                    </ul>
+                                <li class="current-menu-item"><a href="/advice">通知公告</a></li>
+                                <li><a href="/specialrecruitment">招聘信息</a>
                                 </li>
-                                <li ><a href="/download">下载中心</a></li>
                                 <li><a href="#">就业指南</a>
                                     <ul class="backcolr">
                                         <li><a href="/employmentguidance">就业指导</a></li>
@@ -93,91 +73,144 @@ To change this template use File | Settings | File Templates.
         <div class="inner">
             <div class="fullwidth box left">
                 <h3 class="widget-head-border colr">用人单位注册</h3>
-                <form class="form-horizontal notshow"  role="form" id="form7" target="id_iframe" style="width: 800px;margin:0px auto;">
+                <form class="form-horizontal notshow"   action="#" target="rfFrame" role="form"  id="signinform" style="width: 800px;margin:0px auto;">
                     <div class="form-group">
                         <label class="col-sm-2  control-label">*&nbsp;&nbsp;&nbsp;单位名称</label>
                         <div class="col-sm-10">
-                            <input class="form-control" id="dwmc" rows="5"  placeholder="单位名称" style="width: 200px; margin-left: -14px"></input>
+                            <input class="form-control" id="dwmc" required placeholder="单位名称" style="width: 250px;" >
+                            <span id="dwmc_tip" style="color:red"></span>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;单位性质</label>
-                        <select class="form-control" style="width: 300px;">
-                        </select>
+                        <div class="col-sm-10">
+                            <select class="form-control" style="width: 300px;" id="dwxz" required>
+                                <option value="">请选择</option>
+                                <option value="国企">国企</option>
+                                <option value="私企">私企</option>
+                                <option value="外企">外企</option>
+                            </select>
+                            <span id="dwxz_tip" style="color:red"></span>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-2 control-label" >*&nbsp;&nbsp;&nbsp;组织结构代码</label>
+                        <label class="col-sm-2 control-label" >*&nbsp;&nbsp;&nbsp;组织机构代码</label>
                         <div class="col-sm-10">
-                            <input class="form-control" id="zzjgdm" rows="5"  placeholder="组织机构代码（统一社会信用代码）" style="width: 250px; margin-left: -14px"></input>
+                            <input class="form-control" id="zzjgdm" required   placeholder="组织机构代码（统一社会信用代码）" style="width: 250px;"></input>
+                            <span id="zzjgdm_tip" style="color:red"></span>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;所属行业</label>
-                        <select class="form-control" style="width: 300px;">
-                        </select>
+                        <div class="col-sm-10">
+                            <select class="form-control" style="width: 300px;" id="sshy" required>
+                                <option value="">请选择</option>
+                                <option value="it">it</option>
+                                <option value="Ecomy">Econmy</option>
+                                <option value="Law">Law</option>
+                            </select>
+                            <span id="sshy_tip" style="color:red"></span>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;单位规模</label>
-                        <select class="form-control" style="width: 200px;">
-                            <option value="1-49人">1-49人</option>
-                            <option value="50-99人">50-99人</option>
-                            <option value="100-499人">100-499人</option>
-                            <option value="500-999人">500-999人</option>
-                            <option value="1000人以上">1000人以上</option>
-                        </select>
+                        <div class="col-sm-10">
+                            <select class="form-control" style="width: 200px;" id="dwgm" required>
+                                <option value="">请选择</option>
+                                <option value="1-49人">1-49人</option>
+                                <option value="50-99人">50-99人</option>
+                                <option value="100-499人">100-499人</option>
+                                <option value="500-999人">500-999人</option>
+                                <option value="1000人以上">1000人以上</option>
+                            </select>
+                            <span id="dwgm_tip" style="color:red"></span>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;单位所在地</label>
-                        <input class="form-control" id="dwszd"   placeholder="单位所在地" style="width: 250px;"></input>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="dwszd" required  placeholder="单位所在地" style="width: 250px;">
+                            <span id="dwszd_tip" style="color:red"></span>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;单位联系人</label>
-                        <input class="form-control" id="dwlxr"  placeholder="单位联系人" style="width: 250px;"></input>
-
+                        <div class="col-sm-10">
+                            <input class="form-control" id="dwlxr" required placeholder="单位联系人" style="width: 250px;">
+                            <span id="dwlxr_tip" style="color:red"></span>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;电子邮箱</label>
-                        <input class="form-control" id="dzyx"  placeholder="电子邮箱" style="width: 250px;"></input>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="dzyx" required placeholder="电子邮箱同时作为登录帐号" style="width: 250px;">
+                            <span id="dzyx_tip" style="color:red"></span>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;联系人电话</label>
-                        <input class="form-control" id="lxrdh"  placeholder="联系人电话" style="width: 250px;"></input>
-
+                        <div class="col-sm-10">
+                            <input class="form-control" id="lxrdh" required placeholder="联系人电话" style="width: 250px;">
+                            <span id="lxrdh_tip" style="color:red"></span>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;单位联系电话</label>
-                        <input class="form-control" id="dwlxdh"   placeholder="单位联系电话" style="width: 250px;"></input>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="dwlxdh" required  placeholder="单位联系电话" style="width: 250px;">
+                            <span id="dwlxdh_tip" style="color:red"></span>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;邮政编码</label>
-                        <input class="form-control" id="yzbm"   placeholder="邮政编码" style="width: 250px;"></input>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="yzbm" required  placeholder="邮政编码" style="width: 250px;">
+                            <span id="yzbm_tip" style="color:red"></span>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;单位基本情况简介</label>
                         <div class="col-sm-10">
-                        <textarea class="form-control" id="dwjbqkjj" rows="5"  placeholder="单位基本情况简介" style="margin-left: -14px"></textarea>
+                            <textarea class="form-control" id="dwjbqkjj" rows="5"  placeholder="单位基本情况简介" style="margin-left: 0px"></textarea>
+                            <span id="dwjbqkjj_tip" style="color:red"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;密码</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="mm" type="password" required placeholder="请输入密码" style="width: 250px;"/>
+                            <span id="mm_tip" style="color:red"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;确认密码</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" id="qrmm" type="password" required placeholder="请再次输入密码" style="width: 250px;"/>
+                            <span id="qrmm_tip" style="color:red"></span>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-
-                        <button style="width: 200px;" type="button" class="btn btn-default form-control">提交</button>
+                            <button style="width: 150px;"  type="submit" onclick="beroreSub()"  class="btn btn-info form-control">提交</button>
                         </div>
                     </div>
 
                 </form>
+                <iframe id="rfFrame" name="rfFrame" src="about:blank" style="display:none;"></iframe>
 
             </div>
             <!--fullwidth box left end-->

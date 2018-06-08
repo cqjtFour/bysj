@@ -1,7 +1,9 @@
 package com.cqfour.bysj.bean;
 
-import java.util.Date;
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Table(name = "t_xyzbyyb")
 public class SchoolJob {
@@ -83,6 +85,35 @@ public class SchoolJob {
      */
     @Column(name = "YYNR")
     private String yynr;
+
+    /**
+     * 预约公司
+     */
+    @Transient
+    private Employers employers;
+
+    public Employers getEmployers() {
+        return employers;
+    }
+
+    public void setEmployers(Employers employers) {
+        this.employers = employers;
+    }
+
+
+    /**
+     * 就业处人员
+     */
+    @Transient
+    private EmploymentDepartment employmentDepartment;
+
+    public EmploymentDepartment getEmploymentDepartment() {
+        return employmentDepartment;
+    }
+
+    public void setEmploymentDepartment(EmploymentDepartment employmentDepartment) {
+        this.employmentDepartment = employmentDepartment;
+    }
 
     /**
      * 获取自增id，Integer
@@ -316,5 +347,27 @@ public class SchoolJob {
      */
     public void setYynr(String yynr) {
         this.yynr = yynr;
+    }
+
+
+    @Override
+    public String toString() {
+        return "SchoolJob{" +
+                "xyzpyybbh=" + xyzpyybbh +
+                ", yrdwxxbbh=" + yrdwxxbbh +
+                ", zgbh=" + zgbh +
+                ", xyzpdwfzr='" + xyzpdwfzr + '\'' +
+                ", fzrdh='" + fzrdh + '\'' +
+                ", fzryx='" + fzryx + '\'' +
+                ", yrrq='" + yrrq + '\'' +
+                ", yysj='" + yysj + '\'' +
+                ", yytjsj='" + yytjsj + '\'' +
+                ", yyzt=" + yyzt +
+                ", dfsj='" + dfsj + '\'' +
+                ", dfnr='" + dfnr + '\'' +
+                ", yynr='" + yynr + '\'' +
+                ", dwmc='" + employers.getDwmc() + '\'' +
+                //", rymc='" + employmentDepartment.getRymc() + '\'' +
+                '}';
     }
 }

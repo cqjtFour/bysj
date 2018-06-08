@@ -5,6 +5,7 @@ import com.cqfour.bysj.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,8 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by HYHSG on 2018/4/18.
- * 用户Controllo
+ *主界面
  */
 @Controller
 public class UserController {
@@ -91,14 +91,15 @@ public class UserController {
                 for (Menu child : menus) {
                     if (child.getFjcdbh().equals(parent.getCdbh())) {
                         if ((child.getFjcdbh()==5 && child.getCdbh()==25)){
-                            if (student.getZwpj().length()!=0)
+                            if (student!=null&&student.getZwpj().length()!=0)
                                 continue;
                         }
                         if ((child.getFjcdbh()==5 && child.getCdbh()==26)){
-                            if (student.getZwpj().length()==0)
+                            if (student!=null||student.getZwpj().length()==0)
                                 continue;
                         }
                         parent.getChildren().add(child);
+                        System.out.println(child.getFjcdbh());
                     }
                 }
             }
@@ -172,4 +173,26 @@ public class UserController {
         request.getSession().setAttribute("user",user);
         return b;
     }
+
+
+    /**
+     * 验证是否唯一
+     * @param dzyx
+     * @return
+     */
+    @RequestMapping("/validUser")
+    @ResponseBody
+    public Message validUserExist(@RequestParam("dzyx") String dzyx){
+         User user=new User();
+         user.setDlzh(dzyx);
+         boolean flag=userService.validUser(user);
+         Message msg=new Message();
+         if(flag){//已存在
+             msg.setMsg("该邮箱已经注册");
+         }else{
+             msg.setMsg("可以注册");
+         }
+         return msg;
+    }
+
 }
