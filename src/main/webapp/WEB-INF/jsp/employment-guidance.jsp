@@ -51,8 +51,14 @@
                             <ul>
                                 <li><a href="/index">首页</a></li>
                                 <li><a href="/advice">通知公告</a></li>
-                                <li><a href="/specialrecruitment">招聘信息</a>
+                                <li><a href="#">招聘信息</a>
+                                    <ul class="backcolr">
+                                        <li><a href="/specialrecruitment">专场招聘</a></li>
+                                        <li><a href="/socialrecruitment">社会招聘</a></li>
+                                        <li><a href="/doublemeeting">双选会</a></li>
+                                    </ul>
                                 </li>
+                                <li><a href="/download">下载中心</a></li>
                                 <li class="current-menu-item"><a href="#">就业指南</a>
                                     <ul class="backcolr">
                                         <li><a href="/employmentguidance">就业指导</a></li>
@@ -97,12 +103,12 @@
                                 <div class="list">
                                     <div>
                                         <p>
-                                            <a href="/showGuidance?fbbh=${schoolNews.fbbbh}" title="${schoolNews.xxbt}"
+                                            <a href="/News/2001/10006/7012.html" title="${schoolNews.xxbt}"
                                                class="title">${schoolNews.xxbt}</a>
                                         </p>
                                         <p>
                                             <span style="color: #666;">${schoolNews.xxfbsj}</span>
-                                            <span style="margin: 0 20px; color: #666;">作者:${schoolNews.employmentDepartment.rymc}</span>
+                                            <span style="margin: 0 20px; color: #666;">作者:${schoolNews.zgbh}</span>
                                             <span style="color: #666;">浏览次数: ${schoolNews.llcs} 次</span>
                                         </p>
                                     </div>
@@ -130,6 +136,7 @@
                                 for (var i = 0; i < obj_lis.length; i++) {
                                     obj_lis[i].onclick = function () {
                                         var j = parseInt(this.innerHTML);
+                                        alert(j);
                                         $.ajax({
                                             url: "/employmentGuidanceToPage",
                                             type: "GET",
@@ -156,7 +163,7 @@
                             <div class="boxshadow-right-show">
                                 <ul style="height: 238px; margin: 5px;">
                                     <c:forEach items="${eg_llcs}" var="al">
-                                        <li><a href="/showGuidance?fbbh=${al.fbbbh}" title="">${al.xxbt}</a></li>
+                                        <li><a href="" title="">${al.xxbt}</a></li>
                                     </c:forEach>
                                 </ul>
                             </div>
@@ -170,7 +177,7 @@
                             <div class="boxshadow-right-show">
                                 <ul class="multi" style="height: 256px;">
                                     <c:forEach items="${eg_date}" var="al">
-                                        <li><a href="/showGuidance?fbbh=${al.fbbbh}" title="">${al.xxbt}</a></li>
+                                        <li><a href="" title="">${al.xxbt}</a></li>
                                     </c:forEach>
                                 </ul>
                             </div>
