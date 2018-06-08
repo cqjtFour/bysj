@@ -122,6 +122,23 @@ $(document).ready(function () {
 })
 
 function  tj(obj) {
+
+    apply.xh=thisObj.attr("xh");
+    apply.zpgwbh=thisObj.attr("zpgwbh");
+    apply.ypbbh=$("#yrdwxxbbh").val();//用ypbbh存yrdwxxbbh更新applies session对象
+    $.ajax({
+        url:"/updateCKZT",
+        type:"post",
+        dataType:"json",
+        data:apply,
+        success:function (result) {
+            if (result.msg=="success")
+                console.log("跳转成功success!");
+            else
+                console.log("fail!");
+        }
+    })
+
     var thisObj=$(obj);
     var xh={"xh":thisObj.attr("xh")}
     $.ajax({
@@ -137,21 +154,6 @@ function  tj(obj) {
         }
     });
 
-     apply.xh=thisObj.attr("xh");
-     apply.zpgwbh=thisObj.attr("zpgwbh");
-     apply.ypbbh=$("#yrdwxxbbh").val();//用ypbbh存yrdwxxbbh更新applies session对象
-     $.ajax({
-         url:"/updateCKZT",
-         type:"post",
-         dataType:"json",
-         data:apply,
-         success:function (result) {
-             if (result.msg=="success")
-                 console.log("success!");
-             else
-                 console.log("fail!");
-         }
-     })
 }
 
 function tg(obj) {

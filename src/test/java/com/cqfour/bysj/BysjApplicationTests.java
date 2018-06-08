@@ -160,7 +160,7 @@ public class BysjApplicationTests {
 		String startTime=null;
 		String endTime=null;
 		int ckzt=0;
-		List<Apply> xhs=applyService.getStudentsByGw(zpgwbh,startTime,endTime,ckzt);
+		List<Apply> xhs=applyService.getStudentsByGw(0,zpgwbh,startTime,endTime,ckzt);
 		for (Apply xh: xhs){
 			System.out.println(xh.getJob().getMc()+"  "+xh.getStudent().getXsxm()+" "+xh.getStudent().getDiscipline().getZymc()+"  "+xh.getYpsj()+"  "+xh.getCkzt());
 		}

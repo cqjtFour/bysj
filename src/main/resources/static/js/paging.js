@@ -80,7 +80,11 @@
                     data:{"page":pageIndex},
                     success:function (result) {
                         if (result.status == "success"){
-                            window.location.href=webP+"?page="+pageIndex;
+                            if (webP.indexOf("queryStudent")>=0||webP.indexOf("studentresume")>=0||webP.indexOf("deliveredResume")>=0){
+                                window.location.href=webP+"&page="+pageIndex;
+                            }else{
+                                window.location.href=webP+"?page="+pageIndex;
+                            }
                         }
                     }
                 })
@@ -95,7 +99,11 @@
                     data:{"page":pageIndex},
                     success:function (result) {
                         if (result.status == "success"){
-                            window.location.href=webP+"?page="+pageIndex;
+                            if (webP.indexOf("queryStudent")>=0||webP.indexOf("studentresume")>=0||webP.indexOf("deliveredResume")>=0){
+                                window.location.href=webP+"&page="+pageIndex;
+                            }else{
+                                window.location.href=webP+"?page="+pageIndex;
+                            }
                         }
                     }
                 })
@@ -114,7 +122,11 @@
                     data:{"page":pageIndex},
                     success:function (result) {
                         if (result.status == "success"){
-                            window.location.href=webP+"?page="+pageIndex;
+                            if (webP.indexOf("queryStudent")>=0||webP.indexOf("studentresume")>=0||webP.indexOf("deliveredResume")>=0){
+                                window.location.href=webP+"&page="+pageIndex;
+                            }else{
+                                window.location.href=webP+"?page="+pageIndex;
+                            }
                         }
                     }
                 })
@@ -130,7 +142,11 @@
                     data:{"page":pageIndex},
                     success:function (result) {
                         if (result.status == "success"){
-                            window.location.href=webP+"?page="+pageIndex;
+                            if (webP.indexOf("queryStudent")>=0||webP.indexOf("studentresume")>=0||webP.indexOf("deliveredResume")>=0){
+                                window.location.href=webP+"&page="+pageIndex;
+                            }else{
+                                window.location.href=webP+"?page="+pageIndex;
+                            }
                         }
                     }
                 })
@@ -142,6 +158,21 @@
                     pageIndex = jumpNum;
                     handles(pageIndex);
                     jumpText.val(jumpNum);
+                    $.ajax({
+                        url:para,
+                        type:"GET",
+                        dataType:"json",
+                        data:{"page":pageIndex},
+                        success:function (result) {
+                            if (result.status == "success"){
+                                if (webP.indexOf("queryStudent")>=0||webP.indexOf("studentresume")>=0||webP.indexOf("deliveredResume")>=0){
+                                    window.location.href=webP+"&page="+pageIndex;
+                                }else{
+                                    window.location.href=webP+"?page="+pageIndex;
+                                }
+                            }
+                        }
+                    })
                 }
             })
 
@@ -151,6 +182,7 @@
             })
 
             function handles(pageIndex) {
+                jumpText.val(pageIndex);
                 lis.removeClass('sel-page').eq(pageIndex - 1).addClass('sel-page');
                 if (totalPages <= 5) {
                     that.options.callback(pageIndex);

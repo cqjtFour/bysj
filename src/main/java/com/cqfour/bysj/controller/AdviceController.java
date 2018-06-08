@@ -14,12 +14,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+/**
+ * 通知公告
+ */
 @Controller
 public class AdviceController {
 
     @Autowired
     private SchoolNewsService schoolNewsService;
 
+    /**
+     * 初始化通知公告信息
+     * @param page
+     * @param request
+     * @return
+     */
     @RequestMapping("/advice")
     public String advice(@RequestParam(value = "page", defaultValue = "1")Integer page, HttpServletRequest request){
         List<SchoolNews> schoolNews = schoolNewsService.selectAdivceByllcu();
@@ -32,6 +41,13 @@ public class AdviceController {
         request.setAttribute("pageInfo",pageInfo);
         return "/WEB-INF/jsp/advice.jsp";
     }
+
+    /**
+     * 分页查询通知
+     * @param page
+     * @param request
+     * @return
+     */
     @RequestMapping("/adviceToPage")
     @ResponseBody
     public Message advicePage(@RequestParam(value = "page", defaultValue = "1")Integer page, HttpServletRequest request){
@@ -43,4 +59,6 @@ public class AdviceController {
         message.setStatus("success");
         return message;
     }
+
+
 }

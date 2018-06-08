@@ -14,12 +14,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+/**
+ * 就业政策
+ */
 @Controller
 public class EmployeePolicy {
 
     @Autowired
     private SchoolNewsService schoolNewsService;
 
+    /**
+     * 初始化就业政策
+     * @param page
+     * @param request
+     * @return
+     */
     @RequestMapping("/employmentpolicy")
     public String employment_policy(@RequestParam(value = "page", defaultValue = "1")Integer page, HttpServletRequest request){
         List<SchoolNews> schoolNews = schoolNewsService.selectEmploymentPolicyByLlcs();
@@ -33,6 +42,12 @@ public class EmployeePolicy {
         return "/WEB-INF/jsp/employment-policy.jsp";
     }
 
+    /**
+     * 分页查询
+     * @param page
+     * @param request
+     * @return
+     */
     @RequestMapping("/employmentPolicyToPage")
     @ResponseBody
     public Message employmentGuidanceToPage(@RequestParam(value = "page", defaultValue = "1")Integer page, HttpServletRequest request){

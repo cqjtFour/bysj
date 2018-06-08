@@ -10,16 +10,17 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>应聘简历</title>
+    <title>简历筛选</title>
     <%-- javascript --%>
     <script src="./js/jquery-3.1.1.js" type="text/javascript"></script>
     <script src="./bootstrap-3.3.7-dist/js/bootstrap.js" type="text/javascript"></script>
     <script src="./js/jobResume.js" type="text/javascript"></script>
     <script src="./js/jquery.form.js" type="text/javascript"></script>
-
+    <script type="text/javascript" src="./js/paging.js"></script>
     <%-- style --%>
     <link href="./bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="./css/jobResume.css" rel="stylesheet" type="text/css"/>
+    <link href="./css/paging.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -71,13 +72,13 @@
                     <label>审核状态</label>
                 </td>
                 <td>
-                    <label>应聘岗位名称</label>
+                    <label>应聘岗位</label>
                 </td>
                 <td>
-                    <label>应聘人姓名</label>
+                    <label>姓名</label>
                 </td>
                 <td>
-                    <label>应聘人专业</label>
+                    <label>专业</label>
                 </td>
                 <td>
                     <label>简历投递时间</label>
@@ -114,32 +115,43 @@
 
     </div>
     <div class="row">
-        <div class="col-md-6">
-            <span>共&nbsp;&nbsp;<label>1000</label>&nbsp;&nbsp;条数据</span>
-            <span>共&nbsp;&nbsp;<label>100</label>&nbsp;&nbsp;页</span>
-        </div>
-        <div class="col-md-6">
+        <div class="col-md-6"  style="width: 100%" >
             <nav aria-label="Page navigation">
-                <ul class="pagination">
-                    <li>
-                        <a href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
+                <div class="page" id="page" ></div>
+                <script type="text/javascript">
+                    $('#page').paging({
+                        initPageNo: 1, // 初始页码
+                        totalPages:6, //总页数
+                        /*totalCount: '合计' + setTotalCount + '条数据', // 条目总数*/
+                        slideSpeed: 600, // 缓动速度。单位毫秒
+                        jump: true, //是否支持跳转
+                        callback: function(page) { // 回调函数
+                            console.log("fah ");
+                        }
+                    })
+                    window.onload = function(){
+                        var obj_lis = document.getElementById("pageSelect").getElementsByTagName("li");
+                        for(var i=0;i < obj_lis.length;i++){
+                            obj_lis[i].onclick = function(){
+                                var j = parseInt(this.innerHTML);
+                                console.log("当前页面："+j);
+                                /*$.ajax({
+                                    url:"/getAllJobToPage",
+                                    type:"GET",
+                                    dataType:"json",
+                                    data:{"page":i},
+                                    success:function (result) {
+                                        if (result.status == "success"){
+                                            window.location.href="/jobSearch"+"?page="+j;
+                                        }
+                                    }
+                                })*/
+                            }
+                        }
+                    }
+                </script>
             </nav>
         </div>
-
     </div>
 </div>
 

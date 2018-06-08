@@ -53,15 +53,10 @@
                   <div class="contactsshow">
                       <ul>
                           <c:forEach items="${conversationNameList}" var="privateMessage" varStatus="loop">
-                              <li>${privateMessage.fsyhmc}<span class="badge right">${unreadMessageNumbers[loop.count-1]}</span></li>
+                              <li style="text-align: center">${privateMessage.fsyhmc}<span class="badge right">${unreadMessageNumbers[loop.count-1]}</span></li>
                               <label class="notshow">${privateMessage.fsyhzh}</label>
                               <label class="notshow">${privateMessage.fsyhmc}</label>
                           </c:forEach>
-                         <%-- <c:if test="${EmployerStudent !=null}">
-                              <li>${EmployerStudent.xsxm}<span></span></li>
-                              <label class="notshow">${EmployerStudent.xh}</label>
-                              <label class="notshow">${EmployerStudent.xsxm}</label>
-                          </c:if>--%>
                       </ul>
                   </div>
                   <%-- contactsshow end --%>

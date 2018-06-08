@@ -8,6 +8,14 @@
 body{
     background-color: #F5F5F5;
 }
+
+
+.left{
+    float: left;
+}
+ .right{
+     float: right;
+ }
 .contentsec{
     width: 100%;
 }

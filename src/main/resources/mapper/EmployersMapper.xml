@@ -21,10 +21,17 @@
     <result column="DWJBQKJJ" jdbcType="LONGVARCHAR" property="dwjbqkjj" />
   </resultMap>
 
+  <insert id="insertReturn" parameterType="com.cqfour.bysj.bean.Employers" useGeneratedKeys="true" >
+  <selectKey resultType="int" order="AFTER" keyProperty="yrdwxxbbh">
+    SELECT LAST_INSERT_ID()
+  </selectKey>
+    INSERT INTO t_yrdwb(DLZH,DWMC,DWXZ,ZZJGDM,SSHY,DWGM,SZD,DWLXR,LXRDH,DWLXDH,DZYX,YZBM,DWJBQKJJ ) VALUES(#{dzyx},#{dwmc},#{dwxz},#{zzjgdm},#{sshy},#{dwgm},#{szd},#{dwlxr},#{lxrdh},#{dwlxdh},#{dzyx},#{yzbm},#{dwjbqkjj})
+  </insert>
+
   <select id="getEmployerName" resultType="String">
     SELECT DWMC FROM t_yrdwb WHERE DLZH=#{dlzh}
   </select>
-  
+
   <select id="getEmployer"  resultMap="BaseResultMap">
     SELECT * FROM  t_yrdwb WHERE DLZH=#{dlzh};
   </select>

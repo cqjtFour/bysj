@@ -5,6 +5,7 @@ import com.cqfour.bysj.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,8 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by HYHSG on 2018/4/18.
- * 用户Controllo
+ *主界面
  */
 @Controller
 public class UserController {
@@ -91,14 +91,15 @@ public class UserController {
                 for (Menu child : menus) {
                     if (child.getFjcdbh().equals(parent.getCdbh())) {
                         if ((child.getFjcdbh()==5 && child.getCdbh()==25)){
-                            if (student.getZwpj().length()!=0)
+                            if (student.getZwpj()!=null&&student.getZwpj().length()!=0)
                                 continue;
                         }
                         if ((child.getFjcdbh()==5 && child.getCdbh()==26)){
-                            if (student.getZwpj().length()==0)
+                            if (student.getZwpj()==null||student.getZwpj().length()==0)
                                 continue;
                         }
                         parent.getChildren().add(child);
+                        System.out.println(child.getFjcdbh());
                     }
                 }
             }
@@ -120,23 +121,17 @@ public class UserController {
             }else if(user.getJsbh()==4){//用人单位
                 Employers employers;
                 employers=employersService.getEmployer(username);
-                List<Job> gws= jobService.getGwList(employers.getYrdwxxbbh());
+                List<Job> gws= jobService.getGwList(employers.getYrdwxxbbh());//岗位列表
                 request.getSession().setAttribute("gws",gws);
-                List<Apply> applies=new ArrayList<>();
-                for (Job gw:gws){
-                    List<Apply> jobs=applyService.getStudentsByGw(gw.getZpgwbh(),"","",3);
-                    for (Apply job:jobs){
-                        applies.add(job);
-                    }
-                }
+                List<Apply> applies=applyService.getStudentsByGw(employers.getYrdwxxbbh(),0,"","",3); //投递简历列表
                 request.getSession().setAttribute("applies" ,applies);
                 request.getSession().setAttribute("employers",employers);
-                List<PrivateMessage> conversationNameList=privateMessageService.getConversationNameList(username);
+                List<PrivateMessage> conversationNameList=privateMessageService.getConversationNameList(username);//通信对象列表
                 request.getSession().setAttribute("conversationNameList",conversationNameList);
                 String []unreadMessageNumbers=new String[30];
                 int i=0;
                 for (PrivateMessage privateMessage:conversationNameList) {
-                    unreadMessageNumbers[i] = privateMessageService.getUnreadMessage(privateMessage.getFsyhzh(), username);
+                    unreadMessageNumbers[i] = privateMessageService.getUnreadMessage(privateMessage.getFsyhzh(), username);//未读信息数列表
                     if (unreadMessageNumbers[i].equals("0"))
                         unreadMessageNumbers[i] = null;
                     i=i+1;
@@ -172,4 +167,26 @@ public class UserController {
         request.getSession().setAttribute("user",user);
         return b;
     }
+
+
+    /**
+     * 验证是否唯一
+     * @param dzyx
+     * @return
+     */
+    @RequestMapping("/validUser")
+    @ResponseBody
+    public Message validUserExist(@RequestParam("dzyx") String dzyx){
+         User user=new User();
+         user.setDlzh(dzyx);
+         boolean flag=userService.validUser(user);
+         Message msg=new Message();
+         if(flag){//已存在
+             msg.setMsg("该邮箱已经注册");
+         }else{
+             msg.setMsg("可以注册");
+         }
+         return msg;
+    }
+
 }

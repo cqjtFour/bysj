@@ -21,7 +21,9 @@
 </head>
 <body>
    <div class="contentsec">
-       <div class="tiaozhuan"><a href="/resume">返回</a></div>
+       <div class="tiaozhuan"><a href="/resume">
+           <span class="glyphicon glyphicon-menu-left" style="font-size: 25px;margin-right: 5px;"></span>
+       </a></div>
        <div class="content">
            <input type="hidden" id="xh" name="xh" value="${student.xh}">
            <div class="head">
@@ -88,6 +90,7 @@
                </div>
            </div>
            <%--head end--%>
+
            <div class="jbxx">
                <div class="jbxx-head">
                    <div class="jbxx-head-left">
@@ -133,7 +136,42 @@
                            <div class="form-group">
                                <label class="col-sm-2 control-label left" style="width: 80px">生源地</label>
                                <div class="left">
-                                   <input type="text" class="form-control" style="width: 200px;" id="syd" name="syd" value="${student.syd}">
+                                   <select  class="form-control" style="width: 200px;" id="syd" name="syd">
+                                       <option value="北京市" ${student.syd == '北京市'?'selected':''}>北京市</option>
+                                        <option value="浙江省" ${student.syd == '浙江省'?'selected':''}>浙江省</option>
+                                        <option value="天津市" ${student.syd == '天津市'?'selected':''}>天津市</option>
+                                        <option value="安徽省" ${student.syd == '安徽省'?'selected':''}>安徽省</option>
+                                        <option value="上海市" ${student.syd == '上海市'?'selected':''}>上海市</option>
+                                        <option value="福建省" ${student.syd == '福建省'?'selected':''}>福建省</option>
+                                        <option value="重庆市" ${student.syd == '重庆市'?'selected':''}>重庆市</option>
+                                        <option value="江西省" ${student.syd == '江西省'?'selected':''}>江西省</option>
+                                        <option value="山东省" ${student.syd == '山东省'?'selected':''}>山东省</option>
+                                        <option value="河南省" ${student.syd == '河南省'?'selected':''}>河南省</option>
+                                        <option value="湖北省" ${student.syd == '湖北省'?'selected':''}>湖北省</option>
+                                        <option value="湖南省" ${student.syd == '湖南省'?'selected':''}>湖南省</option>
+                                        <option value="广东省" ${student.syd == '广东省'?'selected':''}>广东省</option>
+                                        <option value="海南省" ${student.syd == '海南省'?'selected':''}>海南省</option>
+                                        <option value="山西省" ${student.syd == '山西省'?'selected':''}>山西省</option>
+                                        <option value="青海省" ${student.syd == '青海省'?'selected':''}>青海省</option>
+                                        <option value="江苏省" ${student.syd == '江苏省'?'selected':''}>江苏省</option>
+                                        <option value="辽宁省" ${student.syd == '辽宁省'?'selected':''}>辽宁省</option>
+                                        <option value="吉林省" ${student.syd == '吉林省'?'selected':''}>吉林省</option>
+                                        <option value="台湾省" ${student.syd == '台湾省'?'selected':''}>台湾省</option>
+                                        <option value="河北省" ${student.syd == '河北省'?'selected':''}>河北省</option>
+                                        <option value="贵州省" ${student.syd == '贵州省'?'selected':''}>贵州省</option>
+                                        <option value="四川省" ${student.syd == '四川省'?'selected':''}>四川省</option>
+                                        <option value="云南省" ${student.syd == '云南省'?'selected':''}>云南省</option>
+                                        <option value="陕西省" ${student.syd == '陕西省'?'selected':''}>陕西省</option>
+                                        <option value="甘肃省" ${student.syd == '甘肃省'?'selected':''}>甘肃省</option>
+                                        <option value="黑龙江省" ${student.syd == '黑龙江省'?'selected':''}>黑龙江省</option>
+                                        <option value="香港特别行政区" ${student.syd == '香港特别行政区'?'selected':''}>香港特别行政</option>
+                                        <option value="澳门特别行政区" ${student.syd == '澳门特别行政区'?'selected':''}>澳门特别行政</option>
+                                        <option value="广西壮族自治区" ${student.syd == '广西壮族自治区'?'selected':''}>广西壮族自治</option>
+                                        <option value="宁夏回族自治区" ${student.syd == '宁夏回族自治区'?'selected':''}>宁夏回族自治</option>
+                                        <option value="新疆维吾尔自治区" ${student.syd == '新疆维吾尔自治区'?'selected':''}>新疆维吾尔治区</option>
+                                       <option value="内蒙古自治区" ${student.syd == '内蒙古自治区'?'selected':''}>内蒙古自治区</option>
+                                       <option value="西藏自治区" ${student.syd == '西藏自治区'?'selected':''}>西藏自治区</option>
+                                   </select>
                                </div>
                            </div>
                            <div class="form-group">
@@ -160,11 +198,62 @@
                                <label class="col-sm-2 control-label left" style="width: 80px">民族</label>
                                <div class="left">
                                    <select  class="form-control" style="width: 200px;" id="mz" name="mz">
-                                       <option value="汉" ${student.mz == '汉'?'selected':''}>汉</option>
-                                       <option value="壮" ${student.mz == '壮'?'selected':''}>壮</option>
-                                       <option value="苗" ${student.mz == '苗'?'selected':''}>苗</option>
-                                       <option value="藏" ${student.mz == '藏'?'selected':''}>藏</option>
-                                       <option value="满" ${student.mz == '满'?'selected':''}>满</option>
+                                          <option value="汉族" ${student.mz == '汉族'?'selected':''}>汉族</option>  
+                                         <option value="蒙古族" ${student.mz == '蒙古族'?'selected':''}>蒙古族</option>  
+                                         <option value="回族" ${student.mz == '回族'?'selected':''}>回族</option>  
+                                         <option value="藏族" ${student.mz == '藏族'?'selected':''}>藏族</option>  
+                                         <option value="维吾尔族" ${student.mz == '维吾尔族'?'selected':''}>维吾尔族</option>  
+                                         <option value="苗族" ${student.mz == '苗族'?'selected':''}>苗族</option>  
+                                         <option value="彝族" ${student.mz == '彝族'?'selected':''}>彝族</option>  
+                                         <option value="壮族" ${student.mz == '壮族'?'selected':''}>壮族</option>  
+                                         <option value="布依族" ${student.mz == '布依族'?'selected':''}>布依族</option>  
+                                         <option value="朝鲜族" ${student.mz == '朝鲜族'?'selected':''}>朝鲜族</option>  
+                                         <option value="满族" ${student.mz == '满族'?'selected':''}>满族</option>  
+                                         <option value="侗族" ${student.mz == '侗族'?'selected':''}>侗族</option>  
+                                         <option value="瑶族" ${student.mz == '瑶族'?'selected':''}>瑶族</option>  
+                                         <option value="白族" ${student.mz == '白族'?'selected':''}>白族</option>  
+                                         <option value="土家族" ${student.mz == '土家族'?'selected':''}>土家族</option>  
+                                         <option value="哈尼族" ${student.mz == '哈尼族'?'selected':''}>哈尼族</option>  
+                                         <option value="哈萨克族" ${student.mz == '哈萨克族'?'selected':''}>哈萨克族</option>  
+                                         <option value="傣族" ${student.mz == '傣族'?'selected':''}>傣族</option>  
+                                         <option value="黎族" ${student.mz == '黎族'?'selected':''}>黎族</option>  
+                                         <option value="傈僳族" ${student.mz == '傈僳族'?'selected':''}>傈僳族</option>  
+                                         <option value="佤族" ${student.mz == '佤族'?'selected':''}>佤族</option>  
+                                         <option value="畲族" ${student.mz == '畲族'?'selected':''}>畲族</option>  
+                                          <option value="高山族" ${student.mz == '高山族'?'selected':''}>高山族</option>  
+                                         <option value="拉祜族" ${student.mz == '拉祜族'?'selected':''}>拉祜族</option>  
+                                         <option value="水族" ${student.mz == '水族'?'selected':''}>水族</option>  
+                                         <option value="东乡族" ${student.mz == '东乡族'?'selected':''}>东乡族</option>  
+                                         <option value="纳西族" ${student.mz == '纳西族'?'selected':''}>纳西族</option>  
+                                         <option value="景颇族" ${student.mz == '景颇族'?'selected':''}>景颇族</option>  
+                                         <option value="柯尔克孜族" ${student.mz == '柯尔克孜族'?'selected':''}>柯尔克孜族</option>  
+                                         <option value="土族" ${student.mz == '土族'?'selected':''}>土族</option>  
+                                         <option value="达斡尔族" ${student.mz == '达斡尔族'?'selected':''}>达斡尔族</option>  
+                                         <option value="仫佬族" ${student.mz == '仫佬族'?'selected':''}>仫佬族</option>  
+                                         <option value="羌族" ${student.mz == '羌族'?'selected':''}>羌族</option>  
+                                         <option value="布朗族" ${student.mz == '布朗族'?'selected':''}>布朗族</option>  
+                                         <option value="撒拉族" ${student.mz == '撒拉族'?'selected':''}>撒拉族</option>  
+                                         <option value="毛南族" ${student.mz == '毛南族'?'selected':''}>毛南族</option>  
+                                         <option value="仡佬族" ${student.mz == '仡佬族'?'selected':''}>仡佬族</option>  
+                                         <option value="锡伯族" ${student.mz == '锡伯族'?'selected':''}>锡伯族</option>  
+                                         <option value="阿昌族" ${student.mz == '阿昌族'?'selected':''}>阿昌族</option>  
+                                         <option value="普米族" ${student.mz == '普米族'?'selected':''}>普米族</option>  
+                                         <option value="塔吉克族" ${student.mz == '塔吉克族'?'selected':''}>塔吉克族</option>  
+                                         <option value="怒族" ${student.mz == '怒族'?'selected':''}>怒族</option>  
+                                         <option value="乌孜别克族" ${student.mz == '乌孜别克族'?'selected':''}>乌孜别克族</option>  
+                                         <option value="俄罗斯族" ${student.mz == '俄罗斯族'?'selected':''}>俄罗斯族</option>  
+                                         <option value="鄂温克族" ${student.mz == '鄂温克族'?'selected':''}>鄂温克族</option>  
+                                         <option value="德昂族" ${student.mz == '德昂族'?'selected':''}>德昂族</option>  
+                                         <option value="保安族" ${student.mz == '保安族'?'selected':''}>保安族</option>  
+                                         <option value="裕固族" ${student.mz == '裕固族'?'selected':''}>裕固族</option>  
+                                         <option value="京族" ${student.mz == '京族'?'selected':''}>京族</option>  
+                                         <option value="塔塔尔族" ${student.mz == '塔塔尔族'?'selected':''}>塔塔尔族</option>  
+                                         <option value="独龙族" ${student.mz == '独龙族'?'selected':''}>独龙族</option>  
+                                         <option value="鄂伦春族" ${student.mz == '鄂伦春族'?'selected':''}>鄂伦春族</option>  
+                                         <option value="赫哲族" ${student.mz == '赫哲族'?'selected':''}>赫哲族</option>  
+                                         <option value="门巴族" ${student.mz == '门巴族'?'selected':''}>门巴族</option>  
+                                         <option value="珞巴族" ${student.mz == '珞巴族'?'selected':''}>珞巴族</option>  
+                                         <option value="基诺族" ${student.mz == '基诺族'?'selected':''}>基诺族</option>
                                    </select>
                                </div>
                            </div>

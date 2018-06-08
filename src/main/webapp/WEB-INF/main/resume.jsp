@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>个人简历</title>
     <%--javascript--%>
     <script src="./bootstrap-3.3.7-dist/js/jquery.js" type="text/javascript"></script>
     <script src="./js/resume.js" type="text/javascript"></script>
@@ -22,14 +22,25 @@
     <div class="contentsec">
         <c:if test="${user.jsbh==4}">
             <div class="tiaozhuan">
-                <a href="/jobResume">返回</a>
-                <a id="ly"  style="margin-right:20px;cursor: pointer">留言</a>
+                <a id="ly"  style="margin-right:20px;cursor: pointer;margin-right: 10px;">
+                    <span class="glyphicon glyphicon-comment" style="font-size: 25px"></span>
+                </a>
+                <a href="/jobResume">
+                    <span class="glyphicon glyphicon-menu-left" style="font-size: 25px;margin-right: 30px;"></span>
+                </a>
                 <input type="hidden" id="dlzh" value="${user.dlzh}">
                 <input type="hidden" id="xh" value="${student.xh}">
             </div>
         </c:if>
         <c:if test="${user.jsbh==3}">
-            <div class="tiaozhuan"><a href="/myResume">修改简历</a></div>
+            <div class="tiaozhuan">
+                <a href="/printResume" target="view_window" style="margin-left:40px;margin-right: 10px;">
+                    <span class="glyphicon glyphicon-print" style="font-size: 25px;"></span>
+                </a>
+                <a href="/myResume">
+                    <span class="glyphicon glyphicon-edit" style="font-size: 25px"></span>
+                </a>
+            </div>
         </c:if>
     <div class="content">
         <div class="head">

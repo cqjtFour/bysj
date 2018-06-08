@@ -134,7 +134,7 @@ public class PrivateMessageController {
         request.getSession().setAttribute("unreadMessageNumbers",unreadMessageNumbers);
         int  j=0;
         for (PrivateMessage privateMessage: conversationNameList){
-            if (privateMessage.getFsyhzh()==xh)
+            if (privateMessage.getFsyhzh().equals(xh))
                 j++;
         }
         if(j==0){
@@ -142,6 +142,43 @@ public class PrivateMessageController {
             privateMessage.setFsyhzh(xh);
             Student student=studentService.getStudent(xh);
             privateMessage.setFsyhmc(student.getXsxm());
+            conversationNameList.add(privateMessage);
+        }
+        request.getSession().setAttribute("conversationNameList",conversationNameList);
+        Message message=new Message();
+        message.setStatus("success");
+        message.setMsg("success");
+        return message;
+    }
+
+
+    /**
+     * 学生给某用人单位留言
+     */
+    @RequestMapping("/studentEmployerMessage")
+    @ResponseBody
+    public Message studentEmployerMessage(String fsyhzh,String jsyhzh ,HttpServletRequest request){
+        System.out.println("fsyhzh:"+fsyhzh+"  jsyhzh:"+jsyhzh);
+        List<PrivateMessage> conversationNameList=privateMessageService.getConversationNameList(fsyhzh);
+        String []unreadMessageNumbers=new String[30];
+        int i=0;
+        for (PrivateMessage privateMessage:conversationNameList) {
+            unreadMessageNumbers[i] = privateMessageService.getUnreadMessage(privateMessage.getFsyhzh(), fsyhzh);
+            if (unreadMessageNumbers[i].equals("0"))
+                unreadMessageNumbers[i] = null;
+            i=i+1;
+        }
+        request.getSession().setAttribute("unreadMessageNumbers",unreadMessageNumbers);
+        int  j=0;
+        for (PrivateMessage privateMessage: conversationNameList){
+            if (privateMessage.getFsyhzh().equals(jsyhzh))
+                j++;
+        }
+        if(j==0){
+            PrivateMessage privateMessage=new PrivateMessage();
+            privateMessage.setFsyhzh(jsyhzh);
+            String dwmc=employersService.getEmployerName(jsyhzh);
+            privateMessage.setFsyhmc(dwmc);
             conversationNameList.add(privateMessage);
         }
         request.getSession().setAttribute("conversationNameList",conversationNameList);

@@ -109,8 +109,11 @@
     <include refid="jg"></include>
     FROM t_yp,t_zpgwb,t_xsb,t_zyb
     WHERE
-    <if test=" zpgwbh !=null and zpgwbh!=0" >
-    t_yp.ZPGWBH=#{zpgwbh}
+    <if test=" yrdwxxbbh !=null and yrdwxxbbh!=0" >
+      t_yp.ZPGWBH IN (SELECT t_zpgwb.ZPGWBH FROM t_zpgwb WHERE YRDWXXBBH =#{yrdwxxbbh})
+    </if>
+    <if test=" zpgwbh !=null and zpgwbh !=0">
+      t_yp.ZPGWBH=#{zpgwbh}
     </if>
     AND  t_yp.ZPGWBH=t_zpgwb.ZPGWBH
     AND t_yp.XH=t_xsb.XH
@@ -124,7 +127,7 @@
     <if test=" ckzt==1 or ckzt==0">
       AND CKZT=#{ckzt}
     </if>
-    ORDER BY YPSJ
+    ORDER BY YPSJ DESC limit 0,5
   </select>
 
   <select id="updateCKZT">
@@ -132,7 +135,7 @@
   </select>
 
 
-  <select id="updateSHZT">
+  <update id="updateSHZT">
     UPDATE t_yp SET SHZT=#{shzt} WHERE  ZPGWBH=#{zpgwbh} AND XH=#{xh}
-  </select>
+  </update>
 </mapper>

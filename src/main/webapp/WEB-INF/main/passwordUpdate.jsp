@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>密码更新</title>
     <%-- javascript --%>
     <script src="./bootstrap-3.3.7-dist/js/jquery.js" type="text/javascript"></script>
     <script src="./bootstrap-3.3.7-dist/js/bootstrap.js"></script>

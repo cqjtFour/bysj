@@ -201,7 +201,7 @@ function showResponse(result) {
             ChangeState();
         }
     }
-    console.log(result[result.length-1].jsyhzh==privateMessage.fsyhzh && result[result.length-1].fsyhzh!=privateMessage.jsyhzh);
+
     if(result[result.length-1].jsyhzh==privateMessage.fsyhzh && result[result.length-1].fsyhzh!=privateMessage.jsyhzh){
         bz=true;
     }

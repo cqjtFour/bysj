@@ -57,14 +57,8 @@
                             <ul>
                                 <li><a href="/index">首页</a></li>
                                 <li><a href="/advice">通知公告</a></li>
-                                <li class="current-menu-item"><a href="#">招聘信息</a>
-                                    <ul class="backcolr">
-                                        <li><a href="/specialrecruitment">专场招聘</a></li>
-                                        <li><a href="/socialrecruitment">社会招聘</a></li>
-                                        <li><a href="/doublemeeting">双选会</a></li>
-                                    </ul>
+                                <li><a href="/specialrecruitment">招聘信息</a>
                                 </li>
-                                <li><a href="/download">下载中心</a></li>
                                 <li><a href="#">就业指南</a>
                                     <ul class="backcolr">
                                         <li><a href="/employmentguidance">就业指导</a></li>
@@ -85,45 +79,34 @@
     </div>
     <!-- Header End -->
     <!-- Bread Crumb Start -->
-    <div id="bread-crumb">
-        <div class="inner">
-            <ul>
-                <li><span class="glyphicon glyphicon-home" style="margin-right:5px ;"></span><a href="#">主页</a></li>
-                <li><span class="glyphicon glyphicon-knight" style="margin-right: 5px;"></span><a href="#">招聘信息</a></li>
-                <li><span class="glyphicon glyphicon-leaf"></span><a href="#">专场招聘</a></li>
-                <li><a href="#">浙江龙游产业人才专场招聘</a></li>
-            </ul>
-            <div class="clear"></div>
-        </div>
-    </div>
     <!-- Banner End -->
     <!-- Content Section Start -->
     <div id="contentsec">
         <div class="inner">
             <div class="fullwidth box left">
-                  <div class="boxshow" >
-                        <div class="title">
-                            <div class="title-center">
-                                <div style="width: 400px;margin: 0px auto;"><p style="text-align: left;" class="blue">浙江龙游产业人才专场招聘</p></div>
-                                <div>
-                                    <p style="overflow: auto; margin-top: 5px; padding-bottom: 20px;">
-                                    <span class="left">发布日期:2017-11-14</span>
-                                    <span class="left">&nbsp;&nbsp;|&nbsp;&nbsp;发布者:就业指导中心助理</span>
-                                    <span class="left">&nbsp;&nbsp;|&nbsp;&nbsp;浏览次数: 2781 次</span>
-                                    </p>
-                                </div>
+                <div class="boxshow" >
+                    <div class="title">
+                        <div class="title-center">
+                            <div style="width: 400px;margin: 0px auto;"><p style="text-align: left;" class="blue">${current.xxbt}</p></div>
+                            <div>
+                                <p style="overflow: auto; margin-top: 5px; padding-bottom: 20px;">
+                                    <span class="left">发布日期:${current.xxfbsj}</span>
+                                    <span class="left">&nbsp;&nbsp;|&nbsp;&nbsp;发布者:${current.employmentDepartment.rymc}</span>
+                                    <span class="left">&nbsp;&nbsp;|&nbsp;&nbsp;浏览次数: ${current.llcs} 次</span>
+                                </p>
                             </div>
                         </div>
-                      <%--title end--%>
-                        <div class="content">
-
-                        </div>
-                      <%--content end--%>
-                      <div class="newsupdown">
-                          <div class="newsup"><a>上一篇：宜宾天亿新材料科技有限公司 双选会</a></div>
-                          <div class="newsdown"><a>下一篇：四川九鼎智远知识产权运营有限公司 双选会</a></div>
-                      </div>
-                  </div>
+                    </div>
+                    <%--title end--%>
+                    <div class="content">
+                        ${current.xxzw}
+                    </div>
+                    <%--content end--%>
+                    <div class="newsupdown">
+                        <div class="newsup"><a href="/${url}?fbbh=${pre.fbbbh}">上一篇：${pre.xxbt}</a></div>
+                        <div class="newsdown"><a href="/${url}?fbbh=${next.fbbbh}">下一篇：${next.xxbt}</a></div>
+                    </div>
+                </div>
             </div>
             <!--fullwidth box left end-->
         </div>

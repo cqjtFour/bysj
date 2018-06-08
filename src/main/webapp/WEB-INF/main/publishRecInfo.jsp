@@ -65,12 +65,6 @@
                   </div>
 
                   <div class="form-group">
-                      <label class="col-sm-2 control-label left">招聘内容</label>
-                  </div>
-                  <div class="form-group" style="width: 700px;margin-left: 60px">
-                      <textarea id="zpnr" name="content"  class="ckeditor"></textarea>
-                  </div>
-                  <div class="form-group">
                       <label class="col-sm-2 control-label left">招聘岗位</label>
                   </div>
                   <div class="form-group" style="width: 700px;margin-left: 60px">
@@ -104,6 +98,12 @@
                       </table>
                   </div>
 
+                  <div class="form-group">
+                      <label class="col-sm-2 control-label left">招聘内容</label>
+                  </div>
+                  <div class="form-group" style="width: 700px;margin-left: 60px">
+                      <textarea id="zpnr" name="content"  class="ckeditor"></textarea>
+                  </div>
 
                   <div class="form-group">
                       <div class="col-sm-offset-2 col-sm-10">

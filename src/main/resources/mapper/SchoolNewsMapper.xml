@@ -37,12 +37,132 @@
   <sql id="SchoolNewsWithJycry" >
     FBBBH,t_xxxxfbb.ZGBH,XXLX,XXBT,FJ,XXFBSJ,LLCS,XXZW,t_jycry.ZGBH,DLZH,ZGH,RYMC,ZW,SJ,BJDH
   </sql>
-  <select id="selectTest" resultMap="ResultMapWithRymc">
+
+  <select id="getAllInfo" resultMap="ResultMapWithRymc">
+    SELECT * from t_jycry,t_xxxxfbb where t_jycry.ZGBH = t_xxxxfbb.ZGBH
+  </select>
+
+
+
+
+
+
+  <!--==========================通知公告========================================-->
+  <!--查出所有的通知公告 -->
+  <select id="selectAllAdvice" resultMap="ResultMapWithRymc">
     SELECT
     <if test="distinct">
       distinct
     </if>
     <include refid="SchoolNewsWithJycry" />
-      from t_jycry,t_xxxxfbb where t_jycry.ZGBH = t_xxxxfbb.ZGBH
+      from t_jycry,t_xxxxfbb where t_jycry.ZGBH = t_xxxxfbb.ZGBH and XXLX='通知公告'
   </select>
+  <!--查询前九条通知公告信息-->
+  <select id="selectAdvice" resultMap="ResultMapWithRymc">
+    SELECT
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="SchoolNewsWithJycry" />
+    from t_jycry,t_xxxxfbb where t_jycry.ZGBH = t_xxxxfbb.ZGBH and XXLX='通知公告' limit 0,9
+  </select>
+
+  <!--查出浏览次数的五条通知公告-->
+  <select id="selectAdviceByLlcs" resultMap="ResultMapWithRymc">
+    SELECT
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="SchoolNewsWithJycry" />
+    from t_jycry,t_xxxxfbb where t_jycry.ZGBH = t_xxxxfbb.ZGBH and XXLX='通知公告' ORDER BY LLCS DESC limit 0,5
+  </select>
+
+  <!--查出最新的五条通知公告-->
+  <select id="selectAdviceByDate" resultMap="ResultMapWithRymc">
+    SELECT
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="SchoolNewsWithJycry" />
+    from t_jycry,t_xxxxfbb where t_jycry.ZGBH = t_xxxxfbb.ZGBH and XXLX='通知公告' ORDER BY XXFBSJ DESC LIMIT 0,5
+  </select>
+<!--==========================就业指导========================================-->
+  <!--查出所有的就业指导 -->
+  <select id="selectAllEmploymentGuidance" resultMap="ResultMapWithRymc">
+    SELECT
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="SchoolNewsWithJycry" />
+    from t_jycry,t_xxxxfbb where t_jycry.ZGBH = t_xxxxfbb.ZGBH and XXLX='就业指导'
+  </select>
+  <!--查询前九条就业指导信息-->
+  <select id="selectEmploymentGuidance" resultMap="ResultMapWithRymc">
+    SELECT
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="SchoolNewsWithJycry" />
+    from t_jycry,t_xxxxfbb where t_jycry.ZGBH = t_xxxxfbb.ZGBH and XXLX='就业指导' limit 0,9
+  </select>
+
+  <!--查出浏览次数的五条就业指导-->
+  <select id="selectEmploymentGuidanceByLlcs" resultMap="ResultMapWithRymc">
+    SELECT
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="SchoolNewsWithJycry" />
+    from t_jycry,t_xxxxfbb where t_jycry.ZGBH = t_xxxxfbb.ZGBH and XXLX='就业指导' ORDER BY LLCS DESC limit 0,5
+  </select>
+
+  <!--查出最新的五条就业指导-->
+  <select id="selectEmploymentGuidanceByDate" resultMap="ResultMapWithRymc">
+    SELECT
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="SchoolNewsWithJycry" />
+    from t_jycry,t_xxxxfbb where t_jycry.ZGBH = t_xxxxfbb.ZGBH and XXLX='就业指导' ORDER BY XXFBSJ DESC LIMIT 0,5
+  </select>
+  <!--==========================就业政策========================================-->
+  <!--查出所有的就业政策 -->
+  <select id="selectAllEmploymentPolicy" resultMap="ResultMapWithRymc">
+    SELECT
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="SchoolNewsWithJycry" />
+    from t_jycry,t_xxxxfbb where t_jycry.ZGBH = t_xxxxfbb.ZGBH and XXLX='就业政策'
+  </select>
+  <!--查询前九条就业政策信息-->
+  <select id="selectEmploymentPocily" resultMap="ResultMapWithRymc">
+    SELECT
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="SchoolNewsWithJycry" />
+    from t_jycry,t_xxxxfbb where t_jycry.ZGBH = t_xxxxfbb.ZGBH and XXLX='就业政策' limit 0,9
+  </select>
+
+  <!--查出浏览次数的五条就业政策-->
+  <select id="selectEmploymentPolicyByLlcs" resultMap="ResultMapWithRymc">
+    SELECT
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="SchoolNewsWithJycry" />
+    from t_jycry,t_xxxxfbb where t_jycry.ZGBH = t_xxxxfbb.ZGBH and XXLX='就业政策' ORDER BY LLCS DESC limit 0,5
+  </select>
+
+  <!--查出最新的五条就业指导-->
+  <select id="selectEmploymentPolicyByDate" resultMap="ResultMapWithRymc">
+    SELECT
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="SchoolNewsWithJycry" />
+    from t_jycry,t_xxxxfbb where t_jycry.ZGBH = t_xxxxfbb.ZGBH and XXLX='就业政策' ORDER BY XXFBSJ DESC LIMIT 0,5
+  </select>
+
 </mapper>

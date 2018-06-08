@@ -29,7 +29,6 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">admin</a>
                     <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                        <dd><a href="">个人信息</a></dd>
                         <dd><a href="">切换帐号</a></dd>
                         <dd><a href="/login">退出</a></dd>
                     </dl>
@@ -44,18 +43,18 @@
         </div>
     </div>
     <div class="layui-side layui-bg-black x-side">
-        <div class="layui-side-scroll">
+        <div class="layui-side-scroll" >
             <ul class="layui-nav layui-nav-tree site-demo-nav" lay-filter="side">
                 <c:forEach items="${menus}" var="menu">
                 <li class="layui-nav-item">
-                    <a class="javascript:;" href="javascript:;">
-                        <i class="layui-icon" style="top: 3px;">&#xe607;</i><cite>${menu.cdmc}</cite>
+                    <a class="javascript:;" href="javascript:;" >
+                        <cite>${menu.cdmc}</cite>
                     </a>
                     <dl class="layui-nav-child">
                         <c:forEach items="${menu.children}" var="childMenu">
                         <dd class="">
                         <dd class="">
-                            <a href="javascript:;" _href="${childMenu.cdurl}">
+                            <a href="javascript:;" _href="${childMenu.cdurl}" >
                                 <cite>${childMenu.cdmc}</cite>
                             </a>
                         </dd>

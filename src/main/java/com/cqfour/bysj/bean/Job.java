@@ -3,6 +3,7 @@ package com.cqfour.bysj.bean;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Table(name = "t_zpgwb")
 public class Job {
@@ -78,6 +79,20 @@ public class Job {
      */
     @Column(name = "GWJJ")
     private String gwjj;
+
+    /**
+     * 用人单位信息
+     */
+    @Transient
+    private Employers employers;
+
+    public Employers getEmployers() {
+        return employers;
+    }
+
+    public void setEmployers(Employers employers) {
+        this.employers = employers;
+    }
 
     /**
      * 获取招牌岗位编号，Integer，自增
@@ -293,5 +308,12 @@ public class Job {
      */
     public void setGwjj(String gwjj) {
         this.gwjj = gwjj;
+    }
+
+    @Override
+    public String toString(){
+        String string;
+        string=this.getMc()+"-"+this.getGwlx()+"-"+this.getZy()+"-"+this.getGzjy()+"-"+this.getXlyq()+"-"+this.getZpsl()+"-"+this.getYx()+"-"+this.getGwjj()+"-"+this.getFbsj();
+        return  string;
     }
 }

@@ -9,20 +9,22 @@ $(document).ready(function () {
     student=new Object();
     /*基本信息*/
     $("#form1bc").click(function () {
-        $("#span1").removeClass("color02");
-        $("#span1").addClass("color01");
-        $("#form1").addClass("notshow");
-        $("#form2").removeClass("notshow");
-        student.xh=$("#xh").val();
-        student.xsxm=$("#xsxm").val();
-        student.xb=$("input[name='xb']:checked").val();
-        student.csrq=$("#csrq").val();
-        student.mz=$("#mz").val();
-        student.syd=$("#syd").val();
-        student.sjhm=$("#sjhm").val();
-        student.email=$("#email").val();
-        student.zzmm=$("input[name='zzmm']:checked").val();
-        student.sr = $("#csrq").val();
+        if($("#sjhmError").hasClass("notshow") && $("#emailError").hasClass("notshow")){
+            $("#span1").removeClass("color02");
+            $("#span1").addClass("color01");
+            $("#form1").addClass("notshow");
+            $("#form2").removeClass("notshow");
+            student.xh=$("#xh").val();
+            student.xsxm=$("#xsxm").val();
+            student.xb=$("input[name='xb']:checked").val();
+            student.csrq=$("#csrq").val();
+            student.mz=$("#mz").val();
+            student.syd=$("#syd").val();
+            student.sjhm=$("#sjhm").val();
+            student.email=$("#email").val();
+            student.zzmm=$("input[name='zzmm']:checked").val();
+            student.sr = $("#csrq").val();
+        }
     });
     /*职业意向*/
     $("#form2bc").click(function () {
@@ -176,6 +178,32 @@ $(document).ready(function () {
         }
     });
 
+    //手机号码格式验证
+    $("#sjhm").blur(function () {
+        var sjhm=$("#sjhm").val();
+        var re = /^1\d{10}$/
+        if (!re.test(sjhm)) 
+            $("#sjhmError").removeClass("notshow");
+    });
+
+    $("#sjhm").focus(function () {
+        if(!$(sjhmError).hasClass("notshow"))
+            $(sjhmError).addClass("notshow");
+    });
+
+    //邮箱格式验证
+    $("#email").blur(function () {
+        var email=$(this).val();
+        var re=/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/
+        if(!re.test(email))
+            $("#emailError").removeClass("notshow");
+    });
+
+   $("#email").focus(function () {
+      if(!$(emailError).hasClass("notshow"))
+          $(emailError).addClass("notshow");
+   });
+
 
 });
 function uploadImg() {
@@ -184,6 +212,7 @@ function uploadImg() {
         type:"post",
         dataType:"json",
         success:function (result) {
+            console.log(result.msg)
             $("#yltx").attr("src",result.msg);
         }
     };

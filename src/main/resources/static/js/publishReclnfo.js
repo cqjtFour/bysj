@@ -59,7 +59,7 @@ $(document).ready(function () {
                     dataType:"json",
                     data: {reserveInfoJobs : JSON.stringify(reserveInfoJobs)},
                     success:function (result) {
-                        window.location.replace("/success");
+                        window.location.replace("/successRec");
                     }
                 })
              }

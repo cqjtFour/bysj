@@ -86,29 +86,123 @@
                                 <label for="syd" class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;民族</label>
                                 <div class="col-sm-10" >
                                     <select class="form-control" style="width: 200px;" id="mz" name="mz">
-                                        <option value="汉">汉</option>
-                                        <option value="壮">壮</option>
-                                        <option value="苗">苗</option>
+                                          <option value="汉族">汉族</option>  
+                                          <option value="蒙古族">蒙古族</option>  
+                                          <option value="回族">回族</option>  
+                                          <option value="藏族">藏族</option>  
+                                          <option value="维吾尔族">维吾尔族</option>  
+                                          <option value="苗族">苗族</option>  
+                                          <option value="彝族">彝族</option>  
+                                          <option value="壮族">壮族</option>  
+                                          <option value="布依族">布依族</option>  
+                                          <option value="朝鲜族">朝鲜族</option>  
+                                          <option value="满族">满族</option>  
+                                          <option value="侗族">侗族</option>  
+                                          <option value="瑶族">瑶族</option>  
+                                          <option value="白族">白族</option>  
+                                          <option value="土家族">土家族</option>  
+                                          <option value="哈尼族">哈尼族</option>  
+                                          <option value="哈萨克族">哈萨克族</option>  
+                                          <option value="傣族">傣族</option>  
+                                          <option value="黎族">黎族</option>  
+                                          <option value="傈僳族">傈僳族</option>  
+                                          <option value="佤族">佤族</option>  
+                                          <option value="畲族">畲族</option>  
+                                           <option value="高山族">高山族</option>  
+                                          <option value="拉祜族">拉祜族</option>  
+                                          <option value="水族">水族</option>  
+                                          <option value="东乡族">东乡族</option>  
+                                          <option value="纳西族">纳西族</option>  
+                                          <option value="景颇族">景颇族</option>  
+                                          <option value="柯尔克孜族">柯尔克孜族</option>  
+                                          <option value="土族">土族</option>  
+                                          <option value="达斡尔族">达斡尔族</option>  
+                                          <option value="仫佬族">仫佬族</option>  
+                                          <option value="羌族">羌族</option>  
+                                          <option value="布朗族">布朗族</option>  
+                                          <option value="撒拉族">撒拉族</option>  
+                                          <option value="毛南族">毛南族</option>  
+                                          <option value="仡佬族">仡佬族</option>  
+                                          <option value="锡伯族">锡伯族</option>  
+                                          <option value="阿昌族">阿昌族</option>  
+                                          <option value="普米族">普米族</option>  
+                                          <option value="塔吉克族">塔吉克族</option>  
+                                          <option value="怒族">怒族</option>  
+                                          <option value="乌孜别克族">乌孜别克族</option>  
+                                          <option value="俄罗斯族">俄罗斯族</option>  
+                                          <option value="鄂温克族">鄂温克族</option>  
+                                          <option value="德昂族">德昂族</option>  
+                                          <option value="保安族">保安族</option>  
+                                          <option value="裕固族">裕固族</option>  
+                                          <option value="京族">京族</option>  
+                                          <option value="塔塔尔族">塔塔尔族</option>  
+                                          <option value="独龙族">独龙族</option>  
+                                          <option value="鄂伦春族">鄂伦春族</option>  
+                                          <option value="赫哲族">赫哲族</option>  
+                                          <option value="门巴族">门巴族</option>  
+                                          <option value="珞巴族">珞巴族</option>  
+                                          <option value="基诺族">基诺族</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="syd" class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;生源地</label>
                                 <div class="col-sm-10" >
-                                    <input type="text" class="form-control" id="syd" name="syd" style="width: 200px;">
+                                    <select  class="form-control" style="width: 200px;" id="syd"  name="syd">
+                                          <option value="北京市">北京市</option>
+                                         <option value="浙江省">浙江省</option>
+                                         <option value="天津市">天津市</option>
+                                         <option value="安徽省">安徽省</option>
+                                         <option value="上海市">上海市</option>
+                                         <option value="福建省">福建省</option>
+                                         <option value="重庆市">重庆市</option>
+                                         <option value="江西省">江西省</option>
+                                         <option value="山东省">山东省</option>
+                                         <option value="河南省">河南省</option>
+                                         <option value="湖北省">湖北省</option>
+                                         <option value="湖南省">湖南省</option>
+                                         <option value="广东省">广东省</option>
+                                         <option value="海南省">海南省</option>
+                                         <option value="山西省">山西省</option>
+                                         <option value="青海省">青海省</option>
+                                         <option value="江苏省">江苏省</option>
+                                         <option value="辽宁省">辽宁省</option>
+                                         <option value="吉林省">吉林省</option>
+                                         <option value="台湾省">台湾省</option>
+                                         <option value="河北省">河北省</option>
+                                         <option value="贵州省">贵州省</option>
+                                         <option value="四川省">四川省</option>
+                                         <option value="云南省">云南省</option>
+                                         <option value="陕西省">陕西省</option>
+                                         <option value="甘肃省">甘肃省</option>
+                                         <option value="黑龙江省">黑龙江省</option>
+                                         <option value="香港特别行政区">香港特别行政</option>
+                                         <option value="澳门特别行政区">澳门特别行政</option>
+                                         <option value="广西壮族自治区">广西壮族自治</option>
+                                         <option value="宁夏回族自治区">宁夏回族自治</option>
+                                         <option value="新疆维吾尔自治区">新疆维吾尔治区</option>
+                                         <option value="内蒙古自治区">内蒙古自治区</option>
+                                         <option value="西藏自治区">西藏自治区</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="sjhm" class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;手机号码</label>
-                                <div class="col-sm-10" >
+                                <label for="sjhm" class="col-sm-2 control-label left">*&nbsp;&nbsp;&nbsp;手机号码</label>
+                                <div class="left" style="margin-left: 15px;">
                                     <input type="tel" class="form-control" id="sjhm" name="sjhm" style="width: 200px;">
                                 </div>
+                                <label class="left control-label notshow" id="sjhmError" style="margin-left: 20px;">
+                                    <span style="color: red;">号码格式错误!</span>
+                                </label>
                             </div>
                             <div class="form-group">
-                                <label for="email" class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;电子邮箱</label>
-                                <div class="col-sm-10" >
-                                    <input type="email" class="form-control" id="email" name="email" style="width: 200px;">
+                                <label for="email" class="col-sm-2 control-label left">*&nbsp;&nbsp;&nbsp;电子邮箱</label>
+                                <div class="left" style="margin-left: 15px;" >
+                                    <input type="email" class="form-control" id="email" name="email" style="width: 200px;" title="格式错误">
                                 </div>
+                                <label class="left control-label notshow" id="emailError" style="margin-left: 20px;">
+                                    <span style="color: red;">邮箱格式错误!</span>
+                                </label>
                             </div>
                             <div class="form-group">
                                 <label for="zgdy" class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;政治面貌</label>
@@ -137,15 +231,16 @@
                             </div>
                         </form>
                         <%--form1 end--%>
+
                         <form class="form-horizontal notshow" role="form" id="form2" target="id_iframe">
                             <div class="form-group">
-                                <label for="qwhy" class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;期望行业</label>
+                                <label for="qwhy" class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;期望行业</label>
                                 <div class="col-sm-10" >
                                     <input type="text" class="form-control" id="qwhy" name="qwhy" style="width: 200px;">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="qwzn" class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;期望职能</label>
+                                <label for="qwzn" class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;期望职能</label>
                                 <div class="col-sm-10" >
                                     <input type="text" class="form-control" id="qwzn" name="qwzn" style="width: 200px;">
                                 </div>
@@ -175,6 +270,7 @@
                             </div>
                         </form>
                         <%--form2 end--%>
+
                         <form class="form-horizontal notshow"  role="form" id="form3" target="id_iframe">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;企业名称</label>
@@ -224,6 +320,7 @@
                             </div>
                         </form>
                         <%--form3 end--%>
+
                         <form class="form-horizontal notshow"  role="form" id="form4" target="id_iframe">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" style="float: left;">*&nbsp;&nbsp;&nbsp;学历</label>
@@ -275,6 +372,7 @@
                             </div>
                         </form>
                         <%--form4 end--%>
+
                         <form class="form-horizontal notshow"  role="form" id="form5" target="id_iframe">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;项目名称</label>
@@ -306,6 +404,7 @@
                             </div>
                         </form>
                         <%--form6 end--%>
+
                         <form class="form-horizontal notshow"  role="form" id="form6" target="id_iframe">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;自我评价</label>
@@ -330,7 +429,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">*&nbsp;&nbsp;&nbsp;预览头像</label>
+                                <label class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;预览头像</label>
                                 <div class="col-sm-10">
                                     <label class="control-label"><img src="${student.xszp}" style="width: 140px;height: 140px;" class="img-thumbnail" id="yltx"></label>
                                 </div>

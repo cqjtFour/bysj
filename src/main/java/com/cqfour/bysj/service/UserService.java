@@ -24,6 +24,26 @@ public class UserService {
         return userMapper.selectByPrimaryKey(username);
     }
 
+    /**
+     * wgp
+     * 添加用户
+     * @param user
+     * @return
+     */
+    public Integer addUser(User user){
+        return userMapper.insert(user);
+    }
+
+    /**
+     * wgp
+     * 验证用户名是否已经存在
+     * @param user
+     * @return
+     */
+    public boolean validUser(User user){
+        return userMapper.existsWithPrimaryKey(user);
+    }
+
    /**
    * 验证登陆密码
    * */

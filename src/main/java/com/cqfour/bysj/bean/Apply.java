@@ -71,10 +71,11 @@ public class Apply {
     public void setJob(Job job){
         this.job=job;
     }
-
+    //获得Student
     public Student getStudent(){
         return this.student;
     }
+    //设计Student
     public void setStudent(Student student){
         this.student=student;
     }

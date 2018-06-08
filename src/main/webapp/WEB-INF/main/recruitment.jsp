@@ -140,8 +140,8 @@
 			</div>
 			<div class="row">
 				<div class="col-md-6">
-					<span>共&nbsp;&nbsp;<label>1000</label>&nbsp;&nbsp;条数据</span>
-					<span>共&nbsp;&nbsp;<label>100</label>&nbsp;&nbsp;页</span>
+					<span>共&nbsp;&nbsp;<label>24</label>&nbsp;&nbsp;条数据</span>
+					<span>共&nbsp;&nbsp;<label>5</label>&nbsp;&nbsp;页</span>
 				</div>
 				<div class="col-md-6">
 					<nav aria-label="Page navigation">
